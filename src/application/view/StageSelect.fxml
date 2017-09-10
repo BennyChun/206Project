@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+   <children>
+      <HBox layoutY="137.0" prefHeight="127.0" prefWidth="600.0" spacing="80.0" AnchorPane.topAnchor="170.0">
+         <children>
+            <JFXButton buttonType="RAISED" prefHeight="100.0" prefWidth="160.0" text="EASY">
+               <font>
+                  <Font name="Freestyle Script" size="48.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" prefHeight="100.0" prefWidth="160.0" text="HARD">
+               <font>
+                  <Font name="Freestyle Script" size="48.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+      <Label layoutX="110.0" layoutY="120.0" text="Please select one of the following levels">
+         <font>
+            <Font name="Freestyle Script" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
