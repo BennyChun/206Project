@@ -32,19 +32,19 @@
       </VBox>
    </center>
    <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="481.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="420.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton buttonType="RAISED" text="STATS">
+            <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="65.0" text="STATS">
                <HBox.margin>
-                  <Insets top="35.0" />
+                  <Insets left="25.0" top="30.0" />
                </HBox.margin>
                <font>
                   <Font name="Freestyle Script" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" text="QUIT">
+            <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="65.0" text="QUIT">
                <HBox.margin>
-                  <Insets top="35.0" />
+                  <Insets top="30.0" />
                </HBox.margin>
                <font>
                   <Font name="Freestyle Script" size="18.0" />
