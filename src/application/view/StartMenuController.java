@@ -1,12 +1,11 @@
 package application.view;
 
 
-
-public class StartMenuController extends AbstractController{
+public class StartMenuController {
 	
 	
 	public void handlePlay() {
-		_mainApp.initStageSelect();
+
 	}
 	
 	public void handleStats() {
@@ -16,7 +15,5 @@ public class StartMenuController extends AbstractController{
 	public void handleQuit() {
 		
 	}	
-	
-	
 
 }
