@@ -1,15 +1,15 @@
 package application.view;
 
-import application.util.NavigatorUtil;
+//import application.util.NavigatorUtil;
 import javafx.fxml.FXML;
 
-public class StageSelectController {
+public class StageSelectController extends AbstractController {
 	
+	/*
 	private NavigatorUtil _navigator;
-	
 	public StageSelectController(NavigatorUtil navigator) {
 		_navigator = navigator;
-	}
+	}*/
 	
 	@FXML
 	public void handleEasy() {
@@ -23,7 +23,8 @@ public class StageSelectController {
 	
 	@FXML
 	public void handleStageSelectBack() {
-		_navigator.goToStartMenu();
+		//_navigator.goToStartMenu();
+		_mainApp.initStartMenu();
 	}
 	
 }

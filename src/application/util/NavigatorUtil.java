@@ -1,4 +1,4 @@
-package application.util;
+/*package application.util;
 
 import java.io.IOException;
 
@@ -52,4 +52,4 @@ public class NavigatorUtil {
 		}
 	}
 	
-}
+}*/
