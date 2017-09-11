@@ -4,9 +4,9 @@ import application.MainApp;
 
 public abstract class AbstractController {
 	
-	private MainApp _mainApp;
+	protected MainApp _mainApp;
 	
-	public void getMainApp(MainApp mainApp) {
+	public void setMainApp(MainApp mainApp) {
 		_mainApp = mainApp;
 	}
 }
