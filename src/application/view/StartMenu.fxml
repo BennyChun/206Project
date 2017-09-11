@@ -10,29 +10,24 @@
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="TATAI!">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
                <font>
-                  <Font name="Freestyle Script" size="82.0" />
+                  <Font name="Freestyle Script" size="64.0" />
                </font>
             </Label>
             <JFXButton buttonType="RAISED" onAction="#handlePlay" ripplerFill="#000000ce" text="PLAY">
                <font>
-                  <Font name="Freestyle Script" size="42.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" text="INSTRUCTIONS">
-               <font>
-                  <Font name="Freestyle Script" size="24.0" />
+                  <Font name="Freestyle Script" size="36.0" />
                </font>
             </JFXButton>
          </children>
          <BorderPane.margin>
-            <Insets top="80.0" />
+            <Insets top="100.0" />
          </BorderPane.margin>
       </VBox>
    </center>
