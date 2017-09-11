@@ -16,10 +16,12 @@ public class StartMenuController {
 		_navigator.goToStageSelect();
 	}
 	
+	@FXML
 	public void handleStats() {
 		
 	}
 
+	@FXML
 	public void handleQuit() {
 		
 	}	

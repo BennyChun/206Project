@@ -2,6 +2,7 @@ package application;
 import java.io.IOException;
 
 import application.util.NavigatorUtil;
+import application.view.StageSelectController;
 import application.view.StartMenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
