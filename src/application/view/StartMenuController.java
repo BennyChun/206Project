@@ -1,12 +1,12 @@
 package application.view;
 
-import javafx.stage.Stage;
 
-public class StartMenuController {
+
+public class StartMenuController extends AbstractController{
 	
 	
 	public void handlePlay() {
-		
+
 	}
 	
 	public void handleStats() {
@@ -16,5 +16,7 @@ public class StartMenuController {
 	public void handleQuit() {
 		
 	}	
+	
+	
 
 }

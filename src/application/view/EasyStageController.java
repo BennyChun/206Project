@@ -1,5 +1,5 @@
 package application.view;
 
-public class EasyStageController {
+public class EasyStageController extends AbstractController{
 
 }

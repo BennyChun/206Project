@@ -1,5 +1,5 @@
 package application.view;
 
-public class StageSelectController {
+public class StageSelectController extends AbstractController{
 
 }
