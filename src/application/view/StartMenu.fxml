@@ -20,7 +20,7 @@
                   <Font name="Freestyle Script" size="82.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" ripplerFill="#000000ce" text="PLAY">
+            <JFXButton buttonType="RAISED" onAction="#handlePlay" ripplerFill="#000000ce" text="PLAY">
                <font>
                   <Font name="Freestyle Script" size="42.0" />
                </font>
