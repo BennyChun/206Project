@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+   <children>
+      <Label layoutX="284.0" layoutY="101.0" prefHeight="20.0" prefWidth="34.0" text="8" AnchorPane.bottomAnchor="166.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="283.0" AnchorPane.topAnchor="101.0">
+         <font>
+            <Font name="Freestyle Script" size="96.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
