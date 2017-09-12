@@ -1,6 +1,7 @@
 package application;
 import java.io.IOException;
 
+import application.view.LevelScreenController;
 //import application.util.NavigatorUtil;
 import application.view.StageSelectController;
 import application.view.StartMenuController;
@@ -84,8 +85,8 @@ public class MainApp extends Application {
 			_primaryStage.setResizable(false);
 			
 			//give stage select controller access to the main app
-			//StageSelectController controller = loader.getController();
-			//controller.setMainApp(this);
+			LevelScreenController controller = loader.getController();
+			controller.setMainApp(this);
 		}catch(IOException e){
 			e.printStackTrace();
 		}
