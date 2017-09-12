@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="284.0" layoutY="101.0" prefHeight="20.0" prefWidth="34.0" text="8" AnchorPane.bottomAnchor="166.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="283.0" AnchorPane.topAnchor="101.0">
          <font>
             <Font name="Freestyle Script" size="96.0" />
          </font>
       </Label>
+      <JFXButton layoutX="268.0" layoutY="321.0">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Icons/263048-miscellaneous-elements/png/microphone.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="14.0" layoutY="328.0" text="Main Menu">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Icons/126466-multimedia-collection/png/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Freestyle Script" size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

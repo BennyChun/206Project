@@ -13,12 +13,12 @@ public class StageSelectController extends AbstractController {
 	
 	@FXML
 	public void handleEasy() {
-		
+		_mainApp.initLevelScreen();
 	}
 	
 	@FXML
 	public void handleHard() {
-		
+		_mainApp.initLevelScreen();
 	}
 	
 	@FXML
