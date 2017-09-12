@@ -20,12 +20,12 @@
                   <Font name="Freestyle Script" size="82.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" onAction="#handlePlay" ripplerFill="#000000ce" text="PLAY">
+            <JFXButton buttonType="RAISED" onAction="#handlePlay" ripplerFill="BLACK" text="PLAY">
                <font>
                   <Font name="Freestyle Script" size="42.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" text="INSTRUCTIONS">
+            <JFXButton buttonType="RAISED" onAction="#handleInstructiosn" text="INSTRUCTIONS">
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Font name="Freestyle Script" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="65.0" text="QUIT">
+            <JFXButton buttonType="RAISED" onAction="#handleQuit" prefHeight="40.0" prefWidth="65.0" text="QUIT">
                <HBox.margin>
                   <Insets top="30.0" />
                </HBox.margin>

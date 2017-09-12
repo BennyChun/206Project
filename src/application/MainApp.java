@@ -1,6 +1,7 @@
 package application;
 import java.io.IOException;
 
+import application.view.InstructionsController;
 import application.view.LevelScreenController;
 //import application.util.NavigatorUtil;
 import application.view.StageSelectController;
@@ -90,6 +91,32 @@ public class MainApp extends Application {
 		}catch(IOException e){
 			e.printStackTrace();
 		}
+	}
+	
+	public void initInstructions(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/Instructions.fxml"));
+			//loader.setController(new StartMenuController(_navigator));
+			BorderPane _instrucitons = (BorderPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(_instrucitons);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+			
+			//give stage select controller access to the main app
+			InstructionsController controller = loader.getController();
+			controller.setMainApp(this);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void close() {
+		_primaryStage.close();
 	}
 	
 	public static void main(String[] args) {

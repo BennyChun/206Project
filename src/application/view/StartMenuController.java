@@ -18,13 +18,18 @@ public class StartMenuController extends AbstractController {
 	}
 	
 	@FXML
+	public void handleInstructiosn() {
+		_mainApp.initInstructions();
+	}
+	
+	@FXML
 	public void handleStats() {
 		
 	}
 
 	@FXML
 	public void handleQuit() {
-		
+		_mainApp.close();
 	}	
 
 }
