@@ -11,14 +11,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LevelScreenController">
    <children>
-      <Label layoutX="284.0" layoutY="101.0" prefHeight="20.0" prefWidth="34.0" text="8" AnchorPane.bottomAnchor="166.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="283.0" AnchorPane.topAnchor="101.0">
+      <Label layoutX="283.0" layoutY="100.0" prefHeight="20.0" prefWidth="34.0" text="8" AnchorPane.bottomAnchor="167.0" AnchorPane.leftAnchor="283.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="100.0">
          <font>
-            <Font name="Freestyle Script" size="96.0" />
+            <Font name="Maiandra GD" size="96.0" />
          </font>
       </Label>
       <HBox layoutX="14.0" layoutY="271.0" prefHeight="115.0" prefWidth="600.0" spacing="125.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <JFXButton onAction="#handleMainMenu" prefHeight="50.0" prefWidth="130.0" text="Main Menu">
+            <JFXButton buttonType="RAISED" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -30,10 +30,10 @@
                   <Font name="Freestyle Script" size="24.0" />
                </font>
                <HBox.margin>
-                  <Insets top="35.0" />
+                  <Insets left="30.0" top="35.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton prefWidth="100.0">
+            <JFXButton prefWidth="100.0" style="-fx-background-color: #ffffff;">
                <graphic>
                   <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -45,7 +45,7 @@
                   <Insets top="35.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton text="Skip">
+            <JFXButton style="-fx-background-color: #ffffff;" text="Skip">
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>

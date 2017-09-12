@@ -8,7 +8,7 @@
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InstructionsController">
    <bottom>
-      <JFXButton buttonType="RAISED" onAction="#handleContinue" text="CONTINUE" BorderPane.alignment="TOP_RIGHT">
+      <JFXButton buttonType="RAISED" onAction="#handleContinue" style="-fx-background-color: #ffffff;" text="CONTINUE" BorderPane.alignment="TOP_RIGHT">
          <font>
             <Font name="Freestyle Script" size="18.0" />
          </font>
@@ -18,12 +18,12 @@
       </JFXButton>
    </bottom>
    <center>
-      <JFXTextArea editable="false" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. &#10;In rutrum, lorem sit amet congue ullamcorper, eros purus&#10; mollis ex, non malesuada mi nulla a orci. Curabitur pretium &#10;magna eu ligula pellentesque, vel consequat sapien viverra. &#10;Phasellus ligula leo, aliquam in molestie non, sodales vitae &#10;eros. Sed ut cursus est. Proin nec diam" wrapText="true" BorderPane.alignment="CENTER">
+      <JFXTextArea editable="false" focusColor="WHITE" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. &#10;In rutrum, lorem sit amet congue ullamcorper, eros purus&#10; mollis ex, non malesuada mi nulla a orci. Curabitur pretium &#10;magna eu ligula pellentesque, vel " wrapText="true" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="50.0" left="125.0" right="125.0" top="100.0" />
          </BorderPane.margin>
          <font>
-            <Font name="Freestyle Script" size="18.0" />
+            <Font name="Maiandra GD" size="18.0" />
          </font>
       </JFXTextArea>
    </center>

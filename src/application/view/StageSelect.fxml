@@ -11,7 +11,7 @@
    <children>
       <HBox layoutY="137.0" prefHeight="127.0" prefWidth="600.0" spacing="80.0" AnchorPane.topAnchor="170.0">
          <children>
-            <JFXButton buttonType="RAISED" onAction="#handleEasy" prefHeight="100.0" prefWidth="160.0" text="EASY">
+            <JFXButton buttonType="RAISED" onAction="#handleEasy" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #ffffff;" text="EASY">
                <font>
                   <Font name="Freestyle Script" size="48.0" />
                </font>
@@ -19,7 +19,7 @@
                   <Insets left="100.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton buttonType="RAISED" onAction="#handleHard" prefHeight="100.0" prefWidth="160.0" text="HARD">
+            <JFXButton buttonType="RAISED" onAction="#handleHard" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #ffffff;" text="HARD">
                <font>
                   <Font name="Freestyle Script" size="48.0" />
                </font>
@@ -29,12 +29,12 @@
             </JFXButton>
          </children>
       </HBox>
-      <Label layoutX="110.0" layoutY="120.0" text="Please select one of the following levels">
+      <Label layoutX="195.0" layoutY="90.0" text="Select a level!">
          <font>
-            <Font name="Freestyle Script" size="36.0" />
+            <Font name="Maiandra GD" size="36.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="24.0" layoutY="352.0" onAction="#handleStageSelectBack" prefHeight="40.0" prefWidth="100.0" text="BACK" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0">
+      <JFXButton buttonType="RAISED" layoutX="24.0" layoutY="352.0" onAction="#handleStageSelectBack" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="BACK" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>

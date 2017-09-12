@@ -10,7 +10,7 @@
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="315.0" prefWidth="600.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="TATAI!">
                <VBox.margin>
@@ -20,12 +20,12 @@
                   <Font name="Freestyle Script" size="82.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" onAction="#handlePlay" ripplerFill="BLACK" text="PLAY">
+            <JFXButton buttonType="RAISED" onAction="#handlePlay" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PLAY">
                <font>
                   <Font name="Freestyle Script" size="42.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" onAction="#handleInstructiosn" text="INSTRUCTIONS">
+            <JFXButton buttonType="RAISED" onAction="#handleInstructiosn" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
@@ -39,7 +39,7 @@
    <bottom>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="420.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="65.0" text="STATS">
+            <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="STATS">
                <HBox.margin>
                   <Insets left="25.0" top="30.0" />
                </HBox.margin>
@@ -47,7 +47,7 @@
                   <Font name="Freestyle Script" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" onAction="#handleQuit" prefHeight="40.0" prefWidth="65.0" text="QUIT">
+            <JFXButton buttonType="RAISED" onAction="#handleQuit" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="QUIT">
                <HBox.margin>
                   <Insets top="30.0" />
                </HBox.margin>
