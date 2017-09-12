@@ -16,14 +16,12 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
 
 	private Stage _primaryStage;
-	//private NavigatorUtil _navigator;
 	private BorderPane _startMenu;
 	
 	@Override
 	public void start(Stage primaryStage) {
 		_primaryStage = primaryStage;
 		_primaryStage.setTitle("Tatai!");
-		//_navigator = new NavigatorUtil(primaryStage);
 		initStartMenu();
 	}
 
@@ -32,7 +30,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/StartMenu.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			_startMenu = (BorderPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -54,7 +51,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/StageSelect.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane _stageSelect = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -76,7 +72,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/LevelScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane _levelScreen = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
