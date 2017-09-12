@@ -3,6 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -20,10 +22,17 @@
                   <Font name="Freestyle Script" size="82.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" onAction="#handlePlay" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PLAY">
+            <JFXButton buttonType="RAISED" onAction="#handlePlay" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
                <font>
                   <Font name="Freestyle Script" size="42.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/Icons/263048-miscellaneous-elements/png/play-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
             <JFXButton buttonType="RAISED" onAction="#handleInstructiosn" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
                <font>
