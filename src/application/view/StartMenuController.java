@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 
 public class StartMenuController extends AbstractController {
 	
-	@FXML
 	public void handlePlay() {
 		_mainApp.initStageSelect();
 	}
