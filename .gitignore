@@ -1,3 +1,6 @@
+#project build path settings
+.classpath
+
 # Compiled class file
 *.class
 
