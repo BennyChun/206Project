@@ -29,7 +29,7 @@
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Desktop/Icons/263048-miscellaneous-elements/png/play-button.png" />
+                        <Image url="@../../../Icons/263048-miscellaneous-elements/png/play-button.png" />
                      </image>
                   </ImageView>
                </graphic>
