@@ -1,23 +1,93 @@
 package application.view;
 
+
+import java.util.Random;
+
+import application.model.Question;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 public class LevelScreenController extends AbstractController{
+	private String _selectedLevel;
+	private Question currenctQuestion; //this is the currency Question 
+	
+	@FXML
+	private Label numberLabel;
+	
+	
+	//this will store the 10 question objects, using obserablelist helps us keep track of updates to the question object
+	private ObservableList<Question> questionData = FXCollections.observableArrayList();
 	
 	@FXML
 	public void handleMainMenu() {
+		//goes back to the main menu
 		_mainApp.initStartMenu();
 	}
 	
+	/***
+	 * this method takes a string which should be either easy or hard
+	 * @param selectedLevel
+	 */
+	public void setLevel(String selectedLevel) {
+		_selectedLevel=selectedLevel;
+		generateNumbers();//calls the generateNumbers() method, which generates 10 random numbers depending on which level the user selected
+		
+		//display the 10 questions on console
+		display();//this method only displays to the console, this is for testing purposes
+		
+		//sets the first label number
+		Question tempQuestion = questionData.get(0);
+		showQuestionDetails(tempQuestion);
+	}
+	
+	
+
+	/**
+	 * returns a list of questions as an observable list
+	 * @return
+	 */
+	public ObservableList<Question> getQuestionData() {
+        return questionData;
+    }
+
+	
+	
+	//========================================= handles the recording ==========================================================
+	
 	@FXML
 	public void handleRecord() {
+		/*
+		 * once the person presses the record button
+		 * it should have a prompt asking if the person i ready
+		 * once the person clicks ready or ok
+		 * it starts recording for 3* seconds
+		 * 
+		 * after its done, 
+		 */
+		
+		
+		
 		
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	//========================================== Unimplemented methods ==========================================================
+	
 	@FXML
 	public void handleSkip() {
-		
+		//when the user clicks skip, it should go to the next question, 
+		//and record the current question to be failed
+		//we will not implement the skip button for assignment 3
 	}
+	
 	
 	@FXML
 	public void handleOpenInfo() {
@@ -28,5 +98,99 @@ public class LevelScreenController extends AbstractController{
 	public void handleCloseInfo() {
 		System.out.println("bye");
 	}
+	//=============================== generates the 10 random questions based on user lvl selected ================================
+	private void generateNumbers() {
+		//this method generates 10 random numbers depending on what the level was
+		if (_selectedLevel == "easy") {
+			System.out.println("you have selected easy lvl.");
+			
+			//generate random numbers between 1 and 99
+			for (int i = 1 ; i <= 10; i++) {
+				Random rand = new Random();
+				
+				//nextInt is normally exclusive of the top value,
+				//so add one to make it inclusive
+				int randomNum = rand.nextInt((9 - 1)+1) +1;
+				
+				//convert the random integer to a string
+				String intToString = Integer.toString(randomNum);
+				
+				//make the question object with this random number
+				Question theQuestion = new Question(randomNum);
+				
+				//add the question object into the observable list
+				questionData.add(theQuestion);
+			}
+			
+		}else {
+			System.out.println("you have selected: hard lvl.");
+			//generate 10 numbers between 1 and 99
+			for (int i = 1 ; i <= 10; i++) {
+				Random rand = new Random();
+				
+				//nextInt is normally exclusive of the top value,
+				//so add one to make it inclusive
+				int randomNum = rand.nextInt((99 - 1)+1) +1;
+				
+				//convert the random integer to a string
+				String intToString = Integer.toString(randomNum);
+				
+				//make the question object with this random number
+				Question theQuestion = new Question(randomNum);
+				
+				//add the question object into the observable list
+				questionData.add(theQuestion);
+			}
+		}
+	}
+	//=================================== test method to see if the 10 questions got generated ====================================
 	
+	/**
+	 * this method is solely used for testing: 
+	 * this method prints out the current (10) questions that are stored in the observable list to the console
+	 */
+	
+	private void display() {
+		for (Question q : questionData ) {
+			System.out.println(q.getInteger());
+		}
+	}
+	//============================================== update the numberLabel ========================================================
+	
+	/**
+	 * this fills the Label for which the number is to be answered
+	 * from the Question object
+	 * 
+	 * 
+	 * it takes a Question object, and displays the integer that is associated with that question
+	 * @param Question
+	 */
+	private void showQuestionDetails(Question question) {
+		
+	    if (question != null) {
+	        // Fill the labels with info from the person object.
+	        //firstNameLabel.setText(person.getFirstName());
+	        //lastNameLabel.setText(person.getLastName());
+	        //streetLabel.setText(person.getStreet());
+	        //postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
+	        //cityLabel.setText(person.getCity());
+
+	        numberLabel.setText(Integer.toString(question.getInteger()));
+	        
+	        // TODO: We need a way to convert the birthday into a String! 
+	        // birthdayLabel.setText(...);
+	    } else {
+	    	
+	    	// Person is null, remove all the text.
+	        //firstNameLabel.setText("");
+	        //lastNameLabel.setText("");
+	        //streetLabel.setText("");
+	        //postalCodeLabel.setText("");
+	        //cityLabel.setText("");
+	        //birthdayLabel.setText("");
+	    	
+	    	numberLabel.setText("");
+	    }
+	}
+	//==============================================================================================================
 }

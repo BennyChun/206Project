@@ -61,13 +61,19 @@ public class MainApp extends Application {
 			
 			//give stage select controller access to the main app
 			StageSelectController controller = loader.getController();
-			controller.setMainApp(this);
+			controller.setMainApp(this);//this will set the main app scene to the stage select scene
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 	}
 	
-	public void initLevelScreen(){
+	/**
+	 * this method will get called by the StageSelectController,
+	 * that controller will pass an argument (string) 
+	 * which is either easy or hard for the level to be generated
+	 * @param selectedLevel
+	 */
+	public void initLevelScreen(String selectedLevel){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -82,7 +88,9 @@ public class MainApp extends Application {
 			
 			//give stage select controller access to the main app
 			LevelScreenController controller = loader.getController();
-			controller.setMainApp(this);
+			controller.setLevel(selectedLevel);//passes the selected level to the controller
+			controller.setMainApp(this);//this will set the mainapp scene to the level controller scene
+			
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -94,10 +102,10 @@ public class MainApp extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/Instructions.fxml"));
 			//loader.setController(new StartMenuController(_navigator));
-			BorderPane _instrucitons = (BorderPane) loader.load();
+			BorderPane _instructions = (BorderPane) loader.load();
 
 			// Show the scene containing the start menu
-			Scene scene = new Scene(_instrucitons);
+			Scene scene = new Scene(_instructions);
 			_primaryStage.setScene(scene);
 			_primaryStage.show();
 			_primaryStage.setResizable(false);
@@ -110,6 +118,10 @@ public class MainApp extends Application {
 		}
 	}
 	
+	/**
+	 * when this method gets called
+	 * it closes the primaryStage
+	 */
 	public void close() {
 		_primaryStage.close();
 	}
