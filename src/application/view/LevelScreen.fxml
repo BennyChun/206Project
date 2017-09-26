@@ -18,7 +18,7 @@
       </Label>
       <HBox layoutX="14.0" layoutY="271.0" prefHeight="115.0" prefWidth="600.0" spacing="125.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <JFXButton buttonType="RAISED" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -33,7 +33,7 @@
                   <Insets left="30.0" top="35.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton buttonType="RAISED" prefWidth="100.0" style="-fx-background-color: #ffffff;">
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefWidth="100.0" style="-fx-background-color: #ffffff;">
                <graphic>
                   <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>

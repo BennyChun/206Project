@@ -8,7 +8,7 @@
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InstructionsController">
    <bottom>
-      <JFXButton buttonType="RAISED" onAction="#handleContinue" style="-fx-background-color: #ffffff;" text="CONTINUE" BorderPane.alignment="TOP_RIGHT">
+      <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleContinue" style="-fx-background-color: #ffffff;" text="CONTINUE" BorderPane.alignment="TOP_RIGHT">
          <font>
             <Font name="Freestyle Script" size="18.0" />
          </font>
