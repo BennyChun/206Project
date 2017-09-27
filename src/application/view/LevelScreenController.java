@@ -11,7 +11,8 @@ import javafx.scene.control.Label;
 
 public class LevelScreenController extends AbstractController{
 	private String _selectedLevel;
-	private Question currenctQuestion; //this is the currency Question 
+	private Question currentQuestion;  //this is the currency Question object
+	private int currentQuestionNumber; //this keeps track of which question  1 to 10 (can put this in the Question Model)
 	
 	@FXML
 	private Label numberLabel;
@@ -37,9 +38,16 @@ public class LevelScreenController extends AbstractController{
 		//display the 10 questions on console
 		display();//this method only displays to the console, this is for testing purposes
 		
-		//sets the first label number
-		Question tempQuestion = questionData.get(0);
-		showQuestionDetails(tempQuestion);
+		
+		//sets the current question
+		currentQuestion = questionData.get(0);   
+		currentQuestionNumber = 1;
+		
+		//show the current question on the level scene
+		showQuestionDetails(currentQuestion); // i know that currentQuestion is a global variable, i do not actually need to pass an argument(i will need to change showQuestionDetails)
+		
+		// set the state of this question to have been answered correctly
+		currentQuestion.setCorrect(true); //this is for testing purposes, please change later
 	}
 	
 	
@@ -60,21 +68,44 @@ public class LevelScreenController extends AbstractController{
 	public void handleRecord() {
 		/*
 		 * once the person presses the record button
-		 * it should have a prompt asking if the person i ready
-		 * once the person clicks ready or ok
-		 * it starts recording for 3* seconds
+		 * it should start recording, and have a countdown timer from 3 to 0
+		 * 
+		 * once it finishes recording, it will make a wav file
+		 * 
+		 * pass the wav file to HTK
+		 * HTK then makes a txt file
+		 * 
+		 * read the txt file
+		 * get the sentences and see if they match the "correct" maori number
+		 * 
+		 * 
 		 * 
 		 * after its done, 
 		 */
 		
 		
 		
+		//+++++++++++++++++++++++++++++ testing the next button ++++++++++++++++++++++++++++++++
+		if (currentQuestionNumber <=9 ){
+			
+			
+			
+			currentQuestion = questionData.get(currentQuestionNumber);
+			showQuestionDetails(currentQuestion);
+			
+			currentQuestion.setCorrect(true);//make all questions correct >>> testing purposes
+			
+			currentQuestionNumber = currentQuestionNumber + 1;
+			
+			
+			
+		}else {
+			System.out.println("you've finished the " + currentQuestionNumber + " questions!");//used for testing purposes
+			getResults();
+		}
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		
 	}
-	
-	
-	
-	
 	
 	
 	
@@ -193,4 +224,22 @@ public class LevelScreenController extends AbstractController{
 	    }
 	}
 	//==============================================================================================================
+	
+	/**
+	 * this method is only used for testing
+	 * this method gets the results from all 10 questions
+	 */
+	public void getResults() {
+		boolean tempCorrect;
+		int score = 0;
+		for (Question q : questionData) {
+			tempCorrect = q.isCorrect(); // gets true/false if the question was answered correctly
+			
+			if (tempCorrect == true) {//if the question got answered correctly
+				score+=1;//Increment score
+			}
+		}
+		System.out.println("you got: " + score + " out of 10 Questions correct");
+		
+	}
 }

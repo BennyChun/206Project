@@ -15,8 +15,12 @@ import javafx.beans.property.StringProperty;
  */
 public class Question {
 	private IntegerProperty _theNumber;   //this is a StringProprty that is associated with this Question object
+	
+	
 	private boolean skipped;  //this records whether this Question object has been skipped by the user
 	private boolean correct;  //this records whether this Question has been answered correctly by the user
+	
+	
 	
 	/**
 	 * a constructor for the Question object, it takes an int and saves it as its own unique* state
@@ -26,6 +30,7 @@ public class Question {
 	 */
 	public Question(int theNumber) {
 		_theNumber=new SimpleIntegerProperty(theNumber);
+		
 		skipped = false;
 		correct = false;
 	}
