@@ -1,3 +1,7 @@
+#HTK Stuff
+recout.mlf
+*.wav
+
 #project build path settings
 .classpath
 
