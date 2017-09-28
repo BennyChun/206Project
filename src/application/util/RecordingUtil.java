@@ -1,4 +1,4 @@
-package util;
+package application.util;
 
 import java.io.IOException;
 
@@ -29,6 +29,8 @@ public class RecordingUtil {
 			recordProcess.waitFor();
 			
 			recordProcess.destroy();
+			
+			System.out.println("recording worked ?!?!?");
 			
 		}catch (IOException ioe) {
 			ioe.printStackTrace();
