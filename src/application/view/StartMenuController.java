@@ -12,20 +12,16 @@ public class StartMenuController extends AbstractController {
 	 */
 	public void handlePlay() {
 		_mainApp.initStageSelect();
-	}
-	
-	
+	}	
 	
 	@FXML
 	public void handleInstructiosn() {
 		_mainApp.initInstructions();
 	}
 	
-	
-	
 	@FXML
 	public void handleStats() {
-		
+		_mainApp.initStatsScreen();
 	}
 
 	@FXML
