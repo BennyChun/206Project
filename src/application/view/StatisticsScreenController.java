@@ -6,7 +6,7 @@ public class StatisticsScreenController extends AbstractController{
 	
 	@FXML
 	public void handleContinue() {
-		
+		_mainApp.initStartMenu();
 	}
 
 }
