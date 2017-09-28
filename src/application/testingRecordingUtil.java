@@ -1,6 +1,7 @@
 package application;
 
-import util.RecordingUtil;
+import application.util.ReadHTKFile;
+import application.util.RecordingUtil;
 
 /**
  * this class is solely used to test the recordingUitl class
@@ -17,7 +18,12 @@ public class testingRecordingUtil {
 		
 		
 		recordingUtil.convertVoiceToMaori();// does this work ?
-		System.out.println("it worked ???!?!?!?");
+		System.out.println("recording and converting worked !?!?!!");
+		
+		ReadHTKFile readRecout = new ReadHTKFile();
+		readRecout.readHTK();
+		
+		readRecout.displayString();
 	}
 	
 	
