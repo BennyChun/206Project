@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+   <children>
+      <Label layoutX="248.0" layoutY="84.0" prefHeight="190.0" prefWidth="120.0" text="1" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="84.0">
+         <font>
+            <Font name="Maiandra GD" size="96.0" />
+         </font>
+      </Label>
+      <HBox layoutY="285.0" prefHeight="115.0" prefWidth="600.0" spacing="100.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Listen">
+               <font>
+                  <Font name="Freestyle Script" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="51.0" prefWidth="155.0" style="-fx-background-color: #ffffff;" text="Re-Record">
+               <font>
+                  <Font name="Freestyle Script" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Confirm">
+               <font>
+                  <Font name="Freestyle Script" size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
 </AnchorPane>
-
