@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.ConfirmAnswerScreenController">
    <children>
-      <Label layoutX="248.0" layoutY="84.0" prefHeight="190.0" prefWidth="120.0" text="1" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="84.0">
+      <Label layoutX="260.0" layoutY="48.0" prefHeight="190.0" prefWidth="120.0" text="15" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="48.0">
          <font>
             <Font name="Maiandra GD" size="96.0" />
          </font>
       </Label>
-      <HBox layoutY="285.0" prefHeight="115.0" prefWidth="600.0" spacing="100.0" AnchorPane.leftAnchor="0.0">
+      <HBox layoutY="285.0" prefHeight="115.0" prefWidth="600.0" spacing="50.0" AnchorPane.leftAnchor="0.0">
          <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Listen">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleListen" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Listen">
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="51.0" prefWidth="155.0" style="-fx-background-color: #ffffff;" text="Re-Record">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleRerecord" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Re-Record">
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Confirm">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleConfirm" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Confirm">
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
             </JFXButton>
          </children>
+         <padding>
+            <Insets left="100.0" />
+         </padding>
       </HBox>
+      <Label layoutX="59.0" layoutY="238.0" text="Please choose one of the following options to continue">
+         <font>
+            <Font name="Maiandra GD" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

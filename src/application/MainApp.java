@@ -1,6 +1,7 @@
 package application;
 import java.io.IOException;
 
+import application.view.ConfirmAnswerScreenController;
 import application.view.InstructionsController;
 import application.view.LevelScreenController;
 //import application.util.NavigatorUtil;
@@ -102,16 +103,38 @@ public class MainApp extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/Instructions.fxml"));
 			//loader.setController(new StartMenuController(_navigator));
-			BorderPane _instructions = (BorderPane) loader.load();
+			BorderPane instructions = (BorderPane) loader.load();
 
 			// Show the scene containing the start menu
-			Scene scene = new Scene(_instructions);
+			Scene scene = new Scene(instructions);
 			_primaryStage.setScene(scene);
 			_primaryStage.show();
 			_primaryStage.setResizable(false);
 			
 			//give stage select controller access to the main app
 			InstructionsController controller = loader.getController();
+			controller.setMainApp(this);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void initConfirmAnswerScreen(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/ConfirmAnswerScreen.fxml"));
+			//loader.setController(new StartMenuController(_navigator));
+			AnchorPane confirmAnswerScreen = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(confirmAnswerScreen);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+			
+			//give stage select controller access to the main app
+			ConfirmAnswerScreenController controller = loader.getController();
 			controller.setMainApp(this);
 		}catch(IOException e){
 			e.printStackTrace();
