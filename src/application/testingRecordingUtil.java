@@ -28,11 +28,11 @@ public class testingRecordingUtil {
 		readRecout.displayString();
 		
 		
-//		MaoriAnswerUtil mao = new MaoriAnswerUtil();
-//		mao.numberToMaori(19);
-//		String hello = mao.getMaoriWords();
-//		System.out.println(hello);
-		
+		MaoriAnswerUtil mao = new MaoriAnswerUtil();
+		mao.numberToMaori(42);
+		String hello = mao.getMaoriWords();
+		System.out.println(hello);
+
 	}
 	
 	

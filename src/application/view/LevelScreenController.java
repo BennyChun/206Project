@@ -112,6 +112,8 @@ public class LevelScreenController extends AbstractController{
 	
 	//========================================== Unimplemented methods ==========================================================
 	
+	
+	// not needed for the purposes of this assignment, will be implemented in the final project.
 	@FXML
 	public void handleSkip() {
 		//when the user clicks skip, it should go to the next question, 
