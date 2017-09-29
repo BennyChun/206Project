@@ -1,57 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LevelScreenController">
    <children>
-      <Label fx:id="numberLabel" layoutX="261.0" layoutY="81.0" prefHeight="190.0" prefWidth="170.0" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="81.0">
+      <Label fx:id="numberLabel" alignment="CENTER" layoutX="240.0" layoutY="89.0" prefHeight="190.0" prefWidth="170.0" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="89.0">
          <font>
             <Font name="Maiandra GD" size="96.0" />
          </font>
       </Label>
-      <HBox layoutX="14.0" layoutY="271.0" prefHeight="115.0" prefWidth="600.0" spacing="125.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Icons/126466-multimedia-collection/png/back.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Freestyle Script" size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="30.0" top="35.0" />
-               </HBox.margin>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
-               <graphic>
-                  <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Icons/263048-miscellaneous-elements/png/microphone.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <HBox.margin>
-                  <Insets top="35.0" />
-               </HBox.margin>
-            </JFXButton>
-         </children>
-      </HBox>
       <JFXButton layoutX="534.0" layoutY="14.0" onMouseEntered="#handleOpenInfo" onMouseExited="#handleCloseInfo" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Icons/263048-miscellaneous-elements/png/information.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="40.0" layoutY="322.0" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/126466-multimedia-collection/png/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Freestyle Script" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="250.0" layoutY="322.0" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/111251-material-design/png/voice-message-microphone-button.png" />
                </image>
             </ImageView>
          </graphic>
