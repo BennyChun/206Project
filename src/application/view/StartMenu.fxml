@@ -48,7 +48,7 @@
    <bottom>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="420.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="STATS">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleStats" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="STATS">
                <HBox.margin>
                   <Insets left="25.0" top="30.0" />
                </HBox.margin>
