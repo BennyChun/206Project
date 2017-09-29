@@ -93,6 +93,7 @@ public class MainApp extends Application {
 			controller.setLevel(selectedLevel);//passes the selected level to the controller
 			controller.setMainApp(this);//this will set the mainapp scene to the level controller scene
 			
+			
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -175,4 +176,5 @@ public class MainApp extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+
 }

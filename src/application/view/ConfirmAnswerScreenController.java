@@ -16,7 +16,7 @@ public class ConfirmAnswerScreenController extends AbstractController{
 	
 	@FXML
 	public void handleConfirm() {
-		
+	
 	}
 
 }

@@ -1,5 +1,6 @@
 package application.model;
 
+import application.util.MaoriAnswerUtil;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -17,9 +18,10 @@ public class Question {
 	private IntegerProperty _theNumber;   //this is a StringProprty that is associated with this Question object
 	
 	
-	private boolean skipped;  //this records whether this Question object has been skipped by the user
-	private boolean correct;  //this records whether this Question has been answered correctly by the user
-	
+	private boolean skipped;  //this records whether this Question object has been skipped by the user.
+	private boolean correct;  //this records whether this Question has been answered correctly by the user.
+	private int attempts;     //this records the number of attempts on this question, initially zero.
+	private String maoriWord; //this records the maori word that is associated with this Question.
 	
 	
 	/**
@@ -33,10 +35,13 @@ public class Question {
 		
 		skipped = false;
 		correct = false;
+		attempts = 0;
+		
+		setMaoriWord();
 	}
-	
-	
-	
+
+
+
 	/**
 	 * this method returns the integer that is associated with this Question object
 	 * as a string
@@ -83,6 +88,25 @@ public class Question {
 	 */
 	public boolean isCorrect() {
 		return correct;
+	}
+	
+	/**
+	 * this sets the maori word equivalence to the number that is associated with this question
+	 * should only be called by the constructor of this class
+	 */
+	private void setMaoriWord() {
+		MaoriAnswerUtil mao = new MaoriAnswerUtil();
+		mao.numberToMaori(_theNumber.getValue());
+		maoriWord = mao.getMaoriWords();
+		
+	}
+	
+	/**
+	 * this method returns the maori word equivalence to this Questions number
+	 * @return
+	 */
+	public String getMaorWord() {
+		return maoriWord;
 	}
 	
 }

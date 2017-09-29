@@ -4,6 +4,8 @@ package application.view;
 import java.util.Random;
 
 import application.model.Question;
+import application.util.ReadHTKFile;
+import application.util.RecordingUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,7 +19,6 @@ public class LevelScreenController extends AbstractController{
 	@FXML
 	private Label numberLabel;
 	
-	
 	//this will store the 10 question objects, using obserablelist helps us keep track of updates to the question object
 	private ObservableList<Question> questionData = FXCollections.observableArrayList();
 	
@@ -29,6 +30,9 @@ public class LevelScreenController extends AbstractController{
 	
 	/***
 	 * this method takes a string which should be either easy or hard
+	 * and it will generate 10 random numbers 
+	 * these 10 random numbers will depend on what was passed into this method
+	 * those 10 random numbers will be stored in an: ObservableList<Question> questionData
 	 * @param selectedLevel
 	 */
 	public void setLevel(String selectedLevel) {
@@ -49,16 +53,6 @@ public class LevelScreenController extends AbstractController{
 		// set the state of this question to have been answered correctly
 		currentQuestion.setCorrect(true); //this is for testing purposes, please change later
 	}
-	
-	
-
-	/**
-	 * returns a list of questions as an observable list
-	 * @return
-	 */
-	public ObservableList<Question> getQuestionData() {
-        return questionData;
-    }
 
 	
 	
@@ -66,25 +60,24 @@ public class LevelScreenController extends AbstractController{
 	
 	@FXML
 	public void handleRecord() {
-		/*
-		 * once the person presses the record button
-		 * it should start recording, and have a countdown timer from 3 to 0
-		 * 
-		 * once it finishes recording, it will make a wav file
-		 * 
-		 * pass the wav file to HTK
-		 * HTK then makes a txt file
-		 * 
-		 * read the txt file
-		 * get the sentences and see if they match the "correct" maori number
-		 * 
-		 * 
-		 * 
-		 * after its done, 
-		 */
 		
+
 		//+++++++++++++++++++++++++++++ testing the next button ++++++++++++++++++++++++++++++++
 		if (currentQuestionNumber <=9 ){
+			
+			
+//			RecordingUtil record = new RecordingUtil();
+//			record.recordVoice();
+//			record.convertVoiceToMaori();
+//			
+//			ReadHTKFile readRecout = new ReadHTKFile();
+//			readRecout.readHTK();
+			
+			_mainApp.initConfirmAnswerScreen();//initiallizes the confirm answer screen
+			
+			
+			//NEED TO REFOACTOR THE OBSERVABLE LIST
+			//
 			
 			
 			
@@ -95,7 +88,7 @@ public class LevelScreenController extends AbstractController{
 			
 			currentQuestionNumber = currentQuestionNumber + 1;
 			
-			
+		
 			
 		}else {
 			System.out.println("you've finished the " + currentQuestionNumber + " questions!");//used for testing purposes
@@ -105,6 +98,15 @@ public class LevelScreenController extends AbstractController{
 		
 	}
 	
+	//===========================================================================================================================
+	
+	/**
+	 * returns a list of questions as an observable list
+	 * @return
+	 */
+	public ObservableList<Question> getQuestionData() {
+        return questionData;
+    }
 	
 	
 	
@@ -141,9 +143,6 @@ public class LevelScreenController extends AbstractController{
 				//so add one to make it inclusive
 				int randomNum = rand.nextInt((9 - 1)+1) +1;
 				
-				//convert the random integer to a string
-				String intToString = Integer.toString(randomNum);
-				
 				//make the question object with this random number
 				Question theQuestion = new Question(randomNum);
 				
@@ -161,9 +160,6 @@ public class LevelScreenController extends AbstractController{
 				//so add one to make it inclusive
 				int randomNum = rand.nextInt((99 - 1)+1) +1;
 				
-				//convert the random integer to a string
-				String intToString = Integer.toString(randomNum);
-				
 				//make the question object with this random number
 				Question theQuestion = new Question(randomNum);
 				
@@ -172,19 +168,8 @@ public class LevelScreenController extends AbstractController{
 			}
 		}
 	}
-	//=================================== test method to see if the 10 questions got generated ====================================
 	
-	/**
-	 * this method is solely used for testing: 
-	 * this method prints out the current (10) questions that are stored in the observable list to the console
-	 */
-	
-	private void display() {
-		for (Question q : questionData ) {
-			System.out.println(q.getInteger());
-		}
-	}
-	//============================================== update the numberLabel ========================================================
+	//============================================== updates the numberLabel ========================================================
 	
 	/**
 	 * this fills the Label for which the number is to be answered
@@ -221,7 +206,10 @@ public class LevelScreenController extends AbstractController{
 	    	numberLabel.setText("");
 	    }
 	}
-	//==============================================================================================================
+
+
+	
+	//=============================================== testing stuff ====================================================
 	
 	/**
 	 * this method is only used for testing
@@ -240,4 +228,20 @@ public class LevelScreenController extends AbstractController{
 		System.out.println("you got: " + score + " out of 10 Questions correct");
 		
 	}
+
+	/**
+	 * this method is solely used for testing: 
+	 * this method prints out the current (10) questions that are stored in the observable list to the console
+	 */
+
+	private void display() {
+		for (Question q : questionData ) {
+			System.out.println(q.getInteger());
+		}
+	}
+
+
+
+	
+	
 }
