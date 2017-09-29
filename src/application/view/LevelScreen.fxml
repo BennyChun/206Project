@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LevelScreenController">
    <children>
-      <Label fx:id="numberLabel" layoutX="261.0" layoutY="81.0" prefHeight="190.0" prefWidth="170.0" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="81.0">
+      <Label fx:id="numberLabel" layoutX="240.0" layoutY="95.0" prefHeight="190.0" prefWidth="170.0" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="95.0">
          <font>
             <Font name="Maiandra GD" size="96.0" />
          </font>
@@ -22,7 +22,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../Icons/126466-multimedia-collection/png/back.png" />
+                        <Image url="@../../../Icons/566000-navigation/png/017-left-chevron.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -37,7 +37,7 @@
                <graphic>
                   <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../Icons/263048-miscellaneous-elements/png/microphone.png" />
+                        <Image url="@../../../Icons/111251-material-design/png/microphone-of-voice.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -51,7 +51,7 @@
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Icons/263048-miscellaneous-elements/png/information.png" />
+                  <Image url="@../../../Icons/111251-material-design/png/rounded-info-button.png" />
                </image>
             </ImageView>
          </graphic>
