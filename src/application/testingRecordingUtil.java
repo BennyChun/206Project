@@ -27,7 +27,7 @@ public class testingRecordingUtil {
 //		readRecout.displayString();
 		
 		MaoriAnswerUtil mao = new MaoriAnswerUtil();
-		mao.numberToMaori(3);
+		mao.numberToMaori(42);
 		String hello = mao.getMaoriWords();
 		System.out.println(hello);
 		
