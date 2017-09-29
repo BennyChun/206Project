@@ -83,8 +83,6 @@ public class LevelScreenController extends AbstractController{
 		 * after its done, 
 		 */
 		
-		
-		
 		//+++++++++++++++++++++++++++++ testing the next button ++++++++++++++++++++++++++++++++
 		if (currentQuestionNumber <=9 ){
 			

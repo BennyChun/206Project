@@ -1,5 +1,6 @@
 package application;
 
+import application.util.MaoriAnswerUtil;
 import application.util.ReadHTKFile;
 import application.util.RecordingUtil;
 
@@ -13,17 +14,23 @@ public class testingRecordingUtil {
 
 	
 	public static void main(String[] args) {
-		RecordingUtil recordingUtil = new RecordingUtil();
-		recordingUtil.recordVoice(); // this actually puts the file in 206Project folder
+//		RecordingUtil recordingUtil = new RecordingUtil();
+//		recordingUtil.recordVoice(); // this actually puts the file in 206Project folder
+//		
+//		
+//		recordingUtil.convertVoiceToMaori();// does this work ?
+//		System.out.println("recording and converting worked !?!?!!");
+//		
+//		ReadHTKFile readRecout = new ReadHTKFile();
+//		readRecout.readHTK();
+//		
+//		readRecout.displayString();
 		
+		MaoriAnswerUtil mao = new MaoriAnswerUtil();
+		mao.numberToMaori(3);
+		String hello = mao.getMaoriWords();
+		System.out.println(hello);
 		
-		recordingUtil.convertVoiceToMaori();// does this work ?
-		System.out.println("recording and converting worked !?!?!!");
-		
-		ReadHTKFile readRecout = new ReadHTKFile();
-		readRecout.readHTK();
-		
-		readRecout.displayString();
 	}
 	
 	
