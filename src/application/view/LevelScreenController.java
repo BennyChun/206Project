@@ -204,15 +204,21 @@ public class LevelScreenController extends AbstractController{
 		Optional<ButtonType> result = correctAlert.showAndWait();
 		if (result.get() == nextButton){
 			if(currentQuestionNumber == 9) {
-				
+				_mainApp.initEndScreen();
 			} else {
 				System.out.println("Next Question");
 			}
 		    /*
 		     * should change the State "correct" for this Question to be TRUE ( they got this question right)
 		     * and it should update the currentQuestion to the next one
+		     * display it on the Label
 		     * and update the currentQuestionNumber
 		     */
+			currentQuestion.setCorrect(true);
+			currentQuestion = questionData.get(currentQuestionNumber+1);
+			showQuestionDetails(currentQuestion);
+			currentQuestionNumber++;
+			
 		} 	 
 	}
 	
@@ -235,14 +241,24 @@ public class LevelScreenController extends AbstractController{
 		incorrectAlert.getButtonTypes().setAll(retryButton , nextButton);
 
 		Optional<ButtonType> result = incorrectAlert.showAndWait();
-		if (result.get() == nextButton){
+		
+		if(currentQuestionNumber == 9) {
+			_mainApp.initEndScreen();
+		
+		}else if (result.get() == nextButton){
 		    System.out.println("Next Question");
 		    
 		    /*
 		     * it should change the state "correct" for this Question to be FALSE ( they got this question wrong)
 		     * and it should update the currentQuestion to the next one
+		     * display it on the label
 		     * and update the currentQuestionNumber
 		     */
+		    
+		    currentQuestion.setCorrect(false);
+		    currentQuestion = questionData.get(currentQuestionNumber+1);
+		    showQuestionDetails(currentQuestion);
+			currentQuestionNumber++;
 		    
 		}else if (result.get() == retryButton) {
 			System.out.println("trying again");
@@ -269,14 +285,24 @@ public class LevelScreenController extends AbstractController{
 		incorrectAlert.getButtonTypes().setAll(nextButton);
 
 		Optional<ButtonType> result = incorrectAlert.showAndWait();
-		if (result.get() == nextButton){
+		
+		if(currentQuestionNumber == 9) {
+			_mainApp.initEndScreen();
+		
+		}else if (result.get() == nextButton){
 		    System.out.println("Next Question");
 		    
 		    /*
 		     * it should change the state "correct" for this Question to be FALSE ( they got this question wrong)
 		     * and it should update the currentQuestion to the next one
+		     * display it on the label
 		     * and update the currentQuestionNumber
 		     */
+		    
+		    currentQuestion.setCorrect(false);
+		    currentQuestion = questionData.get(currentQuestionNumber+1);
+		    showQuestionDetails(currentQuestion);
+			currentQuestionNumber++;
 		}
 		
 	}
