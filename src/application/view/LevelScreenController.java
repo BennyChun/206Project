@@ -27,6 +27,8 @@ public class LevelScreenController extends AbstractController{
 		_mainApp.initStartMenu();
 	}
 	
+	
+	//===================================================================================================================
 	/***
 	 * this method takes a string which should be either easy or hard
 	 * @param selectedLevel
@@ -51,7 +53,6 @@ public class LevelScreenController extends AbstractController{
 	}
 	
 	
-
 	/**
 	 * returns a list of questions as an observable list
 	 * @return
@@ -60,28 +61,11 @@ public class LevelScreenController extends AbstractController{
         return questionData;
     }
 
-	
-	
+
 	//========================================= handles the recording ==========================================================
 	
 	@FXML
 	public void handleRecord() {
-		/*
-		 * once the person presses the record button
-		 * it should start recording, and have a countdown timer from 3 to 0
-		 * 
-		 * once it finishes recording, it will make a wav file
-		 * 
-		 * pass the wav file to HTK
-		 * HTK then makes a txt file
-		 * 
-		 * read the txt file
-		 * get the sentences and see if they match the "correct" maori number
-		 * 
-		 * 
-		 * 
-		 * after its done, 
-		 */
 		
 		//+++++++++++++++++++++++++++++ testing the next button ++++++++++++++++++++++++++++++++
 		if (currentQuestionNumber <=9 ){
@@ -143,9 +127,6 @@ public class LevelScreenController extends AbstractController{
 				//so add one to make it inclusive
 				int randomNum = rand.nextInt((9 - 1)+1) +1;
 				
-				//convert the random integer to a string
-				String intToString = Integer.toString(randomNum);
-				
 				//make the question object with this random number
 				Question theQuestion = new Question(randomNum);
 				
@@ -163,8 +144,6 @@ public class LevelScreenController extends AbstractController{
 				//so add one to make it inclusive
 				int randomNum = rand.nextInt((99 - 1)+1) +1;
 				
-				//convert the random integer to a string
-				String intToString = Integer.toString(randomNum);
 				
 				//make the question object with this random number
 				Question theQuestion = new Question(randomNum);
@@ -174,18 +153,7 @@ public class LevelScreenController extends AbstractController{
 			}
 		}
 	}
-	//=================================== test method to see if the 10 questions got generated ====================================
-	
-	/**
-	 * this method is solely used for testing: 
-	 * this method prints out the current (10) questions that are stored in the observable list to the console
-	 */
-	
-	private void display() {
-		for (Question q : questionData ) {
-			System.out.println(q.getInteger());
-		}
-	}
+
 	//============================================== update the numberLabel ========================================================
 	
 	/**
@@ -199,31 +167,28 @@ public class LevelScreenController extends AbstractController{
 	private void showQuestionDetails(Question question) {
 		
 	    if (question != null) {
-	        // Fill the labels with info from the person object.
-	        //firstNameLabel.setText(person.getFirstName());
-	        //lastNameLabel.setText(person.getLastName());
-	        //streetLabel.setText(person.getStreet());
-	        //postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
-	        //cityLabel.setText(person.getCity());
-
+;
 	        numberLabel.setText(Integer.toString(question.getInteger()));
 	        
-	        // TODO: We need a way to convert the birthday into a String! 
-	        // birthdayLabel.setText(...);
 	    } else {
-	    	
-	    	// Person is null, remove all the text.
-	        //firstNameLabel.setText("");
-	        //lastNameLabel.setText("");
-	        //streetLabel.setText("");
-	        //postalCodeLabel.setText("");
-	        //cityLabel.setText("");
-	        //birthdayLabel.setText("");
 	    	
 	    	numberLabel.setText("");
 	    }
 	}
-	//==============================================================================================================
+	
+	//=================================== test method to see if the 10 questions got generated ====================================
+	
+		/**
+		 * this method is solely used for testing: 
+		 * this method prints out the current (10) questions that are stored in the observable list to the console
+		 */
+		
+		private void display() {
+			for (Question q : questionData ) {
+				System.out.println(q.getInteger());
+			}
+		}
+	
 	
 	/**
 	 * this method is only used for testing
