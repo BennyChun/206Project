@@ -35,7 +35,7 @@
             <Font name="Freestyle Script" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="250.0" layoutY="323.0" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
+      <JFXButton fx:id="recordButton" buttonType="RAISED" focusTraversable="false" layoutX="250.0" layoutY="323.0" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -44,12 +44,12 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" disable="true" focusTraversable="false" layoutX="437.0" layoutY="323.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Confirm">
+      <JFXButton fx:id="confirmButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="437.0" layoutY="323.0" onAction="#handleConfirm" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Confirm">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" disable="true" focusTraversable="false" layoutX="64.0" layoutY="323.0" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
+      <JFXButton fx:id="playButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="64.0" layoutY="323.0" onAction="#handleListen" prefWidth="100.0" style="-fx-background-color: #ffffff;">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>

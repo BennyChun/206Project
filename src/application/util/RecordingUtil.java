@@ -92,7 +92,6 @@ public class RecordingUtil {
 			
 			playProcess.destroy();
 			
-			System.out.println("converting worked ??!?!?");
 			
 		}catch (IOException ioe) {
 			ioe.printStackTrace();
