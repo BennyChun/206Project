@@ -1,6 +1,7 @@
 package application;
 import java.io.IOException;
 
+import application.view.EndScreenController;
 import application.view.InstructionsController;
 import application.view.LevelScreenController;
 import application.view.StageSelectController;
@@ -140,6 +141,34 @@ public class MainApp extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	public void initEndScreen(int finalScore , String currenyLevel){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/EndScreen.fxml"));
+			AnchorPane endScreen = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(endScreen);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+			
+			//give stage select controller access to the main app
+			EndScreenController controller = loader.getController();
+			
+			
+			controller.setScoreLabel(finalScore);
+			controller.disableHardButton(finalScore);
+			controller.setMainApp(this);
+			
+			
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	
 	
 	/**
 	 * when this method gets called

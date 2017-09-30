@@ -29,8 +29,7 @@ public class RecordingUtil {
 			recordProcess.waitFor();
 			
 			recordProcess.destroy();
-			
-			System.out.println("recording worked ?!?!?");
+	
 			
 		}catch (IOException ioe) {
 			ioe.printStackTrace();
@@ -62,7 +61,7 @@ public class RecordingUtil {
 			
 			convertProcess.destroy();
 			
-			System.out.println("converting worked ??!?!?");
+	
 			
 		}catch (IOException ioe) {
 			ioe.printStackTrace();
@@ -82,6 +81,23 @@ public class RecordingUtil {
 	 */
 	public void playRecording() {
 		String command = "aplay foo.wav";
+		
+		ProcessBuilder pb = new ProcessBuilder("bash" , "-c" , command );
+		try {
+			
+			Process playProcess = pb.start();
+			
+			playProcess.waitFor();
+			
+			playProcess.destroy();
+			
+			
+		}catch (IOException ioe) {
+			ioe.printStackTrace();
+			
+		}catch (InterruptedException ie) {
+			ie.printStackTrace();
+		}
 	}
 	
 	

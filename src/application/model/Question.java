@@ -19,7 +19,7 @@ public class Question {
 	
 	private boolean skipped;  //this records whether this Question object has been skipped by the user
 	private boolean correct;  //this records whether this Question has been answered correctly by the user
-	
+	private int attempts;		// this records the number of attempts that THIS question has been attempted
 	
 	
 	/**
@@ -33,6 +33,7 @@ public class Question {
 		
 		skipped = false;
 		correct = false;
+		attempts = 1;             //initially 1 attempt
 	}
 	
 	
@@ -83,6 +84,21 @@ public class Question {
 	 */
 	public boolean isCorrect() {
 		return correct;
+	}
+	
+	/**
+	 * this increments the attepts by 1
+	 */
+	public void addAttempts() {
+		attempts = attempts + 1;
+	}
+	
+	/**
+	 * this returns the number of attempts that this question has had
+	 * @return int : attempts
+	 */
+	public int getAttempts() {
+		return attempts;
 	}
 	
 }
