@@ -23,7 +23,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="40.0" layoutY="322.0" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="14.0" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -35,11 +35,25 @@
             <Font name="Freestyle Script" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="250.0" layoutY="322.0" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="250.0" layoutY="323.0" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Icons/111251-material-design/png/voice-message-microphone-button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" disable="true" focusTraversable="false" layoutX="437.0" layoutY="323.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Confirm">
+         <font>
+            <Font name="Freestyle Script" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" disable="true" focusTraversable="false" layoutX="64.0" layoutY="323.0" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/111251-material-design/png/play-arrow.png" />
                </image>
             </ImageView>
          </graphic>
