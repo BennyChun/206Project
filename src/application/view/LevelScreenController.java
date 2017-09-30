@@ -14,7 +14,7 @@ import javafx.scene.control.Label;
 public class LevelScreenController extends AbstractController{
 	private String _selectedLevel;
 	private Question currentQuestion;  //this is the currency Question object
-	private int currentQuestionNumber; //this keeps track of which question  1 to 10 (can put this in the Question Model)
+	private int currentQuestionNumber = 0; //this keeps track of which question  1 to 10 (can put this in the Question Model)
 	
 	@FXML
 	private Label numberLabel;
@@ -42,16 +42,14 @@ public class LevelScreenController extends AbstractController{
 		//display the 10 questions on console
 		display();//this method only displays to the console, this is for testing purposes
 		
-		
 		//sets the current question
-		currentQuestion = questionData.get(0);   
-		currentQuestionNumber = 1;
+		currentQuestion = questionData.get(0); 
+		processRecord();
 		
+
 		//show the current question on the level scene
-		showQuestionDetails(currentQuestion); // i know that currentQuestion is a global variable, i do not actually need to pass an argument(i will need to change showQuestionDetails)
+		//showQuestionDetails(currentQuestion); // i know that currentQuestion is a global variable, i do not actually need to pass an argument(i will need to change showQuestionDetails)
 		
-		// set the state of this question to have been answered correctly
-		currentQuestion.setCorrect(true); //this is for testing purposes, please change later
 	}
 
 	
@@ -62,41 +60,61 @@ public class LevelScreenController extends AbstractController{
 	public void handleRecord() {
 		
 
-		//+++++++++++++++++++++++++++++ testing the next button ++++++++++++++++++++++++++++++++
-		if (currentQuestionNumber <=9 ){
-			
-			
-//			RecordingUtil record = new RecordingUtil();
-//			record.recordVoice();
-//			record.convertVoiceToMaori();
-//			
-//			ReadHTKFile readRecout = new ReadHTKFile();
-//			readRecout.readHTK();
-			
-			_mainApp.initConfirmAnswerScreen();//initiallizes the confirm answer screen
-			
-			
-			//NEED TO REFOACTOR THE OBSERVABLE LIST
-			//
-			
-			
-			
-			currentQuestion = questionData.get(currentQuestionNumber);
-			showQuestionDetails(currentQuestion);
-			
-			currentQuestion.setCorrect(true);//make all questions correct >>> testing purposes
-			
-			currentQuestionNumber = currentQuestionNumber + 1;
-			
+		//+++++++++++++++++++++++++++++ testing the record button ++++++++++++++++++++++++++++++++
 		
+		if (currentQuestionNumber <=9 ){ //THIS IS <= 9 BECAUSE THE LIST OF QUESTIONS GOES FROM 0 - 9
 			
-		}else {
+
+			
+			
+//			RecordingUtil record = new RecordingUtil();		//instantiates the Recording class so that we can use it's Utilities
+//			record.recordVoice();							//record the users voice
+//			record.convertVoiceToMaori();					//pass the users wav file to the KHT, and HTK will output the foo.mlf file
+//			
+//			ReadHTKFile readRecout = new ReadHTKFile();		//instantiates the ReadHTKFile class
+//			readRecout.readHTK();							//reads the foo.mlf file
+//			String mao = readRecout.getMaoriWords();		//get the String of the maori word (this is the the users input answer)
+//			
+			processRecord();
+
+			
+		}else {// all 10 questions has been answered
 			System.out.println("you've finished the " + currentQuestionNumber + " questions!");//used for testing purposes
 			getResults();
 		}
 		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		
 	}
+	
+	
+	
+	
+	
+	
+	/**
+	 * this method opens up a dialog box which  hshows the user if they got the question CORRECT or WRONG
+	 * 
+	 * if CORRECT, the dialog box will have
+	 */
+	public void confirmDialog() {
+		
+	}
+	
+	
+	/**
+	 * this class will display the current question on the label
+	 * and it will be called everytime the user clicks the record button
+	 */
+	public void processRecord() {
+		currentQuestion = questionData.get(currentQuestionNumber);  //gets the current Question
+		showQuestionDetails(currentQuestion);						//updates the Label with the current Question
+		
+		currentQuestion.setCorrect(true);					//make all questions correct >>> testing purposes
+		currentQuestionNumber = currentQuestionNumber + 1;	//updates the counter to the next Question
+		
+		
+	}
+	
 	
 	//===========================================================================================================================
 	
@@ -184,27 +202,11 @@ public class LevelScreenController extends AbstractController{
 	private void showQuestionDetails(Question question) {
 		
 	    if (question != null) {
-	        // Fill the labels with info from the person object.
-	        //firstNameLabel.setText(person.getFirstName());
-	        //lastNameLabel.setText(person.getLastName());
-	        //streetLabel.setText(person.getStreet());
-	        //postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
-	        //cityLabel.setText(person.getCity());
 
 	        numberLabel.setText(Integer.toString(question.getInteger()));
-	        
-	        // TODO: We need a way to convert the birthday into a String! 
-	        // birthdayLabel.setText(...);
+
 	    } else {
-	    	
-	    	// Person is null, remove all the text.
-	        //firstNameLabel.setText("");
-	        //lastNameLabel.setText("");
-	        //streetLabel.setText("");
-	        //postalCodeLabel.setText("");
-	        //cityLabel.setText("");
-	        //birthdayLabel.setText("");
-	    	
+	    
 	    	numberLabel.setText("");
 	    }
 	}
