@@ -4,6 +4,7 @@ package application.view;
 import java.util.Random;
 
 import application.model.Question;
+import application.util.MaoriAnswerUtil;
 import application.util.ReadHTKFile;
 import application.util.RecordingUtil;
 import javafx.application.Platform;
@@ -19,6 +20,7 @@ public class LevelScreenController extends AbstractController{
 	private Question currentQuestion;  //this is the currency Question object
 	private int currentQuestionNumber = 0; //this keeps track of which question  0-9 (can put this in the Question Model maybe ?)
 	private String mao="";
+	
 
 	@FXML
 	private Label numberLabel;
@@ -108,6 +110,8 @@ public class LevelScreenController extends AbstractController{
 			Task<Void> recordTask = new Task<Void>() {
 				@Override
 				public Void call() {
+					playButton.setDisable(true);
+					confirmButton.setDisable(true);
 					RecordingUtil record = new RecordingUtil();		//instantiates the Recording class so that we can use it's Utilities
 					record.recordVoice();							//record the users voice
 					record.convertVoiceToMaori();					//pass the users wav file to the KHT, and HTK will output the foo.mlf file
@@ -153,8 +157,23 @@ public class LevelScreenController extends AbstractController{
 	 * if CORRECT, the dialog box will have
 	 */
 	public void processAnswer() {
+		MaoriAnswerUtil maoUtil = new MaoriAnswerUtil();
+		
+		int correctNumber = currentQuestion.getInteger();
+		maoUtil.numberToMaori(correctNumber);
+		String correctAnswer = maoUtil.getMaoriWords();
+		System.out.println("user answer: " +mao);
+		System.out.println("correct answer: " +correctAnswer);
+		
+		
 
-		//start chekcing ansers
+		if(mao.equals(correctAnswer)) {
+			
+		} else if(!(mao.equals(correctAnswer))){
+			
+		} else if(mao.equalsIgnoreCase(null)) {
+			
+		}
 
 	}
 
