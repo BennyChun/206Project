@@ -1,6 +1,8 @@
 package application.view;
 
 
+import java.io.File;
+import java.util.Optional;
 import java.util.Random;
 
 import application.model.Question;
@@ -12,14 +14,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class LevelScreenController extends AbstractController{
 	private String _selectedLevel;
 	private Question currentQuestion;  //this is the currency Question object
 	private int currentQuestionNumber = 0; //this keeps track of which question  0-9 (can put this in the Question Model maybe ?)
 	private String mao="";
+	String correctAnswer;
 	
 
 	@FXML
@@ -130,12 +138,6 @@ public class LevelScreenController extends AbstractController{
 			};
 			new Thread(recordTask).start();
 
-			//			processRecord();
-			//			currentQuestionNumber = currentQuestionNumber + 1;	//updates the counter to the next Question
-			//			if (currentQuestionNumber <=8 ) {
-			//				currentQuestion = questionData.get(currentQuestionNumber);
-			//				showQuestionDetails(currentQuestion);
-			//			}
 
 
 		}else {// all 10 questions has been answered
@@ -161,21 +163,103 @@ public class LevelScreenController extends AbstractController{
 		
 		int correctNumber = currentQuestion.getInteger();
 		maoUtil.numberToMaori(correctNumber);
-		String correctAnswer = maoUtil.getMaoriWords();
+		correctAnswer = maoUtil.getMaoriWords();
 		System.out.println("user answer: " +mao);
 		System.out.println("correct answer: " +correctAnswer);
 		
 		
-
+		System.out.println(System.getProperty("user.dir"));
 		if(mao.equals(correctAnswer)) {
-			
+			openCorrectDialog();
 		} else if(!(mao.equals(correctAnswer))){
-			
-		} else if(mao.equalsIgnoreCase(null)) {
+			if (currentQuestion.getAttempts()<2 ) {
+				openFirstIncorrectDialog();
+			} else if(currentQuestion.getAttempts()==2) {//well obviously it will be 2 if the previous if stqatement is less than 2
+				openSecondIncorrectDialog();
+			}
+				
+		} else if(mao.equals("")) {
 			
 		}
 
 	}
+	
+	
+	//====================================================== DIALOGS ========================================================
+	public void openCorrectDialog() {
+		Alert correctAlert = new Alert(AlertType.CONFIRMATION);
+		correctAlert.setTitle("Answer confirmed");
+		correctAlert.setHeaderText("You got the answer Correct");
+		correctAlert.setContentText("Correct answer is: " + mao);
+		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/check-symbol.png").toURI().toString(), true);
+		ImageView view = new ImageView(image);
+		view.setFitWidth(100);
+		view.setFitHeight(100);
+		correctAlert.graphicProperty().set(view);
+
+		ButtonType nextButton = new ButtonType("Next");
+
+		correctAlert.getButtonTypes().setAll(nextButton);
+
+		Optional<ButtonType> result = correctAlert.showAndWait();
+		if (result.get() == nextButton){
+		    System.out.println("hi");
+		} 	 
+	}
+	
+	public void openFirstIncorrectDialog() {
+		Alert incorrectAlert = new Alert(AlertType.CONFIRMATION);
+		incorrectAlert.setTitle("Answer confirmed");
+		incorrectAlert.setHeaderText("You got the answer wrong :(");
+		incorrectAlert.setContentText("Please try again, or press next to go to the next question"); // gives the answers 
+		
+		
+		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/close-button.png").toURI().toString(), true);
+		ImageView view = new ImageView(image);
+		view.setFitWidth(100);
+		view.setFitHeight(100);
+		incorrectAlert.graphicProperty().set(view);
+
+		ButtonType nextButton = new ButtonType("Next");
+		ButtonType retryButton = new ButtonType ("Retry");	
+		
+		incorrectAlert.getButtonTypes().setAll(retryButton , nextButton);
+
+		Optional<ButtonType> result = incorrectAlert.showAndWait();
+		if (result.get() == nextButton){
+		    System.out.println("hi");
+		}else if (result.get() == retryButton) {
+			System.out.println("trying again");
+			currentQuestion.addAttempts();	
+		}
+		
+	}
+	
+	public void openSecondIncorrectDialog() {
+		Alert incorrectAlert = new Alert(AlertType.CONFIRMATION);
+		incorrectAlert.setTitle("Answer confirmed");
+		incorrectAlert.setHeaderText("You got the answer wrong :(");
+		incorrectAlert.setContentText("Correct answer is: " + correctAnswer); // gives the answers 
+		
+		
+		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/clear-button.png").toURI().toString(), true);
+		ImageView view = new ImageView(image);
+		view.setFitWidth(100);
+		view.setFitHeight(100);
+		incorrectAlert.graphicProperty().set(view);
+
+		ButtonType nextButton = new ButtonType("Next");
+		
+		incorrectAlert.getButtonTypes().setAll(nextButton);
+
+		Optional<ButtonType> result = incorrectAlert.showAndWait();
+		if (result.get() == nextButton){
+		    System.out.println("hi");
+		}
+		
+	}
+	
+	//================================================================================================================================
 
 
 	/**
