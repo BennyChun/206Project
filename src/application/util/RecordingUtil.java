@@ -82,6 +82,24 @@ public class RecordingUtil {
 	 */
 	public void playRecording() {
 		String command = "aplay foo.wav";
+		
+		ProcessBuilder pb = new ProcessBuilder("bash" , "-c" , command );
+		try {
+			
+			Process playProcess = pb.start();
+			
+			playProcess.waitFor();
+			
+			playProcess.destroy();
+			
+			System.out.println("converting worked ??!?!?");
+			
+		}catch (IOException ioe) {
+			ioe.printStackTrace();
+			
+		}catch (InterruptedException ie) {
+			ie.printStackTrace();
+		}
 	}
 	
 	
