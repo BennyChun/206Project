@@ -14,23 +14,26 @@ public class testingRecordingUtil {
 
 	
 	public static void main(String[] args) {
-//		RecordingUtil recordingUtil = new RecordingUtil();
-//		recordingUtil.recordVoice(); // this actually puts the file in 206Project folder
-//		
-//		
-//		recordingUtil.convertVoiceToMaori();// does this work ?
-//		System.out.println("recording and converting worked !?!?!!");
-//		
-//		ReadHTKFile readRecout = new ReadHTKFile();
-//		readRecout.readHTK();
-//		
-//		readRecout.displayString();
+		RecordingUtil recordingUtil = new RecordingUtil();
+		recordingUtil.recordVoice(); // this actually puts the file in 206Project folder
 		
-		MaoriAnswerUtil mao = new MaoriAnswerUtil();
-		mao.numberToMaori(42);
-		String hello = mao.getMaoriWords();
-		System.out.println(hello);
+		recordingUtil.playRecording();//plays the recording
 		
+		recordingUtil.convertVoiceToMaori();// does this work ?
+		System.out.println("recording and converting worked !?!?!!");
+		
+		ReadHTKFile readRecout = new ReadHTKFile();
+		readRecout.readHTK();
+		readRecout.displayString();
+		String mao = readRecout.getMaoriWords();
+		System.out.println("");
+		System.out.println(mao);
+		
+		
+//		MaoriAnswerUtil mao = new MaoriAnswerUtil();
+//		mao.numberToMaori(42);
+//		String maoWord = mao.getMaoriWords();
+//		System.out.println(maoWord);
 	}
 	
 	
