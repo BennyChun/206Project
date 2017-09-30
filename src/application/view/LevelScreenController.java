@@ -179,7 +179,7 @@ public class LevelScreenController extends AbstractController{
 			}
 				
 		} else if(mao.equals("")) {
-			
+			//there was no input from the user
 		}
 
 	}
@@ -189,7 +189,7 @@ public class LevelScreenController extends AbstractController{
 	public void openCorrectDialog() {
 		Alert correctAlert = new Alert(AlertType.CONFIRMATION);
 		correctAlert.setTitle("Answer confirmed");
-		correctAlert.setHeaderText("You got the answer Correct");
+		correctAlert.setHeaderText("You got the answer Correct ! ");
 		correctAlert.setContentText("Correct answer is: " + mao);
 		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/check-symbol.png").toURI().toString(), true);
 		ImageView view = new ImageView(image);
@@ -203,7 +203,16 @@ public class LevelScreenController extends AbstractController{
 
 		Optional<ButtonType> result = correctAlert.showAndWait();
 		if (result.get() == nextButton){
-		    System.out.println("hi");
+			if(currentQuestionNumber == 9) {
+				
+			} else {
+				System.out.println("Next Question");
+			}
+		    /*
+		     * should change the State "correct" for this Question to be TRUE ( they got this question right)
+		     * and it should update the currentQuestion to the next one
+		     * and update the currentQuestionNumber
+		     */
 		} 	 
 	}
 	
@@ -211,7 +220,7 @@ public class LevelScreenController extends AbstractController{
 		Alert incorrectAlert = new Alert(AlertType.CONFIRMATION);
 		incorrectAlert.setTitle("Answer confirmed");
 		incorrectAlert.setHeaderText("You got the answer wrong :(");
-		incorrectAlert.setContentText("Please try again, or press next to go to the next question"); // gives the answers 
+		incorrectAlert.setContentText("Please try again, or go to the next question."); 
 		
 		
 		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/close-button.png").toURI().toString(), true);
@@ -227,10 +236,17 @@ public class LevelScreenController extends AbstractController{
 
 		Optional<ButtonType> result = incorrectAlert.showAndWait();
 		if (result.get() == nextButton){
-		    System.out.println("hi");
+		    System.out.println("Next Question");
+		    
+		    /*
+		     * it should change the state "correct" for this Question to be FALSE ( they got this question wrong)
+		     * and it should update the currentQuestion to the next one
+		     * and update the currentQuestionNumber
+		     */
+		    
 		}else if (result.get() == retryButton) {
 			System.out.println("trying again");
-			currentQuestion.addAttempts();	
+			currentQuestion.addAttempts();	 // add +1 to attempts for this Question
 		}
 		
 	}
@@ -239,7 +255,7 @@ public class LevelScreenController extends AbstractController{
 		Alert incorrectAlert = new Alert(AlertType.CONFIRMATION);
 		incorrectAlert.setTitle("Answer confirmed");
 		incorrectAlert.setHeaderText("You got the answer wrong :(");
-		incorrectAlert.setContentText("Correct answer is: " + correctAnswer); // gives the answers 
+		incorrectAlert.setContentText("The correct answer was: " + correctAnswer); // gives the answers 
 		
 		
 		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/clear-button.png").toURI().toString(), true);
@@ -254,33 +270,15 @@ public class LevelScreenController extends AbstractController{
 
 		Optional<ButtonType> result = incorrectAlert.showAndWait();
 		if (result.get() == nextButton){
-		    System.out.println("hi");
+		    System.out.println("Next Question");
+		    
+		    /*
+		     * it should change the state "correct" for this Question to be FALSE ( they got this question wrong)
+		     * and it should update the currentQuestion to the next one
+		     * and update the currentQuestionNumber
+		     */
 		}
 		
-	}
-	
-	//================================================================================================================================
-
-
-	/**
-	 * this class will display the current question on the label
-	 * and it will be called everytime the user clicks the record button
-	 */
-	public void processRecord() {
-
-
-		//		RecordingUtil record = new RecordingUtil();		//instantiates the Recording class so that we can use it's Utilities
-		//		record.recordVoice();							//record the users voice
-		//		record.convertVoiceToMaori();					//pass the users wav file to the KHT, and HTK will output the foo.mlf file
-		//		
-		//		ReadHTKFile readRecout = new ReadHTKFile();		//instantiates the ReadHTKFile class
-		//		readRecout.readHTK();							//reads the foo.mlf file
-		//		String mao = readRecout.getMaoriWords();		//get the String of the maori word (this is the the users input answer)
-		//		
-
-		currentQuestion.setCorrect(true);					//make all questions correct >>> testing purposes
-
-
 	}
 
 
