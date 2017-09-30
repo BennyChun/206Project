@@ -142,7 +142,7 @@ public class MainApp extends Application {
 		}
 	}
 	
-	public void initEndScreen(){
+	public void initEndScreen(int finalScore , String currenyLevel){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -157,7 +157,13 @@ public class MainApp extends Application {
 			
 			//give stage select controller access to the main app
 			EndScreenController controller = loader.getController();
+			
+			
+			controller.setScoreLabel(finalScore);
+			controller.disableHardButton(finalScore);
 			controller.setMainApp(this);
+			
+			
 		}catch(IOException e){
 			e.printStackTrace();
 		}
