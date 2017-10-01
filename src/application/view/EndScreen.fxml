@@ -36,7 +36,7 @@
             <Font name="Maiandra GD" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="score" alignment="CENTER" layoutX="204.0" layoutY="82.0" prefHeight="118.0" prefWidth="192.0" text="9/10">
+      <Label fx:id="score" alignment="CENTER" layoutX="153.0" layoutY="76.0" prefHeight="120.0" prefWidth="300.0" text="10/10" AnchorPane.leftAnchor="150.0">
          <font>
             <Font name="Maiandra GD" size="96.0" />
          </font>
