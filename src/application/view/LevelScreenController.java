@@ -2,9 +2,12 @@ package application.view;
 
 
 import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Optional;
 import java.util.Random;
 
+import application.MainApp;
 import application.model.Question;
 import application.util.MaoriAnswerUtil;
 import application.util.ReadHTKFile;
@@ -21,6 +24,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import sun.applet.Main;
 
 public class LevelScreenController extends AbstractController{
 	private String _selectedLevel;
@@ -196,11 +200,17 @@ public class LevelScreenController extends AbstractController{
 	//====================================================== DIALOGS ========================================================
 	public void openCorrectDialog() {
 		Alert correctAlert = new Alert(AlertType.CONFIRMATION);
-		correctAlert.setTitle("Answer confirmed");
+		correctAlert.setTitle("Correct");
 		correctAlert.setHeaderText("You got the answer Correct ! ");
 		correctAlert.setContentText("Correct answer is: " + mao);
-		Image image = new Image(new File(System.getProperty("user.dir") + "/src/Icons/111251-material-design/png/check-symbol.png").toURI().toString(), true);
-		ImageView view = new ImageView(image);
+		String path = null;
+		try {
+			path = MainApp.class.getResource("../Icons/111251-material-design/png/check-symbol.png").toURI().toString();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ImageView view = new ImageView(path);
 		view.setFitWidth(100);
 		view.setFitHeight(100);
 		correctAlert.graphicProperty().set(view);
@@ -242,13 +252,19 @@ public class LevelScreenController extends AbstractController{
 
 	public void openFirstIncorrectDialog() {
 		Alert incorrectAlert = new Alert(AlertType.CONFIRMATION);
-		incorrectAlert.setTitle("Answer confirmed");
-		incorrectAlert.setHeaderText("You got the answer wrong :(");
+		incorrectAlert.setTitle("Incorrect");
+		incorrectAlert.setHeaderText("Incorrect, you said: "+ mao);
 		incorrectAlert.setContentText("Please try again, or go to the next question."); 
 
 
-		Image image = new Image(new File(System.getProperty("user.dir") + "/src/Icons/111251-material-design/png/close-button.png").toURI().toString(), true);
-		ImageView view = new ImageView(image);
+		String path = null;
+		try {
+			path = MainApp.class.getResource("../Icons/111251-material-design/png/clear-button.png").toURI().toString();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ImageView view = new ImageView(path);
 		view.setFitWidth(100);
 		view.setFitHeight(100);
 		incorrectAlert.graphicProperty().set(view);
@@ -313,13 +329,18 @@ public class LevelScreenController extends AbstractController{
 
 	public void openSecondIncorrectDialog() {
 		Alert incorrectAlert = new Alert(AlertType.CONFIRMATION);
-		incorrectAlert.setTitle("Answer confirmed");
-		incorrectAlert.setHeaderText("You got the answer wrong :(");
+		incorrectAlert.setTitle("Incorrect");
+		incorrectAlert.setHeaderText("Incorrect, you said: " + mao);
 		incorrectAlert.setContentText("The correct answer was: " + correctAnswer); // gives the answers 
-
-
-		Image image = new Image(new File(System.getProperty("user.dir") + "/src/Icons/111251-material-design/png/clear-button.png").toURI().toString(), true);
-		ImageView view = new ImageView(image);
+		
+		String path = null;
+		try {
+			path = MainApp.class.getResource("../Icons/111251-material-design/png/clear-button.png").toURI().toString();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ImageView view = new ImageView(path);
 		view.setFitWidth(100);
 		view.setFitHeight(100);
 		incorrectAlert.graphicProperty().set(view);
