@@ -24,8 +24,8 @@ import javafx.scene.image.ImageView;
 
 public class LevelScreenController extends AbstractController{
 	private String _selectedLevel;
-	private Question currentQuestion;  //this is the currency Question object
-	private int currentQuestionNumber = 0; //this keeps track of which question  0-9 (can put this in the Question Model maybe ?)
+	private Question currentQuestion;      //this is the current Question object
+	private int currentQuestionNumber = 1; //this keeps track of which question  0-9 (can put this in the Question Model maybe ?)
 	private String mao="";
 	private String correctAnswer;
 	private int finalScore;
@@ -123,7 +123,7 @@ public class LevelScreenController extends AbstractController{
 
 		//+++++++++++++++++++++++++++++ testing the record button ++++++++++++++++++++++++++++++++
 
-		if (currentQuestionNumber <=9 ){ //THIS IS <= 9 BECAUSE THE LIST OF QUESTIONS GOES FROM 0 - 9
+		if (currentQuestionNumber <=11 ){ //THIS IS <= 9 BECAUSE THE LIST OF QUESTIONS GOES FROM 0 - 9
 
 			Task<Void> recordTask = new Task<Void>() {
 				@Override
@@ -177,8 +177,6 @@ public class LevelScreenController extends AbstractController{
 		System.out.println("user answer: " +mao);
 		System.out.println("correct answer: " +correctAnswer);
 		
-		
-		System.out.println(System.getProperty("user.dir"));
 		if(mao.equals(correctAnswer)) {
 			openCorrectDialog();
 		} else if(!(mao.equals(correctAnswer))){
@@ -213,7 +211,7 @@ public class LevelScreenController extends AbstractController{
 
 		Optional<ButtonType> result = correctAlert.showAndWait();
 		if (result.get() == nextButton){
-			if(currentQuestionNumber == 9) {
+			if(currentQuestionNumber == 10) {
 				
 				System.out.println("you've finished the " + currentQuestionNumber + " questions!");//used for testing purposes
 				getResults();
@@ -221,23 +219,22 @@ public class LevelScreenController extends AbstractController{
 				_mainApp.initEndScreen(finalScore, currentLevel);
 			} else {
 				System.out.println("Next Question");
+				/*
+			     * should change the State "correct" for this Question to be TRUE ( they got this question right)
+			     * and it should update the currentQuestion to the next one
+			     * display it on the Label
+			     * and update the currentQuestionNumber
+			     * disable the playButton and confirmButton
+			     */
+				currentQuestion.setCorrect(true);
+				currentQuestion = questionData.get(currentQuestionNumber);
+				showQuestionDetails(currentQuestion);
+				currentQuestionNumber++;
+				playButton.setDisable(true);
+				confirmButton.setDisable(true);
+				showCurrentQuestionNumber();
+				showCurrentAttempts();
 			}
-		    /*
-		     * should change the State "correct" for this Question to be TRUE ( they got this question right)
-		     * and it should update the currentQuestion to the next one
-		     * display it on the Label
-		     * and update the currentQuestionNumber
-		     * disable the playButton and confirmButton
-		     */
-			currentQuestion.setCorrect(true);
-			currentQuestion = questionData.get(currentQuestionNumber+1);
-			showQuestionDetails(currentQuestion);
-			currentQuestionNumber++;
-			playButton.setDisable(true);
-			confirmButton.setDisable(true);
-			showCurrentQuestionNumber();
-			showCurrentAttempts();
-			
 		} 	 
 	}
 	
@@ -261,13 +258,16 @@ public class LevelScreenController extends AbstractController{
 
 		Optional<ButtonType> result = incorrectAlert.showAndWait();
 		
-		if(currentQuestionNumber == 9) {
+		if(currentQuestionNumber == 10) {
 			
+			currentQuestion.addAttempts();	 // add +1 to attempts for this Question
 			
-			System.out.println("you've finished the " + currentQuestionNumber + " questions!");//used for testing purposes
-			getResults();
+			showCurrentAttempts();
 			
-			_mainApp.initEndScreen(finalScore, currentLevel);
+			//disable playButton and confirmButton
+			playButton.setDisable(true);
+			confirmButton.setDisable(true);
+			
 		
 		}else if (result.get() == nextButton){
 		    System.out.println("Next Question");
@@ -281,7 +281,7 @@ public class LevelScreenController extends AbstractController{
 		     */
 		    
 		    currentQuestion.setCorrect(false);
-		    currentQuestion = questionData.get(currentQuestionNumber+1);
+		    currentQuestion = questionData.get(currentQuestionNumber);
 		    showQuestionDetails(currentQuestion);
 			currentQuestionNumber++;
 			playButton.setDisable(true);
@@ -321,7 +321,8 @@ public class LevelScreenController extends AbstractController{
 
 		Optional<ButtonType> result = incorrectAlert.showAndWait();
 		
-		if(currentQuestionNumber == 9) {
+		if(currentQuestionNumber == 10) {
+			
 			
 			System.out.println("you've finished the " + currentQuestionNumber + " questions!");//used for testing purposes
 			getResults();
@@ -340,7 +341,7 @@ public class LevelScreenController extends AbstractController{
 		     */
 		    
 		    currentQuestion.setCorrect(false);
-		    currentQuestion = questionData.get(currentQuestionNumber+1);
+		    currentQuestion = questionData.get(currentQuestionNumber);
 		    showQuestionDetails(currentQuestion);
 			currentQuestionNumber++;
 			
@@ -462,7 +463,7 @@ public class LevelScreenController extends AbstractController{
 	}
 	
 	private void showCurrentQuestionNumber() {
-		currentQuestionNumberLabel.setText("Question number: " + Integer.toString(currentQuestionNumber + 1));
+		currentQuestionNumberLabel.setText("Question number: " + Integer.toString(currentQuestionNumber ));
 	}
 
 
@@ -499,8 +500,6 @@ public class LevelScreenController extends AbstractController{
 			System.out.println(q.getInteger());
 		}
 	}
-
-
 
 
 

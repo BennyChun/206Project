@@ -39,7 +39,7 @@ public class EndScreenController extends AbstractController{
 	}
 	
 	public void setScoreLabel(int finalScore) {
-		score.setText(Integer.toString(finalScore));
+		score.setText(Integer.toString(finalScore)+"/10");
 	}
 	
 	public void disableHardButton(int finalScore) {
