@@ -24,16 +24,14 @@ public class testingRecordingUtil {
 		
 		ReadHTKFile readRecout = new ReadHTKFile();
 		readRecout.readHTK();
+		
 		readRecout.displayString();
-		String mao = readRecout.getMaoriWords();
-		System.out.println("");
-		System.out.println(mao);
 		
 		
-//		MaoriAnswerUtil mao = new MaoriAnswerUtil();
-//		mao.numberToMaori(42);
-//		String maoWord = mao.getMaoriWords();
-//		System.out.println(maoWord);
+		MaoriAnswerUtil mao = new MaoriAnswerUtil();
+		mao.numberToMaori(42);
+		String hello = mao.getMaoriWords();
+		System.out.println(hello);
 
 	}
 	

@@ -80,23 +80,8 @@ public class ReadHTKFile {
 		
 	}
 	
-	
-	
-	/**
-	 * this method returns the string of the arraylist of maori words
-	 * @return
-	 */
-	public String getMaoriWords(){
-		String maoriString = maoriWordList.get(0);
-		
-		
-		for (int i = 1 ; i < maoriWordList.size() ; i++) {
-			maoriString = maoriString + " " + maoriWordList.get(i);
-		}	
-		
-		return maoriString;
-			
-			
+	public ArrayList<String> getMaoriWords(){
+		return maoriWordList;
 	}
 
 

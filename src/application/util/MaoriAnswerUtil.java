@@ -3,13 +3,6 @@ package application.util;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
-/**
- * this class provides the tools for converting a number to a maori word 
- * and provides a way to check if the users answer equals to the actual answer (this might need to be changed)
- * @author se206
- *
- */
 public class MaoriAnswerUtil {
 
 	
