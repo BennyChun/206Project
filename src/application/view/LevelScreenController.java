@@ -205,7 +205,7 @@ public class LevelScreenController extends AbstractController{
 		correctAlert.setContentText("Correct answer is: " + mao);
 		String path = null;
 		try {
-			path = MainApp.class.getResource("../Icons/111251-material-design/png/check-symbol.png").toURI().toString();
+			path = this.getClass().getResource("check-symbol.png").toURI().toString();
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -259,7 +259,7 @@ public class LevelScreenController extends AbstractController{
 
 		String path = null;
 		try {
-			path = MainApp.class.getResource("../Icons/111251-material-design/png/clear-button.png").toURI().toString();
+			path = this.getClass().getResource("clear-button.png").toURI().toString();
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -335,7 +335,7 @@ public class LevelScreenController extends AbstractController{
 		
 		String path = null;
 		try {
-			path = MainApp.class.getResource("../Icons/111251-material-design/png/clear-button.png").toURI().toString();
+			path = this.getClass().getResource("clear-button.png").toURI().toString();
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
