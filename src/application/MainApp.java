@@ -103,7 +103,7 @@ public class MainApp extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/Instructions.fxml"));
 			//loader.setController(new StartMenuController(_navigator));
-			BorderPane instructions = (BorderPane) loader.load();
+			AnchorPane instructions = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
 			Scene scene = new Scene(instructions);
