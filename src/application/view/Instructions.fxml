@@ -15,7 +15,7 @@
             <Font name="Freestyle Script" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="117.0" layoutY="176.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="46.0" layoutY="188.0" prefHeight="50.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
@@ -27,7 +27,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="116.0" layoutY="101.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="46.0" layoutY="117.0" prefHeight="50.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
@@ -39,7 +39,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="117.0" layoutY="252.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="Continue">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="46.0" layoutY="263.0" prefHeight="50.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="Confirm">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
@@ -54,8 +54,14 @@
             <Font name="Maiandra GD" size="24.0" />
          </font>
       </Label>
-      <JFXTextArea layoutX="272.0" layoutY="101.0" prefHeight="58.0" prefWidth="250.0" />
-      <JFXTextArea layoutX="271.0" layoutY="175.0" prefHeight="58.0" prefWidth="250.0" />
-      <JFXTextArea layoutX="276.0" layoutY="246.0" prefHeight="58.0" prefWidth="250.0" />
+      <JFXTextArea editable="false" focusColor="WHITE" layoutX="182.0" layoutY="117.0" prefHeight="58.0" prefWidth="367.0" text="This will give you 2 seconds to record your answer. You can record as many times as possible">
+         <font>
+            <Font name="Maiandra GD" size="12.0" />
+         </font></JFXTextArea>
+      <JFXTextArea editable="false" focusColor="WHITE" layoutX="182.0" layoutY="188.0" prefHeight="58.0" prefWidth="367.0" text="This button will allow you to listen the the recoding you've made, you can listen to it as many times as you want">
+         <font>
+            <Font name="Maiandra GD" size="12.0" />
+         </font></JFXTextArea>
+      <JFXTextArea editable="false" focusColor="WHITE" layoutX="182.0" layoutY="259.0" prefHeight="58.0" prefWidth="367.0" text="Allows you to submit your answer when you're ready. Don't worry if you get it wrong the first time, you have two attempts at each question" />
    </children>
 </AnchorPane>
