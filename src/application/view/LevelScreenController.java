@@ -213,6 +213,8 @@ public class LevelScreenController extends AbstractController{
 		if (result.get() == nextButton){
 			if(currentQuestionNumber == 10) {
 				
+				currentQuestion.setCorrect(true);
+				
 				System.out.println("you've finished the " + currentQuestionNumber + " questions!");//used for testing purposes
 				getResults();
 				
