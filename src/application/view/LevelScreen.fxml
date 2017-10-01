@@ -2,6 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,16 +12,26 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LevelScreenController">
    <children>
-      <Label fx:id="numberLabel" alignment="CENTER" layoutX="240.0" layoutY="89.0" prefHeight="190.0" prefWidth="170.0" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="89.0">
+      <Label fx:id="numberLabel" alignment="CENTER" focusTraversable="false" layoutX="240.0" layoutY="89.0" prefHeight="190.0" prefWidth="170.0" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="89.0">
          <font>
             <Font name="Maiandra GD" size="96.0" />
          </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#171717" />
+               </light>
+            </Lighting>
+         </effect>
       </Label>
-      <JFXButton layoutX="534.0" layoutY="14.0" onMouseEntered="#handleOpenInfo" onMouseExited="#handleCloseInfo" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+      <JFXButton focusTraversable="false" layoutX="534.0" layoutY="14.0" onMouseEntered="#handleOpenInfo" onMouseExited="#handleCloseInfo" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Icons/263048-miscellaneous-elements/png/information.png" />
+                  <Image url="@../../Icons/263048-miscellaneous-elements/png/information.png" />
                </image>
             </ImageView>
          </graphic>
@@ -27,7 +40,7 @@
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Icons/126466-multimedia-collection/png/back.png" />
+                  <Image url="@../../Icons/111251-material-design/png/left-arrow-key.png" />
                </image>
             </ImageView>
          </graphic>
@@ -39,7 +52,7 @@
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Icons/111251-material-design/png/voice-message-microphone-button.png" />
+                  <Image url="@../../Icons/111251-material-design/png/voice-message-microphone-button.png" />
                </image>
             </ImageView>
          </graphic>
@@ -53,7 +66,7 @@
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Icons/111251-material-design/png/play-arrow.png" />
+                  <Image url="@../../Icons/111251-material-design/png/play-arrow.png" />
                </image>
             </ImageView>
          </graphic>

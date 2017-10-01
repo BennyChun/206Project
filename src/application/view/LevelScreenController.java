@@ -199,7 +199,7 @@ public class LevelScreenController extends AbstractController{
 		correctAlert.setTitle("Answer confirmed");
 		correctAlert.setHeaderText("You got the answer Correct ! ");
 		correctAlert.setContentText("Correct answer is: " + mao);
-		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/check-symbol.png").toURI().toString(), true);
+		Image image = new Image(new File(System.getProperty("user.dir") + "/src/Icons/111251-material-design/png/check-symbol.png").toURI().toString(), true);
 		ImageView view = new ImageView(image);
 		view.setFitWidth(100);
 		view.setFitHeight(100);
@@ -247,7 +247,7 @@ public class LevelScreenController extends AbstractController{
 		incorrectAlert.setContentText("Please try again, or go to the next question."); 
 
 
-		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/close-button.png").toURI().toString(), true);
+		Image image = new Image(new File(System.getProperty("user.dir") + "/src/Icons/111251-material-design/png/close-button.png").toURI().toString(), true);
 		ImageView view = new ImageView(image);
 		view.setFitWidth(100);
 		view.setFitHeight(100);
@@ -318,7 +318,7 @@ public class LevelScreenController extends AbstractController{
 		incorrectAlert.setContentText("The correct answer was: " + correctAnswer); // gives the answers 
 
 
-		Image image = new Image(new File(System.getProperty("user.dir") + "/Icons/111251-material-design/png/clear-button.png").toURI().toString(), true);
+		Image image = new Image(new File(System.getProperty("user.dir") + "/src/Icons/111251-material-design/png/clear-button.png").toURI().toString(), true);
 		ImageView view = new ImageView(image);
 		view.setFitWidth(100);
 		view.setFitHeight(100);
