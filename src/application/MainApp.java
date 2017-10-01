@@ -6,7 +6,6 @@ import application.view.InstructionsController;
 import application.view.LevelScreenController;
 import application.view.StageSelectController;
 import application.view.StartMenuController;
-import application.view.StatisticsScreenController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -119,28 +118,6 @@ public class MainApp extends Application {
 		}
 	}
 
-	
-	public void initStatsScreen(){
-		try {
-			//load start menu from fxml file.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/StatisticsScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
-			AnchorPane statsScreen = (AnchorPane) loader.load();
-
-			// Show the scene containing the start menu
-			Scene scene = new Scene(statsScreen);
-			_primaryStage.setScene(scene);
-			_primaryStage.show();
-			_primaryStage.setResizable(false);
-			
-			//give stage select controller access to the main app
-			StatisticsScreenController controller = loader.getController();
-			controller.setMainApp(this);
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-	}
 	
 	public void initEndScreen(int finalScore , String currentLevel){
 		try {

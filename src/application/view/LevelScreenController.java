@@ -373,29 +373,6 @@ public class LevelScreenController extends AbstractController{
 		return questionData;
 	}
 
-
-
-	//========================================== Unimplemented methods ==========================================================
-
-
-	// not needed for the purposes of this assignment, will be implemented in the final project.
-	@FXML
-	public void handleSkip() {
-		//when the user clicks skip, it should go to the next question, 
-		//and record the current question to be failed
-		//we will not implement the skip button for assignment 3
-	}
-
-
-	@FXML
-	public void handleOpenInfo() {
-		System.out.println("hello");
-	}
-
-	@FXML
-	public void handleCloseInfo() {
-		System.out.println("bye");
-	}
 	//=============================== generates the 10 random questions based on user lvl selected ================================
 	private void generateNumbers() {
 		//this method generates 10 random numbers depending on what the level was

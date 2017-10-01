@@ -19,10 +19,6 @@ public class StartMenuController extends AbstractController {
 		_mainApp.initInstructions();
 	}
 	
-	@FXML
-	public void handleStats() {
-		_mainApp.initStatsScreen();
-	}
 
 	@FXML
 	public void handleQuit() {

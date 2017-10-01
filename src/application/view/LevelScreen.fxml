@@ -27,15 +27,6 @@
             </Lighting>
          </effect>
       </Label>
-      <JFXButton focusTraversable="false" layoutX="534.0" layoutY="14.0" onMouseEntered="#handleOpenInfo" onMouseExited="#handleCloseInfo" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-         <graphic>
-            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Icons/263048-miscellaneous-elements/png/information.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
       <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="14.0" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">

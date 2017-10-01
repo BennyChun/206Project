@@ -6,22 +6,30 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
+   <bottom>
+      <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleQuit" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="QUIT" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Freestyle Script" size="18.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </JFXButton>
+   </bottom>
+   <top>
+      <Label text="TATAI!" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Freestyle Script" size="82.0" />
+         </font>
+      </Label>
+   </top>
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="315.0" prefWidth="600.0" spacing="15.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="234.0" prefWidth="583.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="TATAI!">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <font>
-                  <Font name="Freestyle Script" size="82.0" />
-               </font>
-            </Label>
             <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
                <font>
                   <Font name="Freestyle Script" size="42.0" />
@@ -41,30 +49,8 @@
             </JFXButton>
          </children>
          <BorderPane.margin>
-            <Insets top="80.0" />
+            <Insets />
          </BorderPane.margin>
       </VBox>
    </center>
-   <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="420.0" BorderPane.alignment="CENTER">
-         <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleStats" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="STATS">
-               <HBox.margin>
-                  <Insets left="25.0" top="30.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Freestyle Script" size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleQuit" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="QUIT">
-               <HBox.margin>
-                  <Insets top="30.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Freestyle Script" size="18.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </HBox>
-   </bottom>
 </BorderPane>
