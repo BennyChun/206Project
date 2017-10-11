@@ -8,7 +8,7 @@
 
 
 <AnchorPane xmlns="http://javafx.com/javafx"
-            style="-fx-background-color: radial-gradient(center 50% 50% , radius 40% , #ffebcd, #008080);"
+            style="-fx-background-color: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #008080);"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="application.view.InstructionsController"
             prefHeight="768.0" prefWidth="1024.0">
