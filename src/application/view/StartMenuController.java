@@ -10,12 +10,12 @@ public class StartMenuController extends AbstractController {
 	 * This method gets called when the user clicks on the Play button
 	 * This method will call the initStageSelect() method in the MainApp class
 	 */
-	public void handlePlay() {
-		_mainApp.initStageSelect();
+	public void handlePractice() {
+		_mainApp.initLevelScreen("hard");
 	}	
 	
 	@FXML
-	public void handleInstructiosn() {
+	public void handleInstructions() {
 		_mainApp.initInstructions();
 	}
 	

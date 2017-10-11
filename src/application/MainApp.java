@@ -36,6 +36,7 @@ public class MainApp extends Application {
 			_primaryStage.setScene(scene);
 			_primaryStage.show();
 			_primaryStage.setResizable(false);
+			_primaryStage.sizeToScene();
 			
 			//give the start menu controller access to the MainApp
 			StartMenuController controller = loader.getController();
@@ -57,6 +58,7 @@ public class MainApp extends Application {
 			_primaryStage.setScene(scene);
 			_primaryStage.show();
 			_primaryStage.setResizable(false);
+
 			
 			//give stage select controller access to the main app
 			StageSelectController controller = loader.getController();
