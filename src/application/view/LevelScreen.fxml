@@ -10,11 +10,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LevelScreenController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LevelScreenController">
    <children>
-      <Label fx:id="numberLabel" alignment="CENTER" focusTraversable="false" layoutX="240.0" layoutY="89.0" prefHeight="190.0" prefWidth="170.0" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="89.0">
+      <ImageView fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="numberLabel" alignment="CENTER" focusTraversable="false" layoutX="286.0" layoutY="170.0" prefHeight="376.0" prefWidth="453.0" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="170.0">
          <font>
-            <Font name="Maiandra GD" size="96.0" />
+            <Font name="Maiandra GD" size="300.0" />
          </font>
          <effect>
             <Lighting>
@@ -27,11 +32,11 @@
             </Lighting>
          </effect>
       </Label>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="14.0" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="14.0" onAction="#handleMainMenu" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #ffffff;">
          <graphic>
-            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Icons/111251-material-design/png/left-arrow-key.png" />
+                  <Image url="@back-arrow.png" />
                </image>
             </ImageView>
          </graphic>
@@ -39,40 +44,47 @@
             <Font name="Freestyle Script" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="recordButton" buttonType="RAISED" focusTraversable="false" layoutX="250.0" layoutY="323.0" onAction="#handleRecord" prefWidth="100.0" style="-fx-background-color: #ffffff;">
+      <JFXButton fx:id="recordButton" buttonType="RAISED" focusTraversable="false" layoutX="416.0" layoutY="638.0" onAction="#handleRecord" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="387.0">
          <graphic>
-            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Icons/111251-material-design/png/voice-message-microphone-button.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="confirmButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="437.0" layoutY="323.0" onAction="#handleConfirm" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Confirm">
+      <JFXButton fx:id="confirmButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="729.0" layoutY="638.0" onAction="#handleConfirm" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="62.0">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
-      </JFXButton>
-      <JFXButton fx:id="playButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="64.0" layoutY="323.0" onAction="#handleListen" prefWidth="100.0" style="-fx-background-color: #ffffff;">
          <graphic>
-            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@right-arrow-forward.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="playButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="59.0" layoutY="638.0" onAction="#handleListen" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="62.0">
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Icons/111251-material-design/png/play-arrow.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <Label layoutX="14.0" layoutY="88.0" prefHeight="22.0" prefWidth="61.0" text="Attempt:">
+      <Label layoutX="451.0" layoutY="99.0" prefHeight="22.0" prefWidth="61.0" text="Attempt:">
          <font>
             <Font name="Maiandra GD" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="currentAttempts" layoutX="79.0" layoutY="91.0" prefHeight="19.0" prefWidth="51.0" text="Label">
+      <Label fx:id="currentAttempts" layoutX="512.0" layoutY="100.0" prefHeight="19.0" prefWidth="51.0" text="Label">
          <font>
             <Font name="Maiandra GD" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="currentQuestionNumberLabel" alignment="CENTER" layoutX="159.0" layoutY="30.0" prefHeight="19.0" prefWidth="277.0" text="Label">
+      <Label fx:id="currentQuestionNumberLabel" alignment="CENTER" layoutX="374.0" layoutY="39.0" prefHeight="19.0" prefWidth="277.0" text="Label">
          <font>
             <Font name="Maiandra GD" size="15.0" />
          </font>

@@ -1,49 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EndScreenController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EndScreenController">
    <children>
-      <HBox layoutY="285.0" prefHeight="115.0" prefWidth="600.0" spacing="50.0">
-         <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleRetry" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Retry">
-               <font>
-                  <Font name="Freestyle Script" size="24.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMainMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Main Menu">
-               <font>
-                  <Font name="Freestyle Script" size="24.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="hard" buttonType="RAISED" focusTraversable="false" onAction="#handleHard" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Hard">
-               <font>
-                  <Font name="Freestyle Script" size="24.0" />
-               </font>
-            </JFXButton>
-         </children>
-         <padding>
-            <Insets left="100.0" />
-         </padding>
-      </HBox>
-      <Label layoutX="181.0" layoutY="14.0" text="YOU SCORED:">
+      <ImageView fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="235.0" layoutY="64.0" text="YOU SCORED:">
          <font>
-            <Font name="Maiandra GD" size="36.0" />
+            <Font name="Maiandra GD" size="84.0" />
          </font>
       </Label>
-      <Label fx:id="score" alignment="CENTER" layoutX="153.0" layoutY="76.0" prefHeight="120.0" prefWidth="300.0" text="10/10" AnchorPane.leftAnchor="150.0">
+      <Label layoutX="85.0" layoutY="533.0" text="Please select from on of the following options:">
          <font>
-            <Font name="Maiandra GD" size="96.0" />
+            <Font name="Maiandra GD" size="42.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="240.0" text="Please select from on of the following options:">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="109.0" layoutY="652.0" onAction="#handleRetry" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" text="Retry" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="162.0">
          <font>
-            <Font name="Maiandra GD" size="24.0" />
+            <Font name="Freestyle Script" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="hard" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="854.0" onAction="#handleHard" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #ffffff;" text="Hard" visible="false">
+         <font>
+            <Font name="Freestyle Script" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="634.0" layoutY="611.0" onAction="#handleMainMenu" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" text="Main Menu" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="162.0">
+         <font>
+            <Font name="Freestyle Script" size="24.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="score" alignment="CENTER" layoutX="156.0" layoutY="167.0" prefHeight="366.0" prefWidth="712.0" text="10/10">
+         <font>
+            <Font name="Maiandra GD" size="300.0" />
          </font>
       </Label>
    </children>
