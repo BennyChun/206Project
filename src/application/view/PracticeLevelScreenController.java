@@ -26,7 +26,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import sun.applet.Main;
 
-public class LevelScreenController extends AbstractController{
+public class PracticeLevelScreenController extends AbstractController{
 	private String _selectedLevel;
 	private Question currentQuestion;      //this is the current Question object
 	private int currentQuestionNumber = 1; //this keeps track of which question  0-9 (can put this in the Question Model maybe ?)

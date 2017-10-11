@@ -96,7 +96,7 @@ public class MainApp extends Application {
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/LevelScreen.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/PracticeLevelScreen.fxml"));
 			AnchorPane _levelScreen = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -106,7 +106,7 @@ public class MainApp extends Application {
 			_primaryStage.setResizable(false);
 			
 			//give stage select controller access to the main app
-			LevelScreenController controller = loader.getController();
+			PracticeLevelScreenController controller = loader.getController();
 			controller.setLevel(selectedLevel);//passes the selected level to the controller
 			controller.setMainApp(this);//this will set the mainapp scene to the level controller scene
 			
