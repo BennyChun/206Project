@@ -165,7 +165,95 @@ public class MainApp extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public void initAchievements(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/AchievementsScreen.fxml"));
+			//loader.setController(new StartMenuController(_navigator));
+			AnchorPane achievements = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(achievements);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+
+			//give stage select controller access to the main app
+			AchievementsScreenController controller = loader.getController();
+			controller.setMainApp(this);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public void initOptions(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/OptionsScreen.fxml"));
+			//loader.setController(new StartMenuController(_navigator));
+			AnchorPane options = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(options);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+
+			//give stage select controller access to the main app
+			OptionsScreenController controller = loader.getController();
+			controller.setMainApp(this);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public void initCharacters(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/CharacterPurchaseScreen.fxml"));
+			//loader.setController(new StartMenuController(_navigator));
+			AnchorPane chars = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(chars);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+
+			//give stage select controller access to the main app
+			CharacterPurchaseScreenController controller = loader.getController();
+			controller.setMainApp(this);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public void initStatistics(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/StatisticsScreen.fxml"));
+			//loader.setController(new StartMenuController(_navigator));
+			AnchorPane stats = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(stats);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+
+			//give stage select controller access to the main app
+			StatisticsScreenController controller = loader.getController();
+			controller.setMainApp(this);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
 	
 	/**
 	 * when this method gets called

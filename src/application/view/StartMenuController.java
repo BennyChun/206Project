@@ -7,9 +7,10 @@ public class StartMenuController extends AbstractController {
 	
 	
 	/**
-	 * This method gets called when the user clicks on the Play button
-	 * This method will call the initStageSelect() method in the MainApp class
+	 * This method gets called when the user clicks on the practice button
+	 * will give users instructions before continuing to practice stage
 	 */
+	@FXML
 	public void handlePractice() {
 		_mainApp.initInstructions();
 	}	
@@ -28,6 +29,26 @@ public class StartMenuController extends AbstractController {
 	@FXML
 	public void handlePlay(){
 		_mainApp.initPlaySelect();
+	}
+
+	@FXML
+	public void handleStatistics(){
+		_mainApp.initStatistics();
+	}
+
+	@FXML
+	public void handleCharacter(){
+		_mainApp.initCharacters();
+	}
+
+	@FXML
+	public void handleAchievements(){
+		_mainApp.initAchievements();
+	}
+
+	@FXML
+	public void handleOptions(){
+		_mainApp.initOptions();
 	}
 
 }
