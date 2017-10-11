@@ -1,11 +1,7 @@
 package application;
 import java.io.IOException;
 
-import application.view.EndScreenController;
-import application.view.InstructionsController;
-import application.view.LevelScreenController;
-import application.view.StageSelectController;
-import application.view.StartMenuController;
+import application.view.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,7 +16,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		_primaryStage = primaryStage;
-		_primaryStage.setTitle("Tatai!");
+		_primaryStage.setTitle("Tātai!");
 		initStartMenu();
 	}
 
@@ -62,6 +58,28 @@ public class MainApp extends Application {
 			
 			//give stage select controller access to the main app
 			StageSelectController controller = loader.getController();
+			controller.setMainApp(this);//this will set the main app scene to the stage select scene
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public void initPlaySelect(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/PlaySelectScreen.fxml"));
+			AnchorPane _playSelect = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(_playSelect);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+
+
+			//give stage select controller access to the main app
+			PlaySelectScreenController controller = loader.getController();
 			controller.setMainApp(this);//this will set the main app scene to the stage select scene
 		}catch(IOException e){
 			e.printStackTrace();

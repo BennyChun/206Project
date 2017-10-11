@@ -23,6 +23,11 @@ public class StartMenuController extends AbstractController {
 	@FXML
 	public void handleQuit() {
 		_mainApp.close();
-	}	
+	}
+
+	@FXML
+	public void handlePlay(){
+		_mainApp.initPlaySelect();
+	}
 
 }

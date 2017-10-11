@@ -27,7 +27,7 @@
       </Label>
    <VBox layoutX="55.0" layoutY="85.0" prefHeight="648.0" prefWidth="300.0" spacing="30.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="128.0">
       <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PLAY">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PLAY">
                <font>
                   <Font name="Maiandra GD" size="32.0" />
                </font>
@@ -59,9 +59,9 @@
          </JFXButton>
       </children>
    </VBox>
-   <JFXButton focusTraversable="false" layoutX="559.0" layoutY="278.0" prefHeight="381.0" prefWidth="385.0">
+   <JFXButton focusTraversable="false" layoutX="562.0" layoutY="276.0" prefHeight="381.0" prefWidth="385.0">
       <graphic>
-         <ImageView accessibleRole="BUTTON" fitHeight="329.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView accessibleRole="BUTTON" fitHeight="420.0" fitWidth="424.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@android-logo-1.png" />
             </image>
