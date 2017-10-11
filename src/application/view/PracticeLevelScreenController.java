@@ -58,9 +58,9 @@ public class PracticeLevelScreenController extends AbstractController{
 
 
 	@FXML
-	public void handleMainMenu() {
+	public void handleBack() {
 		//goes back to the main menu
-		_mainApp.initStartMenu();
+		_mainApp.initInstructions();
 	}
 
 

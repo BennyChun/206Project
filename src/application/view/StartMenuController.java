@@ -17,7 +17,7 @@ public class StartMenuController extends AbstractController {
 	
 	@FXML
 	public void handleInstructions() {
-		_mainApp.initInstructions();
+		_mainApp.initGameInstructions();
 	}
 	
 
