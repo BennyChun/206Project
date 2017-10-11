@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InstructionsController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InstructionsController">
    <children>
       <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="524.0" layoutY="360.0" onAction="#handleContinue" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Continue" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <font>

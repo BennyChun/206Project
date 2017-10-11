@@ -37,12 +37,12 @@
                <Font name="Maiandra GD" size="32.0" />
             </font>
          </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="STATISTICS">
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleInstructions" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>
          </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleInstructions" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
+         <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="STATISTICS">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>
