@@ -7,13 +7,8 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.OptionsScreenController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: radial-gradient(center 50% 50% , radius 40% , #ffebcd, #008080);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.OptionsScreenController">
     <children>
-        <ImageView fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <image>
-                <Image url="@background.jpg" />
-            </image>
-        </ImageView>
         <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack" style="-fx-background-color: #ffffff;">
             <font>
                 <Font name="Maiandra GD" size="24.0" />

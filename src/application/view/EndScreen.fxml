@@ -7,13 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EndScreenController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: radial-gradient(center 50% 50% , radius 40% , #ffebcd, #008080);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EndScreenController">
    <children>
-      <ImageView fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@background.jpg" />
-         </image>
-      </ImageView>
       <Label layoutX="235.0" layoutY="64.0" text="YOU SCORED:">
          <font>
             <Font name="Maiandra GD" size="84.0" />
