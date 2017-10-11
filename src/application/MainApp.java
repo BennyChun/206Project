@@ -119,7 +119,7 @@ public class MainApp extends Application {
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/Instructions.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/PracticeInstructions.fxml"));
 			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane instructions = (AnchorPane) loader.load();
 
@@ -130,7 +130,7 @@ public class MainApp extends Application {
 			_primaryStage.setResizable(false);
 			
 			//give stage select controller access to the main app
-			InstructionsController controller = loader.getController();
+			PracticeInstructionsController controller = loader.getController();
 			controller.setMainApp(this);
 		}catch(IOException e){
 			e.printStackTrace();

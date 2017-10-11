@@ -11,7 +11,7 @@ public class StartMenuController extends AbstractController {
 	 * This method will call the initStageSelect() method in the MainApp class
 	 */
 	public void handlePractice() {
-		_mainApp.initLevelScreen("hard");
+		_mainApp.initInstructions();
 	}	
 	
 	@FXML
