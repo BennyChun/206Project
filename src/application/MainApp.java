@@ -10,13 +10,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
 	private Stage _primaryStage;
-	private BorderPane _startMenu;
+	private AnchorPane _startMenu;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -30,7 +29,7 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/StartMenu.fxml"));
-			_startMenu = (BorderPane) loader.load();
+			_startMenu = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
 			Scene scene = new Scene(_startMenu);

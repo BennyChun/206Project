@@ -12,7 +12,7 @@ import javafx.beans.property.SimpleIntegerProperty;
  *
  */
 public class Question {
-	private IntegerProperty _theNumber;   //this is a StringProprty that is associated with this Question object
+	private IntegerProperty _theNumber;   //this is a StringProperty that is associated with this Question object
 	
 	
 	private boolean skipped;  //this records whether this Question object has been skipped by the user

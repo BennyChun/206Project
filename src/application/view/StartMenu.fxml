@@ -1,55 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
-   <bottom>
-      <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleQuit" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="QUIT" BorderPane.alignment="CENTER">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="150.0" layoutY="704.0" onAction="#handleQuit" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="QUIT">
          <font>
             <Font name="Freestyle Script" size="18.0" />
          </font>
-         <BorderPane.margin>
-            <Insets bottom="20.0" />
-         </BorderPane.margin>
       </JFXButton>
-   </bottom>
-   <top>
-      <Label text="TATAI!" BorderPane.alignment="CENTER">
+      <Label layoutX="480.0" layoutY="32.0" prefHeight="143.0" prefWidth="479.0" text="TĀTAI!">
          <font>
-            <Font name="Freestyle Script" size="82.0" />
+            <Font name="Maiandra GD" size="142.0" />
          </font>
       </Label>
-   </top>
-   <center>
-      <VBox alignment="CENTER" prefHeight="234.0" prefWidth="583.0" spacing="15.0" BorderPane.alignment="CENTER">
-         <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
+   <VBox layoutX="55.0" layoutY="85.0" prefHeight="598.0" prefWidth="300.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="148.0">
+      <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PLAY">
                <font>
                   <Font name="Freestyle Script" size="42.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Icons/111251-material-design/png/play-button-inside-a-circle.png" />
-                     </image></ImageView>
-               </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleInstructiosn" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
-               <font>
-                  <Font name="Freestyle Script" size="24.0" />
-               </font>
-            </JFXButton>
-         </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </VBox>
-   </center>
-</BorderPane>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PRACTICE">
+            <font>
+               <Font name="Freestyle Script" size="42.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="STATISTICS">
+            <font>
+               <Font name="Freestyle Script" size="42.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleInstructiosn" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
+            <font>
+               <Font name="Freestyle Script" size="42.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="ACHIEVEMENTS">
+            <font>
+               <Font name="Freestyle Script" size="42.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="OPTIONS">
+            <font>
+               <Font name="Freestyle Script" size="42.0" />
+            </font>
+         </JFXButton>
+      </children>
+   </VBox>
+   <JFXButton focusTraversable="false" layoutX="559.0" layoutY="278.0" prefHeight="381.0" prefWidth="385.0">
+      <graphic>
+         <ImageView fitHeight="329.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@android-logo-1.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </JFXButton>
+
+</AnchorPane>
