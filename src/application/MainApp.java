@@ -304,7 +304,17 @@ public class MainApp extends Application {
 		}
 	}
 
-	public void initQuestionSelect(){
+	/**
+	 * this method initializes the QuestionSlectionScreen (the screen with the plus, minus .... buttons)
+	 * this method takes an argument of type string
+	 * saying if the user selected either easy or hard
+	 *
+	 * easy level: will have all 4 operators, but the sum only goes from 1 to 20
+	 * hard level: will have all 4 operators, but the sum only goes from 1 to 99
+	 *
+	 * @param selectedLevel
+	 */
+	public void initQuestionSelect(String selectedLevel){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
