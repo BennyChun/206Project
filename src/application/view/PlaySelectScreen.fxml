@@ -23,17 +23,17 @@
       </ImageView>
       <VBox layoutX="582.0" layoutY="183.0" prefHeight="500.0" prefWidth="413.0" spacing="60.0">
          <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="EASY">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleEasy" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="EASY">
                <font>
                   <Font name="Maiandra GD" size="37.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="HARD">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleHard" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="HARD">
                <font>
                   <Font name="Maiandra GD" size="37.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="CUSTOM">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleCustom" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="CUSTOM">
                <font>
                   <Font name="Maiandra GD" size="37.0" />
                </font>

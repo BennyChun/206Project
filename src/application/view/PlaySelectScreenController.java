@@ -9,5 +9,20 @@ public class PlaySelectScreenController extends AbstractController {
         _mainApp.initStartMenu();
     }
 
+    @FXML
+    public void handleCustom(){
+        _mainApp.initCustom();
+    }
+
+    @FXML
+    public void handleEasy(){
+
+    }
+
+    @FXML
+    public void handleHard(){
+
+    }
+
 
 }

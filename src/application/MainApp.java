@@ -276,6 +276,28 @@ public class MainApp extends Application {
 		}
 	}
 
+	public void initCustom(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/CustomLevelScreen.fxml"));
+			//loader.setController(new StartMenuController(_navigator));
+			AnchorPane customLevel = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(customLevel);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+
+			//give stage select controller access to the main app
+			CustomLevelScreenController controller = loader.getController();
+			controller.setMainApp(this);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
 
 
 	/**
