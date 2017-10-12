@@ -6,7 +6,7 @@ public class QuestionSelectScreenController extends AbstractController{
 
     @FXML
     public void handleBack(){
-        _mainApp.initStartMenu();
+        _mainApp.initPlaySelect();
     }
 
     @FXML

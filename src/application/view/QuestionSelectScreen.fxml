@@ -24,7 +24,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <HBox layoutX="262.0" layoutY="255.0" prefHeight="150.0" prefWidth="450.0" spacing="150.0">
+      <HBox layoutX="262.0" layoutY="255.0" prefHeight="150.0" prefWidth="450.0" spacing="150.0" AnchorPane.bottomAnchor="392.0" AnchorPane.leftAnchor="287.0">
          <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleAdd" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-background-radius: 75px;">
                <graphic>
@@ -46,7 +46,7 @@
             </JFXButton>
          </children>
       </HBox>
-      <HBox layoutX="262.0" layoutY="485.0" prefHeight="150.0" prefWidth="450.0" spacing="150.0">
+      <HBox layoutX="262.0" layoutY="485.0" prefHeight="150.0" prefWidth="450.0" spacing="150.0" AnchorPane.bottomAnchor="142.0" AnchorPane.leftAnchor="287.0">
          <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMult" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-background-radius: 75px;">
                <graphic>

@@ -1,26 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<!--http://blog.e-zest.com/gradients-in-javafx-2/ instructions for gradient backdrop found here. -->
-
 <AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #008080);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.AchievementsScreenController">
-   <children>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack" >
+    <children>
+        <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack">
+            <font>
+                <Font name="Maiandra GD" size="24.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@back-arrow.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+      <ScrollPane layoutX="272.0" layoutY="218.0" prefHeight="550.0" prefWidth="550.0" stylesheets="@scrollpane.css" AnchorPane.leftAnchor="237.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="550.0">
+               <children>
+                  <VBox layoutX="50.0" prefHeight="647.0" prefWidth="465.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" prefWidth="503.0" text="Quick Maths&#10;-too plus too is for, mynus wun is free&#10;">
+                           <font>
+                              <Font name="Maiandra GD" size="24.0" />
+                           </font>
+                        </JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" text="Hot Streak!&#10;-get 3 correct in a row&#10;">
+                           <font>
+                              <Font name="Maiandra GD" size="24.0" />
+                           </font>
+                        </JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" text="Perfect-Easy&#10;-get 10/10 in easy Mode&#10;">
+                           <font>
+                              <Font name="Maiandra GD" size="24.0" />
+                           </font>
+                        </JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" text="Perfect-Hard&#10;-get 10/10 in Hard Mode">
+                           <font>
+                              <Font name="Maiandra GD" size="24.0" />
+                           </font>
+                        </JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" text="HTK Might Be Broke :(&#10;-get 0/10">
+                           <font>
+                              <Font name="Maiandra GD" size="24.0" />
+                           </font>
+                        </JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" text="Getting Creative!&#10;- create a custom level&#10;">
+                           <font>
+                              <Font name="Maiandra GD" size="24.0" />
+                           </font>
+                        </JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" text="Planner&#10;-get over 6/10 in practice mode">
+                           <font>
+                              <Font name="Maiandra GD" size="24.0" />
+                           </font>
+                        </JFXTextArea>
+                     </children></VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <FontAwesomeIconView glyphName="TROPHY" layoutX="427.0" layoutY="172.0" size="184" />
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="803.0" layoutY="691.0" onAction="#handleBack" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" text="RESET">
          <font>
             <Font name="Maiandra GD" size="24.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@back-arrow.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
-   </children>
+    </children>
 </AnchorPane>
