@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<!--http://blog.e-zest.com/gradients-in-javafx-2/ instructions for gradient backdrop found here. -->
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #008080);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.QuestionSelectScreenController">
+   <children>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <HBox layoutX="162.0" layoutY="277.0" prefHeight="100.0" prefWidth="700.0" spacing="200.0">
+         <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@plus-positive-add-mathematical-symbol.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@minus-sign.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="162.0" layoutY="507.0" prefHeight="100.0" prefWidth="700.0" spacing="200.0">
+         <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@multiply-mathematical-sign.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@divide.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+      <Label layoutX="84.0" layoutY="70.0" text="Select Your Question Type:">
+         <font>
+            <Font name="Maiandra GD" size="72.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

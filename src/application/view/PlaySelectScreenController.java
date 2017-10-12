@@ -16,12 +16,12 @@ public class PlaySelectScreenController extends AbstractController {
 
     @FXML
     public void handleEasy(){
-
+        _mainApp.initQuestionSelect();
     }
 
     @FXML
     public void handleHard(){
-
+        _mainApp.initQuestionSelect();
     }
 
 
