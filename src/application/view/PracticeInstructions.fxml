@@ -21,7 +21,7 @@
             <Font name="Maiandra GD" size="42.0" />
          </font>
       </Label>
-      <Label layoutX="88.0" layoutY="165.0" text="When in game press the following buttons:">
+      <Label layoutX="88.0" layoutY="165.0" text="While practicing press the following buttons:">
          <font>
             <Font name="Maiandra GD" size="24.0" />
          </font>
