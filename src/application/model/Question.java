@@ -12,6 +12,8 @@ import javafx.beans.property.SimpleIntegerProperty;
  *
  */
 public class Question {
+
+
 	private IntegerProperty _theNumber;   //this is a StringProperty that is associated with this Question object
 	
 	

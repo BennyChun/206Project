@@ -395,6 +395,12 @@ public class PracticeLevelScreenController extends AbstractController{
 	}
 
 	//=============================== generates the 10 random questions based on user lvl selected ================================
+
+	/**
+	 * this is called right from the start of this level
+	 * is generates the 10 questions right from the start
+	 * and will use this List to store the 10 questions
+	 */
 	private void generateNumbers() {
 		//this method generates 10 random numbers depending on what the level was
 		if (_selectedLevel == "easy") {

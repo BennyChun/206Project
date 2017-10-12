@@ -64,6 +64,12 @@ public class MainApp extends Application {
 		}
 	}
 
+
+	/**
+	 * initializes the PlaySelectScreen
+	 * and passes the scene to the PlaySelectScreenController
+	 *
+	 */
 	public void initPlaySelect(){
 		try {
 			//load start menu from fxml file.
@@ -297,6 +303,8 @@ public class MainApp extends Application {
 			e.printStackTrace();
 		}
 	}
+
+
 
 
 

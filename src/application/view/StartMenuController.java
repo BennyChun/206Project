@@ -28,7 +28,7 @@ public class StartMenuController extends AbstractController {
 
 	@FXML
 	public void handlePlay(){
-		_mainApp.initPlaySelect();
+		_mainApp.initPlaySelect();//initialises the PlaySelectScreen.fxml and PlaySelectScreeenController
 	}
 
 	@FXML
