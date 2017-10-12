@@ -24,9 +24,9 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <HBox layoutX="162.0" layoutY="277.0" prefHeight="100.0" prefWidth="700.0" spacing="200.0">
+      <HBox layoutX="262.0" layoutY="255.0" prefHeight="150.0" prefWidth="450.0" spacing="150.0">
          <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleAdd" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-background-radius: 75px;">
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -35,7 +35,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMinus" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-background-radius: 75px;">
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -46,9 +46,9 @@
             </JFXButton>
          </children>
       </HBox>
-      <HBox layoutX="162.0" layoutY="507.0" prefHeight="100.0" prefWidth="700.0" spacing="200.0">
+      <HBox layoutX="262.0" layoutY="485.0" prefHeight="150.0" prefWidth="450.0" spacing="150.0">
          <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMult" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-background-radius: 75px;">
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,7 +57,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleDiv" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-background-radius: 75px;">
                <graphic>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>

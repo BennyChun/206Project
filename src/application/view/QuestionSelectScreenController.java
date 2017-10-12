@@ -9,4 +9,24 @@ public class QuestionSelectScreenController extends AbstractController{
         _mainApp.initStartMenu();
     }
 
+    @FXML
+    public void handleAdd(){
+
+    }
+
+    @FXML
+    public void handleMinus(){
+
+    }
+
+    @FXML
+    public void handleMult(){
+
+    }
+
+    @FXML
+    public void handleDiv(){
+
+    }
+
 }
