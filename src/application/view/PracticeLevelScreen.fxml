@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #008080);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.PracticeLevelScreenController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.PracticeLevelScreenController">
    <children>
       <Label fx:id="numberLabel" alignment="CENTER" focusTraversable="false" layoutX="286.0" layoutY="170.0" prefHeight="376.0" prefWidth="453.0" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="170.0">
          <font>

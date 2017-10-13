@@ -148,7 +148,7 @@ public class MainApp extends Application {
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/EndScreen.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/PracticeEndScreen.fxml"));
 			AnchorPane endScreen = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -158,7 +158,7 @@ public class MainApp extends Application {
 			_primaryStage.setResizable(false);
 			
 			//give stage select controller access to the main app
-			EndScreenController controller = loader.getController();
+			PracticeEndScreenController controller = loader.getController();
 			
 			
 			controller.setScoreLabel(finalScore);
@@ -335,6 +335,32 @@ public class MainApp extends Application {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * This initialises the main game levels, takes a difficulty and a multiplication level
+	 */
+	public void initMainLevelScreen(){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/LevelScreen.fxml"));
+			//loader.setController(new StartMenuController(_navigator));
+			AnchorPane questionSelect = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(questionSelect);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+
+			//give stage select controller access to the main app
+			LevelScreenController controller = loader.getController();
+			controller.setMainApp(this);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
 
 
 
