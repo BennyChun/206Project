@@ -12,8 +12,13 @@ import javax.script.ScriptEngineManager;
 public class ExpressionsUtil {
 
 
-
-
+    /**
+     * this method takes a String, which represents an math expression
+     * this method will try and return an int
+     * will return -999.0 if there were exceptions
+     * @param expression
+     * @return
+     */
     public int ExpressionToNum(String expression){
 
         try {
@@ -28,7 +33,7 @@ public class ExpressionsUtil {
         }
 
 
-        return -1;
+        return -999;
     }
 
 
