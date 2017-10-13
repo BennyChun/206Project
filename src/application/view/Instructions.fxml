@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +12,7 @@
 
 <!--http://blog.e-zest.com/gradients-in-javafx-2/ instructions for gradient backdrop found here. -->
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #008080);" stylesheets="@scrollpane.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InstructionsController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InstructionsController">
    <children>
       <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack">
          <font>
@@ -36,4 +37,8 @@
       </ScrollPane>
       <FontAwesomeIconView glyphName="BOOK" layoutX="427.0" layoutY="172.0" size="184" />
    </children>
+   <stylesheets>
+      <URL value="@scrollpane.css" />
+      <URL value="@background.css" />
+   </stylesheets>
 </AnchorPane>

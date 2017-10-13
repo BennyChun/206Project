@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #008080);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.PracticeInstructionsController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.PracticeInstructionsController">
    <children>
       <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="810.0" layoutY="679.0" onAction="#handleContinue" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" text="Continue" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
          <font>
