@@ -13,6 +13,7 @@ public class EquationGenerator {
     private String selectedOperation;
     private int theAnswer; // the answer to the passed in expression
     private  String theEquation;//the equation that got generated
+    private int upperBound;//this records the upper bound, e.g , easy will be 20 , hard will be 99
 
     /**
      * this constructor takes an argument which represents the level the user has selected
@@ -28,20 +29,19 @@ public class EquationGenerator {
     EquationGenerator(String selectedLevel, String selectedOperation){
         this.selectedLevel=selectedLevel;
         this.selectedOperation = selectedOperation;
+
+        if (selectedLevel.equals("easy")){
+            upperBound = 20;
+        }else if (selectedLevel.equals("hard")){
+            upperBound = 99;
+        }else{
+            System.out.println("you have passed an invalid argument to the constructor, please only pass easy or hard");
+        }
     }
 
 
     public void generateEquation(){
-        if (selectedLevel.equals("easy")){
-            generateEasy();
-        }else if (selectedLevel.equals("hard")){
-            generateHard();
-        }else{
-            //you shouldn't go into here
-            //you passed in a wrong argument for the constructor
-            //you fking retarded developer, check your types
-            System.out.println("you should only pass either easy or hard into the EquationGenerator constructor");
-        }
+        generateEasy();
     }
 
 
@@ -50,8 +50,8 @@ public class EquationGenerator {
         Random rand = new Random();
 
         //generate 2 random numbers between 1 - 20
-        int firstEasyNum = rand.nextInt((20 - 1) + 1) + 1;
-        int secondEasyNum = rand.nextInt((20 - 1) + 1) + 1;
+        int firstEasyNum = rand.nextInt((upperBound - 1) + 1) + 1;
+        int secondEasyNum = rand.nextInt((upperBound - 1) + 1) + 1;
 
         String tempEasyEquation = firstEasyNum + selectedOperation + secondEasyNum;
 
@@ -79,7 +79,7 @@ public class EquationGenerator {
         int answer = equa.ExpressionToNum(tempEasyEquation);
 
         if (answer != -999){//if there was no exceptions
-            if (answer > 0 && answer <= 20){//checks if the generated euqation>answer is within the easy range
+            if (answer > 0 && answer <= upperBound){//checks if the generated euqation>answer is within the easy range
                 theAnswer = answer;
                 theEquation = tempEasyEquation;
                 return;
@@ -93,23 +93,6 @@ public class EquationGenerator {
             return; // do i want this return ?????
         }
 
-    }
-
-
-
-
-
-    //might refactor this
-    //and use the generateEasy method
-    //they are pretty much the same
-    //generation of hard numbers
-    private void generateHard() {
-        Random rand = new Random();
-
-        int firstHardNum = rand.nextInt( (99 - 1) + 1) + 1;
-        int secondHardNum = rand.nextInt( (99 - 1) + 1) + 1;
-
-        String tempHardEquation = firstHardNum + selectedOperation + secondHardNum;
     }
 
     //==============================================================
