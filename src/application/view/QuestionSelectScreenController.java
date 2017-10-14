@@ -14,6 +14,7 @@ public class QuestionSelectScreenController extends AbstractController{
     @FXML
     public void handleAdd(){//initMainLevelScreen
         String selectedOperator = "+";
+        _mainApp.initMainLevelScreen();
     }
 
     @FXML

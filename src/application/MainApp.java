@@ -344,7 +344,7 @@ public class MainApp extends Application {
 	/**
 	 * This initialises the main game levels, takes a difficulty and a multiplication level
 	 */
-	public void initMainLevelScreen(String selectedLevel , String selectedOperation){
+	public void initMainLevelScreen(){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();

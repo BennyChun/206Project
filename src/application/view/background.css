@@ -5,3 +5,7 @@ AnchorPane {
 ScrollPane AnchorPane{
     -fx-background-color: #ffffff;
 }
+
+JFXRadioButton{
+    -fx-background-color: none;
+}
