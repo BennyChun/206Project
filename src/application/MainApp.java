@@ -1,7 +1,9 @@
 package application;
 import java.io.IOException;
 
+import application.model.Question;
 import application.view.*;
+import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -380,6 +382,14 @@ public class MainApp extends Application {
 	}
 	
 	public static void main(String[] args) {
+
+//		Gson gson = new Gson();
+//		Question question = new Question(4);
+//		String str = gson.toJson(question);
+//		System.out.println(str);
+//
+//		Question q2 = gson.fromJson(str, Question.class);
+
 		launch(args);
 	}
 
