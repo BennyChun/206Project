@@ -1,7 +1,9 @@
 package application;
 import java.io.IOException;
 
+import application.model.Question;
 import application.view.*;
+import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -98,7 +100,7 @@ public class MainApp extends Application {
 	 * which is either easy or hard for the level to be generated
 	 * @param selectedLevel
 	 */
-	public void initLevelScreen(String selectedLevel){
+	public void initLevelScreen(String selectedLevel){// THIS MAKES THE PRACTICE SCREEEEEN
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -360,12 +362,13 @@ public class MainApp extends Application {
 
 			//give stage select controller access to the main app
 			LevelScreenController controller = loader.getController();
+
+
 			controller.setMainApp(this);
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 	}
-
 
 
 
@@ -380,6 +383,14 @@ public class MainApp extends Application {
 	}
 	
 	public static void main(String[] args) {
+
+//		Gson gson = new Gson();
+//		Question question = new Question(4);
+//		String str = gson.toJson(question);
+//		System.out.println(str);
+//
+//		Question q2 = gson.fromJson(str, Question.class);
+
 		launch(args);
 	}
 

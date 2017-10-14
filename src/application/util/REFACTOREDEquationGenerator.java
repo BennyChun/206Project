@@ -7,7 +7,7 @@ import java.util.Random;
  * easy Level: answer questions up to 20
  * hard Level: answer questions up to 99
  */
-public class EquationGenerator {
+public class REFACTOREDEquationGenerator {
 
     private String selectedLevel;
     private String selectedOperation;
@@ -30,7 +30,7 @@ public class EquationGenerator {
      *
      * @param selectedLevel selectedOperation
      */
-    public EquationGenerator(String selectedLevel, String selectedOperation){
+    public REFACTOREDEquationGenerator(String selectedLevel, String selectedOperation){
         this.selectedLevel=selectedLevel;
         this.selectedOperation = selectedOperation;
 
@@ -68,62 +68,64 @@ public class EquationGenerator {
 
 
 
-
-
-    public void generateEquation(){
-        generateEasy();
-    }
-
-
-    //generations of easy numbers
-    private void generateEasy() {
+    /**
+     * must call this method to generate the equation
+     */
+    public void generateEquation() {
         Random rand = new Random();
 
         //generate 2 random numbers between lower bound and upper bound
-        int firstEasyNum = rand.nextInt((upperBound - lowerBound) + 1) + lowerBound;
-        int secondEasyNum = rand.nextInt((upperBound - lowerBound) + 1) + lowerBound;
+        int firstNum = rand.nextInt((upperBound - 1) + 1) + 1;
+        int secondNum = rand.nextInt((upperBound - 1) + 1) + 1;
 
-        String tempEasyEquation = firstEasyNum + selectedOperation + secondEasyNum;
+        String tempEquation = firstNum + selectedOperation + secondNum;
 
-        if (selectedOperation.equals("/")){//if the selectedOperation was a divide.
-            if (firstEasyNum % secondEasyNum != 0 ){//if the first num % second num NOT EQUAL to zero
-                //this means that it was not divisible, and will need to regenerate new numbers
+        if (selectedOperation.equals("/")){//if the selectedOperation was a divide
 
-                generateEasy();//recursively call this function again if the selected operator was divide.
-                return;//exit this method after the recursive call
+            //while the modulus of them is not eqal to zero
+            //generate the two random numbers again
+            while (firstNum % secondNum !=0){
+                firstNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
+                secondNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
+                tempEquation = firstNum + selectedOperation + secondNum;
 
-            }else{//the two numbers generated is compatible, is divisible by each other
-
-                ExpressionsUtil equa = new ExpressionsUtil();
-                int answer = equa.ExpressionToNum(tempEasyEquation);
-                theAnswer = answer;
-                theEquation = tempEasyEquation;
-
-                return;//this return is used to exit this methods,
             }
+
+            ExpressionsUtil equa = new ExpressionsUtil();
+            theAnswer = equa.ExpressionToNum(tempEquation);
+            theEquation = tempEquation;
+            return;
 
         }
 
         //if the selected Operation is not a divide /
+        //do this stuff
         ExpressionsUtil equa = new ExpressionsUtil();
-        int answer = equa.ExpressionToNum(tempEasyEquation);
+        int answer = equa.ExpressionToNum(tempEquation);
 
         if (answer != -999){//if there was no exceptions
-            if (answer >= lowerBound && answer <= upperBound){//checks if the generated euqation>answer is within the easy range
-                theAnswer = answer;
-                theEquation = tempEasyEquation;
-                return;
+            while (answer < lowerBound || answer > upperBound) {//checks if the generated euqation>answer is within the easy range
+                firstNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
+                secondNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
+                tempEquation = firstNum + selectedOperation + secondNum;
+                answer = equa.ExpressionToNum(tempEquation);
 
-            }else{//the equation is out of scope, try again
-                generateEasy();
-                return;
             }
+
+            theAnswer = answer;
+            theEquation = tempEquation;
+            return;
+
         }else{
-            System.out.println("invalid math expression < this is displayed in EquationGenerator") ;
+            System.out.println("invalid math expression < this is displayed in OLDEquationGenerator") ;
             return; // do i want this return ?????
         }
 
     }
+
+
+
+
 
     //==============================================================
     //returns the answer to the equation that got generated
