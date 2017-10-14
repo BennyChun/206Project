@@ -5,10 +5,22 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 
 import java.util.Optional;
 
 public class LevelScreenController extends AbstractController {
+
+    @FXML
+    private Label difficultyLabel;
+
+    @FXML
+    private Label modeLabel;
+
+
+
+
+    //==============================================================================
 
     private ObservableList<EquationQuestion> lol;
 
@@ -68,4 +80,24 @@ public class LevelScreenController extends AbstractController {
 
     }
     //==========================================================================================
+
+    /**
+     * this sets the label for the
+     * @param selectedLevel
+     * @param selectedOperation
+     */
+    public void setDifficultyAndMode(String selectedLevel, String selectedOperation) {
+        difficultyLabel.setText(selectedLevel);
+
+        if (selectedOperation.equals("+")) {
+            modeLabel.setText("Addition");
+        }else if (selectedOperation.equals("-")){
+            modeLabel.setText("Subtraction");
+        }else if (selectedOperation.equals("*")){
+            modeLabel.setText("Multiplication");
+        }else {
+            modeLabel.setText("Division");
+        }
+    }
+
 }

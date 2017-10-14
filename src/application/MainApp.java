@@ -379,7 +379,10 @@ public class MainApp extends Application {
 			for (int i = 0 ; i < 10 ; i++) {
 				EquationQuestion temp = new EquationQuestion(selectedLevel, selectedOperation);
 				LOL.add(temp);
+				System.out.print(temp.getTheEquation());
+				System.out.println(temp.getTheAnswer());
 			}
+			controller.setDifficultyAndMode(selectedLevel,selectedOperation);
 
 			controller.setList(LOL);
 
