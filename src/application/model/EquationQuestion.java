@@ -2,7 +2,8 @@ package application.model;
 
 
 import application.util.MaoriAnswerUtil;
-import application.util.OLDEquationGenerator;
+import application.util.REFACTOREDEquationGenerator;
+
 import javafx.beans.property.*;
 
 /**
@@ -36,13 +37,14 @@ public class EquationQuestion {
      * @param selectedLevel
      * @param selectedOperation
      */
-    public void EquationQuestion(String selectedLevel , String selectedOperation){
+
+    public EquationQuestion(String selectedLevel , String selectedOperation){
         //generate a random equation base on the users input
         //save the randomly generated equation as a field
         //save the sanswer as a field
         //translate the sanswer to maori
 
-        OLDEquationGenerator generate = new OLDEquationGenerator(selectedLevel, selectedOperation);
+        REFACTOREDEquationGenerator generate = new REFACTOREDEquationGenerator(selectedLevel, selectedOperation);
         generate.generateEquation();
 
         theEquation = new SimpleStringProperty(generate.getTheEquation() + " = ");

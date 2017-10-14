@@ -1,10 +1,13 @@
 package application;
 import java.io.IOException;
 
+import application.model.EquationQuestion;
 import application.model.Question;
 import application.view.*;
 import com.google.gson.Gson;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -346,7 +349,7 @@ public class MainApp extends Application {
 	/**
 	 * This initialises the main game levels, takes a difficulty and a multiplication level
 	 */
-	public void initMainLevelScreen(){
+	public void initMainLevelScreen(String selectedLevel, String selectedOperation){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -360,8 +363,26 @@ public class MainApp extends Application {
 			_primaryStage.show();
 			_primaryStage.setResizable(false);
 
+
 			//give stage select controller access to the main app
 			LevelScreenController controller = loader.getController();
+
+			//im gonna make an observable list of EquationQuestions
+			//for loop to 10
+			//make a new EquationQuestion every time
+			//add the EquationQuestion to the list
+
+			//then im gonna pass this EquationQuestions to the LevelScreenController
+			//the LevelScreenController will then use the observable list as he pleaseseseses
+
+			ObservableList<EquationQuestion> LOL = FXCollections.observableArrayList();
+			for (int i = 0 ; i < 10 ; i++) {
+				EquationQuestion temp = new EquationQuestion(selectedLevel, selectedOperation);
+				LOL.add(temp);
+			}
+
+			controller.setList(LOL);
+
 
 
 			controller.setMainApp(this);

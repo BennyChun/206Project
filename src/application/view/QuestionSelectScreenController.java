@@ -16,24 +16,27 @@ public class QuestionSelectScreenController extends AbstractController{
     public void handleAdd(){//initMainLevelScreen
 
         String selectedOperator = "+";
-        _mainApp.initMainLevelScreen();
+        _mainApp.initMainLevelScreen(selectedLevel , selectedOperator);
     }
 
     @FXML
     public void handleMinus(){
         String selectedOperator = "-";
+        _mainApp.initMainLevelScreen(selectedLevel , selectedOperator);
     }
 
     @FXML
     public void handleMult(){//initMainLevelScreen
 
         String selectedOperator = "*";
+        _mainApp.initMainLevelScreen(selectedLevel , selectedOperator);
     }
 
     @FXML
     public void handleDiv(){//initMainLevelScreen
 
         String selectedOperator = "/";
+        _mainApp.initMainLevelScreen(selectedLevel , selectedOperator);
     }
 
     /**
