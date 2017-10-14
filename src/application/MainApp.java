@@ -314,7 +314,7 @@ public class MainApp extends Application {
 	 *
 	 * @param selectedLevel
 	 */
-	public void initQuestionSelect(String selectedLevel){
+	public void initQuestionSelect(String selectedLevel){//either easy or hard
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -328,9 +328,13 @@ public class MainApp extends Application {
 			_primaryStage.show();
 			_primaryStage.setResizable(false);
 
+
 			//give stage select controller access to the main app
 			QuestionSelectScreenController controller = loader.getController();
+			controller.setLevel(selectedLevel);
 			controller.setMainApp(this);
+
+
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -339,7 +343,7 @@ public class MainApp extends Application {
 	/**
 	 * This initialises the main game levels, takes a difficulty and a multiplication level
 	 */
-	public void initMainLevelScreen(){
+	public void initMainLevelScreen(String selectedLevel , String selectedOperation){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();

@@ -20,8 +20,7 @@ public class Question {
 	private boolean skipped;  //this records whether this Question object has been skipped by the user
 	private boolean correct;  //this records whether this Question has been answered correctly by the user
 	private int attempts;		// this records the number of attempts that THIS question has been attempted
-	
-	
+
 	/**
 	 * a constructor for the Question object, it takes an int and saves it as its own unique* state
 	 * The Question initial state for "skipped" is false.

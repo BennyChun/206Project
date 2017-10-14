@@ -13,7 +13,11 @@ public class EquationGenerator {
     private String selectedOperation;
     private int theAnswer; // the answer to the passed in expression
     private  String theEquation;//the equation that got generated
+
+
     private int upperBound;//this records the upper bound, e.g , easy will be 20 , hard will be 99
+
+    private int lowerBound=1;//this records the lower bound, DEFAULT 1
 
     /**
      * this constructor takes an argument which represents the level the user has selected
@@ -26,7 +30,7 @@ public class EquationGenerator {
      *
      * @param selectedLevel selectedOperation
      */
-    EquationGenerator(String selectedLevel, String selectedOperation){
+    public EquationGenerator(String selectedLevel, String selectedOperation){
         this.selectedLevel=selectedLevel;
         this.selectedOperation = selectedOperation;
 
@@ -40,6 +44,31 @@ public class EquationGenerator {
     }
 
 
+
+    //=======================================================
+
+    /**
+     * this method lets you set the lower bound for the random equation generation
+     * @param upperBound
+     */
+    public void setUpperBound(int upperBound){
+        this.upperBound = upperBound;
+    }
+
+    /**
+     * this method lets you set the upper bound for the random equation generation
+     * @param lowerBound
+     */
+    public void setLowerBound(int lowerBound){
+        this.lowerBound = lowerBound;
+    }
+
+    //=======================================================
+
+
+
+
+
     public void generateEquation(){
         generateEasy();
     }
@@ -49,9 +78,9 @@ public class EquationGenerator {
     private void generateEasy() {
         Random rand = new Random();
 
-        //generate 2 random numbers between 1 - 20
-        int firstEasyNum = rand.nextInt((upperBound - 1) + 1) + 1;
-        int secondEasyNum = rand.nextInt((upperBound - 1) + 1) + 1;
+        //generate 2 random numbers between lower bound and upper bound
+        int firstEasyNum = rand.nextInt((upperBound - lowerBound) + 1) + lowerBound;
+        int secondEasyNum = rand.nextInt((upperBound - lowerBound) + 1) + lowerBound;
 
         String tempEasyEquation = firstEasyNum + selectedOperation + secondEasyNum;
 
@@ -79,7 +108,7 @@ public class EquationGenerator {
         int answer = equa.ExpressionToNum(tempEasyEquation);
 
         if (answer != -999){//if there was no exceptions
-            if (answer > 0 && answer <= upperBound){//checks if the generated euqation>answer is within the easy range
+            if (answer >= lowerBound && answer <= upperBound){//checks if the generated euqation>answer is within the easy range
                 theAnswer = answer;
                 theEquation = tempEasyEquation;
                 return;

@@ -21,14 +21,17 @@ public class testEquationGenerator {
      */
     public static void main(String[] args){
 
-        EquationGenerator test = new EquationGenerator("easy" , "/");
-        test.generateEquation();
+
+        for (int i = 0 ; i < 10 ; i++) {
 
 
+            EquationGenerator test = new EquationGenerator("hard", "*");
+            test.generateEquation();
 
 
-        System.out.print(test.getTheEquation() + " = ");
-        System.out.println (test.getTheAnswer());
+            System.out.print(test.getTheEquation() + " = ");
+            System.out.println(test.getTheAnswer());
+        }
     }
 
 
