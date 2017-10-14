@@ -1,8 +1,13 @@
 package application.view;
 
 import application.model.EquationQuestion;
+
+import application.util.ReadHTKFile;
+import application.util.RecordingUtil;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -56,6 +61,7 @@ public class LevelScreenController extends AbstractController {
 
     //==============================================================================
     private int currentQuestionNumber;//keeps track of which question we are on
+    private String mao="";
 
     //==============================================================================
 
@@ -102,11 +108,10 @@ public class LevelScreenController extends AbstractController {
     //=================================== MIGHT WANT TO CHANGE DIALOG ========================================
     @FXML
     public void handleBack(){
-
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
-        alert.setHeaderText("ALL DATA WILL BE LOST !");
-        alert.setContentText("ARE U SURE ????!?!?!? BRU?");
+        alert.setHeaderText("Are you sure you want to leave?");
+        alert.setContentText("All data of this session will be lost");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
@@ -118,7 +123,34 @@ public class LevelScreenController extends AbstractController {
     //==========================================================================================
     @FXML
     public void handleRecord(){
+        if (currentQuestionNumber <=11 ){ //THIS IS <= 9 BECAUSE THE LIST OF QUESTIONS GOES FROM 0 - 9
 
+            Task<Void> recordTask = new Task<Void>() {
+                @Override
+                public Void call() {
+                    listenButton.setDisable(true);
+                    confirmButton.setDisable(true);
+                    RecordingUtil record = new RecordingUtil();		//instantiates the Recording class so that we can use it's Utilities
+                    record.recordVoice();							//record the users voice
+                    record.convertVoiceToMaori();					//pass the users wav file to the KHT, and HTK will output the foo.mlf file
+                    ReadHTKFile readRecout = new ReadHTKFile();		//instantiates the ReadHTKFile class
+                    readRecout.readHTK();							//reads the foo.mlf file
+                    mao = readRecout.getMaoriWords();		        //get the String of the maori word (this is the the users input answer)
+                    return null;
+                }
+                @Override
+                public void done() {
+                    Platform.runLater(() -> {
+                        listenButton.setDisable(false);
+                        confirmButton.setDisable(false);
+                    });
+                }
+            };
+            new Thread(recordTask).start();
+        }else {// all 10 questions has been answered
+            System.out.println("you've finished the " + currentQuestionNumber + " questions!");//used for testing purposes
+            //getResults();
+        }
 
 
 
@@ -137,10 +169,24 @@ public class LevelScreenController extends AbstractController {
     //==========================================================================================
     @FXML
     public void handleListen(){
-
-
-
-
+        Task<Void> playRecordingTask = new Task<Void>() {
+            @Override
+            public Void call() {
+                confirmButton.setDisable(true);
+                recordButton.setDisable(true);
+                RecordingUtil play = new RecordingUtil();
+                play.playRecording();
+                return null;
+            }
+            @Override
+            public void done() {
+                Platform.runLater(() ->{
+                    confirmButton.setDisable(false);
+                    recordButton.setDisable(false);
+                });
+            }
+        };
+        new Thread(playRecordingTask).start();
 
 
     }
@@ -166,6 +212,7 @@ public class LevelScreenController extends AbstractController {
     }
 
     //============================================================================================
+
 
 
 

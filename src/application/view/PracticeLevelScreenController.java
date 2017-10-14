@@ -85,9 +85,8 @@ public class PracticeLevelScreenController extends AbstractController{
 		showCurrentAttempts();
 		showCurrentQuestionNumber();
 
-
-
 	}
+
 	@FXML
 	public void handleConfirm() {
 		processAnswer();
