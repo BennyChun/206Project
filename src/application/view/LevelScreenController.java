@@ -8,11 +8,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
-import org.controlsfx.control.PopOver;
 
 import java.util.Optional;
 
-import static org.controlsfx.control.PopOver.ArrowLocation.TOP_LEFT;
+
 
 public class LevelScreenController extends AbstractController {
 
