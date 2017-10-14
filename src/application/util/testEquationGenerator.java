@@ -1,6 +1,9 @@
 package application.util;
 
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  * ALL WORK AND NO PLAY MAKES JACK A DULL BOY
  * ALL WORK AN D NOT PLAY MAKES JCUAK A DULL BOY
@@ -21,8 +24,14 @@ public class testEquationGenerator {
      */
     public static void main(String[] args){
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate localDate = LocalDate.now();
+        String ieee = dtf.format(localDate);
+        System.out.println(ieee);
+
 
         REFACTOREDEquationGenerator test = new REFACTOREDEquationGenerator("easy", "*");
+
 
 
 
