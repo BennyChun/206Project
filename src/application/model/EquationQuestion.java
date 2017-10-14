@@ -1,7 +1,7 @@
 package application.model;
 
 
-import application.util.EquationGenerator;
+import application.util.OLDEquationGenerator;
 import javafx.beans.property.*;
 
 /**
@@ -37,7 +37,7 @@ public class EquationQuestion {
         //save the sanswer as a field
         //translate the sanswer to maori
 
-        EquationGenerator generate = new EquationGenerator(selectedLevel, selectedOperation);
+        OLDEquationGenerator generate = new OLDEquationGenerator(selectedLevel, selectedOperation);
         generate.generateEquation();
 
         theEquation = new SimpleStringProperty(generate.getTheEquation() + " = ");

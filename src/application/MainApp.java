@@ -372,7 +372,6 @@ public class MainApp extends Application {
 
 
 
-
 	/**
 	 * when this method gets called
 	 * it closes the primaryStage

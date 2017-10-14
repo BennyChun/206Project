@@ -22,7 +22,8 @@ public class testEquationGenerator {
     public static void main(String[] args){
 
 
-        EquationGenerator test = new EquationGenerator("easy", "*");
+        REFACTOREDEquationGenerator test = new REFACTOREDEquationGenerator("easy", "*");
+
 
 
         for (int i = 0 ; i < 10 ; i++) {
