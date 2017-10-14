@@ -155,7 +155,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <FontAwesomeIconView glyphName="ANDROID" layoutX="94.0" layoutY="480.0" size="350" />
+      <FontAwesomeIconView fx:id="character" glyphName="ANDROID" layoutX="94.0" layoutY="480.0" size="350" />
       <Label fx:id="difficultyLabel" layoutX="369.0" layoutY="24.0" prefHeight="37.0" prefWidth="120.0" text="mao">
          <font>
             <Font name="Maiandra GD" size="30.0" />
@@ -165,5 +165,6 @@
          <font>
             <Font name="Maiandra GD" size="30.0" />
          </font></Label>
+      <Label layoutX="468.0" layoutY="224.0" text="What is  42 + 42?" />
    </children>
 </AnchorPane>

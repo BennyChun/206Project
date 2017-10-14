@@ -1,13 +1,18 @@
 package application.view;
 
 import application.model.EquationQuestion;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
+import org.controlsfx.control.PopOver;
 
 import java.util.Optional;
+
+import static org.controlsfx.control.PopOver.ArrowLocation.TOP_LEFT;
 
 public class LevelScreenController extends AbstractController {
 
@@ -16,8 +21,6 @@ public class LevelScreenController extends AbstractController {
 
     @FXML
     private Label modeLabel;
-
-
 
 
     //==============================================================================
