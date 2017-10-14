@@ -64,6 +64,11 @@ public class LevelScreenController extends AbstractController {
         correctLabel.setVisible(false);
     }
 
+    /**
+     * this method should be called from the start
+     * it should should get the first question from the list
+     * and display the equation on the label
+     */
     public void showCurrentQuestion(){
         questionLabel.setText("hello");
     }
