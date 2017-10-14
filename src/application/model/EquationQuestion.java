@@ -2,10 +2,7 @@ package application.model;
 
 
 import application.util.EquationGenerator;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 /**
  * This class will represent a model for a Question (pretty similar to the Question class)
@@ -21,11 +18,8 @@ public class EquationQuestion {
 
     private IntegerProperty theAnswer;  //records the answer
     private StringProperty theEquation; //records the equation
-    private IntegerProperty numAttemps; //records the number of attemps
-
-
-
-
+    private IntegerProperty currentAttemps; //records the number of attemps
+    private BooleanProperty correct;    //records whether this question got answered correct
 
     /**
      * this constructor takes 2 inputs, which represents the users selectedLevel
@@ -46,14 +40,67 @@ public class EquationQuestion {
         EquationGenerator generate = new EquationGenerator(selectedLevel, selectedOperation);
         generate.generateEquation();
 
-        theEquation = new SimpleStringProperty(generate.getTheEquation());
+        theEquation = new SimpleStringProperty(generate.getTheEquation() + " = ");
         theAnswer = new SimpleIntegerProperty(generate.getTheAnswer());
 
-
-
-
+        currentAttemps =new  SimpleIntegerProperty(1);
+        correct = new SimpleBooleanProperty(false);
     }
 
+    //======================================setters and getter====================================
+//    private IntegerProperty theAnswer;  //records the answer
+//    private StringProperty theEquation; //records the equation
+//    private IntegerProperty numAttemps; //records the number of attemps
+//    private BooleanProperty correct;
+
+    //===========================================
+    public int getTheAnswer(){
+        return theAnswer.get();
+    }
+    public IntegerProperty theAnswerProperty() {
+        return theAnswer;
+    }
+
+//    public void setTheAnswer(int theAnswer) {
+//        this.theAnswer.set(theAnswer);
+//    }
+    //=============================================
+    public String getTheEquation() {
+        return theEquation.get();
+    }
+
+    public StringProperty theEquationProperty() {
+        return theEquation;
+    }
+
+//    public void setTheEquation(String theEquation) {
+//        this.theEquation.set(theEquation);
+//    }
+    //=======================================================
+    public int getCurrentAttemps() {
+        return currentAttemps.get();
+    }
+
+    public IntegerProperty currentAttempsProperty() {
+        return currentAttemps;
+    }
+
+    public void setCurrentAttemps(int currentAttemps) {
+        this.currentAttemps.set(currentAttemps);
+    }
+
+    //============================================================
+    public boolean isCorrect() {
+        return correct.get();
+    }
+
+    public BooleanProperty correctProperty() {
+        return correct;
+    }
+
+    public void setCorrect(boolean correct) {
+        this.correct.set(correct);
+    }
 
 
 }

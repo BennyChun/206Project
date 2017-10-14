@@ -17,7 +17,7 @@ public class EquationGenerator {
 
     private int upperBound;//this records the upper bound, e.g , easy will be 20 , hard will be 99
 
-    private int lowerBound=1;//this records the lower bound, DEFAULT 1
+    private int lowerBound;//this records the lower bound, DEFAULT 1
 
     /**
      * this constructor takes an argument which represents the level the user has selected
@@ -41,6 +41,7 @@ public class EquationGenerator {
         }else{
             System.out.println("you have passed an invalid argument to the constructor, please only pass easy or hard");
         }
+        lowerBound = 1;
     }
 
 
