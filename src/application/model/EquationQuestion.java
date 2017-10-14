@@ -1,6 +1,7 @@
 package application.model;
 
 
+import application.util.MaoriAnswerUtil;
 import application.util.OLDEquationGenerator;
 import javafx.beans.property.*;
 
@@ -17,8 +18,12 @@ import javafx.beans.property.*;
 public class EquationQuestion {
 
     private IntegerProperty theAnswer;  //records the answer
+
+
+
+    private StringProperty theAnswerInMaori; //records the answer in maori :String
     private StringProperty theEquation; //records the equation
-    private IntegerProperty currentAttemps; //records the number of attemps
+    private IntegerProperty currentAttempts; //records the number of attemps
     private BooleanProperty correct;    //records whether this question got answered correct
 
     /**
@@ -43,17 +48,19 @@ public class EquationQuestion {
         theEquation = new SimpleStringProperty(generate.getTheEquation() + " = ");
         theAnswer = new SimpleIntegerProperty(generate.getTheAnswer());
 
-        currentAttemps =new  SimpleIntegerProperty(1);
+        currentAttempts =new  SimpleIntegerProperty(1);
         correct = new SimpleBooleanProperty(false);
+
+
+        MaoriAnswerUtil mao = new MaoriAnswerUtil();//use the maorianswer util
+        mao.numberToMaori(getTheAnswer());//pass the int, and convert to a maori word
+        String maomao = mao.getMaoriWords();//get the maori word
+        theAnswerInMaori = new SimpleStringProperty(maomao);
+
     }
 
     //======================================setters and getter====================================
-//    private IntegerProperty theAnswer;  //records the answer
-//    private StringProperty theEquation; //records the equation
-//    private IntegerProperty numAttemps; //records the number of attemps
-//    private BooleanProperty correct;
 
-    //===========================================
     public int getTheAnswer(){
         return theAnswer.get();
     }
@@ -61,9 +68,6 @@ public class EquationQuestion {
         return theAnswer;
     }
 
-//    public void setTheAnswer(int theAnswer) {
-//        this.theAnswer.set(theAnswer);
-//    }
     //=============================================
     public String getTheEquation() {
         return theEquation.get();
@@ -73,20 +77,17 @@ public class EquationQuestion {
         return theEquation;
     }
 
-//    public void setTheEquation(String theEquation) {
-//        this.theEquation.set(theEquation);
-//    }
     //=======================================================
-    public int getCurrentAttemps() {
-        return currentAttemps.get();
+    public int getCurrentAttempts() {
+        return currentAttempts.get();
     }
 
-    public IntegerProperty currentAttempsProperty() {
-        return currentAttemps;
+    public IntegerProperty currentAttemptsProperty() {
+        return currentAttempts;
     }
 
-    public void setCurrentAttemps(int currentAttemps) {
-        this.currentAttemps.set(currentAttemps);
+    public void setCurrentAttempts(int currentAttempts) {
+        this.currentAttempts.set(currentAttempts);
     }
 
     //============================================================
@@ -100,6 +101,14 @@ public class EquationQuestion {
 
     public void setCorrect(boolean correct) {
         this.correct.set(correct);
+    }
+    //=============================================================
+    public String getTheAnswerInMaori() {
+        return theAnswerInMaori.get();
+    }
+
+    public StringProperty theAnswerInMaoriProperty() {
+        return theAnswerInMaori;
     }
 
 

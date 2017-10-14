@@ -100,7 +100,7 @@ public class MainApp extends Application {
 	 * which is either easy or hard for the level to be generated
 	 * @param selectedLevel
 	 */
-	public void initLevelScreen(String selectedLevel){
+	public void initLevelScreen(String selectedLevel){// THIS MAKES THE PRACTICE SCREEEEEN
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -362,6 +362,8 @@ public class MainApp extends Application {
 
 			//give stage select controller access to the main app
 			LevelScreenController controller = loader.getController();
+
+
 			controller.setMainApp(this);
 		}catch(IOException e){
 			e.printStackTrace();

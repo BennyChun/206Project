@@ -11,23 +11,27 @@ public class QuestionSelectScreenController extends AbstractController{
         _mainApp.initPlaySelect();
     }
 
+
     @FXML
     public void handleAdd(){//initMainLevelScreen
+
         String selectedOperator = "+";
     }
 
     @FXML
-    public void handleMinus(){//initMainLevelScreen
+    public void handleMinus(){
         String selectedOperator = "-";
     }
 
     @FXML
     public void handleMult(){//initMainLevelScreen
+
         String selectedOperator = "*";
     }
 
     @FXML
     public void handleDiv(){//initMainLevelScreen
+
         String selectedOperator = "/";
     }
 
