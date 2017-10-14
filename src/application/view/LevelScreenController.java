@@ -92,7 +92,7 @@ public class LevelScreenController extends AbstractController {
 
         EquationQuestion currentEquation = equationList.get(currentQuestionNumber - 1);
 
-        questionLabel.setText(" What is " + currentEquation.getTheEquation() + "?");
+        questionLabel.setText(" What is " + currentEquation.getTheEquation() + "? ");
     }
 
 

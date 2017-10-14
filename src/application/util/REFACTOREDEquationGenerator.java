@@ -87,11 +87,12 @@ public class REFACTOREDEquationGenerator {
             while (firstNum % secondNum !=0){
                 firstNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
                 secondNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
-                tempEquation = firstNum + " ÷ " + secondNum;
+                tempEquation = firstNum + " " + selectedOperation + " " + secondNum;
 
             }
 
             ExpressionsUtil equa = new ExpressionsUtil();
+            tempEquation = firstNum + " ÷ " + secondNum;
             theAnswer = equa.ExpressionToNum(tempEquation);
             theEquation = tempEquation;
             return;
