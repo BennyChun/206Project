@@ -87,7 +87,7 @@ public class REFACTOREDEquationGenerator {
             while (firstNum % secondNum !=0){
                 firstNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
                 secondNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
-                tempEquation = firstNum + selectedOperation + secondNum;
+                tempEquation = firstNum + " ÷ " + secondNum;
 
             }
 
@@ -103,16 +103,20 @@ public class REFACTOREDEquationGenerator {
         ExpressionsUtil equa = new ExpressionsUtil();
         int answer = equa.ExpressionToNum(tempEquation);
 
+
         if (answer != -999){//if there was no exceptions
             while (answer < lowerBound || answer > upperBound) {//checks if the generated euqation>answer is within the easy range
                 firstNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
                 secondNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
-                tempEquation = firstNum + selectedOperation + secondNum;
+                tempEquation = firstNum + " " + selectedOperation + " " + secondNum;
                 answer = equa.ExpressionToNum(tempEquation);
 
             }
 
             theAnswer = answer;
+            if(selectedOperation.equals("*")){
+                tempEquation = firstNum + " x " + secondNum;
+            }
             theEquation = tempEquation;
             return;
 

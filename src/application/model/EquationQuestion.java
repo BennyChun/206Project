@@ -47,7 +47,7 @@ public class EquationQuestion {
         REFACTOREDEquationGenerator generate = new REFACTOREDEquationGenerator(selectedLevel, selectedOperation);
         generate.generateEquation();
 
-        theEquation = new SimpleStringProperty(generate.getTheEquation() + " = ");
+        theEquation = new SimpleStringProperty(generate.getTheEquation() );
         theAnswer = new SimpleIntegerProperty(generate.getTheAnswer());
 
         currentAttempts =new  SimpleIntegerProperty(1);

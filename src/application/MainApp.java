@@ -388,6 +388,7 @@ public class MainApp extends Application {
 			controller.setDifficultyAndMode(selectedLevel,selectedOperation);
 
 			controller.setList(LOL);
+			controller.showCurrentQuestion();
 
 
 

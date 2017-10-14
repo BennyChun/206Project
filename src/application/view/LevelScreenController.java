@@ -5,8 +5,11 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 import java.util.Optional;
@@ -17,20 +20,38 @@ public class LevelScreenController extends AbstractController {
 
     //=================================@FXML=========================================
 
-    @FXML
-    private Label difficultyLabel;
+    @FXML private Label difficultyLabel;
+    @FXML private Label modeLabel;
+    @FXML private Label incorrectLabel;
+    @FXML private Label correctLabel;
+    @FXML private Label questionLabel;
+    //===============================================================================
+    //question tracker fields
+    @FXML private ImageView questionOne;
+    @FXML private ImageView questionTwo;
+    @FXML private ImageView questionThree;
+    @FXML private ImageView questionFour;
+    @FXML private ImageView questionFive;
+    @FXML private ImageView questionSix;
+    @FXML private ImageView questionSeven;
+    @FXML private ImageView questionEight;
+    @FXML private ImageView questionNine;
+    @FXML private ImageView questionTen;
 
-    @FXML
-    private Label modeLabel;
+    //===============================================================================
+    //attempt tracking fields
+    @FXML private Rectangle attemptOne;
+    @FXML private Rectangle attemptTwo;
+    @FXML private Rectangle attemptThree;
 
-    @FXML
-    private Label incorrectLabel;
-
-    @FXML
-    private Label correctLabel;
-
-    @FXML
-    private Label questionLabel;
+    //===============================================================================
+    // button fields
+    @FXML private Button recordButton;
+    @FXML private Button listenButton;
+    @FXML private Button confirmButton;
+    @FXML private Button skipButton;
+    @FXML private Button retryButton;
+    @FXML private Button nextButton;
 
 
     //==============================================================================
@@ -38,14 +59,13 @@ public class LevelScreenController extends AbstractController {
 
     //==============================================================================
 
-    private ObservableList<EquationQuestion> lol;
+    private ObservableList<EquationQuestion> equationList;
 
     /**
      * this constructor takes an observableList of EquationQuestion objects
-     * @param lol
      */
-    public void setList(ObservableList<EquationQuestion> lol){
-        this.lol = lol;
+    public void setList(ObservableList<EquationQuestion> equationList){
+        this.equationList = equationList;
     }
 
     //========================================================================================
@@ -59,7 +79,6 @@ public class LevelScreenController extends AbstractController {
 
         currentQuestionNumber = 1;//initially the current question number is 1
 
-
         incorrectLabel.setVisible(false);
         correctLabel.setVisible(false);
     }
@@ -70,7 +89,10 @@ public class LevelScreenController extends AbstractController {
      * and display the equation on the label
      */
     public void showCurrentQuestion(){
-        questionLabel.setText("hello");
+
+        EquationQuestion currentEquation = equationList.get(currentQuestionNumber - 1);
+
+        questionLabel.setText(" What is " + currentEquation.getTheEquation() + "?");
     }
 
 
