@@ -451,7 +451,6 @@ public class PracticeLevelScreenController extends AbstractController{
 	 * 
 	 * 
 	 * it takes a Question object, and displays the integer that is associated with that question
-	 * @param Question
 	 */
 	private void showQuestionDetails(Question question) {
 

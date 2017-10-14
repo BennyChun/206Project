@@ -15,12 +15,26 @@ import java.util.Optional;
 
 public class LevelScreenController extends AbstractController {
 
+    //=================================@FXML=========================================
+
     @FXML
     private Label difficultyLabel;
 
     @FXML
     private Label modeLabel;
 
+    @FXML
+    private Label incorrectLabel;
+
+    @FXML
+    private Label correctLabel;
+
+    @FXML
+    private Label questionLabel;
+
+
+    //==============================================================================
+    private int currentQuestionNumber;//keeps track of which question we are on
 
     //==============================================================================
 
@@ -33,6 +47,28 @@ public class LevelScreenController extends AbstractController {
     public void setList(ObservableList<EquationQuestion> lol){
         this.lol = lol;
     }
+
+    //========================================================================================
+    /**
+     * Initializes the controller class. This method is automatically called
+     * after the fxml file has been loaded.
+     */
+    @FXML
+    private void initialize() {
+        //should initialize the all the labels on the level scene
+
+        currentQuestionNumber = 1;//initially the current question number is 1
+
+
+        incorrectLabel.setVisible(false);
+        correctLabel.setVisible(false);
+    }
+
+    public void showCurrentQuestion(){
+        questionLabel.setText("hello");
+    }
+
+
 
 
 
@@ -84,7 +120,7 @@ public class LevelScreenController extends AbstractController {
     //==========================================================================================
 
     /**
-     * this sets the label for the
+     * this sets the label for the difficulty and the operator that they chose
      * @param selectedLevel
      * @param selectedOperation
      */

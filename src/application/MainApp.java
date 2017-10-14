@@ -375,6 +375,9 @@ public class MainApp extends Application {
 			//then im gonna pass this EquationQuestions to the LevelScreenController
 			//the LevelScreenController will then use the observable list as he pleaseseseses
 
+			//IF YOU WANT TO USE THIS METHOD TO CREATE THE LEVELSCREEN
+			//WHEN YOU PASS IN A CUSTOM LIST< PLEASE DONT MAKE A NEW LIST
+			//NEED TO CHANGE THIS CODE
 			ObservableList<EquationQuestion> LOL = FXCollections.observableArrayList();
 			for (int i = 0 ; i < 10 ; i++) {
 				EquationQuestion temp = new EquationQuestion(selectedLevel, selectedOperation);

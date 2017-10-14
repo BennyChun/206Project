@@ -109,16 +109,6 @@
             </ImageView>
          </children>
       </HBox>
-      <Label layoutX="231.0" layoutY="24.0" text="Difficulty:">
-         <font>
-            <Font name="Maiandra GD" size="30.0" />
-         </font>
-      </Label>
-      <Label layoutX="581.0" layoutY="24.0" text="Mode:">
-         <font>
-            <Font name="Maiandra GD" size="30.0" />
-         </font>
-      </Label>
       <HBox layoutX="447.0" layoutY="105.0" prefHeight="30.0" prefWidth="130.0" spacing="20.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
@@ -166,11 +156,6 @@
          <font>
             <Font name="Maiandra GD" size="30.0" />
          </font></Label>
-      <Label layoutX="337.0" layoutY="194.0" prefHeight="73.0" prefWidth="490.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15px;" text=" What is 42 + 42?">
-         <font>
-            <Font name="Maiandra GD" size="60.0" />
-         </font>
-      </Label>
       <Circle fill="WHITE" layoutX="312.0" layoutY="249.0" radius="18.0" stroke="WHITE" strokeType="INSIDE" />
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0">
          <children>
@@ -323,16 +308,6 @@
                </graphic>
             </JFXButton>
             <FontAwesomeIconView fx:id="character1" glyphName="ANDROID" layoutX="84.0" layoutY="487.0" size="350" />
-            <Label fx:id="difficultyLabel1" layoutX="369.0" layoutY="24.0" prefHeight="37.0" prefWidth="120.0" text="wmao">
-               <font>
-                  <Font name="Maiandra GD" size="30.0" />
-               </font>
-            </Label>
-            <Label fx:id="modeLabel1" layoutX="679.0" layoutY="24.0" prefHeight="37.0" prefWidth="180.0" text="wmao">
-               <font>
-                  <Font name="Maiandra GD" size="30.0" />
-               </font>
-            </Label>
             <Label fx:id="questionLabel" layoutX="380.0" layoutY="170.0" prefHeight="88.0" prefWidth="490.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15px;" text=" What is 42 + 42?" AnchorPane.leftAnchor="383.0">
                <font>
                   <Font name="Maiandra GD" size="60.0" />
