@@ -157,7 +157,7 @@
             <Font name="Maiandra GD" size="30.0" />
          </font></Label>
       <Circle fill="WHITE" layoutX="312.0" layoutY="249.0" radius="18.0" stroke="WHITE" strokeType="INSIDE" />
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0">
+      <AnchorPane layoutX="14.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0">
          <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="14.0" onAction="#handleBack" prefHeight="14.0" prefWidth="31.0">
                <graphic>
@@ -255,9 +255,9 @@
                   </ImageView>
                </children>
             </HBox>
-            <Label fx:id="correctLabel" layoutX="383.0" layoutY="165.0" prefHeight="156.0" prefWidth="490.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15px;" text=" What is 42 + 42?">
+            <Label fx:id="correctLabel" layoutX="380.0" layoutY="165.0" prefHeight="156.0" prefWidth="490.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15px;" text="Correct!&#10; The answer is 84" visible="false" AnchorPane.leftAnchor="387.0">
                <font>
-                  <Font name="Maiandra GD" size="60.0" />
+                  <Font name="Maiandra GD" size="50.0" />
                </font>
             </Label>
             <Label layoutX="231.0" layoutY="24.0" text="Difficulty:">
@@ -310,15 +310,15 @@
             <FontAwesomeIconView fx:id="character1" glyphName="ANDROID" layoutX="84.0" layoutY="487.0" size="350" />
             <Label fx:id="questionLabel" layoutX="380.0" layoutY="170.0" prefHeight="88.0" prefWidth="490.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15px;" text=" What is 42 + 42?" AnchorPane.leftAnchor="383.0">
                <font>
-                  <Font name="Maiandra GD" size="60.0" />
+                  <Font name="Maiandra GD" size="50.0" />
                </font>
             </Label>
             <Circle fill="WHITE" layoutX="359.0" layoutY="213.0" radius="18.0" stroke="WHITE" strokeType="INSIDE" />
             <Circle fill="WHITE" layoutX="324.0" layoutY="225.0" radius="12.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.bottomAnchor="531.0" AnchorPane.leftAnchor="312.0" />
             <Circle fill="WHITE" layoutX="301.0" layoutY="237.0" radius="6.0" stroke="WHITE" strokeType="INSIDE" />
-            <Label fx:id="incorrectLabel" layoutX="383.0" layoutY="165.0" prefHeight="156.0" prefWidth="490.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15px;" text=" What is 42 + 42?">
+            <Label fx:id="incorrectLabel" focusTraversable="false" layoutX="387.0" layoutY="165.0" prefHeight="156.0" prefWidth="545.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15px;" text=" Awww, not quite right &#10; You said 42" visible="false" AnchorPane.leftAnchor="387.0">
                <font>
-                  <Font name="Maiandra GD" size="60.0" />
+                  <Font name="Maiandra GD" size="50.0" />
                </font>
             </Label>
          </children>
