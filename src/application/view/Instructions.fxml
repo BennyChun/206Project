@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.BorderPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InstructionsController">
-   <bottom>
-      <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleContinue" style="-fx-background-color: #ffffff;" text="CONTINUE" BorderPane.alignment="TOP_RIGHT">
+<!--http://blog.e-zest.com/gradients-in-javafx-2/ instructions for gradient backdrop found here. -->
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InstructionsController">
+   <children>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack">
          <font>
-            <Font name="Freestyle Script" size="18.0" />
+            <Font name="Maiandra GD" size="24.0" />
          </font>
-         <BorderPane.margin>
-            <Insets bottom="30.0" right="30.0" />
-         </BorderPane.margin>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
-   </bottom>
-   <center>
-      <JFXTextArea editable="false" focusColor="WHITE" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. &#10;In rutrum, lorem sit amet congue ullamcorper, eros purus&#10; mollis ex, non malesuada mi nulla a orci. Curabitur pretium &#10;magna eu ligula pellentesque, vel " wrapText="true" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="50.0" left="125.0" right="125.0" top="100.0" />
-         </BorderPane.margin>
-         <font>
-            <Font name="Maiandra GD" size="18.0" />
-         </font>
-      </JFXTextArea>
-   </center>
-</BorderPane>
+      <ScrollPane layoutX="237.0" layoutY="218.0" prefHeight="550.0" prefWidth="550.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="535.0">
+               <children>
+                  <VBox layoutX="151.0" layoutY="102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <FontAwesomeIconView glyphName="BOOK" layoutX="427.0" layoutY="172.0" size="184" />
+   </children>
+   <stylesheets>
+      <URL value="@scrollpane.css" />
+      <URL value="@background.css" />
+   </stylesheets>
+</AnchorPane>

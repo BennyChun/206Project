@@ -3,8 +3,6 @@ package application.model;
 import application.util.MaoriAnswerUtil;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 /**
  * this is a Question object
@@ -15,15 +13,15 @@ import javafx.beans.property.StringProperty;
  *
  */
 public class Question {
-	private IntegerProperty _theNumber;   //this is a StringProprty that is associated with this Question object
+
+
+	private IntegerProperty _theNumber;   //this is a StringProperty that is associated with this Question object
 	
 	
-	private boolean skipped;  //this records whether this Question object has been skipped by the user.
-	private boolean correct;  //this records whether this Question has been answered correctly by the user.
-	private int attempts;     //this records the number of attempts on this question, initially zero.
-	private String maoriWord; //this records the maori word that is associated with this Question.
-	
-	
+	private boolean skipped;  //this records whether this Question object has been skipped by the user
+	private boolean correct;  //this records whether this Question has been answered correctly by the user
+	private int attempts;		// this records the number of attempts that THIS question has been attempted
+
 	/**
 	 * a constructor for the Question object, it takes an int and saves it as its own unique* state
 	 * The Question initial state for "skipped" is false.
@@ -35,9 +33,7 @@ public class Question {
 		
 		skipped = false;
 		correct = false;
-		attempts = 0;
-		
-		setMaoriWord();
+		attempts = 1;             //initially 1 attempt
 	}
 
 
@@ -91,22 +87,18 @@ public class Question {
 	}
 	
 	/**
-	 * this sets the maori word equivalence to the number that is associated with this question
-	 * should only be called by the constructor of this class
+	 * this increments the attepts by 1
 	 */
-	private void setMaoriWord() {
-		MaoriAnswerUtil mao = new MaoriAnswerUtil();
-		mao.numberToMaori(_theNumber.getValue());
-		maoriWord = mao.getMaoriWords();
-		
+	public void addAttempts() {
+		attempts = attempts + 1;
 	}
 	
 	/**
-	 * this method returns the maori word equivalence to this Questions number
-	 * @return
+	 * this returns the number of attempts that this question has had
+	 * @return int : attempts
 	 */
-	public String getMaorWord() {
-		return maoriWord;
+	public int getAttempts() {
+		return attempts;
 	}
 	
 }

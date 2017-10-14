@@ -1,6 +1,5 @@
 package application.util;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MaoriAnswerUtil {
@@ -60,6 +59,9 @@ public class MaoriAnswerUtil {
 			
 			if (secondDigit == 0) {
 				finalMaoriWords = numberToMaori.get(firstDigit) + " tekau";
+				
+			}else if (firstDigit == 1) {	
+				finalMaoriWords = "tekau maa " + numberToMaori.get(secondDigit);
 			}else {
 				finalMaoriWords = numberToMaori.get(firstDigit) + " tekau maa " + numberToMaori.get(secondDigit);
 			}

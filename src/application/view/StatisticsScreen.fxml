@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
-<?import javafx.scene.control.TreeTableColumn?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StatisticsScreenController">
-   <children>
-      <JFXTreeTableView prefHeight="400.0" prefWidth="404.0">
-         <columns>
-            <TreeTableColumn prefWidth="75.0" text="Attempt #" />
-            <TreeTableColumn prefWidth="97.5" text="Difficulty" />
-            <TreeTableColumn prefWidth="107.0" text="Score" />
-            <TreeTableColumn prefWidth="123.0" text="Time Stamp" />
-         </columns>
-      </JFXTreeTableView>
-      <JFXButton buttonType="RAISED" layoutX="504.0" layoutY="337.0" onAction="#handleContinue" style="-fx-background-color: #ffffff;" text="Continue">
-         <font>
-            <Font name="Freestyle Script" size="24.0" />
-         </font>
-      </JFXButton>
-   </children>
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StatisticsScreenController">
+    <children>
+        <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack">
+            <font>
+                <Font name="Maiandra GD" size="24.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@back-arrow.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+      <FontAwesomeIconView />
+      <FontAwesomeIconView glyphName="LINE_CHART" layoutX="407.0" layoutY="172.0" size="184" />
+      <StackPane layoutX="237.0" layoutY="226.0" prefHeight="550.0" prefWidth="550.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Label text="Easy Statistics">
+                     <font>
+                        <Font name="Maiandra GD" size="37.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+    </children>
 </AnchorPane>

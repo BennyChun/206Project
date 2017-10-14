@@ -1,70 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
-   <center>
-      <VBox alignment="TOP_CENTER" prefHeight="315.0" prefWidth="600.0" spacing="15.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="TATAI!">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="150.0" layoutY="679.0" onAction="#handleQuit" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="QUIT">
+         <font>
+            <Font name="Maiandra GD" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="480.0" layoutY="32.0" prefHeight="143.0" prefWidth="479.0" text="TATAI!">
+         <font>
+            <Font name="Maiandra GD" size="142.0" />
+         </font>
+      </Label>
+   <VBox layoutX="55.0" layoutY="85.0" prefHeight="648.0" prefWidth="300.0" spacing="30.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="128.0">
+      <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PLAY">
                <font>
-                  <Font name="Freestyle Script" size="82.0" />
-               </font>
-            </Label>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
-               <font>
-                  <Font name="Freestyle Script" size="42.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Icons/263048-miscellaneous-elements/png/play-button.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleInstructiosn" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
-               <font>
-                  <Font name="Freestyle Script" size="24.0" />
+                  <Font name="Maiandra GD" size="32.0" />
                </font>
             </JFXButton>
-         </children>
-         <BorderPane.margin>
-            <Insets top="80.0" />
-         </BorderPane.margin>
-      </VBox>
-   </center>
-   <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="420.0" BorderPane.alignment="CENTER">
-         <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleStats" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="STATS">
-               <HBox.margin>
-                  <Insets left="25.0" top="30.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Freestyle Script" size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleQuit" prefHeight="40.0" prefWidth="65.0" style="-fx-background-color: #ffffff;" text="QUIT">
-               <HBox.margin>
-                  <Insets top="30.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Freestyle Script" size="18.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </HBox>
-   </bottom>
-</BorderPane>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePractice" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PRACTICE">
+            <font>
+               <Font name="Maiandra GD" size="32.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleInstructions" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
+            <font>
+               <Font name="Maiandra GD" size="32.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleStatistics" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="STATISTICS">
+            <font>
+               <Font name="Maiandra GD" size="32.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleAchievements" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="ACHIEVEMENTS">
+            <font>
+               <Font name="Maiandra GD" size="32.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleOptions" prefHeight="61.0" prefWidth="300.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="OPTIONS">
+            <font>
+               <Font name="Maiandra GD" size="32.0" />
+            </font>
+         </JFXButton>
+      </children>
+   </VBox>
+   <JFXButton focusTraversable="false" layoutX="562.0" layoutY="276.0" onAction="#handleCharacter" prefHeight="381.0" prefWidth="385.0">
+      <graphic>
+         <ImageView accessibleRole="BUTTON" fitHeight="420.0" fitWidth="424.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@android-logo-1.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </JFXButton>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#413c3c" height="11.0" layoutX="580.0" layoutY="50.0" stroke="#413c3c" strokeType="INSIDE" width="59.0" />
+
+</AnchorPane>

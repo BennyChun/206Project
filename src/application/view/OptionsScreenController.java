@@ -2,10 +2,11 @@ package application.view;
 
 import javafx.fxml.FXML;
 
-public class StatisticsScreenController extends AbstractController {
+public class OptionsScreenController extends AbstractController {
 
     @FXML
     public void handleBack(){
         _mainApp.initStartMenu();
     }
+
 }

@@ -29,8 +29,7 @@ public class RecordingUtil {
 			recordProcess.waitFor();
 			
 			recordProcess.destroy();
-			
-			System.out.println("recording worked ?!?!?");
+	
 			
 		}catch (IOException ioe) {
 			ioe.printStackTrace();
@@ -62,7 +61,7 @@ public class RecordingUtil {
 			
 			convertProcess.destroy();
 			
-			System.out.println("converting worked ??!?!?");
+	
 			
 		}catch (IOException ioe) {
 			ioe.printStackTrace();
@@ -92,7 +91,6 @@ public class RecordingUtil {
 			
 			playProcess.destroy();
 			
-			System.out.println("converting worked ??!?!?");
 			
 		}catch (IOException ioe) {
 			ioe.printStackTrace();
