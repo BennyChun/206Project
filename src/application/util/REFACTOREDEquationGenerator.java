@@ -78,7 +78,7 @@ public class REFACTOREDEquationGenerator {
         int firstNum = rand.nextInt((upperBound - 1) + 1) + 1;
         int secondNum = rand.nextInt((upperBound - 1) + 1) + 1;
 
-        String tempEquation = firstNum + selectedOperation + secondNum;
+        String tempEquation = firstNum + " " + selectedOperation + " " + secondNum;
 
         if (selectedOperation.equals("/")){//if the selectedOperation was a divide
 
@@ -88,12 +88,12 @@ public class REFACTOREDEquationGenerator {
                 //if the 2 ints are not divisible, then redo
                 firstNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
                 secondNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
-                tempEquation = firstNum + selectedOperation + secondNum;
+                tempEquation = firstNum +" " + selectedOperation + " " + secondNum;
 
             }
 
             ExpressionsUtil equa = new ExpressionsUtil();
-            //tempEquation = firstNum + " ÷ " + secondNum;
+
             theAnswer = equa.ExpressionToNum(tempEquation);
             theEquation = tempEquation;
             return;
