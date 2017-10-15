@@ -116,34 +116,22 @@
             <Rectangle fx:id="attemptThree" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
          </children>
       </HBox>
-      <JFXButton fx:id="retryButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="503.0" onAction="#handleListen" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" text="Button" visible="false">
+      <JFXButton fx:id="retryButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="503.0" onAction="#handleRetry" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
          <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Icons/111251-material-design/png/play-arrow.png" />
-               </image>
-            </ImageView>
+            <FontAwesomeIconView glyphName="REPEAT" size="60" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="skipButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="626.0" onAction="#handleConfirm" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
+      <JFXButton fx:id="skipButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="626.0" onAction="#handleSkip" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@right-arrow-forward.png" />
-               </image>
-            </ImageView>
+            <FontAwesomeIconView glyphName="FORWARD" size="60" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="nextButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="388.0" layoutY="626.0" onAction="#handleListen" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
+      <JFXButton fx:id="nextButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="388.0" layoutY="626.0" onAction="#handleNext" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
          <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Icons/111251-material-design/png/play-arrow.png" />
-               </image>
-            </ImageView>
+            <FontAwesomeIconView glyphName="STEP_FORWARD" size="60" />
          </graphic>
       </JFXButton>
       <FontAwesomeIconView fx:id="character" glyphName="ANDROID" layoutX="71.0" layoutY="500.0" size="350" />
