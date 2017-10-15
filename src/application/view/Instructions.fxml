@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.net.URL?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -30,7 +31,14 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="535.0">
                <children>
-                  <VBox layoutX="151.0" layoutY="102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <VBox layoutX="151.0" layoutY="102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label prefWidth="550.0" text="         Welcome to Tatai!">
+                           <font>
+                              <Font name="Maiandra GD" size="42.0" />
+                           </font>
+                        </Label>
+                     </children></VBox>
                </children>
             </AnchorPane>
         </content>

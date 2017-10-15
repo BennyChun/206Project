@@ -28,7 +28,7 @@ import sun.applet.Main;
 
 public class PracticeLevelScreenController extends AbstractController{
 	private String _selectedLevel;
-	private Question currentQuestion;      //this is the current Question object
+	private Question currentQuestion; //this is the current Question object
 	private int currentQuestionNumber = 1; //this keeps track of which question  0-9 (can put this in the Question Model maybe ?)
 	private String mao="";
 	private String correctAnswer;
