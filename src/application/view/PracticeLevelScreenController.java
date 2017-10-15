@@ -168,7 +168,8 @@ public class PracticeLevelScreenController extends AbstractController{
 
 	/**
 	 * this method opens up a dialog box which  hshows the user if they got the question CORRECT or WRONG
-	 * 
+	 *
+	 * THIS METHOD GETS INSTANTLY CALLED WHEN HT EUSER CLICKS COMFIRM
 	 * if CORRECT, the dialog box will have
 	 */
 	public void processAnswer() {

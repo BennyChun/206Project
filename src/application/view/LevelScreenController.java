@@ -2,6 +2,7 @@ package application.view;
 
 import application.model.EquationQuestion;
 
+import application.util.MaoriAnswerUtil;
 import application.util.ReadHTKFile;
 import application.util.RecordingUtil;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -61,6 +62,9 @@ public class LevelScreenController extends AbstractController {
 
     //==============================================================================
     private int currentQuestionNumber;//keeps track of which question we are on
+    private EquationQuestion currentEquation; // keeps track of the current Equation
+    private String correctAnswer;// records the correct answer, for the current equation
+
     private String mao="";
 
     //==============================================================================
@@ -96,9 +100,9 @@ public class LevelScreenController extends AbstractController {
      */
     public void showCurrentQuestion(){
 
-        EquationQuestion currentEquation = equationList.get(currentQuestionNumber - 1);
+        currentEquation = equationList.get(currentQuestionNumber - 1);// gets the first euqation from the list
 
-        questionLabel.setText(" What is " + currentEquation.getTheEquation() + "? ");
+        questionLabel.setText(" What is " + currentEquation.getTheEquation() + " ? ");//displays the currentEquation
     }
 
 
@@ -160,6 +164,46 @@ public class LevelScreenController extends AbstractController {
     @FXML
     public void handleConfirm(){
 
+        MaoriAnswerUtil maoUtil = new MaoriAnswerUtil();
+
+        //int correctNumber = currentQuestion.getInteger();
+        int correctNumber = currentEquation.getTheAnswer(); //this returns the currentEquation's correct answer: int
+        maoUtil.numberToMaori(correctNumber);
+        correctAnswer = maoUtil.getMaoriWords();
+
+        System.out.println("user answer: " + mao);//testing purposes
+        System.out.println("correct answer: " + correctAnswer);//testing purposes
+
+        /*
+        If the answer is right, show the next button and hide the record, play and listen buttons
+        and also turn the text box and speech bubbles green. Set the corresponding question
+        and tracker to a green tick.
+        If the answer is wrong and attempt is 1 or 2, then show try again and skip buttons, turn
+        text box and bubbles red
+        If the answer is wrong and attempt is 3, then show the next button, turn text box and bubbles
+        red.
+         */
+        if(mao.equals(correctAnswer)) {
+
+            //the user got the question correct
+            processCorrect();
+
+        } else if(!(mao.equals(correctAnswer))){
+
+            if (currentEquation.getCurrentAttempts()<3 ) {
+
+                //if the user still has attempts left
+                processIncorrect();
+
+            } else if(currentEquation.getCurrentAttempts()==3) {//well obviously it will be 2 if the previous if statement is less than 2
+
+                processFinalIncorrect();
+            }
+
+        } else if(mao.equals("")) {
+            //there was no input from the user
+            //do nothing
+        }
 
 
 
@@ -198,7 +242,7 @@ public class LevelScreenController extends AbstractController {
      * @param selectedOperation
      */
     public void setDifficultyAndMode(String selectedLevel, String selectedOperation) {
-        difficultyLabel.setText(selectedLevel);
+        difficultyLabel.setText(selectedLevel.substring(0,1).toUpperCase() + selectedLevel.substring(1));
 
         if (selectedOperation.equals("+")) {
             modeLabel.setText("Addition");
@@ -212,9 +256,41 @@ public class LevelScreenController extends AbstractController {
     }
 
     //============================================================================================
+    // process answer methods
 
+    // if answer is correct
+    private void processCorrect(){
+        hideInitialButtons();
+        nextButton.setVisible(true);
+        nextButton.setDisable(false);
+    }
 
+    // if the attempt is between 1 and 2
+    private void processIncorrect(){
+        hideInitialButtons();
+        retryButton.setVisible(true);
+        retryButton.setDisable(false);
+        skipButton.setVisible(true);
+        skipButton.setDisable(false);
+    }
 
+    private void processFinalIncorrect(){
+        hideInitialButtons();
+    }
+
+    //==============================================================================================
+    //Helper methods
+    private void hideInitialButtons(){
+        listenButton.setVisible(false);
+        recordButton.setVisible(false);
+        confirmButton.setVisible(false);
+    }
+
+    private void showInitialButtons(){
+        listenButton.setVisible(true);
+        recordButton.setVisible(true);
+        confirmButton.setVisible(true);
+    }
 
 
 

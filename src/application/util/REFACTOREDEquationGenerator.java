@@ -85,19 +85,22 @@ public class REFACTOREDEquationGenerator {
             //while the modulus of them is not eqal to zero
             //generate the two random numbers again
             while (firstNum % secondNum !=0){
+                //if the 2 ints are not divisible, then redo
                 firstNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
                 secondNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
-                tempEquation = firstNum + " " + selectedOperation + " " + secondNum;
+                tempEquation = firstNum + selectedOperation + secondNum;
 
             }
 
             ExpressionsUtil equa = new ExpressionsUtil();
-            tempEquation = firstNum + " ÷ " + secondNum;
+            //tempEquation = firstNum + " ÷ " + secondNum;
             theAnswer = equa.ExpressionToNum(tempEquation);
             theEquation = tempEquation;
             return;
 
         }
+
+        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
         //if the selected Operation is not a divide /
         //do this stuff
@@ -106,7 +109,7 @@ public class REFACTOREDEquationGenerator {
 
 
         if (answer != -999){//if there was no exceptions
-            while (answer < lowerBound || answer > upperBound) {//checks if the generated euqation>answer is within the easy range
+            while (answer < lowerBound || answer > upperBound) {//checks if the generated equation >answer is within the easy range
                 firstNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
                 secondNum = rand.nextInt((upperBound - 1) + 1) + 1;//regenerate the random nums
                 tempEquation = firstNum + " " + selectedOperation + " " + secondNum;
@@ -115,9 +118,7 @@ public class REFACTOREDEquationGenerator {
             }
 
             theAnswer = answer;
-            if(selectedOperation.equals("*")){
-                tempEquation = firstNum + " x " + secondNum;
-            }
+
             theEquation = tempEquation;
             return;
 
@@ -143,9 +144,21 @@ public class REFACTOREDEquationGenerator {
     //returns the equation that got generated
     //you must pass valid inputs to the constructor for this class e.g("easy" , "+")
     //you must call generateEquation() method first before calling this
-    public String getTheEquation(){
-        return theEquation;
-    }
 
+    //need to make a change to the returned string
+    //need to return ÷ instead of /
+    //need to return
+    public String getTheEquation(){
+
+        if (selectedOperation.equals("/")) {
+
+            return theEquation.replace("/" , " ÷ ");
+        }else if (selectedOperation.equals("*")){
+
+            return theEquation.replace("*" , " x ");
+        }else {
+            return theEquation;
+        }
+    }
 
 }
