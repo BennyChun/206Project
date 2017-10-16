@@ -280,6 +280,8 @@ public class LevelScreenController extends AbstractController {
     // if answer is correct
     private void processCorrect(){
         hideInitialButtons();
+        correctLabel.setVisible(true);
+        correctLabel.setText("Correct!&#10; The answer is " + correctAnswer);
         nextButton.setVisible(true);
         nextButton.setDisable(false);
     }
@@ -287,6 +289,11 @@ public class LevelScreenController extends AbstractController {
     // if the attempt is between 1 and 2
     private void processIncorrect(){
         hideInitialButtons();
+
+        incorrectLabel.setVisible(true);
+        correctLabel.setText(" Awww, not quite right &#10; You said " + mao);
+
+        // show and enable the retry and skip buttons
         retryButton.setVisible(true);
         retryButton.setDisable(false);
         skipButton.setVisible(true);
@@ -295,17 +302,21 @@ public class LevelScreenController extends AbstractController {
 
     private void processFinalIncorrect(){
         hideInitialButtons();
+        nextButton.setVisible(true);
+        nextButton.setDisable(false);
     }
 
     //==============================================================================================
     //Helper methods
     private void hideInitialButtons(){
+        questionLabel.setVisible(false);
         listenButton.setVisible(false);
         recordButton.setVisible(false);
         confirmButton.setVisible(false);
     }
 
     private void showInitialButtons(){
+        questionLabel.setVisible(true);
         listenButton.setVisible(true);
         recordButton.setVisible(true);
         confirmButton.setVisible(true);
