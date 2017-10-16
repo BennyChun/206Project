@@ -14,10 +14,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
+import javafx.scene.shape.Circle;
 
+
+import java.net.URISyntaxException;
 import java.util.Optional;
 
 
@@ -26,6 +30,9 @@ public class LevelScreenController extends AbstractController {
 
     //=================================@FXML=========================================
 
+    @FXML private Circle circleOne;
+    @FXML private Circle circleTwo;
+    @FXML private Circle circleThree;
     @FXML private Label difficultyLabel;
     @FXML private Label modeLabel;
     @FXML private Label incorrectLabel;
@@ -280,8 +287,15 @@ public class LevelScreenController extends AbstractController {
     // if answer is correct
     private void processCorrect(){
         hideInitialButtons();
+
+        // make the speech circles green
+        correctFill();
+
+        // add a tick to tracker
+        updateCorrectQuestionTracker();
+
         correctLabel.setVisible(true);
-        correctLabel.setText("Correct!&#10; The answer is " + correctAnswer);
+        correctLabel.setText(" Correct \n The answer is : \n" + " " +correctAnswer + " ");
         nextButton.setVisible(true);
         nextButton.setDisable(false);
     }
@@ -290,8 +304,20 @@ public class LevelScreenController extends AbstractController {
     private void processIncorrect(){
         hideInitialButtons();
 
+        //fill the circles red
+        incorrectFill();
+
         incorrectLabel.setVisible(true);
-        correctLabel.setText(" Awww, not quite right &#10; You said " + mao);
+        incorrectLabel.setText(" Awww, not quite right \n You said : \n" + " " + mao + " ");
+
+
+
+        //if it's the first attempt and they get it wrong, update 2nd attempt tracker
+        if((currentEquation.getCurrentAttempts() == 1)){
+            attemptTwo.setFill(Color.YELLOW);
+        } else if( currentEquation.getCurrentAttempts() == 2){
+            attemptThree.setFill(Color.YELLOW);
+        }
 
         // show and enable the retry and skip buttons
         retryButton.setVisible(true);
@@ -302,6 +328,12 @@ public class LevelScreenController extends AbstractController {
 
     private void processFinalIncorrect(){
         hideInitialButtons();
+        //fill the circles red
+        incorrectFill();
+
+        incorrectLabel.setVisible(true);
+        incorrectLabel.setText(" Awww, not quite right \n You said : \n" + " " + mao + " " + "\n Let's try another question!");
+
         nextButton.setVisible(true);
         nextButton.setDisable(false);
     }
@@ -322,6 +354,84 @@ public class LevelScreenController extends AbstractController {
         confirmButton.setVisible(true);
     }
 
+    private void updateCorrectQuestionTracker(){
+        String path = null;
+        try {
+            path = this.getClass().getResource("green.png").toURI().toString();
+        } catch (URISyntaxException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        Image correctImage = new Image(path);
+        if(currentQuestionNumber == 1){
+            questionOne.setImage(correctImage);
+            System.out.println("bolos");
+        } else if(currentQuestionNumber == 2){
+            questionTwo.setImage(correctImage);
+        } else if(currentQuestionNumber == 3){
+            questionThree.setImage(correctImage);
+        } else if(currentQuestionNumber == 4){
+            questionFour.setImage(correctImage);
+        } else if(currentQuestionNumber == 5){
+            questionFive.setImage(correctImage);
+        } else if(currentQuestionNumber == 6){
+            questionSix.setImage(correctImage);
+        } else if(currentQuestionNumber == 7){
+            questionSeven.setImage(correctImage);
+        } else if(currentQuestionNumber == 8){
+            questionEight.setImage(correctImage);
+        } else if(currentQuestionNumber == 9){
+            questionNine.setImage(correctImage);
+        } else if(currentQuestionNumber == 10) {
+            questionTen.setImage(correctImage);
+        }
+    }
+
+    private void updateiorrectQuestionTracker(){
+        String path = null;
+        try {
+            path = this.getClass().getResource("red.png").toURI().toString();
+        } catch (URISyntaxException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        Image incorrectImage = new Image(path);
+        if(currentQuestionNumber == 1){
+            questionOne.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 2){
+            questionTwo.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 3){
+            questionThree.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 4){
+            questionFour.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 5){
+            questionFive.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 6){
+            questionSix.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 7){
+            questionSeven.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 8){
+            questionEight.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 9){
+            questionNine.setImage(incorrectImage);
+        } else if(currentQuestionNumber == 10) {
+            questionTen.setImage(incorrectImage);
+        }
+    }
+    private void incorrectFill(){
+        circleOne.setFill(Color.RED);
+        circleTwo.setFill(Color.RED);
+        circleThree.setFill(Color.RED);
+    }
+    private void correctFill(){
+        circleOne.setFill(Color.GREENYELLOW);
+        circleTwo.setFill(Color.GREENYELLOW);
+        circleThree.setFill(Color.GREENYELLOW);
+    }
+    private void unFill(){
+
+    }
 
 
 }
