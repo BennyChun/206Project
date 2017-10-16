@@ -69,12 +69,12 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <Label layoutX="398.0" layoutY="93.0" prefHeight="52.0" prefWidth="171.0" text="Attempt:">
+      <Label layoutX="398.0" layoutY="93.0" prefHeight="52.0" text="Attempt:">
          <font>
             <Font name="Maiandra GD" size="42.0" />
          </font>
       </Label>
-      <Label fx:id="currentAttempts" layoutX="601.0" layoutY="93.0" prefHeight="52.0" prefWidth="111.0" text="Label">
+      <Label fx:id="currentAttempts" layoutX="601.0" layoutY="93.0" prefHeight="52.0" text="Label">
          <font>
             <Font name="Maiandra GD" size="42.0" />
          </font>

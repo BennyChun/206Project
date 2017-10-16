@@ -400,6 +400,32 @@ public class MainApp extends Application {
 		}
 	}
 
+	public void initMainEndScreen(int finalScore , String selectedLevel, String selectedOperation){
+		try {
+			//load start menu from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/EndScreen.fxml"));
+			AnchorPane endScreen = (AnchorPane) loader.load();
+
+			// Show the scene containing the start menu
+			Scene scene = new Scene(endScreen);
+			_primaryStage.setScene(scene);
+			_primaryStage.show();
+			_primaryStage.setResizable(false);
+
+			//give stage select controller access to the main app
+			EndScreenController controller = loader.getController();
+
+			controller.setScoreLabel(finalScore);
+			controller.setPreviousLevel(selectedLevel, selectedOperation);
+			controller.setMainApp(this);
+
+
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
 
 
 

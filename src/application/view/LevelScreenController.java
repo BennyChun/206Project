@@ -71,7 +71,10 @@ public class LevelScreenController extends AbstractController {
     //==============================================================================
     private int currentQuestionNumber;//keeps track of which question we are on
     private EquationQuestion currentEquation; // keeps track of the current Equation
+    private String selectedLevel;
+    private String selectedOperation;
     private String correctAnswer;// records the correct answer, for the current equation
+    private int finalScore=0;
 
     private String mao="";//this stores the users recorded answer in maori
 
@@ -523,19 +526,20 @@ public class LevelScreenController extends AbstractController {
      * it should display the results of the 10 equationQuestions
      */
     private void displayEndScreen() {
-        hideInitialButtons();
-        retryButton.setDisable(true);
-        retryButton.setVisible(false);
 
-        skipButton.setVisible(false);
-        skipButton.setDisable(true);
-
-        nextButton.setVisible(false);
-        nextButton.setDisable(true);
-        questionLabel.setVisible(true);
-        questionLabel.setText("YOU FUCKING FINISHED YOU PENIS");
+        getFinalSCore();
+        _mainApp.initMainEndScreen(finalScore, selectedLevel , selectedOperation);
     }
 
+    private void getFinalSCore() {
+        for (int i = 0 ; i < 10 ; i++){
+            EquationQuestion tempQuestion = equationList.get(i);
+            boolean isCorrect = tempQuestion.isCorrect();
+            if (isCorrect == true){
+                finalScore+=1;
+            }
+        }
+    }
 
 
     //========================================================================================================
@@ -726,15 +730,21 @@ public class LevelScreenController extends AbstractController {
      */
     public void setDifficultyAndMode(String selectedLevel, String selectedOperation) {
         difficultyLabel.setText(selectedLevel.substring(0,1).toUpperCase() + selectedLevel.substring(1));
+        this.selectedLevel = selectedLevel;
+
 
         if (selectedOperation.equals("+")) {
             modeLabel.setText("Addition");
+            this.selectedOperation = "addition";
         }else if (selectedOperation.equals("-")){
             modeLabel.setText("Subtraction");
+            this.selectedOperation = "subtraction";
         }else if (selectedOperation.equals("*")){
             modeLabel.setText("Multiplication");
+            this.selectedOperation = "multiplication";
         }else {
             modeLabel.setText("Division");
+            this.selectedOperation = "division";
         }
     }
 
