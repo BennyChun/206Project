@@ -10,10 +10,12 @@ import java.util.Random;
 public class REFACTOREDEquationGenerator {
 
     private String selectedLevel;
-    private String selectedOperation;
-    private int theAnswer; // the answer to the passed in expression
-    private  String theEquation;//the equation that got generated
 
+    private String selectedOperation;
+
+    private int theAnswer; // the answer to the passed in expression
+
+    private  String theEquation;//the equation that got generated
 
     private int upperBound;//this records the upper bound, e.g , easy will be 20 , hard will be 99
 

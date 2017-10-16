@@ -88,8 +88,10 @@ public class EquationQuestion {
         return currentAttempts;
     }
 
-    public void setCurrentAttempts(int currentAttempts) {
-        this.currentAttempts.set(currentAttempts);
+    public void setCurrentAttempts() {
+        int tempAttempt = getCurrentAttempts() + 1;//increment
+        currentAttempts.set(tempAttempt);
+
     }
 
     //============================================================

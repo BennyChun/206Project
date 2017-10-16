@@ -30,9 +30,10 @@ public class LevelScreenController extends AbstractController {
 
     //=================================@FXML=========================================
 
-    @FXML private Circle circleOne;
-    @FXML private Circle circleTwo;
-    @FXML private Circle circleThree;
+    @FXML private Circle circleOne;  //the little speech bubbles
+    @FXML private Circle circleTwo;  //the little speech bubbles
+    @FXML private Circle circleThree;//the little speech bubbles
+
     @FXML private Label difficultyLabel;
     @FXML private Label modeLabel;
     @FXML private Label incorrectLabel;
@@ -72,14 +73,14 @@ public class LevelScreenController extends AbstractController {
     private EquationQuestion currentEquation; // keeps track of the current Equation
     private String correctAnswer;// records the correct answer, for the current equation
 
-    private String mao="";
+    private String mao="";//this stores the users recorded answer in maori
 
     //==============================================================================
 
-    private ObservableList<EquationQuestion> equationList;
+    private ObservableList<EquationQuestion> equationList; // this will store the 10 equation questions, passed into it from the start
 
     /**
-     * this constructor takes an observableList of EquationQuestion objects
+     * this method takes an observable list of equations. and stores it in this controller
      */
     public void setList(ObservableList<EquationQuestion> equationList){
         this.equationList = equationList;
@@ -94,8 +95,33 @@ public class LevelScreenController extends AbstractController {
     private void initialize() {
         //should initialize the all the labels on the level scene
 
+        //this will set all the question tracking tick thingy all invisible
+        //will need to set them up one by one during run time of the code
+        questionOne.setOpacity(0);
+        questionTwo.setOpacity(0);
+        questionThree.setOpacity(0);
+        questionFour.setOpacity(0);
+        questionFive.setOpacity(0);
+        questionSix.setOpacity(0);
+        questionSeven.setOpacity(0);
+        questionEight.setOpacity(0);
+        questionNine.setOpacity(0);
+        questionTen.setOpacity(0);
+
+
         currentQuestionNumber = 1;//initially the current question number is 1
 
+        //THIS NOT NOT NECESSARY IF YOU DISABLED AND HID THE BUTTONS ON FXML SCENE BUILDER
+        //im doing this for extra redundancy checking
+        retryButton.setDisable(true);
+        retryButton.setVisible(false);
+
+        skipButton.setDisable(true);
+        skipButton.setVisible(false);
+
+        nextButton.setDisable(true);
+        nextButton.setVisible(false);
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         incorrectLabel.setVisible(false);
         correctLabel.setVisible(false);
     }
@@ -107,7 +133,7 @@ public class LevelScreenController extends AbstractController {
      */
     public void showCurrentQuestion(){
 
-        currentEquation = equationList.get(currentQuestionNumber - 1);// gets the first euqation from the list
+        currentEquation = equationList.get(currentQuestionNumber - 1);// gets the first equation from the list
 
         questionLabel.setText(" What is " + currentEquation.getTheEquation() + " ? ");//displays the currentEquation
     }
@@ -128,13 +154,18 @@ public class LevelScreenController extends AbstractController {
         if (result.get() == ButtonType.OK){
             _mainApp.initStartMenu();
         } else {
-
+            //do nothing
         }
     }
     //==========================================================================================
     @FXML
     public void handleRecord(){
-        if (currentQuestionNumber <=11 ){ //THIS IS <= 9 BECAUSE THE LIST OF QUESTIONS GOES FROM 0 - 9
+
+        //initialilly the currentQuestionNumber == 1
+        //once you press record, it is == 1
+
+        //the currentQuestionNumber will only increase after the user clicks nextButton
+        if (currentQuestionNumber <=10 ){ //PLEASE CHECK THIS NUMBER !!!
 
             Task<Void> recordTask = new Task<Void>() {
                 @Override
@@ -173,22 +204,49 @@ public class LevelScreenController extends AbstractController {
 
         MaoriAnswerUtil maoUtil = new MaoriAnswerUtil();
 
-        //int correctNumber = currentQuestion.getInteger();
+
         int correctNumber = currentEquation.getTheAnswer(); //this returns the currentEquation's correct answer: int
         maoUtil.numberToMaori(correctNumber);
-        correctAnswer = maoUtil.getMaoriWords();
+        correctAnswer = maoUtil.getMaoriWords(); //saves the correct answer as a maori string
 
         System.out.println("user answer: " + mao);//testing purposes
         System.out.println("correct answer: " + correctAnswer);//testing purposes
 
         /*
-        If the answer is right, show the next button and hide the record, play and listen buttons
-        and also turn the text box and speech bubbles green. Set the corresponding question
-        and tracker to a green tick.
-        If the answer is wrong and attempt is 1 or 2, then show try again and skip buttons, turn
-        text box and bubbles red
-        If the answer is wrong and attempt is 3, then show the next button, turn text box and bubbles
-        red.
+        If the answer is right,
+            processCorrect()
+
+        If the answer is wrong and attempt is less than 3,
+            then show "try again" and "skip" buttons
+            turn text box and bubbles red
+            if (try again)
+                go back to the questionLabel
+                hide the "try again" and "skip" button
+
+                set the currentEquation.setCurrentAttempts();
+
+                set the 3 boxes tracker according to the attempts
+
+            else if (skip)
+                set currentEquation.setCorrect(false);
+                set the currentQuestionNumber
+                set the currentEquation
+
+                reset the 3 boxes
+
+
+
+        If the answer is wrong and attempt is 3,
+        then show the next button,
+        turn text box and bubbles red.
+            if (next)
+                set currentEquation.setCorrect(false);
+                set the currentQuestionNumber
+                set the currentEquation
+
+                reset the 3 boxes
+
+
          */
         if(mao.equals(correctAnswer)) {
 
@@ -202,7 +260,7 @@ public class LevelScreenController extends AbstractController {
                 //if the user still has attempts left
                 processIncorrect();
 
-            } else if(currentEquation.getCurrentAttempts()==3) {//well obviously it will be 2 if the previous if statement is less than 2
+            } else if(currentEquation.getCurrentAttempts()==3) {
 
                 processFinalIncorrect();
             }
@@ -242,24 +300,423 @@ public class LevelScreenController extends AbstractController {
 
     }
 
-    //==========================================================================================
-    @FXML
-    public void handleSkip(){
 
-    }
-
-    //==========================================================================================
+    //======================================================================================================
     @FXML
     public void handleRetry(){
+        //the only way the user can get to here is they still have attempts left, if attempts < 3
 
+        //hide the retry button
+        //disable the retry button
+        //show the initial buttons
+        //hide the incorrectLabel.setVisible(false);
+        //unfill the 3 bubbles
+
+        //currentQuestionNumber SHOULD NOT CHANGE
+        //currentEquation SHOULD NOT CHANGE
+        //currentEquation.setAttempts()
+        nextButton.setDisable(true);
+        nextButton.setVisible(false);
+
+        skipButton.setVisible(false);
+        skipButton.setDisable(true);
+
+        retryButton.setVisible(false);
+        retryButton.setDisable(true);
+
+        incorrectLabel.setVisible(false);
+        showInitialButtons();//shows the question label and enable the play, record, submit buttons
+        listenButton.setDisable(true);//but we actually need to disable them
+        confirmButton.setDisable(true);//disable these because the user wants to retry, so the user does not want to re-listen to th old recording
+
+
+        unFill();
+        currentEquation.setCurrentAttempts();//increment the attempts
+
+        questionLabel.setText(" What is " + currentEquation.getTheEquation() + " ? ");//displays the currentEquation
     }
 
-    //==========================================================================================
+
     @FXML
     public void handleNext() {
+        //    hide next button
+        //    show the record, play and listen buttons.
+        //    showCurrentQuestion()
+        //
+        //    set THIS.question label be a green tick
+        //    show the 3 boxes(attempt boxes)
+        //    hide the correct bubble
+        //    refill the colour of the 3 bubbles
+
+        nextButton.setVisible(false);//hides the next button
+        nextButton.setDisable(true);//disables the next button
+        skipButton.setVisible(false);
+        skipButton.setDisable(true);
+        retryButton.setDisable(true);
+        retryButton.setVisible(false);
+
+
+
+        incorrectLabel.setVisible(false);//hies the incorrectLabel bubble
+        correctLabel.setVisible(false);//hides the correct label
+        showInitialButtons();//shows the question label and enable the play, record, submit buttons
+        confirmButton.setDisable(true);
+        listenButton.setDisable(true);
+
+
+
+        unFill();//un-fills the colours of the 3 little bubbles
+        attemptTwo.setFill(Color.WHITE);
+        attemptThree.setFill(Color.WHITE);
+
+        if (currentEquation.isCorrect()){
+            updateCorrectQuestionTracker();
+        }else{//they got this question wrong
+            updateIncorrectQuestionTracker();
+        }
+
+        currentQuestionNumber+=1;//increment to the next question number
+
+        //CHECK FOR INDEX ERRORS
+        if (currentQuestionNumber <= 10) {
+            currentEquation = equationList.get(currentQuestionNumber - 1);//updates the currentEquation to the next one in the list
+            questionLabel.setText(" What is " + currentEquation.getTheEquation() + " ? ");//displays the currentEquation
+        }else{
+            displayEndScreen();
+        }
+
 
     }
 
+
+    @FXML
+    public void handleSkip(){
+        //  hide next button
+        //  show the record, play and listen buttons.
+        //  showCurrentQuestion()
+        //
+        //  set THIS.question label be a green tick
+        //  show the 3 boxes(attempt boxes)
+        //  hide the correct bubble
+        //  refill the colour of the 3 bubbles
+        //  increments the currentQuestionNumber count
+        //  updates currentEquation
+        //  updates the questionLabel
+
+        skipButton.setVisible(false);//hides the next button
+        skipButton.setDisable(true);//disables the next button
+
+
+        showInitialButtons();//shows the question label and enable the play, record, submit buttons
+        retryButton.setVisible(false);
+        retryButton.setDisable(true);
+        confirmButton.setDisable(true);
+
+        listenButton.setDisable(true);
+
+
+        correctLabel.setVisible(false);//hides the correctLabel bubble
+        incorrectLabel.setVisible(false);
+
+        unFill();//un-fills the colours of the 3 little bubbles
+        attemptTwo.setFill(Color.WHITE);
+        attemptThree.setFill(Color.WHITE);
+
+
+        currentEquation.setCorrect(false);//the user got this question wrong, cus they skipped it
+        updateIncorrectQuestionTracker();//puts a cross on the tracker
+        currentQuestionNumber+=1;//increment to the next question number
+
+        //CHECK FOR INDEX ERRORS
+        if (currentQuestionNumber <= 10) {
+            currentEquation = equationList.get(currentQuestionNumber - 1);//updates the currentEquation to the next one in the list
+            questionLabel.setText(" What is " + currentEquation.getTheEquation() + " ? ");//displays the currentEquation
+        }else{
+            displayEndScreen();
+        }
+    }
+
+
+    //======================================================================================================================
+    // process answer methods
+    //
+    // if answer is correct
+//    show the next button
+//    hide the record, play and listen buttons.
+//    Also turn the text box and speech bubbles green
+//
+//    set currentEquation.setCorrect(true);
+//    Set the currentQuestionNumber and set the currentEquation
+//    Set tracker to a green tick.
+//
+//    go to (nextButton)
+
+    private void processCorrect(){
+        hideInitialButtons();//hide the question label AND disable/hide the 3 buttons (listen, record , confirm)
+
+        // make the 3 little speech circles green
+        correctFill();
+
+        // add a tick to tracker, shows up on the gui
+        updateCorrectQuestionTracker();
+
+        correctLabel.setVisible(true);//shows the correctLabel bubble
+        correctLabel.setText(" Well Done! \n You Said: " +correctAnswer + "\n Which means: " + currentEquation.getTheAnswer() + " ");
+
+        nextButton.setVisible(true);
+        nextButton.setDisable(false);
+
+        currentEquation.setCorrect(true);//sets the state of the current question to be TRUE (user answer this question correctly
+
+    }
+
+    // if the attempt is between 1 and 2
+    private void processIncorrect(){
+        hideInitialButtons();//hide the question label AND disable/hide the 3 buttons (listen, record , confirm)
+        nextButton.setVisible(false);//disables the next button
+        nextButton.setDisable(true);//this is kinda retarded, the next button and skip button have basically the same functionality
+
+        //fill the circles red
+        incorrectFill();
+
+        incorrectLabel.setVisible(true);
+        incorrectLabel.setText(" Awww, not quite right \n You said : \n" + " " + mao + " ");
+
+        //if it's the first attempt and they get it wrong, update 2nd attempt tracker
+        if((currentEquation.getCurrentAttempts() == 1)){
+            attemptTwo.setFill(Color.YELLOW);
+        } else if( currentEquation.getCurrentAttempts() == 2){
+            attemptThree.setFill(Color.YELLOW);
+        }
+
+        // show and enable the retry and skip buttons
+        retryButton.setVisible(true);
+        retryButton.setDisable(false);
+
+        skipButton.setVisible(true);
+        skipButton.setDisable(false);
+    }
+
+    private void processFinalIncorrect(){
+
+        hideInitialButtons();
+        retryButton.setDisable(true);
+        retryButton.setVisible(false);
+
+        skipButton.setVisible(false);
+        skipButton.setDisable(true);
+
+        nextButton.setVisible(true);
+        nextButton.setDisable(false);
+        incorrectFill();
+
+        currentEquation.setCorrect(false);//the user got this question wrong :(
+
+        incorrectLabel.setVisible(true);
+        incorrectLabel.setText(" Aww, not quite right \n You said: " + mao + "\n The correct answer is: " + currentEquation.getTheAnswer() + "\n Let's try another question! ");
+
+    }
+
+
+    /**
+     * this method will get called at the end of the 10 questions
+     * it should display the results of the 10 equationQuestions
+     */
+    private void displayEndScreen() {
+        hideInitialButtons();
+        retryButton.setDisable(true);
+        retryButton.setVisible(false);
+
+        skipButton.setVisible(false);
+        skipButton.setDisable(true);
+
+        nextButton.setVisible(false);
+        nextButton.setDisable(true);
+        questionLabel.setVisible(true);
+        questionLabel.setText("YOU FUCKING FINISHED YOU PENIS");
+    }
+
+
+
+    //========================================================================================================
+    //                                          Helper methods
+    //========================================================================================================
+
+    /**
+     * this method will
+     * hide the question label (the label that shows the equation)
+     * hide the listen button
+     * hide the record button
+     * hide the confirm button
+     *
+     * and disable all 3 of the buttons
+     */
+    private void hideInitialButtons(){
+        questionLabel.setVisible(false);
+        listenButton.setVisible(false);
+        recordButton.setVisible(false);
+        confirmButton.setVisible(false);
+
+        listenButton.setDisable(true);
+        recordButton.setDisable(true);
+        confirmButton.setDisable(true);
+    }
+
+    /**
+     * thi method will
+     * show the question label (the label that shows the equation)
+     * show the listen button
+     * show the record button
+     * show the confirm button
+     *
+     * and enable all 3 buttons
+     */
+    private void showInitialButtons(){
+        questionLabel.setVisible(true);
+        listenButton.setVisible(true);
+        recordButton.setVisible(true);
+        confirmButton.setVisible(true);
+
+        listenButton.setDisable(false);
+        recordButton.setDisable(false);
+        confirmButton.setDisable(false);
+    }
+
+
+
+
+    //====================================================================================
+
+    /**
+     * this method trys and open the green tick png
+     * it will set the tracker tick based on which currentQuestionNumber we are currently on
+     * when this method was called adds a green tick and makes the imageview visible
+     */
+    private void updateCorrectQuestionTracker(){
+        String path = null;
+        try {
+            path = this.getClass().getResource("green.png").toURI().toString();
+        } catch (URISyntaxException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        Image correctImage = new Image(path);
+
+
+
+        if(currentQuestionNumber == 1){
+            questionOne.setImage(correctImage);
+            questionOne.setOpacity(1);
+        } else if(currentQuestionNumber == 2){
+            questionTwo.setImage(correctImage);
+            questionTwo.setOpacity(1);
+        } else if(currentQuestionNumber == 3){
+            questionThree.setImage(correctImage);
+            questionThree.setOpacity(1);
+        } else if(currentQuestionNumber == 4){
+            questionFour.setImage(correctImage);
+            questionFour.setOpacity(1);
+        } else if(currentQuestionNumber == 5){
+            questionFive.setImage(correctImage);
+            questionFive.setOpacity(1);
+        } else if(currentQuestionNumber == 6){
+            questionSix.setImage(correctImage);
+            questionSix.setOpacity(1);
+        } else if(currentQuestionNumber == 7){
+            questionSeven.setImage(correctImage);
+            questionSeven.setOpacity(1);
+        } else if(currentQuestionNumber == 8){
+            questionEight.setImage(correctImage);
+            questionEight.setOpacity(1);
+        } else if(currentQuestionNumber == 9){
+            questionNine.setImage(correctImage);
+            questionNine.setOpacity(1);
+        } else if(currentQuestionNumber == 10) {
+            questionTen.setImage(correctImage);
+            questionTen.setOpacity(1);
+        }
+    }
+
+
+    /**
+     * when you call this method, it will try and get the red cross png
+     * and depnding on which currentQuestionNumber we are on
+     * it will set the image for that tracker to be incorrect
+     */
+    private void updateIncorrectQuestionTracker(){
+        String path = null;
+        try {
+            path = this.getClass().getResource("red.png").toURI().toString();
+        } catch (URISyntaxException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        Image incorrectImage = new Image(path);
+
+
+
+        if(currentQuestionNumber == 1){
+            questionOne.setImage(incorrectImage);
+            questionOne.setOpacity(1);
+        } else if(currentQuestionNumber == 2){
+            questionTwo.setImage(incorrectImage);
+            questionTwo.setOpacity(1);
+        } else if(currentQuestionNumber == 3){
+            questionThree.setImage(incorrectImage);
+            questionThree.setOpacity(1);
+        } else if(currentQuestionNumber == 4){
+            questionFour.setImage(incorrectImage);
+            questionFour.setOpacity(1);
+        } else if(currentQuestionNumber == 5){
+            questionFive.setImage(incorrectImage);
+            questionFive.setOpacity(1);
+        } else if(currentQuestionNumber == 6){
+            questionSix.setImage(incorrectImage);
+            questionSix.setOpacity(1);
+        } else if(currentQuestionNumber == 7){
+            questionSeven.setImage(incorrectImage);
+            questionSeven.setOpacity(1);
+        } else if(currentQuestionNumber == 8){
+            questionEight.setImage(incorrectImage);
+            questionEight.setOpacity(1);
+        } else if(currentQuestionNumber == 9){
+            questionNine.setImage(incorrectImage);
+            questionNine.setOpacity(1);
+        } else if(currentQuestionNumber == 10) {
+            questionTen.setImage(incorrectImage);
+            questionTen.setOpacity(1);
+        }
+    }
+
+
+    //===========================================================================================================
+
+    /**
+     * this fills the colours of the 3 little bubbles
+     */
+    private void incorrectFill(){
+        circleOne.setFill(Color.RED);
+        circleTwo.setFill(Color.RED);
+        circleThree.setFill(Color.RED);
+    }
+
+    /**
+     * this fills the colours of the 3 little bubbles
+     */
+    private void correctFill(){
+        circleOne.setFill(Color.GREENYELLOW);
+        circleTwo.setFill(Color.GREENYELLOW);
+        circleThree.setFill(Color.GREENYELLOW);
+    }
+
+    /**
+     * this unfills the colours of the 3 little bubbles
+     */
+    private void unFill(){
+        circleOne.setFill(Color.WHITE);
+        circleTwo.setFill(Color.WHITE);
+        circleThree.setFill(Color.WHITE);
+    }
     //==========================================================================================
 
     /**
@@ -279,158 +736,6 @@ public class LevelScreenController extends AbstractController {
         }else {
             modeLabel.setText("Division");
         }
-    }
-
-    //============================================================================================
-    // process answer methods
-
-    // if answer is correct
-    private void processCorrect(){
-        hideInitialButtons();
-
-        // make the speech circles green
-        correctFill();
-
-        // add a tick to tracker
-        updateCorrectQuestionTracker();
-
-        correctLabel.setVisible(true);
-        correctLabel.setText(" Correct \n The answer is : \n" + " " +correctAnswer + " ");
-        nextButton.setVisible(true);
-        nextButton.setDisable(false);
-    }
-
-    // if the attempt is between 1 and 2
-    private void processIncorrect(){
-        hideInitialButtons();
-
-        //fill the circles red
-        incorrectFill();
-
-        incorrectLabel.setVisible(true);
-        incorrectLabel.setText(" Awww, not quite right \n You said : \n" + " " + mao + " ");
-
-
-
-        //if it's the first attempt and they get it wrong, update 2nd attempt tracker
-        if((currentEquation.getCurrentAttempts() == 1)){
-            attemptTwo.setFill(Color.YELLOW);
-        } else if( currentEquation.getCurrentAttempts() == 2){
-            attemptThree.setFill(Color.YELLOW);
-        }
-
-        // show and enable the retry and skip buttons
-        retryButton.setVisible(true);
-        retryButton.setDisable(false);
-        skipButton.setVisible(true);
-        skipButton.setDisable(false);
-    }
-
-    private void processFinalIncorrect(){
-        hideInitialButtons();
-        //fill the circles red
-        incorrectFill();
-
-        incorrectLabel.setVisible(true);
-        incorrectLabel.setText(" Awww, not quite right \n You said : \n" + " " + mao + " " + "\n Let's try another question!");
-
-        nextButton.setVisible(true);
-        nextButton.setDisable(false);
-    }
-
-    //==============================================================================================
-    //Helper methods
-    private void hideInitialButtons(){
-        questionLabel.setVisible(false);
-        listenButton.setVisible(false);
-        recordButton.setVisible(false);
-        confirmButton.setVisible(false);
-    }
-
-    private void showInitialButtons(){
-        questionLabel.setVisible(true);
-        listenButton.setVisible(true);
-        recordButton.setVisible(true);
-        confirmButton.setVisible(true);
-    }
-
-    private void updateCorrectQuestionTracker(){
-        String path = null;
-        try {
-            path = this.getClass().getResource("green.png").toURI().toString();
-        } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        Image correctImage = new Image(path);
-        if(currentQuestionNumber == 1){
-            questionOne.setImage(correctImage);
-            System.out.println("bolos");
-        } else if(currentQuestionNumber == 2){
-            questionTwo.setImage(correctImage);
-        } else if(currentQuestionNumber == 3){
-            questionThree.setImage(correctImage);
-        } else if(currentQuestionNumber == 4){
-            questionFour.setImage(correctImage);
-        } else if(currentQuestionNumber == 5){
-            questionFive.setImage(correctImage);
-        } else if(currentQuestionNumber == 6){
-            questionSix.setImage(correctImage);
-        } else if(currentQuestionNumber == 7){
-            questionSeven.setImage(correctImage);
-        } else if(currentQuestionNumber == 8){
-            questionEight.setImage(correctImage);
-        } else if(currentQuestionNumber == 9){
-            questionNine.setImage(correctImage);
-        } else if(currentQuestionNumber == 10) {
-            questionTen.setImage(correctImage);
-        }
-    }
-
-    private void updateiorrectQuestionTracker(){
-        String path = null;
-        try {
-            path = this.getClass().getResource("red.png").toURI().toString();
-        } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        Image incorrectImage = new Image(path);
-        if(currentQuestionNumber == 1){
-            questionOne.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 2){
-            questionTwo.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 3){
-            questionThree.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 4){
-            questionFour.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 5){
-            questionFive.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 6){
-            questionSix.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 7){
-            questionSeven.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 8){
-            questionEight.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 9){
-            questionNine.setImage(incorrectImage);
-        } else if(currentQuestionNumber == 10) {
-            questionTen.setImage(incorrectImage);
-        }
-    }
-    private void incorrectFill(){
-        circleOne.setFill(Color.RED);
-        circleTwo.setFill(Color.RED);
-        circleThree.setFill(Color.RED);
-    }
-    private void correctFill(){
-        circleOne.setFill(Color.GREENYELLOW);
-        circleTwo.setFill(Color.GREENYELLOW);
-        circleThree.setFill(Color.GREENYELLOW);
-    }
-    private void unFill(){
-
     }
 
 
