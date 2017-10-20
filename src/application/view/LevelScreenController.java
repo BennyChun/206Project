@@ -198,8 +198,6 @@ public class LevelScreenController extends AbstractController {
         }
 
 
-
-
     }
     //==========================================================================================
     @FXML
@@ -215,42 +213,6 @@ public class LevelScreenController extends AbstractController {
         System.out.println("user answer: " + mao);//testing purposes
         System.out.println("correct answer: " + correctAnswer);//testing purposes
 
-        /*
-        If the answer is right,
-            processCorrect()
-
-        If the answer is wrong and attempt is less than 3,
-            then show "try again" and "skip" buttons
-            turn text box and bubbles red
-            if (try again)
-                go back to the questionLabel
-                hide the "try again" and "skip" button
-
-                set the currentEquation.setCurrentAttempts();
-
-                set the 3 boxes tracker according to the attempts
-
-            else if (skip)
-                set currentEquation.setCorrect(false);
-                set the currentQuestionNumber
-                set the currentEquation
-
-                reset the 3 boxes
-
-
-
-        If the answer is wrong and attempt is 3,
-        then show the next button,
-        turn text box and bubbles red.
-            if (next)
-                set currentEquation.setCorrect(false);
-                set the currentQuestionNumber
-                set the currentEquation
-
-                reset the 3 boxes
-
-
-         */
         if(mao.equals(correctAnswer)) {
 
             //the user got the question correct
@@ -531,20 +493,11 @@ public class LevelScreenController extends AbstractController {
         _mainApp.initMainEndScreen(finalScore, selectedLevel , selectedOperation);
     }
 
-    private void getFinalSCore() {
-        for (int i = 0 ; i < 10 ; i++){
-            EquationQuestion tempQuestion = equationList.get(i);
-            boolean isCorrect = tempQuestion.isCorrect();
-            if (isCorrect == true){
-                finalScore+=1;
-            }
-        }
-    }
-
-
-    //========================================================================================================
+    //---------------------------------------------------------------------------------------------------------
+    //=========================================================================================================
     //                                          Helper methods
-    //========================================================================================================
+    //=========================================================================================================
+    //---------------------------------------------------------------------------------------------------------
 
     /**
      * this method will
@@ -745,6 +698,21 @@ public class LevelScreenController extends AbstractController {
         }else {
             modeLabel.setText("Division");
             this.selectedOperation = "division";
+        }
+    }
+
+    /**
+     * when you call this method, it will start getting all the EquationQuestions in the list
+     * and counting how many of those isCorrect
+     * and stored the score as a global variable (int) called finalScore.
+     */
+    private void getFinalSCore() {
+        for (int i = 0 ; i < 10 ; i++){
+            EquationQuestion tempQuestion = equationList.get(i);
+            boolean isCorrect = tempQuestion.isCorrect();
+            if (isCorrect == true){
+                finalScore+=1;
+            }
         }
     }
 
