@@ -100,7 +100,7 @@ public class LevelScreenController extends AbstractController {
 
         //this will set all the question tracking tick thingy all invisible
         //will need to set them up one by one during run time of the code
-        questionOne.setOpacity(0);
+       /* questionOne.setOpacity(0);
         questionTwo.setOpacity(0);
         questionThree.setOpacity(0);
         questionFour.setOpacity(0);
@@ -109,7 +109,7 @@ public class LevelScreenController extends AbstractController {
         questionSeven.setOpacity(0);
         questionEight.setOpacity(0);
         questionNine.setOpacity(0);
-        questionTen.setOpacity(0);
+        questionTen.setOpacity(0);*/
 
 
         currentQuestionNumber = 1;//initially the current question number is 1

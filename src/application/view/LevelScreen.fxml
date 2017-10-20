@@ -55,56 +55,56 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <HBox layoutX="337.0" layoutY="70.0" prefHeight="35.0" prefWidth="200.0" AnchorPane.leftAnchor="337.0">
+      <HBox layoutX="337.0" layoutY="70.0" prefHeight="35.0" spacing="10.0" AnchorPane.leftAnchor="292.0">
          <children>
             <ImageView fx:id="questionOne" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionTwo" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionThree" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionFour" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionFive" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionSix" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionSeven" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionEight" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionNine" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
             <ImageView fx:id="questionTen" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@green.png" />
+                  <Image url="@circumference.png" />
                </image>
             </ImageView>
          </children>
