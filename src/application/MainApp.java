@@ -363,21 +363,9 @@ public class MainApp extends Application {
 			_primaryStage.show();
 			_primaryStage.setResizable(false);
 
-
 			//give stage select controller access to the main app
 			LevelScreenController controller = loader.getController();
 
-			//im gonna make an observable list of EquationQuestions
-			//for loop to 10
-			//make a new EquationQuestion every time
-			//add the EquationQuestion to the list
-
-			//then im gonna pass this EquationQuestions to the LevelScreenController
-			//the LevelScreenController will then use the observable list as he pleaseseseses
-
-			//IF YOU WANT TO USE THIS METHOD TO CREATE THE LEVELSCREEN
-			//WHEN YOU PASS IN A CUSTOM LIST< PLEASE DONT MAKE A NEW LIST
-			//NEED TO CHANGE THIS CODE
 			ObservableList<EquationQuestion> LOL = FXCollections.observableArrayList();
 			for (int i = 0 ; i < 10 ; i++) {
 				EquationQuestion temp = new EquationQuestion(selectedLevel, selectedOperation);
@@ -400,6 +388,17 @@ public class MainApp extends Application {
 		}
 	}
 
+	/**
+	 * this method take an int of the final score
+	 * string of the selectedlevel
+	 * string of the selected operation
+	 *
+	 * it will then open the EndScreen.fxml
+	 * and pass the 3 parameters to the controller (EndScreenController)
+	 * @param finalScore
+	 * @param selectedLevel
+	 * @param selectedOperation
+	 */
 	public void initMainEndScreen(int finalScore , String selectedLevel, String selectedOperation){
 		try {
 			//load start menu from fxml file.

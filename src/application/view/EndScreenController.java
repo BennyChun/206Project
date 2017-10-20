@@ -20,14 +20,35 @@ public class EndScreenController extends AbstractController{
 
 	@FXML 
 	public void handleRetry() {
-		_mainApp.initMainLevelScreen(selectedLevel, selectedOperation);
+		String operation;
+
+		if (selectedOperation.equals("addition")) {
+			operation = "+";
+
+		}else if (selectedOperation.equals("subtraction")){
+			operation = "-";
+
+		}else if (selectedOperation.equals("multiplication")){
+			operation = "*";
+		}else {
+			operation = "/";
+
+		}
+		_mainApp.initMainLevelScreen(selectedLevel, operation);
 	}
 
+	/**
+	 * this method takes a selectedLevel (String)
+	 * and takes a selectedOperation (String)
+	 *
+	 * it will store those input strings as a global variable
+	 * @param selectedLevel
+	 * @param selectedOperation
+	 */
 	public void setPreviousLevel(String selectedLevel , String selectedOperation) {
 		this.selectedLevel = selectedLevel;
 		this.selectedOperation = selectedOperation;
-		System.out.println(selectedLevel);
-		System.out.println(selectedOperation);
+
 	}
 
 	public void setScoreLabel(int finalScore) {
