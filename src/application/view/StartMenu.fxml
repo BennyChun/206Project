@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="150.0" layoutY="679.0" onAction="#handleQuit" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="QUIT">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="175.0" layoutY="624.0" onAction="#handleQuit" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="QUIT">
          <font>
             <Font name="Maiandra GD" size="18.0" />
          </font>
@@ -20,7 +20,7 @@
             <Font name="Maiandra GD" size="142.0" />
          </font>
       </Label>
-   <VBox layoutX="55.0" layoutY="85.0" prefHeight="648.0" prefWidth="300.0" spacing="30.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="128.0">
+   <VBox layoutX="55.0" layoutY="85.0" prefHeight="428.0" prefWidth="300.0" spacing="30.0" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="170.0">
       <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PLAY">
                <font>
@@ -28,11 +28,6 @@
                </font>
             </JFXButton>
          <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePractice" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PRACTICE">
-            <font>
-               <Font name="Maiandra GD" size="32.0" />
-            </font>
-         </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleInstructions" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="INSTRUCTIONS">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>
@@ -47,7 +42,7 @@
                <Font name="Maiandra GD" size="32.0" />
             </font>
          </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleOptions" prefHeight="61.0" prefWidth="300.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="OPTIONS">
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleOther" prefHeight="61.0" prefWidth="300.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="OTHER">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>

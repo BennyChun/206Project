@@ -16,12 +16,6 @@ public class StartMenuController extends AbstractController {
 	}	
 	
 	@FXML
-	public void handleInstructions() {
-		_mainApp.initGameInstructions();
-	}
-	
-
-	@FXML
 	public void handleQuit() {
 		_mainApp.close();
 	}
@@ -47,7 +41,7 @@ public class StartMenuController extends AbstractController {
 	}
 
 	@FXML
-	public void handleOptions(){
+	public void handleOther(){
 		_mainApp.initOptions();
 	}
 
