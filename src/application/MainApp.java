@@ -2,9 +2,7 @@ package application;
 import java.io.IOException;
 
 import application.model.EquationQuestion;
-import application.model.Question;
 import application.view.*;
-import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -204,18 +202,18 @@ public class MainApp extends Application {
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/OptionsScreen.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/MicTestScreen.fxml"));
 			//loader.setController(new StartMenuController(_navigator));
-			AnchorPane options = (AnchorPane) loader.load();
+			AnchorPane micTest = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
-			Scene scene = new Scene(options);
+			Scene scene = new Scene(micTest);
 			_primaryStage.setScene(scene);
 			_primaryStage.show();
 			_primaryStage.setResizable(false);
 
 			//give stage select controller access to the main app
-			OptionsScreenController controller = loader.getController();
+			MicTestScreenController controller = loader.getController();
 			controller.setMainApp(this);
 		}catch(IOException e){
 			e.printStackTrace();

@@ -27,11 +27,7 @@
       </JFXButton>
       <JFXButton fx:id="recordButton" buttonType="RAISED" focusTraversable="false" layoutX="416.0" layoutY="638.0" onAction="#handleRecord" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="387.0">
          <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Icons/111251-material-design/png/voice-message-microphone-button.png" />
-               </image>
-            </ImageView>
+            <FontAwesomeIconView glyphName="MICROPHONE" size="60" />
          </graphic>
       </JFXButton>
       <JFXButton fx:id="confirmButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="729.0" layoutY="638.0" onAction="#handleConfirm" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="62.0">
@@ -109,7 +105,7 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox layoutX="447.0" layoutY="105.0" prefHeight="30.0" prefWidth="130.0" spacing="20.0">
+      <HBox layoutX="447.0" layoutY="112.0" prefHeight="30.0" prefWidth="130.0" spacing="20.0">
          <children>
             <Rectangle fx:id="attemptOne" arcHeight="5.0" arcWidth="5.0" fill="#fff200" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
             <Rectangle fx:id="attemptTwo" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />

@@ -42,7 +42,7 @@
                <Font name="Maiandra GD" size="32.0" />
             </font>
          </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleOther" prefHeight="61.0" prefWidth="300.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="OTHER">
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMic" prefHeight="61.0" prefWidth="300.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="MIC TEST">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>

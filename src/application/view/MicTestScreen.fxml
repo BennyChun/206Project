@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.MicTestScreenController">
+    <children>
+        <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack">
+            <font>
+                <Font name="Maiandra GD" size="24.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@back-arrow.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="605.0" layoutY="563.0" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="562.0">
+         <font>
+            <Font name="Maiandra GD" size="12.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="PLAY" size="60" />
+         </graphic>
+      </JFXButton>
+      <FontAwesomeIconView glyphName="ANDROID" layoutX="337.0" layoutY="476.0" size="420" AnchorPane.leftAnchor="342.0" />
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="223.0" layoutY="564.0" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="212.0">
+         <font>
+            <Font name="Maiandra GD" size="12.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="MICROPHONE" size="60" text="" />
+         </graphic>
+      </JFXButton>
+      <Label layoutX="295.0" layoutY="39.0" text="MICROPHONE TEST" AnchorPane.leftAnchor="270.0">
+         <font>
+            <Font name="Maiandra GD" size="52.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
