@@ -1,25 +1,19 @@
 package application.view;
 
 import application.model.EquationQuestion;
-
 import application.util.MaoriAnswerUtil;
 import application.util.ReadHTKFile;
 import application.util.RecordingUtil;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Circle;
-
+import javafx.scene.shape.Rectangle;
 
 import java.net.URISyntaxException;
 import java.util.Optional;
@@ -39,6 +33,8 @@ public class LevelScreenController extends AbstractController {
     @FXML private Label incorrectLabel;
     @FXML private Label correctLabel;
     @FXML private Label questionLabel;
+
+    @FXML private ProgressBar progressBar;//the progress bar
     //===============================================================================
     //question tracker fields
     @FXML private ImageView questionOne;
@@ -164,6 +160,9 @@ public class LevelScreenController extends AbstractController {
     @FXML
     public void handleRecord(){
 
+        //should start the progress bar as another thread ? maybe ?
+        startProgressBar();
+
         //initialilly the currentQuestionNumber == 1
         //once you press record, it is == 1
 
@@ -202,6 +201,10 @@ public class LevelScreenController extends AbstractController {
     //==========================================================================================
     @FXML
     public void handleConfirm(){
+        //hide the progress bar, and rest back to 0
+        progressBar.setProgress(0.0);
+        progressBar.setOpacity(0);
+
 
         MaoriAnswerUtil maoUtil = new MaoriAnswerUtil();
 
@@ -280,6 +283,10 @@ public class LevelScreenController extends AbstractController {
         //currentQuestionNumber SHOULD NOT CHANGE
         //currentEquation SHOULD NOT CHANGE
         //currentEquation.setAttempts()
+
+        //unhide the progress bar
+        progressBar.setOpacity(1);
+
         nextButton.setDisable(true);
         nextButton.setVisible(false);
 
@@ -312,6 +319,9 @@ public class LevelScreenController extends AbstractController {
         //    show the 3 boxes(attempt boxes)
         //    hide the correct bubble
         //    refill the colour of the 3 bubbles
+
+        //unhide the progress bar
+        progressBar.setOpacity(1);
 
         nextButton.setVisible(false);//hides the next button
         nextButton.setDisable(true);//disables the next button
@@ -367,6 +377,9 @@ public class LevelScreenController extends AbstractController {
         //  increments the currentQuestionNumber count
         //  updates currentEquation
         //  updates the questionLabel
+
+        //unhide the progress bar
+        progressBar.setOpacity(1);
 
         skipButton.setVisible(false);//hides the next button
         skipButton.setDisable(true);//disables the next button
@@ -718,6 +731,46 @@ public class LevelScreenController extends AbstractController {
             }
         }
     }
+
+    /**
+     * when you call this method, it will start the progress bar
+     * it will always be fixed at 3 seconds
+     */
+    private void startProgressBar(){
+
+        Task<Void> progressBarTask = new Task<Void>() {
+            @Override
+            public Void call() throws Exception{
+
+                for (double i = 0.0 ; i < 1.0 ; i = i + 0.01){
+                    //good luck trying to calculate the exact intervals needed for 3 seconds( or was it 2?)
+                    //good luck trying to figure out milliseconds needed....
+
+                    progressBar.setProgress(i);
+                    try {
+                        Thread.sleep(20);
+                    }catch (InterruptedException ie){
+                        //do nothing
+                    }
+                }
+                return null;
+            }
+
+            @Override
+            public void done() {
+                //i dunno why, but when the progress bar only goes up to like 95%...and you can see a bit of white
+                //not covered by the progress
+                //so i have to manually set the progress to 100%....wtf.....
+                progressBar.setProgress(1.0);//cheating, not really
+            }
+
+        };
+        new Thread(progressBarTask).start();
+    }
+
+
+
+
 
 
 }
