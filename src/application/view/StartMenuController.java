@@ -41,7 +41,7 @@ public class StartMenuController extends AbstractController {
 	}
 
 	@FXML
-	public void handleMic(){
+	public void handleOther(){
 		_mainApp.initOptions();
 	}
 
