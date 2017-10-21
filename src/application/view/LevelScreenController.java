@@ -490,6 +490,9 @@ public class LevelScreenController extends AbstractController {
     private void displayEndScreen() {
 
         getFinalSCore();
+
+
+
         _mainApp.initMainEndScreen(finalScore, selectedLevel , selectedOperation);
     }
 
