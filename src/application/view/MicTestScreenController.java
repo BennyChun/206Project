@@ -2,7 +2,7 @@ package application.view;
 
 import javafx.fxml.FXML;
 
-public class OptionsScreenController extends AbstractController {
+public class MicTestScreenController extends AbstractController {
 
     @FXML
     public void handleBack(){
