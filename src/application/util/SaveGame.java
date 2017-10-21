@@ -17,7 +17,9 @@ public class SaveGame {
         String str = gson.toJson(temp);
         System.out.println(str);
 
-        EquationQuestion q2 = gson.fromJson(str, EquationQuestion.class);
+
+
+        //EquationQuestion q2 = gson.fromJson(str, EquationQuestion.class);
     }
 
 
