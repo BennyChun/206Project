@@ -503,8 +503,11 @@ public class LevelScreenController extends AbstractController {
     private void displayEndScreen() {
 
         getFinalSCore();
-
-
+        //should also save the game
+        //pass the final score
+        //and pass the list of equation (model) to the class
+        //the class should:
+        //serialize the results of each game(10 questions and score)
 
         _mainApp.initMainEndScreen(finalScore, selectedLevel , selectedOperation);
     }
