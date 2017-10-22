@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="840.0" prefWidth="460.0" stylesheets="@scrollpane.css">
+         <children>
+            <LineChart layoutX="55.0" layoutY="123.0" prefHeight="300.0" prefWidth="350.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Label layoutX="110.0" layoutY="14.0" text="EASY STATISTICS">
+               <font>
+                  <Font name="Maiandra GD" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="71.0" text="High Score:">
+               <font>
+                  <Font name="Maiandra GD" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="178.0" layoutY="71.0" text="10/10">
+               <font>
+                  <Font name="Maiandra GD" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="423.0" text="Previous Attemps">
+               <font>
+                  <Font name="Maiandra GD" size="24.0" />
+               </font>
+            </Label>
+            <TableView focusTraversable="false" layoutX="35.0" layoutY="482.0" prefHeight="256.0" prefWidth="400.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
+              <columns>
+                <TableColumn maxWidth="98.5" prefWidth="98.5" text="Difficulty" />
+                <TableColumn prefWidth="113.5" text="Opertation" />
+                  <TableColumn prefWidth="81.5" text="Score" />
+                  <TableColumn prefWidth="105.0" text="Time/Date" />
+              </columns>
+            </TableView>
+            <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="763.0" style="-fx-background-color: #ffffff;" text="Open Session">
+               <font>
+                  <Font name="Maiandra GD" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="304.0" layoutY="763.0" style="-fx-background-color: #ffffff;" text="Delete">
+               <font>
+                  <Font name="Maiandra GD" size="22.0" />
+               </font>
+            </JFXButton>
+            <TableView focusTraversable="false" layoutX="62.0" layoutY="346.0" prefHeight="256.0" prefWidth="400.0" visible="false" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
+               <columns>
+                  <TableColumn maxWidth="98.5" prefWidth="76.5" text="Question " />
+                  <TableColumn prefWidth="116.5" text="Equation" />
+                  <TableColumn prefWidth="82.0" text="Answer" />
+                  <TableColumn prefWidth="59.0" text="Correct?" />
+                  <TableColumn prefWidth="65.0" text="Attempts" />
+               </columns>
+            </TableView>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

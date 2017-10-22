@@ -2,12 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StatisticsScreenController">
@@ -26,18 +23,5 @@
         </JFXButton>
       <FontAwesomeIconView />
       <FontAwesomeIconView glyphName="LINE_CHART" layoutX="407.0" layoutY="172.0" size="184" />
-      <StackPane layoutX="237.0" layoutY="226.0" prefHeight="550.0" prefWidth="550.0">
-         <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #ffffff;">
-               <children>
-                  <Label text="Easy Statistics">
-                     <font>
-                        <Font name="Maiandra GD" size="37.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </StackPane>
     </children>
 </AnchorPane>
