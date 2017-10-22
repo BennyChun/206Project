@@ -1,4 +1,5 @@
 package application;
+import java.io.File;
 import java.io.IOException;
 
 import application.model.EquationQuestion;
@@ -18,6 +19,8 @@ public class MainApp extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
+		setUpSavedGamesStats();//sets up the SavedGamesStats directory
+		setUpCustomGames();//sets yp the CustomGames directory
 		_primaryStage = primaryStage;
 		_primaryStage.setTitle("Tātai!");
 		initStartMenu();
@@ -403,7 +406,56 @@ public class MainApp extends Application {
 	}
 
 
+	//==================================================
 
+	/**
+	 * when yoy call this method, it will get the current working directory
+	 * it will check whether the directory: SavedGamesStats exists
+	 * it will then create the directory if it doesn't exits
+	 */
+	public void setUpSavedGamesStats(){
+		File theDir = new File(System.getProperty("user.dir")+"/SavedGamesStats");
+
+		// if the directory does not exist, create it
+		if (!theDir.exists()) {
+			System.out.println("creating directory: " + theDir.getName());
+
+			try{
+				theDir.mkdir();
+			}
+			catch(Exception eee){
+				eee.printStackTrace();
+			}
+		}else{
+			//the directory already exits, so do nothing ?
+			System.out.println(System.getProperty("user.dir")+"/SavedGames" + ": already exists !");
+		}
+	}
+
+	/**
+	 * when you cal lthis method
+	 * it will check if the directory: CustomGames exists
+	 * if it doesn't exist, make the directory.
+	 */
+	public void setUpCustomGames(){
+		File theDir = new File(System.getProperty("user.dir")+"/CustomGames");
+
+		// if the directory does not exist, create it
+		if (!theDir.exists()) {
+			System.out.println("creating directory: " + theDir.getName());
+
+			try{
+				theDir.mkdir();
+			}
+			catch(Exception eee){
+				eee.printStackTrace();
+			}
+		}else{
+			//the directory already exits, so do nothing ?
+			System.out.println(System.getProperty("user.dir")+"/CustomGames" + ": already exists !");
+		}
+	}
+	//==================================================
 
 
 	/**
@@ -415,13 +467,6 @@ public class MainApp extends Application {
 	}
 	
 	public static void main(String[] args) {
-
-//		Gson gson = new Gson();
-//		Question question = new Question(4);
-//		String str = gson.toJson(question);
-//		System.out.println(str);
-//
-//		Question q2 = gson.fromJson(str, Question.class);
 
 		launch(args);
 	}

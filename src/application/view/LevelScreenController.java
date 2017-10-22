@@ -4,6 +4,7 @@ import application.model.EquationQuestion;
 import application.util.MaoriAnswerUtil;
 import application.util.ReadHTKFile;
 import application.util.RecordingUtil;
+import application.util.SaveGameHelper;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -503,11 +504,7 @@ public class LevelScreenController extends AbstractController {
     private void displayEndScreen() {
 
         getFinalSCore();
-        //should also save the game
-        //pass the final score
-        //and pass the list of equation (model) to the class
-        //the class should:
-        //serialize the results of each game(10 questions and score)
+        SaveGameHelper test = new SaveGameHelper(equationList , selectedLevel , selectedOperation , finalScore);
 
         _mainApp.initMainEndScreen(finalScore, selectedLevel , selectedOperation);
     }
@@ -770,8 +767,6 @@ public class LevelScreenController extends AbstractController {
         };
         new Thread(progressBarTask).start();
     }
-
-
 
 
 

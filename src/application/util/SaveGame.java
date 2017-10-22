@@ -26,39 +26,29 @@ public class SaveGame {
     private int theScore;       //records the score
     private String theLevel;    //records the level played
     private String theOperation;//records the operation used
+
+    private long unixTimeStamp;  //reocords the unix time stamp, will use this as the txt file name to store the json string
+
     private int[] scoreArray = {0,0,0,0,0,0,0,0,0,0};//this helps keep track of which question they got correct and wrong
-    private ArrayList<String> equationList = new ArrayList<String>();         // this helps keep track of all the equations
-
-
-//==============================================================================================================
-//   public static void main(String[] args){
-//        ObservableList<EquationQuestion> LOL = FXCollections.observableArrayList();
-//        for (int i = 0 ; i < 10 ; i++) {
-//            EquationQuestion temp = new EquationQuestion("easy", "+");
-//            LOL.add(temp);
-//
-//            //testing purposes
-//            System.out.print(temp.getTheEquation() + " = ");
-//            System.out.println(temp.getTheAnswer());
-//        }
-//
-//
-//        Gson gson = new Gson();
-//        String str = gson.toJson(LOL);//stores the observablelist into a json String
-//        System.out.println(str);
-
-//          EquationQuestion q2 = gson.fromJson(str, EquationQuestion.class); // can't do that
-//    }
+    private ArrayList<String> equationList = new ArrayList<>();         // this helps keep track of all the equations
+    private ArrayList<Integer> answerList = new ArrayList<>();          //this helps keep track of all the answers (int)
+    private ArrayList<Integer> attempsList = new ArrayList<>();         //this helps stores the number of attempts
 
 //===============================================================================================================
     public SaveGame(ObservableList<EquationQuestion> theList , String theLevel , String theOperation, int theScore){
+
+        setDate();//this method will help get the date, and set it as global fields
+
         this.theLevel = theLevel;
         this.theOperation = theOperation;
         this.theScore = theScore;
 
+
         for (int i  = 0 ; i < 10 ; i++){
             EquationQuestion tempEquation = theList.get(i);//gets the EquationQuestion
-            equationList.add(tempEquation.getTheEquation());//stores the equation to the equation list;
+            answerList.add(tempEquation.getTheAnswer());   //stores the answer to the equation in a list
+            equationList.add(tempEquation.getTheEquation());//stores the equation to the equationList;
+            attempsList.add(tempEquation.getCurrentAttempts());//stores the number of attempts used on that equation question
             if (tempEquation.isCorrect()){
                 //if the question got answered correctly
                 scoreArray[i] = 1;//set it as 1, which means they got it correct, otherwise just leave it as 0 (default)
@@ -71,11 +61,12 @@ public class SaveGame {
      * this method sets the current date and time
      * and stores it as a global field: theDate , theTime.
      */
-    public void setDate(){
+    private void setDate(){
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         DateFormat dateFormatTime = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
         theDate = dateFormat.format(date);
+        unixTimeStamp = date.getTime();//this gets the unix time stamps
         theTime = dateFormatTime.format(date);
     }
 
@@ -83,6 +74,13 @@ public class SaveGame {
     //                                            getters nad setters
     //===========================================================================================================
 
+    /**
+     * this method returns the unix time stamp
+     * @return
+     */
+    public long getUnixTimeStamp(){
+        return unixTimeStamp;
+    }
 
 
 }
