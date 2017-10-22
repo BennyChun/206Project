@@ -32,7 +32,7 @@ public class SaveGame {
     private int[] scoreArray = {0,0,0,0,0,0,0,0,0,0};//this helps keep track of which question they got correct and wrong
     private ArrayList<String> equationList = new ArrayList<>();         // this helps keep track of all the equations
     private ArrayList<Integer> answerList = new ArrayList<>();          //this helps keep track of all the answers (int)
-    private ArrayList<Integer> attempsList = new ArrayList<>();         //this helps stores the number of attempts
+    private ArrayList<Integer> attemptsList = new ArrayList<>();         //this helps stores the number of attempts
 
 //===============================================================================================================
     public SaveGame(ObservableList<EquationQuestion> theList , String theLevel , String theOperation, int theScore){
@@ -48,7 +48,7 @@ public class SaveGame {
             EquationQuestion tempEquation = theList.get(i);//gets the EquationQuestion
             answerList.add(tempEquation.getTheAnswer());   //stores the answer to the equation in a list
             equationList.add(tempEquation.getTheEquation());//stores the equation to the equationList;
-            attempsList.add(tempEquation.getCurrentAttempts());//stores the number of attempts used on that equation question
+            attemptsList.add(tempEquation.getCurrentAttempts());//stores the number of attempts used on that equation question
             if (tempEquation.isCorrect()){
                 //if the question got answered correctly
                 scoreArray[i] = 1;//set it as 1, which means they got it correct, otherwise just leave it as 0 (default)
@@ -75,12 +75,64 @@ public class SaveGame {
     //===========================================================================================================
 
     /**
-     * this method returns the unix time stamp
+     * this method returns the date: String
      * @return
      */
-    public long getUnixTimeStamp(){
-        return unixTimeStamp;
-    }
+    public String getTheDate(){ return theDate;}
 
+    /**
+     * this method returns the time: String
+     * @return
+     */
+    public String getTheTime(){ return theTime; }
+
+    /**
+     * this method returns the score: int
+     * @return
+     */
+    public int getTheScore(){ return theScore; }
+
+    /**
+     * this method returns the level: String
+     * @return
+     */
+    public String getTheLevel(){ return theLevel; }
+
+    /**
+     * this method returns the operation: String
+     * @return
+     */
+    public String getTheOperation(){ return theOperation; }
+
+    /**
+     * this method returns the unixTimeStampL Long
+     * @return
+     */
+    public long getUnixTimeStamp(){ return unixTimeStamp; }
+
+
+    /**
+     * this method returns the score array: int[]
+     * @return
+     */
+    public int[] getScoreArray(){ return scoreArray; }
+
+    /**
+     * this method returns the equationList: ArrayList<String>
+     * @return
+     */
+    public ArrayList<String> getEquationList(){ return equationList; }
+
+    /**
+     * this method returns the answer list: ArrayList<Integer>
+     * @return
+     */
+    public ArrayList<Integer> getAnswerList(){ return answerList; }
+
+    /**
+     * this method returns the attempts list: ArrayList<Integer>
+     * @return
+     */
+    public ArrayList<Integer> getAttemptsList(){ return attemptsList; }
 
 }

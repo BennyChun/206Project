@@ -1,10 +1,58 @@
 package application.util;
 
+import com.google.gson.Gson;
+
+import java.io.*;
+import java.util.ArrayList;
+
 /**
  * this class should read all the txt files in a specified location/path
  * it should tak
  */
 public class InputStatsFile {
     private String savedGamesDir = System.getProperty("user.dir")+"/SavedGamesStats/";
+    private ArrayList<SaveGame> listOfSavedGames = new ArrayList<>();                   //this stores all the files as SaveGame object
+    private Gson gson = new Gson();
 
+
+
+    /**
+     *
+     */
+    public void getFiles(){
+        File folder = new File(savedGamesDir);//get the SavedGamesStats folder as a File
+        File[] listOfFiles = folder.listFiles();//get all the files inside that folder, and stores it in an array of File type
+
+        for (int i = 0; i < listOfFiles.length; i++) {
+            String jsonString="";
+            //System.out.println("File " + listOfFiles[i].getName());//display the file name:debugging purposes
+
+            try {
+                File tempFile = listOfFiles[i];
+                BufferedReader buff = new BufferedReader(new FileReader(tempFile));
+                jsonString = buff.readLine();
+            } catch (FileNotFoundException fnfe) {
+                fnfe.printStackTrace();
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+
+            //System.out.println(jsonString);
+            SaveGame getTheGameStats = gson.fromJson(jsonString, SaveGame.class);
+            listOfSavedGames.add(getTheGameStats);
+        }
+
+    }
+
+    /**
+     * this getter method returns the arraylist of all the stats of saved games
+     * the object in the array list is the SaveGame object.
+     * please refer to SaveGame object for getters.
+     *
+     * will return NULL if there were NO filesS in the SavedGamesStats folder !!!!
+     * @return
+     */
+    public ArrayList<SaveGame> getAllSavedGames(){
+        return listOfSavedGames;
+    }
 }

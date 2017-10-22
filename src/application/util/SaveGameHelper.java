@@ -32,7 +32,6 @@ public class SaveGameHelper {
         //========================================================================================================
         String savedGamesDir = System.getProperty("user.dir")+"/SavedGamesStats/";
 
-
         OutputStatsFile out = new OutputStatsFile(savedGamesDir , sg.getUnixTimeStamp(), jsonString);
 
         //---------------------------------------------------------------------------------------------------------------

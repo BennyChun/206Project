@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css" vvalue="1.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EasyStatsController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="840.0" prefWidth="460.0" stylesheets="@scrollpane.css">
          <children>
-            <LineChart layoutX="55.0" layoutY="123.0" prefHeight="300.0" prefWidth="350.0">
+            <LineChart fx:id="_scoreGraph" layoutX="55.0" layoutY="123.0" prefHeight="300.0" prefWidth="350.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -33,7 +33,7 @@
                   <Font name="Maiandra GD" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="178.0" layoutY="71.0" text="10/10">
+            <Label fx:id="highScore" layoutX="178.0" layoutY="71.0" text="10/10">
                <font>
                   <Font name="Maiandra GD" size="24.0" />
                </font>
@@ -43,33 +43,38 @@
                   <Font name="Maiandra GD" size="24.0" />
                </font>
             </Label>
-            <TableView focusTraversable="false" layoutX="35.0" layoutY="482.0" prefHeight="256.0" prefWidth="400.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
+            <TableView fx:id="overallStats" focusTraversable="false" layoutX="35.0" layoutY="482.0" prefHeight="256.0" prefWidth="400.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
               <columns>
-                <TableColumn maxWidth="98.5" prefWidth="98.5" text="Difficulty" />
-                <TableColumn prefWidth="113.5" text="Operation" />
-                  <TableColumn prefWidth="81.5" text="Score" />
-                  <TableColumn prefWidth="105.0" text="Time/Date" />
+                <TableColumn fx:id="_difficulty" maxWidth="98.5" prefWidth="98.5" text="Difficulty" />
+                <TableColumn fx:id="_operation" prefWidth="113.5" text="Operation" />
+                  <TableColumn fx:id="_score" prefWidth="81.5" text="Score" />
+                  <TableColumn fx:id="_time" prefWidth="105.0" text="Time/Date" />
               </columns>
             </TableView>
-            <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="763.0" style="-fx-background-color: #ffffff;" text="Open Session">
+            <JFXButton fx:id="_openSession" buttonType="RAISED" focusTraversable="false" layoutX="62.0" layoutY="763.0" style="-fx-background-color: #ffffff;" text="Open Session" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="763.0">
                <font>
                   <Font name="Maiandra GD" size="22.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="304.0" layoutY="763.0" style="-fx-background-color: #ffffff;" text="Delete">
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="304.0" layoutY="763.0" style="-fx-background-color: #ffffff;" text="Delete">
                <font>
                   <Font name="Maiandra GD" size="22.0" />
                </font>
             </JFXButton>
-            <TableView focusTraversable="false" layoutX="62.0" layoutY="346.0" prefHeight="256.0" prefWidth="400.0" visible="false" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
+            <TableView fx:id="sessionStats" focusTraversable="false" layoutX="62.0" layoutY="346.0" prefHeight="256.0" prefWidth="400.0" visible="false" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
                <columns>
-                  <TableColumn maxWidth="98.5" prefWidth="76.5" text="Question " />
-                  <TableColumn prefWidth="116.5" text="Equation" />
-                  <TableColumn prefWidth="82.0" text="Answer" />
-                  <TableColumn prefWidth="59.0" text="Correct?" />
-                  <TableColumn prefWidth="65.0" text="Attempts" />
+                  <TableColumn fx:id="_questionNumber" maxWidth="98.5" prefWidth="76.5" text="Question " />
+                  <TableColumn fx:id="_equation" prefWidth="116.5" text="Equation" />
+                  <TableColumn fx:id="_answer" prefWidth="82.0" text="Answer" />
+                  <TableColumn fx:id="_isCorrect" prefWidth="59.0" text="Correct?" />
+                  <TableColumn fx:id="_attempts" prefWidth="65.0" text="Attempts" />
                </columns>
             </TableView>
+            <JFXButton fx:id="_closeSession" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="107.0" layoutY="754.0" style="-fx-background-color: #ffffff;" text="Close Session" visible="false" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="763.0">
+               <font>
+                  <Font name="Maiandra GD" size="22.0" />
+               </font>
+            </JFXButton>
          </children></AnchorPane>
   </content>
 </ScrollPane>
