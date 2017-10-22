@@ -822,13 +822,13 @@ public class LevelScreenController extends AbstractController {
 
     @FXML
     private void skipHelp(){
-        createPopover(questionTrackerPopOver, questionTracker,"Press this button to skip this question");
+        createPopover(skipPopOver, skipButton,"Press this button to skip this question");
 
     }
 
     @FXML
     private void nextHelp(){
-        createPopover(questionTrackerPopOver, questionTracker,"Pres this button to continue to the next question!");
+        createPopover(nextPopOver, nextButton,"Pres this button to continue to the next question!");
 
     }
 

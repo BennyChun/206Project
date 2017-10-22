@@ -113,12 +113,12 @@
             <Rectangle fx:id="attemptThree" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
          </children>
       </HBox>
-      <JFXButton fx:id="retryButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="503.0" onAction="#handleRetry" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
+      <JFXButton fx:id="retryButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="503.0" onAction="#handleRetry" onMouseEntered="#retryHelp" onMouseExited="#retryClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
          <graphic>
             <FontAwesomeIconView glyphName="REPEAT" size="60" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="skipButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="626.0" onAction="#handleSkip" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
+      <JFXButton fx:id="skipButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="626.0" onAction="#handleSkip" onMouseEntered="#skipHelp" onMouseExited="#skipClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
@@ -126,7 +126,7 @@
             <FontAwesomeIconView glyphName="FORWARD" size="60" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="nextButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="388.0" layoutY="626.0" onAction="#handleNext" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
+      <JFXButton fx:id="nextButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="388.0" layoutY="626.0" onAction="#handleNext" onMouseEntered="#nextHelp" onMouseExited="#nextClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
          <graphic>
             <FontAwesomeIconView glyphName="STEP_FORWARD" size="60" />
          </graphic>
@@ -169,6 +169,6 @@
             <Font name="Maiandra GD" size="30.0" />
          </font>
       </Label>
-      <JFXProgressBar fx:id="progressBar" blendMode="RED" layoutX="387.0" layoutY="620.0" prefHeight="12.0" prefWidth="250.0" progress="0.0" />
+      <JFXProgressBar fx:id="progressBar" blendMode="RED" layoutX="-6.0" layoutY="614.0" prefHeight="12.0" prefWidth="1024.0" progress="0.0" AnchorPane.leftAnchor="-6.0" />
    </children>
 </AnchorPane>
