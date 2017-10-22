@@ -44,28 +44,6 @@ public class MainApp extends Application {
 			e.printStackTrace();
 		}
 	}
-	
-	public void initStageSelect(){
-		try {
-			//load start menu from fxml file.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/StageSelect.fxml"));
-			AnchorPane _stageSelect = (AnchorPane) loader.load();
-
-			// Show the scene containing the start menu
-			Scene scene = new Scene(_stageSelect);
-			_primaryStage.setScene(scene);
-			_primaryStage.show();
-			_primaryStage.setResizable(false);
-
-			
-			//give stage select controller access to the main app
-			StageSelectController controller = loader.getController();
-			controller.setMainApp(this);//this will set the main app scene to the stage select scene
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-	}
 
 
 	/**
@@ -198,7 +176,7 @@ public class MainApp extends Application {
 		}
 	}
 
-	public void initOptions(){
+	public void initMic(){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();

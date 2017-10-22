@@ -49,7 +49,7 @@
             <Image url="@android-logo-1.png" />
          </image>
       </ImageView>
-      <JFXTextArea focusColor="WHITE" layoutX="201.0" layoutY="641.0" prefHeight="74.0" prefWidth="613.0" style="-fx-background-color: #ffffff;" text="Press the record button to record for 3 seconds,&#10;then press play to check if your microphone works!">
+      <JFXTextArea editable="false" focusColor="WHITE" layoutX="201.0" layoutY="641.0" prefHeight="74.0" prefWidth="613.0" style="-fx-background-color: #ffffff;" text="Press the record button to record for 3 seconds,&#10;then press play to check if your microphone works!">
          <font>
             <Font name="Maiandra GD" size="25.0" />
          </font>
