@@ -265,8 +265,6 @@ public class LevelScreenController extends AbstractController {
             }
         };
         new Thread(playRecordingTask).start();
-
-
     }
 
 

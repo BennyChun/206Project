@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -22,7 +23,7 @@
                 </ImageView>
             </graphic>
         </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="605.0" layoutY="563.0" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="562.0">
+      <JFXButton fx:id="playButton" buttonType="RAISED" focusTraversable="false" layoutX="557.0" layoutY="518.0" onAction="#handlePlay" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="557.0">
          <font>
             <Font name="Maiandra GD" size="12.0" />
          </font>
@@ -30,8 +31,7 @@
             <FontAwesomeIconView glyphName="PLAY" size="60" />
          </graphic>
       </JFXButton>
-      <FontAwesomeIconView glyphName="ANDROID" layoutX="337.0" layoutY="476.0" size="420" AnchorPane.leftAnchor="342.0" />
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="223.0" layoutY="564.0" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="212.0">
+      <JFXButton fx:id="recordButton" buttonType="RAISED" focusTraversable="false" layoutX="208.0" layoutY="518.0" onAction="#handleRecord" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="208.0">
          <font>
             <Font name="Maiandra GD" size="12.0" />
          </font>
@@ -44,5 +44,15 @@
             <Font name="Maiandra GD" size="52.0" />
          </font>
       </Label>
+      <ImageView fitHeight="354.0" fitWidth="349.0" layoutX="333.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@android-logo-1.png" />
+         </image>
+      </ImageView>
+      <JFXTextArea editable="false" focusColor="WHITE" layoutX="201.0" layoutY="641.0" prefHeight="74.0" prefWidth="613.0" style="-fx-background-color: #ffffff;" text="Press the record button to record for 3 seconds,&#10;then press play to check if your microphone works!">
+         <font>
+            <Font name="Maiandra GD" size="25.0" />
+         </font>
+      </JFXTextArea>
     </children>
 </AnchorPane>
