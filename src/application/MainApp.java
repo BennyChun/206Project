@@ -111,7 +111,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/PracticeInstructions.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane instructions = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -162,7 +161,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/AchievementsScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane achievements = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -184,7 +182,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/MicTestScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane micTest = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -206,7 +203,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/CharacterPurchaseScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane chars = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -228,7 +224,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/StatisticsScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane stats = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -251,7 +246,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/CustomLevelScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane customLevel = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -283,7 +277,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/QuestionSelectScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane questionSelect = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu
@@ -312,7 +305,6 @@ public class MainApp extends Application {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/LevelScreen.fxml"));
-			//loader.setController(new StartMenuController(_navigator));
 			AnchorPane questionSelect = (AnchorPane) loader.load();
 
 			// Show the scene containing the start menu

@@ -38,7 +38,7 @@
                   <Font name="Maiandra GD" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="50.0" layoutY="423.0" text="Previous Attemps">
+            <Label layoutX="50.0" layoutY="423.0" text="Previous Attempts">
                <font>
                   <Font name="Maiandra GD" size="24.0" />
                </font>
@@ -46,7 +46,7 @@
             <TableView focusTraversable="false" layoutX="35.0" layoutY="482.0" prefHeight="256.0" prefWidth="400.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
               <columns>
                 <TableColumn maxWidth="98.5" prefWidth="98.5" text="Difficulty" />
-                <TableColumn prefWidth="113.5" text="Opertation" />
+                <TableColumn prefWidth="113.5" text="Operation" />
                   <TableColumn prefWidth="81.5" text="Score" />
                   <TableColumn prefWidth="105.0" text="Time/Date" />
               </columns>

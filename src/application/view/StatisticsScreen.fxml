@@ -23,5 +23,21 @@
         </JFXButton>
       <FontAwesomeIconView />
       <FontAwesomeIconView glyphName="LINE_CHART" layoutX="407.0" layoutY="172.0" size="184" />
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="287.0" layoutY="202.0" onAction="#handleEasy" prefWidth="120.0" style="-fx-background-color: #ffffff;" text="Easy">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="452.0" layoutY="202.0" onAction="#handleHard" prefWidth="120.0" style="-fx-background-color: #ffffff;" text="Hard">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="617.0" layoutY="202.0" onAction="#handleCustom" prefWidth="120.0" style="-fx-background-color: #ffffff;" text="Custom">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="statsPane" layoutX="275.0" layoutY="266.0" prefHeight="475.0" prefWidth="475.0" style="-fx-background-color: #ffffff;" />
     </children>
 </AnchorPane>
