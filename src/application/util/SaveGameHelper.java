@@ -2,13 +2,7 @@ package application.util;
 
 import application.model.EquationQuestion;
 import com.google.gson.Gson;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.time.Instant;
 
 /**
  * this class is solely for testing the class: SaveGame
@@ -39,7 +33,7 @@ public class SaveGameHelper {
         String savedGamesDir = System.getProperty("user.dir")+"/SavedGamesStats/";
 
 
-        OutPutFile out = new OutPutFile(savedGamesDir , sg.getUnixTimeStamp(), jsonString);
+        OutputStatsFile out = new OutputStatsFile(savedGamesDir , sg.getUnixTimeStamp(), jsonString);
 
         //---------------------------------------------------------------------------------------------------------------
         //SaveGame getTheGame = gson.fromJson(str, SaveGame.class); //this will get the string, and will try and deserialize it to the SaveGame class.

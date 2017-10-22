@@ -398,7 +398,7 @@ public class MainApp extends Application {
 			}
 		}else{
 			//the directory already exits, so do nothing ?
-			System.out.println(System.getProperty("user.dir")+"/SavedGames" + ": already exists !");
+			//System.out.println(System.getProperty("user.dir")+"/SavedGames" + ": already exists !");
 		}
 	}
 
@@ -422,7 +422,7 @@ public class MainApp extends Application {
 			}
 		}else{
 			//the directory already exits, so do nothing ?
-			System.out.println(System.getProperty("user.dir")+"/CustomGames" + ": already exists !");
+			//System.out.println(System.getProperty("user.dir")+"/CustomGames" + ": already exists !");
 		}
 	}
 	//==================================================
