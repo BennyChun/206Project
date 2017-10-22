@@ -19,9 +19,6 @@ import javafx.beans.property.*;
 public class EquationQuestion {
 
     private IntegerProperty theAnswer;  //records the answer
-
-
-
     private StringProperty theAnswerInMaori; //records the answer in maori :String
     private StringProperty theEquation; //records the equation
     private IntegerProperty currentAttempts; //records the number of attemps
