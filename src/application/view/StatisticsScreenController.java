@@ -51,7 +51,7 @@ public class StatisticsScreenController extends AbstractController {
             Scene scene = new Scene(hard);
             statsPane.getChildren().add(hard);
             //give stage select controller access to the main app
-            //MicTestScreenController controller = loader.getController();
+            EasyStatsController controller = loader.getController();
         }catch(IOException e){
             e.printStackTrace();
         }
