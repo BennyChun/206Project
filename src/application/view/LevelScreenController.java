@@ -25,8 +25,8 @@ import org.controlsfx.control.PopOver;
 import java.net.URISyntaxException;
 import java.util.Optional;
 
+import static application.MainApp.mascotImage;
 import static org.controlsfx.control.PopOver.ArrowLocation.TOP_CENTER;
-import static org.controlsfx.control.PopOver.ArrowLocation.TOP_LEFT;
 
 
 public class LevelScreenController extends AbstractController {
@@ -43,7 +43,8 @@ public class LevelScreenController extends AbstractController {
     @FXML private Label correctLabel;
     @FXML private Label questionLabel;
     @FXML private HBox questionTracker;
-    @FXML private HBox attempTracker;
+    @FXML private HBox attemptTracker;
+    @FXML private ImageView mascot;
 
     @FXML private ProgressBar progressBar;//the progress bar
     //===============================================================================
@@ -143,6 +144,7 @@ public class LevelScreenController extends AbstractController {
         //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         incorrectLabel.setVisible(false);
         correctLabel.setVisible(false);
+        mascot.setImage(mascotImage);
     }
 
     /**
@@ -805,7 +807,7 @@ public class LevelScreenController extends AbstractController {
 
     @FXML
     private void attemptHelp(){
-        createPopover(attemptPopOver, attempTracker,"This shows which attempt you're on \nRemember you have 3 tries for each question!");
+        createPopover(attemptPopOver, attemptTracker,"This shows which attempt you're on \nRemember you have 3 tries for each question!");
     }
 
     @FXML

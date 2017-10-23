@@ -106,7 +106,7 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox fx:id="attempTracker" layoutX="447.0" layoutY="112.0" onMouseEntered="#attemptHelp" onMouseExited="#attemptClose" prefHeight="30.0" prefWidth="130.0" spacing="20.0">
+      <HBox fx:id="attemptTracker" layoutX="447.0" layoutY="112.0" onMouseEntered="#attemptHelp" onMouseExited="#attemptClose" prefHeight="30.0" prefWidth="130.0" spacing="20.0">
          <children>
             <Rectangle fx:id="attemptOne" arcHeight="5.0" arcWidth="5.0" fill="#fff200" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
             <Rectangle fx:id="attemptTwo" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
@@ -169,7 +169,7 @@
          </font>
       </Label>
       <JFXProgressBar fx:id="progressBar" blendMode="RED" layoutX="387.0" layoutY="603.0" prefHeight="12.0" prefWidth="250.0" progress="0.0" />
-      <ImageView fitHeight="437.0" fitWidth="417.0" layoutX="14.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="166.0">
+      <ImageView fx:id="mascot" fitHeight="437.0" fitWidth="417.0" layoutX="14.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="166.0">
          <image>
             <Image url="@kiwi.png" />
          </image>

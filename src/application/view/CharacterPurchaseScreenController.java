@@ -32,6 +32,7 @@ public class CharacterPurchaseScreenController extends AbstractController {
             storePane.getChildren().add(storePanel);
             //give stage select controller access to the main app
             StorePanelController controller = loader.getController();
+
         }catch(IOException e){
             e.printStackTrace();
         }

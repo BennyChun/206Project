@@ -1,6 +1,9 @@
 package application.view;
 
 import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
+
+import static application.MainApp.mascotImage;
 
 /**
  * this controller handles to play screen
@@ -8,6 +11,12 @@ import javafx.fxml.FXML;
  */
 public class PlaySelectScreenController extends AbstractController {
 
+    @FXML private ImageView mascot;
+
+    @FXML
+    public void initialize(){
+        mascot.setImage(mascotImage);
+    }
 
     @FXML
     public void handleBack(){

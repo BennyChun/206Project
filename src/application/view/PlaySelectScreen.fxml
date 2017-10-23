@@ -16,7 +16,7 @@
          </font>
       </Label>
       <VBox layoutX="711.0" layoutY="164.0" prefHeight="200.0" prefWidth="100.0" />
-      <ImageView fitHeight="448.0" fitWidth="406.0" layoutX="47.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="mascot" fitHeight="448.0" fitWidth="406.0" layoutX="47.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@kiwi.png" />
          </image>

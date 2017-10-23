@@ -45,7 +45,7 @@
             <Font name="Maiandra GD" size="52.0" />
          </font>
       </Label>
-      <ImageView fitHeight="392.0" fitWidth="365.0" layoutX="375.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="mascot" fitHeight="392.0" fitWidth="365.0" layoutX="375.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@kiwi.png" />
          </image>
