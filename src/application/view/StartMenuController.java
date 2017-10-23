@@ -1,17 +1,27 @@
 package application.view;
 
 //import application.util.NavigatorUtil;
+import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
+import org.controlsfx.control.PopOver;
 
 import java.net.URISyntaxException;
 
 import static application.MainApp.mascotImage;
+import static org.controlsfx.control.PopOver.ArrowLocation.BOTTOM_RIGHT;
+import static org.controlsfx.control.PopOver.ArrowLocation.TOP_CENTER;
 
 public class StartMenuController extends AbstractController {
 
 	@FXML private ImageView mascot;
+	@FXML private Button charButton;
+	private PopOver clickHerePopOver = new PopOver();
 
 	@FXML
 	public void initialize(){
@@ -25,6 +35,7 @@ public class StartMenuController extends AbstractController {
 		}
 		mascotImage = new Image(path);
 		mascot.setImage(mascotImage);
+
 	}
 	
 	/**
@@ -64,6 +75,33 @@ public class StartMenuController extends AbstractController {
 	@FXML
 	public void handleMic(){
 		_mainApp.initMic();
+	}
+
+	@FXML
+	public void showClickMe(){
+		setPopOver();
+	}
+
+	@FXML
+	public void closeClickMe(){
+		clickHerePopOver.hide();
+	}
+
+	private void setPopOver(){
+		String text = "Click Me!";
+		Label help = new Label(text);
+		help.setFont(new Font("Maiandra GD",40));
+		clickHerePopOver.setContentNode(help);
+		clickHerePopOver.setArrowLocation(BOTTOM_RIGHT);
+		clickHerePopOver.setArrowSize(10);
+		clickHerePopOver.setAutoHide(false);
+		// remove min height property.
+		DoubleProperty minHeight = clickHerePopOver.getRoot().minHeightProperty();
+		minHeight.unbind();
+		minHeight.set(0);
+		// Set padding
+		clickHerePopOver.getRoot().setPadding(new Insets(8));
+		clickHerePopOver.show(mascot);
 	}
 
 }

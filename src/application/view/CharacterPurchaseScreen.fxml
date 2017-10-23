@@ -20,6 +20,6 @@
                 </ImageView>
             </graphic>
         </JFXButton>
-      <AnchorPane fx:id="storePane" layoutX="167.0" layoutY="159.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="212.0" AnchorPane.topAnchor="159.0" />
+      <AnchorPane fx:id="storePane" layoutX="14.0" layoutY="159.0" prefHeight="450.0" prefWidth="910.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="159.0" />
     </children>
 </AnchorPane>

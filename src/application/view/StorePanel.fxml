@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StorePanelController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StorePanelController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="900.0">
          <children>
@@ -77,7 +77,7 @@
                         <Insets left="9.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <JFXRadioButton focusTraversable="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <JFXRadioButton focusTraversable="false" selected="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <toggleGroup>
                         <ToggleGroup fx:id="charSelectGroup" />
                      </toggleGroup>
