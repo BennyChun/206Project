@@ -15,12 +15,10 @@ import java.net.URISyntaxException;
 
 import static application.MainApp.mascotImage;
 import static org.controlsfx.control.PopOver.ArrowLocation.BOTTOM_RIGHT;
-import static org.controlsfx.control.PopOver.ArrowLocation.TOP_CENTER;
 
 public class StartMenuController extends AbstractController {
 
 	@FXML private ImageView mascot;
-	@FXML private Button charButton;
 	private PopOver clickHerePopOver = new PopOver();
 
 	@FXML
@@ -28,7 +26,7 @@ public class StartMenuController extends AbstractController {
 		// TODO change this because we need to set it from reading a file storing user's previous choice
 		String path = null;
 		try {
-			path = this.getClass().getResource("kiwi.png").toURI().toString();
+			path = this.getClass().getResource("Kea.png").toURI().toString();
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -49,7 +49,7 @@
          </JFXButton>
       </children>
    </VBox>
-   <JFXButton fx:id="charButton" focusTraversable="false" layoutX="547.0" layoutY="272.0" onAction="#handleCharacter" onMouseEntered="#showClickMe" onMouseExited="#closeClickMe" prefHeight="381.0" prefWidth="385.0">
+   <JFXButton focusTraversable="false" layoutX="547.0" layoutY="272.0" onAction="#handleCharacter" onMouseEntered="#showClickMe" onMouseExited="#closeClickMe" prefHeight="381.0" prefWidth="385.0">
       <graphic>
          <ImageView fx:id="mascot" accessibleRole="BUTTON" fitHeight="448.0" fitWidth="406.0" pickOnBounds="true" preserveRatio="true" scaleX="-1.0">
             <image>
