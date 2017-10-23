@@ -4,7 +4,9 @@ package application.view;
 import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,6 +14,7 @@ import javafx.scene.text.Font;
 import org.controlsfx.control.PopOver;
 
 import java.net.URISyntaxException;
+import java.util.Optional;
 
 import static application.MainApp.mascotImage;
 import static org.controlsfx.control.PopOver.ArrowLocation.BOTTOM_RIGHT;
@@ -47,7 +50,17 @@ public class StartMenuController extends AbstractController {
 	
 	@FXML
 	public void handleQuit() {
-		_mainApp.close();
+		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Confirmation Dialog");
+		alert.setHeaderText("Are you sure you want to quit?");
+		alert.setContentText("We'd love for you keep learning!");
+
+		Optional<ButtonType> result = alert.showAndWait();
+		if (result.get() == ButtonType.OK){
+			_mainApp.close();
+		} else {
+			//do nothing
+		}
 	}
 
 	@FXML
