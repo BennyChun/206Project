@@ -318,6 +318,7 @@ public class MainApp extends Application {
 			//give stage select controller access to the main app
 			LevelScreenController controller = loader.getController();
 
+
 			ObservableList<EquationQuestion> LOL = FXCollections.observableArrayList();
 			for (int i = 0 ; i < 10 ; i++) {
 				EquationQuestion temp = new EquationQuestion(selectedLevel, selectedOperation);

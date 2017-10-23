@@ -32,7 +32,8 @@ public class StatisticsScreenController extends AbstractController {
             Scene scene = new Scene(hard);
             statsPane.getChildren().add(hard);
             //give stage select controller access to the main app
-            //MicTestScreenController controller = loader.getController();
+            EasyStatsController controller = loader.getController();
+            controller.initialSetUp("hard");
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -43,7 +44,7 @@ public class StatisticsScreenController extends AbstractController {
         try {
             //load start menu from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/HardStats.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/EasyStats.fxml"));
             ScrollPane hard = (ScrollPane) loader.load();
 
             // Show the scene containing the start menu
@@ -52,6 +53,7 @@ public class StatisticsScreenController extends AbstractController {
             statsPane.getChildren().add(hard);
             //give stage select controller access to the main app
             EasyStatsController controller = loader.getController();
+            controller.initialSetUp("easy");
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -63,15 +65,16 @@ public class StatisticsScreenController extends AbstractController {
         try {
             //load start menu from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/CustomStats.fxml"));
-            ScrollPane hard = (ScrollPane) loader.load();
+            loader.setLocation(MainApp.class.getResource("view/EasyStats.fxml"));
+            ScrollPane custom = (ScrollPane) loader.load();
 
             // Show the scene containing the start menu
 
-            Scene scene = new Scene(hard);
-            statsPane.getChildren().add(hard);
+            Scene scene = new Scene(custom);
+            statsPane.getChildren().add(custom);
             //give stage select controller access to the main app
-            //MicTestScreenController controller = loader.getController();
+            EasyStatsController controller = loader.getController();
+            controller.initialSetUp("custom");
         }catch(IOException e){
             e.printStackTrace();
         }

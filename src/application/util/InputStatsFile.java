@@ -1,6 +1,8 @@
 package application.util;
 
 import com.google.gson.Gson;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ public class InputStatsFile {
     private ArrayList<SaveGame> listOfSavedGames = new ArrayList<>();                   //this stores all the files as SaveGame object
     private Gson gson = new Gson();
 
+    private ObservableList<SaveGameObservable> observableArrayList = FXCollections.observableArrayList();//stores all the observable lists of saveGame
 
 
     /**
@@ -54,5 +57,24 @@ public class InputStatsFile {
      */
     public ArrayList<SaveGame> getAllSavedGames(){
         return listOfSavedGames;
+    }
+
+    /**
+     * should return the BbservableList<SaveGame> of the ArrayList<SaveGame>
+     * @return
+     */
+    public ObservableList<SaveGameObservable> getObservableList(String selectedLevel){
+
+        //loop through the ArrayList of SaveGame
+        for (int i = 0 ; i < listOfSavedGames.size() ; i++){
+            //convert the SaveGame object to a SaveGameObservable object
+            SaveGameObservable temp = new SaveGameObservable(listOfSavedGames.get(i));
+            if (temp.getTheLevel().equals(selectedLevel)){
+                observableArrayList.add(temp);//add the SaveGameObservable object to the observableArrayList
+
+            }
+        }
+
+        return observableArrayList;
     }
 }
