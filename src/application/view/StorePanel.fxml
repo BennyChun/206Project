@@ -77,13 +77,13 @@
                         <Insets left="9.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <JFXRadioButton focusTraversable="false" selected="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <JFXRadioButton fx:id="kiwiButton" focusTraversable="false" onAction="#setKiwi" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <toggleGroup>
                         <ToggleGroup fx:id="charSelectGroup" />
                      </toggleGroup>
                   </JFXRadioButton>
-                  <JFXRadioButton focusTraversable="false" toggleGroup="$charSelectGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <JFXRadioButton focusTraversable="false" toggleGroup="$charSelectGroup" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <JFXRadioButton fx:id="keaButton" focusTraversable="false" onAction="#setKea" toggleGroup="$charSelectGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <JFXRadioButton fx:id="kakapoButton" focusTraversable="false" onAction="#setKakapo" toggleGroup="$charSelectGroup" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children></AnchorPane>

@@ -459,7 +459,7 @@ public class LevelScreenController extends AbstractController {
         updateCorrectQuestionTracker();
 
         correctLabel.setVisible(true);//shows the correctLabel bubble
-        correctLabel.setText(" Well Done! \n You Said: " +correctAnswer + "\n Which means: " + currentEquation.getTheAnswer() + " ");
+        correctLabel.setText(" Well Done! \n You Said: " +correctAnswer + " " + "\n Which means: " + currentEquation.getTheAnswer() + " ");
 
         nextButton.setVisible(true);
         nextButton.setDisable(false);
