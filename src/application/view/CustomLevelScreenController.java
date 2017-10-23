@@ -15,7 +15,6 @@ public class CustomLevelScreenController extends AbstractController{
         mascot.setImage(mascotImage);
     }
 
-
     @FXML
     public void handleBack(){
         _mainApp.initPlaySelect();

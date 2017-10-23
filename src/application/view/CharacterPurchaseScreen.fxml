@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #008080);" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.CharacterPurchaseScreenController">
@@ -21,5 +23,11 @@
             </graphic>
         </JFXButton>
       <AnchorPane fx:id="storePane" layoutX="14.0" layoutY="159.0" prefHeight="450.0" prefWidth="910.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="159.0" />
+      <Label layoutX="107.0" layoutY="59.0" text="Pick Your Favorite Tatai Mascot!">
+         <font>
+            <Font name="Maiandra GD" size="57.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#413c3c" height="4.5" layoutX="617.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" AnchorPane.leftAnchor="618.0" AnchorPane.topAnchor="77.0" />
     </children>
 </AnchorPane>

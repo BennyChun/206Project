@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.PlaySelectScreenController">
    <children>
-      <Label layoutX="264.0" layoutY="14.0" text="Select Level">
+      <Label layoutX="216.0" layoutY="14.0" text="Select A Level">
          <font>
             <Font name="Maiandra GD" size="100.0" />
          </font>
@@ -23,22 +23,22 @@
       </ImageView>
       <VBox layoutX="582.0" layoutY="183.0" prefHeight="500.0" prefWidth="413.0" spacing="60.0">
          <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleEasy" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="EASY">
+            <JFXButton fx:id="easyButton" buttonType="RAISED" focusTraversable="false" onAction="#handleEasy" onMouseEntered="#easyHelp" onMouseExited="#closeEasyHelp" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="EASY">
                <font>
                   <Font name="Maiandra GD" size="37.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleHard" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="HARD">
+            <JFXButton fx:id="hardButton" buttonType="RAISED" focusTraversable="false" onAction="#handleHard" onMouseEntered="#hardHelp" onMouseExited="#closeHardHelp" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="HARD">
                <font>
                   <Font name="Maiandra GD" size="37.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleCustom" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="CUSTOM">
+            <JFXButton fx:id="customButton" buttonType="RAISED" focusTraversable="false" onAction="#handleCustom" onMouseEntered="#customHelp" onMouseExited="#closeCustomHelp" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="CUSTOM">
                <font>
                   <Font name="Maiandra GD" size="37.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleBack" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="BACK">
+            <JFXButton fx:id="backButton" buttonType="RAISED" focusTraversable="false" onAction="#handleBack" onMouseEntered="#backHelp" onMouseExited="#closeBackHelp" prefHeight="50.0" prefWidth="370.0" style="-fx-background-color: #ffffff;" text="BACK">
                <font>
                   <Font name="Maiandra GD" size="37.0" />
                </font>
