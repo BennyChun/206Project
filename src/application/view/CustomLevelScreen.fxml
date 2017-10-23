@@ -26,11 +26,7 @@
          </graphic>
       </JFXButton>
       <JFXListView layoutX="512.0" layoutY="108.0" prefHeight="490.0" prefWidth="420.0" />
-      <ImageView fitHeight="420.0" fitWidth="424.0" layoutX="22.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@android-logo-1.png" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="mascot" fitHeight="448.0" fitWidth="406.0" layoutX="22.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true" />
       <HBox layoutX="512.0" layoutY="598.0" prefHeight="100.0" prefWidth="420.0" spacing="94.0">
          <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefHeight="70.0" prefWidth="80.0" style="-fx-background-color: #ffffff;">
