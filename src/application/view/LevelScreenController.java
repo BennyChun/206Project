@@ -6,19 +6,27 @@ import application.util.ReadHTKFile;
 import application.util.RecordingUtil;
 import application.util.SaveGameHelper;
 import javafx.application.Platform;
+import javafx.beans.property.DoubleProperty;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import org.controlsfx.control.PopOver;
 
 import java.net.URISyntaxException;
 import java.util.Optional;
 
+import static application.MainApp.mascotImage;
+import static org.controlsfx.control.PopOver.ArrowLocation.TOP_CENTER;
 
 
 public class LevelScreenController extends AbstractController {
@@ -34,6 +42,9 @@ public class LevelScreenController extends AbstractController {
     @FXML private Label incorrectLabel;
     @FXML private Label correctLabel;
     @FXML private Label questionLabel;
+    @FXML private HBox questionTracker;
+    @FXML private HBox attemptTracker;
+    @FXML private ImageView mascot;
 
     @FXML private ProgressBar progressBar;//the progress bar
     //===============================================================================
@@ -63,7 +74,16 @@ public class LevelScreenController extends AbstractController {
     @FXML private Button skipButton;
     @FXML private Button retryButton;
     @FXML private Button nextButton;
-
+    //==============================================================================
+    // pop overs
+    private PopOver recordPopOver = new PopOver();
+    private PopOver listenPopOver = new PopOver();
+    private PopOver confirmPopOver = new PopOver();
+    private PopOver questionTrackerPopOver = new PopOver();
+    private PopOver attemptPopOver = new PopOver();
+    private PopOver retryPopOver = new PopOver();
+    private PopOver skipPopOver = new PopOver();
+    private PopOver nextPopOver = new PopOver();
 
     //==============================================================================
     private int currentQuestionNumber;//keeps track of which question we are on
@@ -124,6 +144,7 @@ public class LevelScreenController extends AbstractController {
         //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         incorrectLabel.setVisible(false);
         correctLabel.setVisible(false);
+        mascot.setImage(mascotImage);
     }
 
     /**
@@ -766,7 +787,75 @@ public class LevelScreenController extends AbstractController {
         new Thread(progressBarTask).start();
     }
 
+    //===========================================================================================
+    //Instruction help popovers
 
+    @FXML
+    private void recordHelp(){
+        createPopover(recordPopOver, recordButton,"Press this button to record your answer for 2 seconds!");
+    }
 
+    @FXML
+    private void listenHelp(){
+        createPopover(listenPopOver, listenButton,"Press this button to listen to your answer");
+    }
+
+    @FXML
+    private void confirmHelp(){
+        createPopover(confirmPopOver, confirmButton,"Press this button to listen to submit your answer");
+    }
+
+    @FXML
+    private void attemptHelp(){
+        createPopover(attemptPopOver, attemptTracker,"This shows which attempt you're on \nRemember you have 3 tries for each question!");
+    }
+
+    @FXML
+    private void questionTrackHelp(){
+        createPopover(questionTrackerPopOver, questionTracker,"This shows which question you're on!");
+    }
+
+    @FXML
+    private void retryHelp(){
+        createPopover(retryPopOver, retryButton,"Press this button to retry the question!");
+
+    }
+
+    @FXML
+    private void skipHelp(){
+        createPopover(skipPopOver, skipButton,"Press this button to skip this question");
+
+    }
+
+    @FXML
+    private void nextHelp(){
+        createPopover(nextPopOver, nextButton,"Pres this button to continue to the next question!");
+
+    }
+
+    @FXML private void recordClose(){ recordPopOver.hide();}
+    @FXML private void listenClose(){ listenPopOver.hide();}
+    @FXML private void confirmClose(){ confirmPopOver.hide();}
+    @FXML private void attemptClose(){ attemptPopOver.hide();}
+    @FXML private void questionTrackerClose(){ questionTrackerPopOver.hide();}
+    @FXML private void retryClose(){ retryPopOver.hide();}
+    @FXML private void skipClose(){ skipPopOver.hide();}
+    @FXML private void nextClose(){ nextPopOver.hide();}
+
+    private void createPopover(PopOver popOver, Node anchor, String text){
+        Label help = new Label(text);
+        help.setFont(new Font("Maiandra GD",20));
+        popOver.setContentNode(help);
+        popOver.setArrowLocation(TOP_CENTER);
+        popOver.setArrowSize(10);
+        // remove min height property.
+        DoubleProperty minHeight = popOver.getRoot().minHeightProperty();
+        minHeight.unbind();
+        minHeight.set(0);
+        // Set padding
+        popOver.getRoot().setPadding(new Insets(8));
+        popOver.show(anchor);
+
+    }
 
 }

@@ -7,12 +7,25 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+import java.net.URISyntaxException;
+
+import static application.MainApp.mascotImage;
 
 public class MicTestScreenController extends AbstractController {
 
     @FXML private Button recordButton;
     @FXML private Button playButton;
     @FXML private ProgressBar progressBar;
+    @FXML private ImageView mascot;
+
+    @FXML
+    private void initialize(){
+
+        mascot.setImage(mascotImage);
+    }
 
     @FXML
     public void handleBack(){

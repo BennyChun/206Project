@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -16,6 +17,7 @@ public class MainApp extends Application {
 
 	private Stage _primaryStage;
 	private AnchorPane _startMenu;
+	public static Image mascotImage; // the image that occurs throughout the app.
 	
 	@Override
 	public void start(Stage primaryStage) {
