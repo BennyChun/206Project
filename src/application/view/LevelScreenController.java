@@ -790,7 +790,7 @@ public class LevelScreenController extends AbstractController {
 
     @FXML
     private void recordHelp(){
-        createPopover(recordPopOver, recordButton,"Press this button to record your answer for 2 seconds");
+        createPopover(recordPopOver, recordButton,"Press this button to record your answer for 2 seconds!");
     }
 
     @FXML
@@ -811,7 +811,6 @@ public class LevelScreenController extends AbstractController {
     @FXML
     private void questionTrackHelp(){
         createPopover(questionTrackerPopOver, questionTracker,"This shows which question you're on!");
-
     }
 
     @FXML
@@ -856,8 +855,5 @@ public class LevelScreenController extends AbstractController {
         popOver.show(anchor);
 
     }
-
-
-
 
 }

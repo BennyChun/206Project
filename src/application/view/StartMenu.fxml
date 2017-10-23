@@ -49,11 +49,11 @@
          </JFXButton>
       </children>
    </VBox>
-   <JFXButton focusTraversable="false" layoutX="562.0" layoutY="276.0" onAction="#handleCharacter" prefHeight="381.0" prefWidth="385.0">
+   <JFXButton focusTraversable="false" layoutX="547.0" layoutY="272.0" onAction="#handleCharacter" prefHeight="381.0" prefWidth="385.0">
       <graphic>
-         <ImageView accessibleRole="BUTTON" fitHeight="420.0" fitWidth="424.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView accessibleRole="BUTTON" fitHeight="448.0" fitWidth="406.0" pickOnBounds="true" preserveRatio="true" scaleX="-1.0">
             <image>
-               <Image url="@android-logo-1.png" />
+               <Image url="@kiwi.png" />
             </image>
          </ImageView>
       </graphic>

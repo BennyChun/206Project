@@ -45,9 +45,9 @@
             <Font name="Maiandra GD" size="52.0" />
          </font>
       </Label>
-      <ImageView fitHeight="354.0" fitWidth="349.0" layoutX="333.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="392.0" fitWidth="365.0" layoutX="375.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@android-logo-1.png" />
+            <Image url="@kiwi.png" />
          </image>
       </ImageView>
       <JFXTextArea editable="false" focusColor="WHITE" layoutX="201.0" layoutY="641.0" prefHeight="74.0" prefWidth="613.0" style="-fx-background-color: #ffffff;" text="Press the record button to record for 3 seconds,&#10;then press play to check if your microphone works!">
@@ -55,6 +55,6 @@
             <Font name="Maiandra GD" size="25.0" />
          </font>
       </JFXTextArea>
-      <JFXProgressBar fx:id="progressBar" layoutX="420.0" layoutY="226.0" prefHeight="15.0" prefWidth="175.0" progress="0.0" />
+      <JFXProgressBar fx:id="progressBar" layoutX="425.0" layoutY="497.0" prefHeight="15.0" prefWidth="175.0" progress="0.0" />
     </children>
 </AnchorPane>
