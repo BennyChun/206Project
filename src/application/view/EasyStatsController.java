@@ -127,7 +127,8 @@ public class EasyStatsController extends AbstractController {
      * this method will set up the line chart to show the progression of the last (10 games ? )
      */
     private void setUpLineChart(){
-
+        ArrayList<Integer> history = new ArrayList<>();
+        //for (int i = 0; )
 
     }
 }
