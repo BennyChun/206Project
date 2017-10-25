@@ -188,23 +188,24 @@ public class LevelScreenController extends AbstractController {
         //initialilly the currentQuestionNumber == 1
         //once you press record, it is == 1
 
+
         //the currentQuestionNumber will only increase after the user clicks nextButton
         if (currentQuestionNumber <=10 ){ //PLEASE CHECK THIS NUMBER !!!
-
             Task<Void> recordTask = new Task<Void>() {
-                @Override
-                public Void call() {
-                    listenButton.setDisable(true);
-                    confirmButton.setDisable(true);
-                    RecordingUtil record = new RecordingUtil();		//instantiates the Recording class so that we can use it's Utilities
-                    record.recordVoice();							//record the users voice
-                    record.convertVoiceToMaori();					//pass the users wav file to the KHT, and HTK will output the foo.mlf file
-                    ReadHTKFile readRecout = new ReadHTKFile();		//instantiates the ReadHTKFile class
-                    readRecout.readHTK();							//reads the foo.mlf file
-                    mao = readRecout.getMaoriWords();		        //get the String of the maori word (this is the the users input answer)
-                    return null;
-                }
-                @Override
+                    @Override
+                    public Void call() {
+                        listenButton.setDisable(true);
+                        confirmButton.setDisable(true);
+
+                        RecordingUtil record = new RecordingUtil();        //instantiates the Recording class so that we can use it's Utilities
+                        record.recordVoice();                            //record the users voice
+                        record.convertVoiceToMaori();                    //pass the users wav file to the KHT, and HTK will output the foo.mlf file
+                        ReadHTKFile readRecout = new ReadHTKFile();        //instantiates the ReadHTKFile class
+                        readRecout.readHTK();                            //reads the foo.mlf file
+                        mao = readRecout.getMaoriWords();                //get the String of the maori word (this is the the users input answer)
+                        return null;
+                    }
+                    @Override
                 public void done() {
                     Platform.runLater(() -> {
                         listenButton.setDisable(false);

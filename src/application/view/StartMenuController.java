@@ -68,6 +68,7 @@ public class StartMenuController extends AbstractController {
 
 	@FXML
 	public void handleCharacter(){
+		clickHerePopOver.hide();
 		_mainApp.initCharacters();
 	}
 

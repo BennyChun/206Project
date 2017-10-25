@@ -22,7 +22,7 @@
                 </ImageView>
             </graphic>
         </JFXButton>
-      <AnchorPane fx:id="storePane" layoutX="14.0" layoutY="159.0" prefHeight="450.0" prefWidth="910.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="159.0" />
+      <AnchorPane fx:id="storePane" layoutX="14.0" layoutY="159.0" prefHeight="450.0" prefWidth="910.0" style="-fx-background-color: #ffffff;" stylesheets="@background.css" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="159.0" />
       <Label layoutX="107.0" layoutY="59.0" text="Pick Your Favorite Tatai Mascot!">
          <font>
             <Font name="Maiandra GD" size="57.0" />
