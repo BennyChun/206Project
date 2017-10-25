@@ -50,7 +50,12 @@ public class SaveGameObservable {
         answerList = theSavedGame.getAnswerList();
         attemptsList = theSavedGame.getAttemptsList();
 
-        for (int i = 0; i < scoreArray.length; i++) {
+        for (int i = 0; i < 10; i++) {
+
+            equationList.get(i);
+            attemptsList.get(i);
+            answerList.get(i);
+
             sessionObservables.add(new SessionObservable(equationList.get(i), answerList.get(i), attemptsList.get(i), scoreArray[i]));
         }
     }

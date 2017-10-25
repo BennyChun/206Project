@@ -4,6 +4,7 @@ package application.view;
 import application.util.InputStatsFile;
 import application.util.SaveGame;
 import application.util.SaveGameObservable;
+import application.util.SessionObservable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,13 +30,11 @@ public class EasyStatsController extends AbstractController {
     @FXML private TableColumn<SaveGameObservable, String> _time;
     //===================================================================================================
     // hidden table fields
-    @FXML private TableView<SaveGameObservable> sessionStats; // hidden table storing equations that were done
-    @FXML private TableColumn<SaveGameObservable, Integer> _questionNumber;
-    @FXML private TableColumn<SaveGameObservable, String> _equation;
-    @FXML private TableColumn<SaveGameObservable, Integer> _answer;
-    @FXML private TableColumn<SaveGameObservable, String> _isCorrect;
-    @FXML
-    private TableColumn<SaveGameObservable, Integer> _attempts;
+    @FXML private TableView<SessionObservable> sessionStats; // hidden table storing equations that were done
+    @FXML private TableColumn<SessionObservable, String> _equation;
+    @FXML private TableColumn<SessionObservable, Integer> _answer;
+    @FXML private TableColumn<SessionObservable, String> _isCorrect;
+    @FXML private TableColumn<SessionObservable, Integer> _attempts;
     //====================================================================================================
     @FXML private Button _openSession;
     @FXML private Button _closeSession;
@@ -97,8 +96,9 @@ public class EasyStatsController extends AbstractController {
         stats.getFiles();
 
         observableArrayList = stats.getObservableList(selectedLevelButton);
-        overallStats.setItems(observableArrayList);
 
+        overallStats.setItems(observableArrayList);
+        System.out.println("asdfasdf");
 
         setUpHighScoreLabel();
         setUpLineChart();
@@ -152,6 +152,13 @@ public class EasyStatsController extends AbstractController {
 
 
     public void handleOpenSession(){
+
+        if (overallStats.getSelectionModel().getSelectedItem() == null) {
+            return;
+        }
+
+        SaveGameObservable game = overallStats.getSelectionModel().getSelectedItem();
+
         //disable the opensession
         //disable the delete button
         //enable the close session button
@@ -167,8 +174,14 @@ public class EasyStatsController extends AbstractController {
         overallStats.setVisible(false);
         overallStats.setDisable(true);
         sessionStats.setDisable(false);
-        sessionStats.setVisible(true);
 
+        _equation.setCellValueFactory(cell -> cell.getValue().equationProperty());
+        _answer.setCellValueFactory(cell -> cell.getValue().answerProperty().asObject());
+        _isCorrect.setCellValueFactory(cell -> cell.getValue().correctProperty());
+        _attempts.setCellValueFactory(cell -> cell.getValue().numberOfAttemptsProperty().asObject());
+
+        sessionStats.setItems(game.getSessionObservables());
+        sessionStats.setVisible(true);
     }
 
     public void handleCloseSession(){

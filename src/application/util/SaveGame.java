@@ -30,12 +30,17 @@ public class SaveGame {
     private long unixTimeStamp;  //reocords the unix time stamp, will use this as the txt file name to store the json string
 
     private int[] scoreArray = {0,0,0,0,0,0,0,0,0,0};//this helps keep track of which question they got correct and wrong
-    private ArrayList<String> equationList = new ArrayList<>();         // this helps keep track of all the equations
-    private ArrayList<Integer> answerList = new ArrayList<>();          //this helps keep track of all the answers (int)
-    private ArrayList<Integer> attemptsList = new ArrayList<>();         //this helps stores the number of attempts
+    private ArrayList<String> equationList;       // this helps keep track of all the equations
+    private ArrayList<Integer> answerList;        //this helps keep track of all the answers (int)
+    private ArrayList<Integer> attemptsList;        //this helps stores the number of attempts
 
 //===============================================================================================================
     public SaveGame(ObservableList<EquationQuestion> theList , String theLevel , String theOperation, int theScore){
+
+        equationList = new ArrayList<>();         // this helps keep track of all the equations
+        answerList = new ArrayList<>();          //this helps keep track of all the answers (int)
+        attemptsList = new ArrayList<>();         //this helps stores the number of attempts
+
 
         setDate();//this method will help get the date, and set it as global fields
 
@@ -133,6 +138,8 @@ public class SaveGame {
      * this method returns the attempts list: ArrayList<Integer>
      * @return
      */
-    public ArrayList<Integer> getAttemptsList(){ return attemptsList; }
+    public ArrayList<Integer> getAttemptsList(){
+        return attemptsList;
+    }
 
 }

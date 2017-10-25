@@ -1,15 +1,18 @@
 package application.util;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class SessionObservable {
-    private StringProperty equation, answer, numberOfAttempts, correct;
+    private StringProperty equation, correct;
+    private IntegerProperty answer, numberOfAttempts;
 
     public SessionObservable(String equation, int answer, int numberOfAttempts, int correct) {
         this.equation = new SimpleStringProperty(equation);
-        this.answer = new SimpleStringProperty(Integer.toString(answer));
-        this.numberOfAttempts = new SimpleStringProperty(Integer.toString(numberOfAttempts));
+        this.answer = new SimpleIntegerProperty(answer);
+        this.numberOfAttempts = new SimpleIntegerProperty(numberOfAttempts);
 
         if (correct == 1) {
             this.correct = new SimpleStringProperty("Correct :)");
@@ -26,27 +29,27 @@ public class SessionObservable {
         return equation;
     }
 
-    public String getAnswer() {
-        return answer.get();
-    }
-
-    public StringProperty answerProperty() {
-        return answer;
-    }
-
-    public String getNumberOfAttempts() {
-        return numberOfAttempts.get();
-    }
-
-    public StringProperty numberOfAttemptsProperty() {
-        return numberOfAttempts;
-    }
-
     public String getCorrect() {
         return correct.get();
     }
 
     public StringProperty correctProperty() {
         return correct;
+    }
+
+    public int getAnswer() {
+        return answer.get();
+    }
+
+    public IntegerProperty answerProperty() {
+        return answer;
+    }
+
+    public int getNumberOfAttempts() {
+        return numberOfAttempts.get();
+    }
+
+    public IntegerProperty numberOfAttemptsProperty() {
+        return numberOfAttempts;
     }
 }

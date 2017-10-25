@@ -66,6 +66,7 @@ public class InputStatsFile {
     public ObservableList<SaveGameObservable> getObservableList(String selectedLevel){
 
         //loop through the ArrayList of SaveGame
+        System.out.println(listOfSavedGames.size());
         for (int i = 0 ; i < listOfSavedGames.size() ; i++){
             //convert the SaveGame object to a SaveGameObservable object
             SaveGameObservable temp = new SaveGameObservable(listOfSavedGames.get(i));
