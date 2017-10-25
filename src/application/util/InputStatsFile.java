@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * this class should read all the txt files in a specified location/path
@@ -25,6 +26,9 @@ public class InputStatsFile {
     public void getFiles(){
         File folder = new File(savedGamesDir);//get the SavedGamesStats folder as a File
         File[] listOfFiles = folder.listFiles();//get all the files inside that folder, and stores it in an array of File type
+
+        //need to sort the File[] array
+
 
         for (int i = 0; i < listOfFiles.length; i++) {
             String jsonString="";
@@ -66,7 +70,7 @@ public class InputStatsFile {
     public ObservableList<SaveGameObservable> getObservableList(String selectedLevel){
 
         //loop through the ArrayList of SaveGame
-        System.out.println(listOfSavedGames.size());
+
         for (int i = 0 ; i < listOfSavedGames.size() ; i++){
             //convert the SaveGame object to a SaveGameObservable object
             SaveGameObservable temp = new SaveGameObservable(listOfSavedGames.get(i));
@@ -78,4 +82,10 @@ public class InputStatsFile {
 
         return observableArrayList;
     }
+
+
+    //-----------------------------------------------------------
+
+
+
 }

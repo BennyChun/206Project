@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * just go into the SaveGame class
  * and add getters which returns new SimpleIntegerProperty.....................WTF
  */
-public class SaveGameObservable {
+public class SaveGameObservable implements Comparable<SaveGameObservable> {
     private StringProperty theDate;     //records the date
     private StringProperty theTime;     //records the time
     private IntegerProperty theScore;       //records the score
@@ -51,10 +51,6 @@ public class SaveGameObservable {
         attemptsList = theSavedGame.getAttemptsList();
 
         for (int i = 0; i < 10; i++) {
-
-            equationList.get(i);
-            attemptsList.get(i);
-            answerList.get(i);
 
             sessionObservables.add(new SessionObservable(equationList.get(i), answerList.get(i), attemptsList.get(i), scoreArray[i]));
         }
@@ -134,4 +130,17 @@ public class SaveGameObservable {
         return attemptsList;
     }
 
+
+    //must override compareTo() method because this class implements comparable<SaveGameObservable>
+    //this helps sort the SaveGameObservable based on its unixTimeStamp
+    @Override
+    public int compareTo(SaveGameObservable o) {
+        if (this.getUnixTimeStamp() < o.getUnixTimeStamp()) {
+            return -1;
+        } else if (this.getUnixTimeStamp() > o.getUnixTimeStamp()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }

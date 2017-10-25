@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Optional;
 
 public class EasyStatsController extends AbstractController {
@@ -91,6 +92,7 @@ public class EasyStatsController extends AbstractController {
     public void initialSetUp(String selectedLevelButton){
 
         userSelectedStatsLevel = selectedLevelButton; //saves what the user selected
+        StatLevelLabel.setText(selectedLevelButton + " statistics");
         //should get all the stats
         InputStatsFile stats = new InputStatsFile();
         stats.getFiles();
@@ -98,7 +100,7 @@ public class EasyStatsController extends AbstractController {
         observableArrayList = stats.getObservableList(selectedLevelButton);
 
         overallStats.setItems(observableArrayList);
-        System.out.println("asdfasdf");
+
 
         setUpHighScoreLabel();
         setUpLineChart();
@@ -245,6 +247,9 @@ public class EasyStatsController extends AbstractController {
         }else{
             theLength = observableArrayList.size();
         }
+
+        //Sort observableArrayList
+        Collections.sort(observableArrayList);
 
         for (int i = 0; i < theLength ; i ++){
             history.add(observableArrayList.get(i).getTheScore());

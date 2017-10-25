@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css" vvalue="1.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EasyStatsController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EasyStatsController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="840.0" prefWidth="460.0" stylesheets="@scrollpane.css">
          <children>
@@ -23,11 +23,6 @@
                 <NumberAxis fx:id="y" side="LEFT" />
               </yAxis>
             </LineChart>
-            <Label layoutX="110.0" layoutY="14.0" text="EASY STATISTICS">
-               <font>
-                  <Font name="Maiandra GD" size="32.0" />
-               </font>
-            </Label>
             <Label layoutX="50.0" layoutY="71.0" text="High Score:">
                <font>
                   <Font name="Maiandra GD" size="24.0" />
@@ -80,6 +75,11 @@
                   <Font name="Maiandra GD" size="22.0" />
                </font>
             </JFXButton>
+            <Label fx:id="StatLevelLabel" alignment="CENTER" layoutX="27.0" layoutY="17.0" prefHeight="39.0" prefWidth="418.0" text="stats">
+               <font>
+                  <Font name="Maiandra GD" size="32.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </content>
 </ScrollPane>
