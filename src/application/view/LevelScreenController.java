@@ -378,6 +378,14 @@ public class LevelScreenController extends AbstractController {
             currentEquation = equationList.get(currentQuestionNumber - 1);//updates the currentEquation to the next one in the list
             questionLabel.setText(" What is " + currentEquation.getTheEquation() + " ? ");//displays the currentEquation
         }else{
+            recordPopOver.hide();
+            listenPopOver.hide();
+            confirmPopOver.hide();
+            questionTrackerPopOver.hide();
+            attemptPopOver.hide();
+            retryPopOver.hide();
+            skipPopOver.hide();
+            nextPopOver.hide();
             displayEndScreen();
         }
 

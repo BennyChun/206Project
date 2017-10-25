@@ -42,6 +42,7 @@ public class PlaySelectScreenController extends AbstractController {
 
     @FXML
     public void handleBack(){
+        backPopOver.hide();
         _mainApp.initStartMenu();
     }
 
@@ -56,12 +57,14 @@ public class PlaySelectScreenController extends AbstractController {
     //===================================================
     @FXML
     public void handleEasy(){
+        easyPopOver.hide();
         _mainApp.initQuestionSelect("easy");
     }
 
 
     @FXML
     public void handleHard(){
+        hardPopOver.hide();
         _mainApp.initQuestionSelect("hard");
     }
     //==================================================
