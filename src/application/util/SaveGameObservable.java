@@ -1,6 +1,8 @@
 package application.util;
 
 import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 
@@ -31,6 +33,8 @@ public class SaveGameObservable {
     private ArrayList<Integer> answerList = new ArrayList<>();          //this helps keep track of all the answers (int)
     private ArrayList<Integer> attemptsList = new ArrayList<>();         //this helps stores the number of attempts
 
+    private ObservableList<SessionObservable> sessionObservables = FXCollections.observableArrayList();
+
     //======================================================================================
 
     public SaveGameObservable(SaveGame theSavedGame){
@@ -46,10 +50,19 @@ public class SaveGameObservable {
         answerList = theSavedGame.getAnswerList();
         attemptsList = theSavedGame.getAttemptsList();
 
+        for (int i = 0; i < scoreArray.length; i++) {
+            sessionObservables.add(new SessionObservable(equationList.get(i), answerList.get(i), attemptsList.get(i), scoreArray[i]));
+        }
     }
     //======================================================================================
     //                                     setters and getters
     //======================================================================================
+
+
+    public ObservableList<SessionObservable> getSessionObservables() {
+        return sessionObservables;
+    }
+
     public String getTheDate() {
         return theDate.get();
     }

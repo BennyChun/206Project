@@ -8,15 +8,15 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class EasyStatsController extends AbstractController {
 
@@ -39,8 +39,17 @@ public class EasyStatsController extends AbstractController {
     //====================================================================================================
     @FXML private Button _openSession;
     @FXML private Button _closeSession;
-    @FXML private LineChart<Integer, Integer> _scoreGraph;
+    @FXML private Button delete;
+    @FXML private LineChart<Integer, Integer> _OLDscoreGraph;
+
+
+    @FXML private CategoryAxis x;
+    @FXML private NumberAxis y;
+    @FXML private LineChart<?,?> _scoreGraph ;
+
+
     @FXML private Label highScore;
+    @FXML private Label StatLevelLabel;
     //==========================================================================================
     //                                   global fields
 
@@ -71,7 +80,7 @@ public class EasyStatsController extends AbstractController {
         _score.setCellValueFactory(cellData -> cellData.getValue().theScoreProperty().asObject());
         _time.setCellValueFactory(cellData -> cellData.getValue().theDateProperty());
 
-
+        //how to set the cellData to show an arralist of Strings
 
 
     }
@@ -83,17 +92,104 @@ public class EasyStatsController extends AbstractController {
     public void initialSetUp(String selectedLevelButton){
 
         userSelectedStatsLevel = selectedLevelButton; //saves what the user selected
-        //should get al lth stats
+        //should get all the stats
         InputStatsFile stats = new InputStatsFile();
         stats.getFiles();
 
         observableArrayList = stats.getObservableList(selectedLevelButton);
         overallStats.setItems(observableArrayList);
 
+
         setUpHighScoreLabel();
         setUpLineChart();
     }
 
+    /**
+     * Called when the user clicks on the delete button.
+     */
+    @FXML
+    private void handleDeleteStats() {
+        int selectedIndex = overallStats.getSelectionModel().getSelectedIndex();
+
+        if (selectedIndex >= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("Are you sure you want to Delete this saved game ?");
+            alert.setContentText("All statistics of this game will be lost");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+
+
+
+                //also delete it from the SavedGamesStats folder
+                String savedGamesDir = System.getProperty("user.dir")+"/SavedGamesStats/";
+
+                SaveGameObservable temp = overallStats.getItems().get(selectedIndex);//this gets the SaveGame that was selected from the user on the Tableview
+                String filename = Long.toString(temp.getUnixTimeStamp());
+                File fileToDelete = new File(savedGamesDir + filename);
+                fileToDelete.delete();
+
+                overallStats.getItems().remove(selectedIndex);//delete the game form the TableView
+
+
+
+            } else {
+                //do nothing
+            }
+
+        } else {
+            //the user did not select a game
+            //inform the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("There was no game session selected");
+            alert.setContentText("Please select a session, if there are any.");
+
+            alert.showAndWait();
+        }
+    }
+
+
+    public void handleOpenSession(){
+        //disable the opensession
+        //disable the delete button
+        //enable the close session button
+        //hide showoverall table
+        //show sessionStats
+
+        _openSession.setVisible(false);
+        _openSession.setDisable(true);
+        delete.setDisable(true);
+        delete.setVisible(false);
+        _closeSession.setVisible(true);
+        _closeSession.setDisable(false);
+        overallStats.setVisible(false);
+        overallStats.setDisable(true);
+        sessionStats.setDisable(false);
+        sessionStats.setVisible(true);
+
+    }
+
+    public void handleCloseSession(){
+        //disable close session button
+        //enable delete button
+        //enable open session button
+        //show overall table
+        //hide sessionStats
+
+        _openSession.setVisible(true);
+        _openSession.setDisable(false);
+        delete.setDisable(false);
+        delete.setVisible(true);
+        _closeSession.setVisible(false);
+        _closeSession.setDisable(true);
+        overallStats.setVisible(true);
+        overallStats.setDisable(false);
+        sessionStats.setDisable(true);
+        sessionStats.setVisible(false);
+
+    }
 
     //=============================================================================================
     //                                        helper methods
@@ -128,7 +224,30 @@ public class EasyStatsController extends AbstractController {
      */
     private void setUpLineChart(){
         ArrayList<Integer> history = new ArrayList<>();
-        //for (int i = 0; )
+        int theLength ;
+        if (observableArrayList.size() >10){
+            //if there are more than 10 questions
+            //only make it show the 10 questions
+            theLength = 10;
+        }else{
+            theLength = observableArrayList.size();
+        }
 
+        for (int i = 0; i < theLength ; i ++){
+            history.add(observableArrayList.get(i).getTheScore());
+        }
+        //defining a series
+        XYChart.Series series = new XYChart.Series();
+        series.setName("Progression");
+        //populating the series with data
+        for (int i = 0 ; i < history.size() ; i ++){
+            String string = Integer.toString(i);
+            series.getData().add(new XYChart.Data(string , history.get(i)));
+        }
+
+        _scoreGraph.getData().add(series);
     }
+
+
+
 }
