@@ -26,12 +26,12 @@
             <Font name="Freestyle Script" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="recordButton" buttonType="RAISED" focusTraversable="false" layoutX="416.0" layoutY="638.0" onAction="#handleRecord" onMouseEntered="#recordHelp" onMouseExited="#recordClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="387.0">
+      <JFXButton fx:id="recordButton" buttonType="RAISED" focusTraversable="false" layoutX="416.0" layoutY="638.0" onAction="#handleRecord" onMouseEntered="#recordHelp" onMouseExited="#recordClose" prefHeight="100.0" prefWidth="250.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="387.0">
          <graphic>
             <FontAwesomeIconView glyphName="MICROPHONE" size="60" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="confirmButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="729.0" layoutY="638.0" onAction="#handleConfirm" onMouseEntered="#confirmHelp" onMouseExited="#confirmClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="62.0">
+      <JFXButton fx:id="confirmButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="729.0" layoutY="638.0" onAction="#handleConfirm" onMouseEntered="#confirmHelp" onMouseExited="#confirmClose" prefHeight="100.0" prefWidth="250.0" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="62.0">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
@@ -43,7 +43,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="listenButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="59.0" layoutY="638.0" onAction="#handleListen" onMouseEntered="#listenHelp" onMouseExited="#listenClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="62.0">
+      <JFXButton fx:id="listenButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="59.0" layoutY="638.0" onAction="#handleListen" onMouseEntered="#listenHelp" onMouseExited="#listenClose" prefHeight="100.0" prefWidth="250.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="62.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -113,12 +113,12 @@
             <Rectangle fx:id="attemptThree" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
          </children>
       </HBox>
-      <JFXButton fx:id="retryButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="503.0" onAction="#handleRetry" onMouseEntered="#retryHelp" onMouseExited="#retryClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
+      <JFXButton fx:id="retryButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="503.0" onAction="#handleRetry" onMouseEntered="#retryHelp" onMouseExited="#retryClose" prefHeight="100.0" prefWidth="250.0" visible="false">
          <graphic>
             <FontAwesomeIconView glyphName="REPEAT" size="60" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="skipButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="626.0" onAction="#handleSkip" onMouseEntered="#skipHelp" onMouseExited="#skipClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
+      <JFXButton fx:id="skipButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="626.0" onAction="#handleSkip" onMouseEntered="#skipHelp" onMouseExited="#skipClose" prefHeight="100.0" prefWidth="250.0" visible="false">
          <font>
             <Font name="Freestyle Script" size="24.0" />
          </font>
@@ -126,7 +126,7 @@
             <FontAwesomeIconView glyphName="FORWARD" size="60" />
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="nextButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="388.0" layoutY="626.0" onAction="#handleNext" onMouseEntered="#nextHelp" onMouseExited="#nextClose" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" visible="false">
+      <JFXButton fx:id="nextButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="388.0" layoutY="626.0" onAction="#handleNext" onMouseEntered="#nextHelp" onMouseExited="#nextClose" prefHeight="100.0" prefWidth="250.0" visible="false">
          <graphic>
             <FontAwesomeIconView glyphName="STEP_FORWARD" size="60" />
          </graphic>

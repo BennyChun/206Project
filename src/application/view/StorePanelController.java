@@ -14,41 +14,46 @@ public class StorePanelController extends AbstractController {
 
     @FXML
     public void initialize(){
-        // read file to check selected image from before
+        System.out.println(_mainApp.imagePath);
+        if(_mainApp.imagePath.equals("file:/C:/Users/BennyChun-PC/eclipse-workspace/206Project/bin/application/view/kiwi.png")){
+            kiwiButton.setSelected(true);
+        } else if(_mainApp.imagePath.equals("file:/C:/Users/BennyChun-PC/eclipse-workspace/206Project/bin/application/view/Kea.png")){
+            keaButton.setSelected(true);
+        } else if(_mainApp.imagePath.equals("file:/C:/Users/BennyChun-PC/eclipse-workspace/206Project/bin/application/view/kakapo.png")){
+            kakapoButton.setSelected(true);
+        }
+
     }
 
     @FXML public void setKiwi(){
-        String path = null;
         try {
-            path = this.getClass().getResource("kiwi.png").toURI().toString();
+            _mainApp.imagePath = this.getClass().getResource("kiwi.png").toURI().toString();
         } catch (URISyntaxException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        _mainApp.mascotImage = new Image(path);
-        kiwiButton.setSelected(true);
+        _mainApp.mascotImage = new Image(_mainApp.imagePath);
+
     }
     @FXML public void setKea(){
-        String path = null;
         try {
-            path = this.getClass().getResource("Kea.png").toURI().toString();
+            _mainApp.imagePath = this.getClass().getResource("Kea.png").toURI().toString();
         } catch (URISyntaxException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        _mainApp.mascotImage = new Image(path);
-        keaButton.setSelected(true);
+        _mainApp.mascotImage = new Image(_mainApp.imagePath);
+
     }
     @FXML public void setKakapo(){
-        String path = null;
         try {
-            path = this.getClass().getResource("kakapo.png").toURI().toString();
+            _mainApp.imagePath = this.getClass().getResource("kakapo.png").toURI().toString();
         } catch (URISyntaxException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        _mainApp.mascotImage = new Image(path);
-        kakapoButton.setSelected(true);
+        _mainApp.mascotImage = new Image(_mainApp.imagePath);
+
     }
 
 

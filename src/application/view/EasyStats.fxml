@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css"  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="840.0" prefWidth="460.0" stylesheets="@scrollpane.css">
          <children>
@@ -51,12 +51,12 @@
                   <TableColumn prefWidth="105.0" text="Time/Date" />
               </columns>
             </TableView>
-            <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="763.0" style="-fx-background-color: #ffffff;" text="Open Session">
+            <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="763.0" style="-fx-background-color: #B4D8E7;" text="Open Session">
                <font>
                   <Font name="Maiandra GD" size="22.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="304.0" layoutY="763.0" style="-fx-background-color: #ffffff;" text="Delete">
+            <JFXButton buttonType="RAISED" layoutX="304.0" layoutY="763.0" style="-fx-background-color: #B4D8E7;" text="Delete">
                <font>
                   <Font name="Maiandra GD" size="22.0" />
                </font>

@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="175.0" layoutY="624.0" onAction="#handleQuit" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="QUIT">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="175.0" layoutY="624.0" onAction="#handleQuit" prefHeight="50.0" prefWidth="100.0" text="QUIT">
          <font>
             <Font name="Maiandra GD" size="18.0" />
          </font>
@@ -22,34 +22,34 @@
       </Label>
    <VBox layoutX="55.0" layoutY="85.0" prefHeight="428.0" prefWidth="300.0" spacing="30.0" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="170.0">
       <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PLAY">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefWidth="400.0" ripplerFill="BLACK" text="PLAY">
                <font>
                   <Font name="Maiandra GD" size="32.0" />
                </font>
             </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePractice" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="PRACTICE">
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePractice" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" text="PRACTICE">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>
          </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleStatistics" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="STATISTICS">
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleStatistics" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" text="STATISTICS">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>
          </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleAchievements" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="ACHIEVEMENTS">
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleAchievements" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" text="ACHIEVEMENTS">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>
          </JFXButton>
-         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMic" prefHeight="61.0" prefWidth="300.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;" text="MIC TEST">
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMic" prefHeight="61.0" prefWidth="300.0" ripplerFill="BLACK" text="MIC TEST">
             <font>
                <Font name="Maiandra GD" size="32.0" />
             </font>
          </JFXButton>
       </children>
    </VBox>
-   <JFXButton focusTraversable="false" layoutX="547.0" layoutY="272.0" onAction="#handleCharacter" onMouseEntered="#showClickMe" onMouseExited="#closeClickMe" prefHeight="381.0" prefWidth="385.0">
+   <JFXButton focusTraversable="false" layoutX="547.0" layoutY="272.0" onAction="#handleCharacter" onMouseEntered="#showClickMe" style = "-fx-background-color: none;" onMouseExited="#closeClickMe" prefHeight="381.0" prefWidth="385.0">
       <graphic>
          <ImageView fx:id="mascot" accessibleRole="BUTTON" fitHeight="448.0" fitWidth="406.0" pickOnBounds="true" preserveRatio="true" scaleX="-1.0">
             <image>
