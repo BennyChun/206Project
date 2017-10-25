@@ -17,12 +17,12 @@
             <Font name="Maiandra GD" size="42.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="109.0" layoutY="652.0" onAction="#handleRetry" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" text="Retry" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="162.0">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="109.0" layoutY="652.0" onAction="#handleRetry" prefHeight="100.0" prefWidth="250.0" text="Retry" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="162.0">
          <font>
             <Font name="Maiandra GD" size="37.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="634.0" layoutY="611.0" onAction="#handleMainMenu" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #ffffff;" text="Main Menu" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="162.0">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="634.0" layoutY="611.0" onAction="#handleMainMenu" prefHeight="100.0" prefWidth="250.0"  text="Main Menu" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="162.0">
          <font>
             <Font name="Maiandra GD" size="37.0" />
          </font>

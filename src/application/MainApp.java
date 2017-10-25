@@ -1,6 +1,7 @@
 package application;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import application.model.EquationQuestion;
 import application.view.*;
@@ -17,15 +18,28 @@ public class MainApp extends Application {
 
 	private Stage _primaryStage;
 	private AnchorPane _startMenu;
-	public static Image mascotImage; // the image that occurs throughout the app.
-	
+	public static String imagePath = null;
+	public static Image mascotImage = null; // the image that occurs throughout the app.
+
 	@Override
 	public void start(Stage primaryStage) {
 		setUpSavedGamesStats();//sets up the SavedGamesStats directory
 		setUpCustomGames();//sets yp the CustomGames directory
 		_primaryStage = primaryStage;
 		_primaryStage.setTitle("Tātai!");
+		setMascot();
 		initStartMenu();
+	}
+
+	// on startup the initial mascot will be the kiwi.
+	public void setMascot(){
+		try {
+			imagePath = this.getClass().getResource("view/kiwi.png").toURI().toString();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		mascotImage = new Image(imagePath);
 	}
 
 	public void initStartMenu(){

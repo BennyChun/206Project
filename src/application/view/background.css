@@ -1,9 +1,12 @@
 AnchorPane {
-  //-fx-background-color: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #008080);
-    -fx-background-color: radial-gradient(center 50% 50% , radius 60% , #ffebcd, #e01414);
+  -fx-background-color: radial-gradient(center 50% 50% , radius 40% , #ffebcd, #117554);
 
 }
 
 ScrollPane AnchorPane{
     -fx-background-color: #ffffff;
+}
+
+JFXButton {
+    -fx-background-color: #B4D8E7;
 }

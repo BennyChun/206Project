@@ -188,23 +188,24 @@ public class LevelScreenController extends AbstractController {
         //initialilly the currentQuestionNumber == 1
         //once you press record, it is == 1
 
+
         //the currentQuestionNumber will only increase after the user clicks nextButton
         if (currentQuestionNumber <=10 ){ //PLEASE CHECK THIS NUMBER !!!
-
             Task<Void> recordTask = new Task<Void>() {
-                @Override
-                public Void call() {
-                    listenButton.setDisable(true);
-                    confirmButton.setDisable(true);
-                    RecordingUtil record = new RecordingUtil();		//instantiates the Recording class so that we can use it's Utilities
-                    record.recordVoice();							//record the users voice
-                    record.convertVoiceToMaori();					//pass the users wav file to the KHT, and HTK will output the foo.mlf file
-                    ReadHTKFile readRecout = new ReadHTKFile();		//instantiates the ReadHTKFile class
-                    readRecout.readHTK();							//reads the foo.mlf file
-                    mao = readRecout.getMaoriWords();		        //get the String of the maori word (this is the the users input answer)
-                    return null;
-                }
-                @Override
+                    @Override
+                    public Void call() {
+                        listenButton.setDisable(true);
+                        confirmButton.setDisable(true);
+
+                        RecordingUtil record = new RecordingUtil();        //instantiates the Recording class so that we can use it's Utilities
+                        record.recordVoice();                            //record the users voice
+                        record.convertVoiceToMaori();                    //pass the users wav file to the KHT, and HTK will output the foo.mlf file
+                        ReadHTKFile readRecout = new ReadHTKFile();        //instantiates the ReadHTKFile class
+                        readRecout.readHTK();                            //reads the foo.mlf file
+                        mao = readRecout.getMaoriWords();                //get the String of the maori word (this is the the users input answer)
+                        return null;
+                    }
+                    @Override
                 public void done() {
                     Platform.runLater(() -> {
                         listenButton.setDisable(false);
@@ -430,6 +431,7 @@ public class LevelScreenController extends AbstractController {
             currentEquation = equationList.get(currentQuestionNumber - 1);//updates the currentEquation to the next one in the list
             questionLabel.setText(" What is " + currentEquation.getTheEquation() + " ? ");//displays the currentEquation
         }else{
+
             displayEndScreen();
         }
     }
@@ -459,7 +461,7 @@ public class LevelScreenController extends AbstractController {
         updateCorrectQuestionTracker();
 
         correctLabel.setVisible(true);//shows the correctLabel bubble
-        correctLabel.setText(" Well Done! \n You Said: " +correctAnswer + "\n Which means: " + currentEquation.getTheAnswer() + " ");
+        correctLabel.setText(" Well Done! \n You Said: " +correctAnswer + " " + "\n Which means: " + currentEquation.getTheAnswer() + " ");
 
         nextButton.setVisible(true);
         nextButton.setDisable(false);
@@ -521,7 +523,7 @@ public class LevelScreenController extends AbstractController {
      * it should display the results of the 10 equationQuestions
      */
     private void displayEndScreen() {
-
+        hideInitialButtons();
         getFinalSCore();
         SaveGameHelper test = new SaveGameHelper(equationList , selectedLevel , selectedOperation , finalScore);
 

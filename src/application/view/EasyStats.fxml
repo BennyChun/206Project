@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EasyStatsController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="840.0" prefWidth="460.0" stylesheets="@scrollpane.css">
@@ -54,7 +55,9 @@
                   <Font name="Maiandra GD" size="22.0" />
                </font>
             </JFXButton>
+
             <JFXButton fx:id="delete" buttonType="RAISED" focusTraversable="false" layoutX="304.0" layoutY="763.0" onAction="#handleDeleteStats" style="-fx-background-color: #ffffff;" text="Delete">
+
                <font>
                   <Font name="Maiandra GD" size="22.0" />
                </font>

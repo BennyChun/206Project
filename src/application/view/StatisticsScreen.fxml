@@ -23,17 +23,17 @@
         </JFXButton>
       <FontAwesomeIconView />
       <FontAwesomeIconView glyphName="LINE_CHART" layoutX="407.0" layoutY="172.0" size="184" />
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="287.0" layoutY="202.0" onAction="#handleEasy" prefWidth="120.0" style="-fx-background-color: #ffffff;" text="Easy">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="287.0" layoutY="202.0" onAction="#handleEasy" prefWidth="120.0" text="Easy">
          <font>
             <Font name="Maiandra GD" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="452.0" layoutY="202.0" onAction="#handleHard" prefWidth="120.0" style="-fx-background-color: #ffffff;" text="Hard">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="452.0" layoutY="202.0" onAction="#handleHard" prefWidth="120.0" text="Hard">
          <font>
             <Font name="Maiandra GD" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="617.0" layoutY="202.0" onAction="#handleCustom" prefWidth="120.0" style="-fx-background-color: #ffffff;" text="Custom">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="617.0" layoutY="202.0" onAction="#handleCustom" prefWidth="120.0" text="Custom">
          <font>
             <Font name="Maiandra GD" size="24.0" />
          </font>

@@ -2,6 +2,9 @@
 recout.mlf
 *.wav
 
+#SaveGameFiles
+.txt
+
 #project build path settings
 .classpath
 

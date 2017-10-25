@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.PracticeInstructionsController">
    <children>
-      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="810.0" layoutY="679.0" onAction="#handleContinue" prefHeight="75.0" style="-fx-background-color: #ffffff;" text="Continue" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="810.0" layoutY="679.0" onAction="#handleContinue" prefHeight="75.0" text="Continue" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
          <font>
             <Font name="Maiandra GD" size="37.0" />
          </font>
@@ -28,7 +28,7 @@
       </Label>
       <VBox layoutX="84.0" layoutY="228.0" prefHeight="400.0" prefWidth="250.0" spacing="50.0">
          <children>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" >
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" >
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
@@ -52,7 +52,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" style="-fx-background-color: #ffffff;">
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" >
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
