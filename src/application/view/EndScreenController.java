@@ -12,6 +12,8 @@ public class EndScreenController extends AbstractController{
 
 	@FXML
 	private Label score;
+	@FXML
+	private Label pointLabel;
 
 	@FXML
 	public void handleMainMenu() {
@@ -51,8 +53,13 @@ public class EndScreenController extends AbstractController{
 
 	}
 
-	public void setScoreLabel(int finalScore) {
+	@FXML
+	private void handleStatistics(){
+		_mainApp.initStatistics();
+	}
+	public void setScoreLabel(int points, int finalScore) {
 		score.setText(Integer.toString(finalScore)+"/10");
+		pointLabel.setText(Integer.toString(points));
 	}
 
 
