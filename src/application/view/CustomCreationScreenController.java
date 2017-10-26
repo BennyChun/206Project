@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CustomCreationScreenController extends AbstractController {
 
@@ -75,9 +76,15 @@ public class CustomCreationScreenController extends AbstractController {
             //we have the operations in an selectedOperations: ArrayList<String>
             //we have the usersBoundary: String
             //we have the usersCreationName: String
+            Random rand = new Random();
+            int numOfOperations = selectedOperations.size();//this gets how many operations the user wants
+            for (int i = 0 ; i < 10 ; i ++){
+
+                int choice = rand.nextInt(((numOfOperations-1) - 0) + 1) + 0;//generate number between 0 and (num of operations the user selected)
+                String choiceOperation = selectedOperations.get(choice);
 
 
-
+            }
 
 
             //go back to custom screen (the screen that was a TableView of all the users custom games
