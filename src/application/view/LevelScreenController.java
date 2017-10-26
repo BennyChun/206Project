@@ -100,7 +100,7 @@ public class LevelScreenController extends AbstractController {
     the streak counter keeps track of how many times the user keeps getting consecutive answers correct
     the points field will use the streakCounter to help calculate how many points the user will get
      */
-    private int streakCounter = 0; //keeps track of the streaks
+    private int streakCounter = 1; //keeps track of the streaks
     private int points = 0; // user score tracker in point form
 
     //==============================================================================
@@ -458,9 +458,9 @@ public class LevelScreenController extends AbstractController {
         currentEquation.setCorrect(true);//sets the state of the current question to be TRUE (user answer this question correctly
 
         //--------------
-        streakCounter+=1;//add one to the streak counter
-        addPoints();//this method uses the streakCounter to total up the points
 
+        addPoints();//this method uses the streakCounter to total up the points
+        streakCounter+=1;//add one to the streak counter
 
     }
 
@@ -536,7 +536,9 @@ public class LevelScreenController extends AbstractController {
 
     private void addPoints(){
 
-        if (streakCounter <= 1){
+        if (streakCounter == 0){
+            points+= 0;
+        }else if(streakCounter == 1){
             points+= 10;
         }else if(streakCounter == 2){
             points+= 20;
