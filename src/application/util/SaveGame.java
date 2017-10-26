@@ -26,6 +26,7 @@ public class SaveGame {
     private int theScore;       //records the score
     private String theLevel;    //records the level played
     private String theOperation;//records the operation used
+    private int points; // keeps track of the points
 
     private long unixTimeStamp;  //reocords the unix time stamp, will use this as the txt file name to store the json string
 
@@ -35,7 +36,7 @@ public class SaveGame {
     private ArrayList<Integer> attemptsList;        //this helps stores the number of attempts
 
 //===============================================================================================================
-    public SaveGame(ObservableList<EquationQuestion> theList , String theLevel , String theOperation, int theScore){
+    public SaveGame(ObservableList<EquationQuestion> theList , String theLevel , String theOperation, int theScore , int points){
 
         equationList = new ArrayList<>();         // this helps keep track of all the equations
         answerList = new ArrayList<>();          //this helps keep track of all the answers (int)
@@ -47,7 +48,7 @@ public class SaveGame {
         this.theLevel = theLevel;
         this.theOperation = theOperation;
         this.theScore = theScore;
-
+        this.points = points;
 
         for (int i  = 0 ; i < 10 ; i++){
             EquationQuestion tempEquation = theList.get(i);//gets the EquationQuestion
@@ -108,6 +109,14 @@ public class SaveGame {
      * @return
      */
     public String getTheOperation(){ return theOperation; }
+
+    /**
+     * this method returns the points: int
+     * @return
+     */
+    public int getPoints() {
+        return points;
+    }
 
     /**
      * this method returns the unixTimeStampL Long

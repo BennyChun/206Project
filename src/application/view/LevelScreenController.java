@@ -93,6 +93,14 @@ public class LevelScreenController extends AbstractController {
     private String correctAnswer;// records the correct answer, for the current equation
     private int finalScore=0;
     private String mao="";//this stores the users recorded answer in maori
+
+
+    //==============================================================================
+    /*
+    the streak counter keeps track of how many times the user keeps getting consecutive answers correct
+    the points field will use the streakCounter to help calculate how many points the user will get
+     */
+    private int streakCounter = 0; //keeps track of the streaks
     private int points = 0; // user score tracker in point form
 
     //==============================================================================
@@ -113,21 +121,6 @@ public class LevelScreenController extends AbstractController {
      */
     @FXML
     private void initialize() {
-        //should initialize the all the labels on the level scene
-
-        //this will set all the question tracking tick thingy all invisible
-        //will need to set them up one by one during run time of the code
-       /* questionOne.setOpacity(0);
-        questionTwo.setOpacity(0);
-        questionThree.setOpacity(0);
-        questionFour.setOpacity(0);
-        questionFive.setOpacity(0);
-        questionSix.setOpacity(0);
-        questionSeven.setOpacity(0);
-        questionEight.setOpacity(0);
-        questionNine.setOpacity(0);
-        questionTen.setOpacity(0);*/
-
 
         currentQuestionNumber = 1;//initially the current question number is 1
 
@@ -182,12 +175,7 @@ public class LevelScreenController extends AbstractController {
     @FXML
     public void handleRecord(){
 
-        //should start the progress bar as another thread ? maybe ?
         startProgressBar();
-
-        //initialilly the currentQuestionNumber == 1
-        //once you press record, it is == 1
-
 
         //the currentQuestionNumber will only increase after the user clicks nextButton
         if (currentQuestionNumber <=10 ){ //PLEASE CHECK THIS NUMBER !!!
@@ -423,6 +411,12 @@ public class LevelScreenController extends AbstractController {
 
 
         currentEquation.setCorrect(false);//the user got this question wrong, cus they skipped it
+
+        addPoints(); //add the points of the current streaks
+        streakCounter = 0;//reset the streak counter after its totaled the points
+
+
+
         updateIncorrectQuestionTracker();//puts a cross on the tracker
         currentQuestionNumber+=1;//increment to the next question number
 
@@ -462,6 +456,11 @@ public class LevelScreenController extends AbstractController {
         nextButton.setVisible(true);
         nextButton.setDisable(false);
         currentEquation.setCorrect(true);//sets the state of the current question to be TRUE (user answer this question correctly
+
+        //--------------
+        streakCounter+=1;//add one to the streak counter
+        addPoints();//this method uses the streakCounter to total up the points
+
 
     }
 
@@ -507,6 +506,9 @@ public class LevelScreenController extends AbstractController {
         incorrectFill();
 
         currentEquation.setCorrect(false);//the user got this question wrong :(
+        addPoints();
+        streakCounter=0;
+
 
         incorrectLabel.setVisible(true);
         incorrectLabel.setText(" Aww, not quite right \n You said: " + mao + "\n The correct answer is: \n " + currentEquation.getTheAnswer() + "\n Let's try another question! ");
@@ -521,7 +523,7 @@ public class LevelScreenController extends AbstractController {
     private void displayEndScreen() {
         hideInitialButtons();
         getFinalSCore();
-        SaveGameHelper test = new SaveGameHelper(equationList , selectedLevel , selectedOperation , finalScore);
+        SaveGameHelper test = new SaveGameHelper(equationList , selectedLevel , selectedOperation , finalScore , points);
 
         _mainApp.initMainEndScreen(finalScore, selectedLevel , selectedOperation);
     }
@@ -531,6 +533,33 @@ public class LevelScreenController extends AbstractController {
     //                                          Helper methods
     //=========================================================================================================
     //---------------------------------------------------------------------------------------------------------
+
+    private void addPoints(){
+
+        if (streakCounter <= 1){
+            points+= 10;
+        }else if(streakCounter == 2){
+            points+= 20;
+        }else if(streakCounter == 3){
+            points+= 30;
+        }else if(streakCounter == 4){
+            points+= 40;
+        }else if(streakCounter == 5){
+            points+= 50;
+        }else if(streakCounter == 6){
+            points+= 60;
+        }else if(streakCounter == 7){
+            points+= 70;
+        }else if(streakCounter == 8){
+            points+= 80;
+        }else if(streakCounter == 9){
+            points+= 90;
+        }else if(streakCounter == 10 || streakCounter == 11){
+            points+= 100;
+        }
+    }
+
+
 
     /**
      * this method will

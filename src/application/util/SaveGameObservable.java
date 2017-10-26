@@ -25,6 +25,8 @@ public class SaveGameObservable implements Comparable<SaveGameObservable> {
     private StringProperty theLevel;    //records the level played
     private StringProperty theOperation;//records the operation used
 
+    private IntegerProperty thePoints; //records the points
+
     private LongProperty unixTimeStamp;  //reocords the unix time stamp, will use this as the txt file name to store the json string
 
 
@@ -43,6 +45,7 @@ public class SaveGameObservable implements Comparable<SaveGameObservable> {
         theScore = new SimpleIntegerProperty(theSavedGame.getTheScore());
         theLevel = new SimpleStringProperty(theSavedGame.getTheLevel());
         theOperation = new SimpleStringProperty(theSavedGame.getTheOperation());
+        thePoints = new SimpleIntegerProperty((theSavedGame.getPoints()));
         unixTimeStamp = new SimpleLongProperty(theSavedGame.getUnixTimeStamp());
 
         scoreArray = theSavedGame.getScoreArray();
@@ -109,6 +112,10 @@ public class SaveGameObservable implements Comparable<SaveGameObservable> {
         return theOperation;
     }
 
+    //--------------------------------------------------------------
+    public int getThePoints() { return thePoints.get(); }
+
+    public IntegerProperty thePointsProperty() { return thePoints; }
     //--------------------------------------------------------------
     public long getUnixTimeStamp() {
         return unixTimeStamp.get();

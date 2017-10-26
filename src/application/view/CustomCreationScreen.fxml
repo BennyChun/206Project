@@ -99,12 +99,12 @@
             <CheckBox fx:id="divCheck" focusTraversable="false" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Label layoutX="105.0" layoutY="514.0" text="Max Answer Value:">
+      <Label layoutX="31.0" layoutY="518.0" text="Max Answer Value (10 to 99):">
          <font>
             <Font name="Maiandra GD" size="42.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="boundaryValue" focusColor="WHITE" focusTraversable="false" layoutX="473.0" layoutY="514.0" prefHeight="60.0" prefWidth="344.0" promptText="Enter Max Answer">
+      <JFXTextField fx:id="boundaryValue" focusColor="WHITE" focusTraversable="false" layoutX="599.0" layoutY="517.0" prefHeight="60.0" prefWidth="344.0" promptText="Enter Max Answer">
          <font>
             <Font name="Maiandra GD" size="42.0" />
          </font></JFXTextField>
