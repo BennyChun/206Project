@@ -172,27 +172,6 @@ public class MainApp extends Application {
 		}
 	}
 
-	public void initAchievements(){
-		try {
-			//load start menu from fxml file.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/AchievementsScreen.fxml"));
-			AnchorPane achievements = (AnchorPane) loader.load();
-
-			// Show the scene containing the start menu
-			Scene scene = new Scene(achievements);
-			_primaryStage.setScene(scene);
-			_primaryStage.show();
-			_primaryStage.setResizable(false);
-
-			//give stage select controller access to the main app
-			AchievementsScreenController controller = loader.getController();
-			controller.setMainApp(this);
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-	}
-
 	public void initMic(){
 		try {
 			//load start menu from fxml file.

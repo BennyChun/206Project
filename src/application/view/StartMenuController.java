@@ -46,7 +46,7 @@ public class StartMenuController extends AbstractController {
 		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 		alert.setTitle("Confirmation Dialog");
 		alert.setHeaderText("Are you sure you want to quit?");
-		alert.setContentText("We'd love for you keep learning!");
+		alert.setContentText("We'd love for you to keep learning!");
 
 		Optional<ButtonType> result = alert.showAndWait();
 		if (result.get() == ButtonType.OK){
@@ -72,10 +72,6 @@ public class StartMenuController extends AbstractController {
 		_mainApp.initCharacters();
 	}
 
-	@FXML
-	public void handleAchievements(){
-		_mainApp.initAchievements();
-	}
 
 	@FXML
 	public void handleMic(){
