@@ -99,17 +99,23 @@
             <JFXCheckBox focusTraversable="false" style="-fx-background-color: none;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Label layoutX="105.0" layoutY="567.0" text="Max Answer Value:">
+      <Label layoutX="105.0" layoutY="514.0" text="Max Answer Value:">
          <font>
             <Font name="Maiandra GD" size="42.0" />
          </font>
       </Label>
-      <JFXTextField focusColor="WHITE" focusTraversable="false" layoutX="473.0" layoutY="567.0" prefHeight="52.0" prefWidth="282.0" />
+      <JFXTextField focusColor="WHITE" focusTraversable="false" layoutX="473.0" layoutY="514.0" prefHeight="52.0" prefWidth="282.0" />
       <JFXButton focusTraversable="false" layoutX="822.0" layoutY="674.0" prefHeight="75.0" text="Create!">
          <font>
             <Font name="Maiandra GD" size="42.0" />
          </font>
       </JFXButton>
+      <Label layoutX="82.0" layoutY="578.0" text="Custom Level Name:">
+         <font>
+            <Font name="Maiandra GD" size="42.0" />
+         </font>
+      </Label>
+      <JFXTextField focusColor="WHITE" focusTraversable="false" layoutX="473.0" layoutY="578.0" prefHeight="52.0" prefWidth="282.0" />
     </children>
    <stylesheets>
       <URL value="@scrollpane.css" />
