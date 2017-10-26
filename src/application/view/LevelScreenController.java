@@ -548,25 +548,25 @@ public class LevelScreenController extends AbstractController {
         if (streakCounter == 0){
             points+= 0;
         }else if(streakCounter == 1){
-            points+= 10;
-        }else if(streakCounter == 2){
-            points+= 20;
-        }else if(streakCounter == 3){
-            points+= 30;
-        }else if(streakCounter == 4){
-            points+= 40;
-        }else if(streakCounter == 5){
-            points+= 50;
-        }else if(streakCounter == 6){
-            points+= 60;
-        }else if(streakCounter == 7){
-            points+= 70;
-        }else if(streakCounter == 8){
-            points+= 80;
-        }else if(streakCounter == 9){
-            points+= 90;
-        }else if(streakCounter == 10 || streakCounter == 11){
             points+= 100;
+        }else if(streakCounter == 2){
+            points+= 200;
+        }else if(streakCounter == 3){
+            points+= 300;
+        }else if(streakCounter == 4){
+            points+= 400;
+        }else if(streakCounter == 5){
+            points+= 500;
+        }else if(streakCounter == 6){
+            points+= 600;
+        }else if(streakCounter == 7){
+            points+= 700;
+        }else if(streakCounter == 8){
+            points+= 800;
+        }else if(streakCounter == 9){
+            points+= 900;
+        }else if(streakCounter == 10 || streakCounter == 11){
+            points+= 1000;
         }
     }
 
