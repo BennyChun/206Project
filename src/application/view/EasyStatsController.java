@@ -93,7 +93,7 @@ public class EasyStatsController extends AbstractController {
     public void initialSetUp(String selectedLevelButton){
 
         userSelectedStatsLevel = selectedLevelButton; //saves what the user selected
-        StatLevelLabel.setText(selectedLevelButton + " statistics");
+        StatLevelLabel.setText(selectedLevelButton.substring(0,1).toUpperCase() + selectedLevelButton.substring(1) + " Statistics");
         //should get all the stats
         InputStatsFile stats = new InputStatsFile();
         stats.getFiles();
