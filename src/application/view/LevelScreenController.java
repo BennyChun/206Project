@@ -93,6 +93,9 @@ public class LevelScreenController extends AbstractController {
     private String correctAnswer;// records the correct answer, for the current equation
     private int finalScore=0;
     private String mao="";//this stores the users recorded answer in maori
+
+
+    private int streakCounter = 0; //keeps track of the streaks
     private int points = 0; // user score tracker in point form
 
     //==============================================================================
@@ -113,21 +116,6 @@ public class LevelScreenController extends AbstractController {
      */
     @FXML
     private void initialize() {
-        //should initialize the all the labels on the level scene
-
-        //this will set all the question tracking tick thingy all invisible
-        //will need to set them up one by one during run time of the code
-       /* questionOne.setOpacity(0);
-        questionTwo.setOpacity(0);
-        questionThree.setOpacity(0);
-        questionFour.setOpacity(0);
-        questionFive.setOpacity(0);
-        questionSix.setOpacity(0);
-        questionSeven.setOpacity(0);
-        questionEight.setOpacity(0);
-        questionNine.setOpacity(0);
-        questionTen.setOpacity(0);*/
-
 
         currentQuestionNumber = 1;//initially the current question number is 1
 
@@ -182,12 +170,7 @@ public class LevelScreenController extends AbstractController {
     @FXML
     public void handleRecord(){
 
-        //should start the progress bar as another thread ? maybe ?
         startProgressBar();
-
-        //initialilly the currentQuestionNumber == 1
-        //once you press record, it is == 1
-
 
         //the currentQuestionNumber will only increase after the user clicks nextButton
         if (currentQuestionNumber <=10 ){ //PLEASE CHECK THIS NUMBER !!!
