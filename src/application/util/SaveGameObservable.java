@@ -52,6 +52,11 @@ public class SaveGameObservable implements Comparable<SaveGameObservable> {
 
         for (int i = 0; i < 10; i++) {
 
+            equationList.get(i);    //testing purpose to see if the json was not null
+            answerList.get(i);      //testing purpose to see if the json was not null
+            attemptsList.get(i);    //testing purpose to see if the json was not null
+            int num = scoreArray[i];//testing purpose to see if the json was not null
+
             sessionObservables.add(new SessionObservable(equationList.get(i), answerList.get(i), attemptsList.get(i), scoreArray[i]));
         }
     }

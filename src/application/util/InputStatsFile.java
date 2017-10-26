@@ -74,7 +74,8 @@ public class InputStatsFile {
         for (int i = 0 ; i < listOfSavedGames.size() ; i++){
             //convert the SaveGame object to a SaveGameObservable object
             SaveGameObservable temp = new SaveGameObservable(listOfSavedGames.get(i));
-            if (temp.getTheLevel().equals(selectedLevel)){
+
+            if (temp.getTheLevel().equals(selectedLevel)){//if the SaveGame is what the user selected to show on the stats
                 observableArrayList.add(temp);//add the SaveGameObservable object to the observableArrayList
 
             }
