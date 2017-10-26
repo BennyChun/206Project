@@ -458,7 +458,7 @@ public class LevelScreenController extends AbstractController {
         // add a tick to tracker, shows up on the gui
         updateCorrectQuestionTracker();
         correctLabel.setVisible(true);//shows the correctLabel bubble
-        correctLabel.setText(" Well Done! \n You Said: \n" +correctAnswer + " " + "\n Which means: " + currentEquation.getTheAnswer() + " ");
+        correctLabel.setText(" Well Done! \n You Said: \n " +correctAnswer + " " + "\n Which means: " + currentEquation.getTheAnswer() + " ");
         nextButton.setVisible(true);
         nextButton.setDisable(false);
         currentEquation.setCorrect(true);//sets the state of the current question to be TRUE (user answer this question correctly
@@ -509,7 +509,7 @@ public class LevelScreenController extends AbstractController {
         currentEquation.setCorrect(false);//the user got this question wrong :(
 
         incorrectLabel.setVisible(true);
-        incorrectLabel.setText(" Aww, not quite right \n You said: " + mao + "\n The correct answer is: " + currentEquation.getTheAnswer() + "\n Let's try another question! ");
+        incorrectLabel.setText(" Aww, not quite right \n You said: " + mao + "\n The correct answer is: \n " + currentEquation.getTheAnswer() + "\n Let's try another question! ");
 
     }
 
