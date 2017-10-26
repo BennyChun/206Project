@@ -525,7 +525,7 @@ public class LevelScreenController extends AbstractController {
         getFinalSCore();
         SaveGameHelper test = new SaveGameHelper(equationList , selectedLevel , selectedOperation , finalScore , points);
 
-        _mainApp.initMainEndScreen(finalScore, selectedLevel , selectedOperation);
+        _mainApp.initMainEndScreen(points, finalScore, selectedLevel , selectedOperation);
     }
 
     //---------------------------------------------------------------------------------------------------------
