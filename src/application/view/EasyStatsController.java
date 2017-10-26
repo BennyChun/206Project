@@ -101,6 +101,9 @@ public class EasyStatsController extends AbstractController {
 
         overallStats.setItems(observableArrayList);
 
+        _openSession.setDisable(true);
+
+        overallStats.getSelectionModel().selectedItemProperty().addListener(event -> _openSession.setDisable(false));
 
         setUpHighScoreLabel();
         setUpLineChart();
