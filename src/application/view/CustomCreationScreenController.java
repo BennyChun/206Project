@@ -1,17 +1,11 @@
 package application.view;
 
-import application.model.EquationQuestion;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class CustomCreationScreenController extends AbstractController {
 
-    @FXML private TableView customLevelTable;
-    @FXML private TableColumn<String, EquationQuestion> equationListNameCol;
-    @FXML private TableColumn<String, EquationQuestion> equationCreationDateCol;
+
     @FXML private Button addBtn;
     @FXML private Button subBtn;
     @FXML private Button mulBtn;
@@ -19,6 +13,10 @@ public class CustomCreationScreenController extends AbstractController {
     @FXML private TextField boundaryValue;
     @FXML private TextField equationListName;
     @FXML private Button generateButton;
+    @FXML private CheckBox addCheck;
+    @FXML private CheckBox subCheck;
+    @FXML private CheckBox mulCheck;
+    @FXML private CheckBox divCheck;
 
     @FXML
     private void handleBack(){
@@ -31,5 +29,41 @@ public class CustomCreationScreenController extends AbstractController {
         _mainApp.initCustom();
     }
 
-    
+    @FXML
+    private void handleAdd(){
+        if(addCheck.isSelected()){
+            addCheck.setSelected(false);
+        } else {
+            addCheck.setSelected(true);
+        }
+    }
+    @FXML
+    private void handleSub(){
+        if(subCheck.isSelected()){
+            subCheck.setSelected(false);
+        } else {
+            subCheck.setSelected(true);
+        }
+    }
+
+    @FXML
+    private void handleMul(){
+        if(mulCheck.isSelected()) {
+            mulCheck.setSelected(false);
+        } else{
+            mulCheck.setSelected(true);
+        }
+    }
+    @FXML
+    private void handleDiv(){
+        if(divCheck.isSelected()){
+            divCheck.setSelected(false);
+        } else {
+            divCheck.setSelected(true);
+        }
+    }
+
+
+
+
 }
