@@ -511,7 +511,7 @@ public class LevelScreenController extends AbstractController {
 
 
         incorrectLabel.setVisible(true);
-        incorrectLabel.setText(" Aww, not quite right \n You said: " + mao + "\n The correct answer is: \n " + currentEquation.getTheAnswer() + "\n Let's try another question! ");
+        incorrectLabel.setText(" Aww, not quite right \n You said: \n " + mao + "\n The correct answer is: \n " + currentEquation.getTheAnswer() + "\n Let's try another question! ");
 
     }
 
