@@ -9,6 +9,8 @@ public class CustomLevelScreenController extends AbstractController{
 
     @FXML private ImageView mascot;
 
+
+
     @FXML
     private void initialize(){
 
@@ -27,7 +29,9 @@ public class CustomLevelScreenController extends AbstractController{
 
     @FXML
     public void handleAdd(){
-        //should open up a new scene, where the user cna make their equation, and submit
+        //should open up a new scene, where the user cna make their equations, and submit it
+        //once they submit, it should lead them back here to this scene
+
     }
 
     @FXML

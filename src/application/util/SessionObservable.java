@@ -17,7 +17,7 @@ public class SessionObservable {
         if (correct == 1) {
             this.correct = new SimpleStringProperty("Correct :)");
         } else {
-            this.correct = new SimpleStringProperty("Wrong lol :(");
+            this.correct = new SimpleStringProperty("Incorrect");
         }
     }
 

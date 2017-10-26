@@ -29,6 +29,7 @@ public class EasyStatsController extends AbstractController {
     @FXML private TableColumn<SaveGameObservable, String> _operation;
     @FXML private TableColumn<SaveGameObservable, Integer> _score;
     @FXML private TableColumn<SaveGameObservable, String> _time;
+    @FXML private TableColumn<SaveGameObservable, Integer> _points;
     //===================================================================================================
     // hidden table fields
     @FXML private TableView<SessionObservable> sessionStats; // hidden table storing equations that were done
@@ -79,7 +80,7 @@ public class EasyStatsController extends AbstractController {
         _operation.setCellValueFactory(cellData -> cellData.getValue().theOperationProperty());
         _score.setCellValueFactory(cellData -> cellData.getValue().theScoreProperty().asObject());
         _time.setCellValueFactory(cellData -> cellData.getValue().theDateProperty());
-
+        _points.setCellValueFactory(cellData -> cellData.getValue().thePointsProperty().asObject());
         //how to set the cellData to show an arralist of Strings
 
 
@@ -221,11 +222,11 @@ public class EasyStatsController extends AbstractController {
         int size = observableArrayList.size();
 
         if (size > 0) {
-            int highestScore = observableArrayList.get(0).getTheScore();//gets the score of the first savegame, make it the highest
+            int highestScore = observableArrayList.get(0).getThePoints();//gets the score of the first savegame, make it the highest
 
             for (int i = 1; i < size; i++) {
                 SaveGameObservable temp = observableArrayList.get(i);
-                int tempScore = temp.getTheScore();
+                int tempScore = temp.getThePoints();
                 if (tempScore >= highestScore) {
                     highestScore = tempScore;
                 }
@@ -255,7 +256,7 @@ public class EasyStatsController extends AbstractController {
         Collections.sort(observableArrayList);
 
         for (int i = 0; i < theLength ; i ++){
-            history.add(observableArrayList.get(i).getTheScore());
+            history.add(observableArrayList.get(i).getThePoints());
         }
         //defining a series
         XYChart.Series series = new XYChart.Series();

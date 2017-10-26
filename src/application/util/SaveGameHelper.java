@@ -17,10 +17,10 @@ import javafx.collections.ObservableList;
  */
 public class SaveGameHelper {
 
-    public SaveGameHelper(ObservableList<EquationQuestion> LOL , String selectedLevel , String selectedOperation , int theScore){
+    public SaveGameHelper(ObservableList<EquationQuestion> LOL , String selectedLevel , String selectedOperation , int theScore , int points){
 
         //----------------------------------------------------------------------------------------------------
-        SaveGame sg = new SaveGame(LOL, selectedLevel , selectedOperation , theScore);
+        SaveGame sg = new SaveGame(LOL, selectedLevel , selectedOperation , theScore , points);
 
         Gson gson = new Gson();
         String jsonString = gson.toJson(sg);//stores the observablelist into a json String
