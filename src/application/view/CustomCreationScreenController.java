@@ -36,14 +36,14 @@ public class CustomCreationScreenController extends AbstractController {
 
         String errorMessage = "";
 
-        ArrayList<String> selectedOperations = getTickBoxes();
+        ArrayList<String> selectedOperations = getTickBoxes();//this stores what the operations the user has selected    +-+-+
         if (selectedOperations.size() == 0){
             //the user did not select a operation
             errorMessage+= "You did not select an operation, please select one\n";
         }
 
         //----------------------------------------------------------------------
-        String usersBoundary = boundaryValue.getText();
+        String usersBoundary = boundaryValue.getText();//this stores the String for the upper bound  (e.g "80")          +-+-+
         String digitRegex = "\\d+";
         int result;
         if (usersBoundary.length()==0){//if the user did not enter anything for the upper bound
@@ -62,8 +62,8 @@ public class CustomCreationScreenController extends AbstractController {
         }
         //--------------------------------------------
 
-        String usersName = equationListName.getText();
-        if (usersName.length() == 0){
+        String usersCreationName = equationListName.getText(); //this stores what the user wants to name their creation.         +-+-+
+        if (usersCreationName.length() == 0){
             errorMessage+= "Please enter a name for this custom game \n";
         }
 
@@ -72,7 +72,10 @@ public class CustomCreationScreenController extends AbstractController {
         if (errorMessage.length() == 0) {
             //if the user has no error messages
 
-            //create random equation questions
+            //we have the operations in an selectedOperations: ArrayList<String>
+            //we have the usersBoundary: String
+            //we have the usersCreationName: String
+
 
 
 
