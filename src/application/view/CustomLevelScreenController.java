@@ -25,9 +25,9 @@ public class CustomLevelScreenController extends AbstractController{
     @FXML private Button playBtn;
     @FXML private Button addBtn;
     @FXML private Button delBtn;
-    private PopOver playLevelPopOver;
-    private PopOver addLevelPopOver;
-    private PopOver deleteLevelPopOver;
+    private PopOver playLevelPopOver = new PopOver();
+    private PopOver addLevelPopOver = new PopOver();
+    private PopOver deleteLevelPopOver = new PopOver();
 
     @FXML
     private void initialize(){
@@ -40,12 +40,14 @@ public class CustomLevelScreenController extends AbstractController{
 
     @FXML
     public void handleBack(){
+        hidePopOvers();
         _mainApp.initPlaySelect();
     }
 
     @FXML
     public void handleAdd(){
         //should open up a new scene, where the user cna make their equation, and submit
+        hidePopOvers();
         _mainApp.initCreateCustom();
     }
 
@@ -53,6 +55,7 @@ public class CustomLevelScreenController extends AbstractController{
     public void handlePlay(){
         //check if the user clicked on a equationlist
         //if they have, pass that equation list to the LevelScreenController, and load the FXML for that
+        hidePopOvers();
     }
 
     @FXML
@@ -62,17 +65,40 @@ public class CustomLevelScreenController extends AbstractController{
         //go to the CustomGames folder and delete it
     }
 
+    /**
+     * show helper for what the play button does
+     */
     @FXML private void showPlay(){
+        createPopover(playLevelPopOver, playBtn, "Select your level and press this to play!");
     }
+
+    /**
+     * show helper for what the add button does
+     */
     @FXML private void showAdd(){
-
+        createPopover(addLevelPopOver, addBtn, "Click to create a new level!");
     }
+
+    /**
+     * show helper for what the delete button does
+     */
     @FXML private void showDel(){
-
+        createPopover(deleteLevelPopOver, delBtn, "Click to delete one of your levels");
     }
-    @FXML private void hidePlay(){}
-    @FXML private void hideAdd(){}
-    @FXML private void hideDel(){}
+
+    //these 3 methods hide the popovers once mouse exits the button areas.
+    @FXML private void hidePlay(){playLevelPopOver.hide();}
+    @FXML private void hideAdd(){addLevelPopOver.hide();}
+    @FXML private void hideDel(){deleteLevelPopOver.hide();}
+
+    /**
+     * Hides all popovers to stop null pointer exceptions from occuring.
+     */
+    private void hidePopOvers(){
+        playLevelPopOver.hide();
+        addLevelPopOver.hide();
+        deleteLevelPopOver.hide();
+    }
     private void createPopover(PopOver popOver, Node anchor, String text){
         Label help = new Label(text);
         help.setFont(new Font("Maiandra GD",20));
