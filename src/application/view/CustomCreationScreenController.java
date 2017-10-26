@@ -81,7 +81,7 @@ public class CustomCreationScreenController extends AbstractController {
             for (int i = 0 ; i < 10 ; i ++){
 
                 int choice = rand.nextInt(((numOfOperations-1) - 0) + 1) + 0;//generate number between 0 and (num of operations the user selected)
-                String choiceOperation = selectedOperations.get(choice);
+                String choiceOperation = selectedOperations.get(choice);        
 
 
             }
