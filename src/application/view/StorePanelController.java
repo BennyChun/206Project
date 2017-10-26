@@ -25,7 +25,8 @@ public class StorePanelController extends AbstractController {
 
     }
 
-    @FXML public void setKiwi(){
+    @FXML
+    public void setKiwi(){
         try {
             _mainApp.imagePath = this.getClass().getResource("kiwi.png").toURI().toString();
         } catch (URISyntaxException e) {
@@ -35,7 +36,8 @@ public class StorePanelController extends AbstractController {
         _mainApp.mascotImage = new Image(_mainApp.imagePath);
 
     }
-    @FXML public void setKea(){
+    @FXML
+    public void setKea(){
         try {
             _mainApp.imagePath = this.getClass().getResource("Kea.png").toURI().toString();
         } catch (URISyntaxException e) {
@@ -45,7 +47,8 @@ public class StorePanelController extends AbstractController {
         _mainApp.mascotImage = new Image(_mainApp.imagePath);
 
     }
-    @FXML public void setKakapo(){
+    @FXML
+    public void setKakapo(){
         try {
             _mainApp.imagePath = this.getClass().getResource("kakapo.png").toURI().toString();
         } catch (URISyntaxException e) {
