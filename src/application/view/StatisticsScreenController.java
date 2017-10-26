@@ -20,6 +20,11 @@ public class StatisticsScreenController extends AbstractController {
     }
 
     @FXML
+    public void initialize(){
+        initEasyStats();
+    }
+
+    @FXML
     public void handleHard(){
         try {
             //load start menu from fxml file.
@@ -41,23 +46,7 @@ public class StatisticsScreenController extends AbstractController {
 
     @FXML
     public void handleEasy(){
-        try {
-            //load start menu from fxml file.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/EasyStats.fxml"));
-            ScrollPane hard = (ScrollPane) loader.load();
-
-            // Show the scene containing the start menu
-
-            Scene scene = new Scene(hard);
-            statsPane.getChildren().add(hard);
-            //give stage select controller access to the main app
-            EasyStatsController controller = loader.getController();
-            controller.initialSetUp("easy");
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-
+        initEasyStats();
     }
 
     @FXML
@@ -81,4 +70,22 @@ public class StatisticsScreenController extends AbstractController {
 
     }
 
+    private void initEasyStats(){
+        try {
+            //load start menu from fxml file.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/EasyStats.fxml"));
+            ScrollPane hard = (ScrollPane) loader.load();
+
+            // Show the scene containing the start menu
+
+            Scene scene = new Scene(hard);
+            statsPane.getChildren().add(hard);
+            //give stage select controller access to the main app
+            EasyStatsController controller = loader.getController();
+            controller.initialSetUp("easy");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 }
