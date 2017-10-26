@@ -103,8 +103,10 @@ public class EasyStatsController extends AbstractController {
         overallStats.setItems(observableArrayList);
 
         _openSession.setDisable(true);
+        delete.setDisable(true);
 
         overallStats.getSelectionModel().selectedItemProperty().addListener(event -> _openSession.setDisable(false));
+        overallStats.getSelectionModel().selectedItemProperty().addListener(event -> delete.setDisable(false));
 
         setUpHighScoreLabel();
         setUpLineChart();
@@ -117,43 +119,40 @@ public class EasyStatsController extends AbstractController {
     private void handleDeleteStats() {
         int selectedIndex = overallStats.getSelectionModel().getSelectedIndex();
 
-        if (selectedIndex >= 0) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmation Dialog");
-            alert.setHeaderText("Are you sure you want to Delete this saved game ?");
-            alert.setContentText("All statistics of this game will be lost");
 
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation Dialog");
+        alert.setHeaderText("Are you sure you want to Delete this saved game ?");
+        alert.setContentText("All statistics of this game will be lost");
 
-
-
-                //also delete it from the SavedGamesStats folder
-                String savedGamesDir = System.getProperty("user.dir")+"/SavedGamesStats/";
-
-                SaveGameObservable temp = overallStats.getItems().get(selectedIndex);//this gets the SaveGame that was selected from the user on the Tableview
-                String filename = Long.toString(temp.getUnixTimeStamp());
-                File fileToDelete = new File(savedGamesDir + filename);
-                fileToDelete.delete();
-
-                overallStats.getItems().remove(selectedIndex);//delete the game form the TableView
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
 
 
 
-            } else {
-                //do nothing
+            //also delete it from the SavedGamesStats folder
+            String savedGamesDir = System.getProperty("user.dir")+"/SavedGamesStats/";
+
+            SaveGameObservable temp = overallStats.getItems().get(selectedIndex);//this gets the SaveGame that was selected from the user on the Tableview
+            String filename = Long.toString(temp.getUnixTimeStamp());
+            File fileToDelete = new File(savedGamesDir + filename);
+            fileToDelete.delete();
+
+            overallStats.getItems().remove(selectedIndex);//delete the game form the TableView
+
+            //this checks if the list is empty
+            //if it is ,disable the openSession button and delete button
+            if(observableArrayList.size() ==0){
+                _openSession.setDisable(true);
+                delete.setDisable(true);
             }
 
-        } else {
-            //the user did not select a game
-            //inform the user
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText("There was no game session selected");
-            alert.setContentText("Please select a session, if there are any.");
 
-            alert.showAndWait();
+        } else {
+            //do nothing
         }
+
+
     }
 
 

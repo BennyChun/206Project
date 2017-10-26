@@ -251,6 +251,9 @@ public class MainApp extends Application {
 
 			//give stage select controller access to the main app
 			CustomLevelScreenController controller = loader.getController();
+			//initial set up helps get the custom files
+			controller.initialSetUp();
+
 			controller.setMainApp(this);
 		}catch(IOException e){
 			e.printStackTrace();
@@ -295,7 +298,7 @@ public class MainApp extends Application {
 	/**
 	 * This initialises the main game levels, takes a difficulty and a multiplication level
 	 */
-	public void initMainLevelScreen(String selectedLevel, String selectedOperation){
+	public void initMainLevelScreen(String selectedLevel, String selectedOperation , ObservableList<EquationQuestion> customEquations){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -311,20 +314,30 @@ public class MainApp extends Application {
 			//give stage select controller access to the main app
 			LevelScreenController controller = loader.getController();
 
+			if (!selectedOperation.equals("custom")) {
+				//check if the past in argument is custom, if not custom, make your own list
+				//if it is custom, should have recived an observableList as argument, lol , more refactoring
+				ObservableList<EquationQuestion> LOL = FXCollections.observableArrayList();
+				for (int i = 0; i < 10; i++) {
+					EquationQuestion temp = new EquationQuestion(selectedLevel, selectedOperation, 99);
+					LOL.add(temp);
 
-			ObservableList<EquationQuestion> LOL = FXCollections.observableArrayList();
-			for (int i = 0 ; i < 10 ; i++) {
-				EquationQuestion temp = new EquationQuestion(selectedLevel, selectedOperation);
-				LOL.add(temp);
-
-				//testing purposes
-				System.out.print(temp.getTheEquation() + " = ");
-				System.out.println(temp.getTheAnswer());
+					//testing purposes
+					System.out.print(temp.getTheEquation() + " = ");
+					System.out.println(temp.getTheAnswer());
+				}
+				controller.setDifficultyAndMode(selectedLevel, selectedOperation);
+				controller.setList(LOL);
+				controller.showCurrentQuestion();
+			}else{
+				//it is a custom level
+				//pass selectedLevel as the name of the creation
+				//pass custom
+				controller.setDifficultyAndMode(selectedLevel , "custom" );
+				controller.setList(customEquations);
+				controller.showCurrentQuestion();
 			}
-			controller.setDifficultyAndMode(selectedLevel,selectedOperation);
 
-			controller.setList(LOL);
-			controller.showCurrentQuestion();
 
 
 

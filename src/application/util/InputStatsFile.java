@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * this class should read all the txt files in a specified location/path
- * it should tak
+ * this class should read all the txt files in the SavedGamesStats folder
  */
 public class InputStatsFile {
     private String savedGamesDir = System.getProperty("user.dir")+"/SavedGamesStats/";
@@ -21,7 +20,8 @@ public class InputStatsFile {
 
 
     /**
-     *
+     *this method will go into the SavedGamesStats folder and get all the files
+     * it will then try and store them in the
      */
     public void getFiles(){
         File folder = new File(savedGamesDir);//get the SavedGamesStats folder as a File
@@ -64,7 +64,7 @@ public class InputStatsFile {
     }
 
     /**
-     * should return the BbservableList<SaveGame> of the ArrayList<SaveGame>
+     * should return the ObservableList<SaveGame> of the ArrayList<SaveGame>
      * @return
      */
     public ObservableList<SaveGameObservable> getObservableList(String selectedLevel){
@@ -75,9 +75,17 @@ public class InputStatsFile {
             //convert the SaveGame object to a SaveGameObservable object
             SaveGameObservable temp = new SaveGameObservable(listOfSavedGames.get(i));
 
-            if (temp.getTheLevel().equals(selectedLevel)){//if the SaveGame is what the user selected to show on the stats
-                observableArrayList.add(temp);//add the SaveGameObservable object to the observableArrayList
+            //check if the passed in selectedLevel.equals("custom")
 
+            if (!selectedLevel.equals("custom")) {
+                //if it's not custom
+                if (temp.getTheLevel().equals(selectedLevel)) {//if the SaveGame is what the user selected to show on the stats
+                    observableArrayList.add(temp);//add the SaveGameObservable object to the observableArrayList
+                }
+            }else{
+                if (temp.getTheOperation().equals("custom")){//can also use selectedLevel, but we know that it has to be custom
+                    observableArrayList.add(temp);
+                }
             }
         }
 

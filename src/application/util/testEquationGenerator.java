@@ -30,7 +30,7 @@ public class testEquationGenerator {
         System.out.println(ieee);
 
 
-        REFACTOREDEquationGenerator test = new REFACTOREDEquationGenerator("easy", "*");
+        REFACTOREDEquationGenerator test = new REFACTOREDEquationGenerator("easy", "*" , 00);
 
 
 

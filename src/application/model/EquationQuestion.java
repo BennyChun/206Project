@@ -24,6 +24,21 @@ public class EquationQuestion {
     private IntegerProperty currentAttempts; //records the number of attemps
     private BooleanProperty correct;    //records whether this question got answered correct
 
+
+    /**
+     * a constructor that takes in arguments instead of generating them
+     * and sets them
+     */
+    public EquationQuestion(int theAnswer , String theAnswerInMaori , String theEquation , int currentAttempts , boolean correct){
+        this.theAnswer = new SimpleIntegerProperty(theAnswer);
+        this.theAnswerInMaori = new SimpleStringProperty(theAnswerInMaori);
+        this.theEquation = new SimpleStringProperty(theEquation);
+        this.currentAttempts = new SimpleIntegerProperty(currentAttempts);
+        this.correct = new SimpleBooleanProperty(correct);
+    }
+
+
+
     /**
      * this constructor takes 2 inputs, which represents the users selectedLevel
      * and the users selected Operation (+ , - , * , / )
@@ -35,13 +50,13 @@ public class EquationQuestion {
      * @param selectedOperation
      */
 
-    public EquationQuestion(String selectedLevel , String selectedOperation){
+    public EquationQuestion(String selectedLevel , String selectedOperation , int upperBound){
         //generate a random equation base on the users input
         //save the randomly generated equation as a field
         //save the sanswer as a field
         //translate the sanswer to maori
 
-        REFACTOREDEquationGenerator generate = new REFACTOREDEquationGenerator(selectedLevel, selectedOperation);
+        REFACTOREDEquationGenerator generate = new REFACTOREDEquationGenerator(selectedLevel, selectedOperation , upperBound);
         generate.generateEquation();
 
         theEquation = new SimpleStringProperty(generate.getTheEquation() );

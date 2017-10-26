@@ -32,16 +32,17 @@ public class REFACTOREDEquationGenerator {
      *
      * @param selectedLevel selectedOperation
      */
-    public REFACTOREDEquationGenerator(String selectedLevel, String selectedOperation){
+    public REFACTOREDEquationGenerator(String selectedLevel, String selectedOperation , int selectedUpperBound){
         this.selectedLevel=selectedLevel;
         this.selectedOperation = selectedOperation;
+
 
         if (selectedLevel.equals("easy")){
             upperBound = 20;
         }else if (selectedLevel.equals("hard")){
             upperBound = 99;
         }else if (selectedLevel.equals("custom")){
-            upperBound = 99;//please tell the user to set up the upper bound with setUpperBound()
+            upperBound = selectedUpperBound;//sets the upper bound if the selected Level was custom
         }
         lowerBound = 1;
     }

@@ -36,7 +36,7 @@ public class EndScreenController extends AbstractController{
 			operation = "/";
 
 		}
-		_mainApp.initMainLevelScreen(selectedLevel, operation);
+		_mainApp.initMainLevelScreen(selectedLevel, operation , null );
 	}
 
 	/**

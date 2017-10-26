@@ -1,6 +1,9 @@
 package application.view;
 
 import application.model.EquationQuestion;
+import application.util.OutputFile;
+import application.util.SaveCreationHelper;
+import com.google.gson.Gson;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -80,39 +83,52 @@ public class CustomCreationScreenController extends AbstractController {
             //we have the usersBoundary: String
             //we have the usersCreationName: String
 
-            //raondomly pick the users selected operations
-            //generate the 10 EquationQuestions
-            //somehow generate a JSON string of the 10 equationQuestions
-            //save the JSON string to a txt file , to CustomGames folder
+            /////randomly pick the users selected operations
+            /////generate the 10 EquationQuestions
+            /////somehow generate a JSON string of the 10 equationQuestions, and save the name for it
 
+            Random rand = new Random();
+            ObservableList<EquationQuestion> theTenEquations = FXCollections.observableArrayList();
+
+            int numOfOperations = selectedOperations.size();//this gets how many operations the user wants
+
+            System.out.println("-----CUSTOM EQUATIONS CREATED-----"); //testing purpose
+            for (int i = 0 ; i < 10 ; i ++){
+
+                int choice = rand.nextInt(((numOfOperations-1) - 0) + 1) + 0;//generate number between 0 and (num of operations the user selected)
+                String choiceOperation = selectedOperations.get(choice);
+
+                EquationQuestion tempEquation = new EquationQuestion("custom", choiceOperation , Integer.parseInt(usersBoundary));
+                theTenEquations.add(tempEquation);
+                //testing purposes
+
+                System.out.print(tempEquation.getTheEquation() + " = ");
+                System.out.println(tempEquation.getTheAnswer());
+
+            }
+            //---------------------------------------------------------------------------------------
+            /////make a EquationQuestionAdapter class for EquationQuestion (has Strings and ints instead of properties)
+            /////make a SaveCreationHelper to take in the ObservableList<EquationQuestion> and the creationName
+            /////serialize that SaveCreationHelper and save the JSON string
+            /////save the JSON string to a txt file , to CustomGames folder
+
+            SaveCreationHelper sch = new SaveCreationHelper(theTenEquations, usersCreationName);
+
+            Gson gson = new Gson();
+            String jsonString = gson.toJson(sch);
+            System.out.println(jsonString);
+
+            String savedGamesDir = System.getProperty("user.dir")+"/CustomGames/";
+            OutputFile out = new OutputFile(savedGamesDir , sch.getUnixTimeStamp(), jsonString);
+
+
+            //--------------------------------------------------------------------------------------
             //back in the CustomLevelScreenController
             //when the user selects a game to play
             //it should read the JSON string
             //it should somehow get that string
             //and convert everthing back to an ObservableList<EquationQuestion>
             //and then past that ObservableList to the initmainLevelScreen
-
-
-            Random rand = new Random();
-            ObservableList<EquationQuestion> theTenEquations = FXCollections.observableArrayList();
-
-            int numOfOperations = selectedOperations.size();//this gets how many operations the user wants
-            for (int i = 0 ; i < 10 ; i ++){
-
-                int choice = rand.nextInt(((numOfOperations-1) - 0) + 1) + 0;//generate number between 0 and (num of operations the user selected)
-                String choiceOperation = selectedOperations.get(choice);
-
-
-                EquationQuestion tempEquation = new EquationQuestion("custom", choiceOperation);
-                theTenEquations.add(tempEquation);
-
-                //testing purposes
-                System.out.print(tempEquation.getTheEquation() + " = ");
-                System.out.println(tempEquation.getTheAnswer());
-
-
-
-            }
 
 
             //go back to custom screen (the screen that was a TableView of all the users custom games

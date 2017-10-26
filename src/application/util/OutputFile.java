@@ -12,9 +12,9 @@ import java.io.IOException;
  * also takes the jsonString to write to the file.
  *
  */
-public class OutputStatsFile {
+public class OutputFile {
 
-    public OutputStatsFile(String dir , long unixTimeStamp , String jsonString){
+    public OutputFile(String dir , long unixTimeStamp , String jsonString){
 
         File f = new File(dir + Long.toString(unixTimeStamp));//creates the new File
         BufferedWriter writer = null;

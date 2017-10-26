@@ -32,7 +32,7 @@ public class SaveGameHelper {
         //========================================================================================================
         String savedGamesDir = System.getProperty("user.dir")+"/SavedGamesStats/";
 
-        OutputStatsFile out = new OutputStatsFile(savedGamesDir , sg.getUnixTimeStamp(), jsonString);
+        OutputFile out = new OutputFile(savedGamesDir , sg.getUnixTimeStamp(), jsonString);
 
         //---------------------------------------------------------------------------------------------------------------
         //SaveGame getTheGame = gson.fromJson(str, SaveGame.class); //this will get the string, and will try and deserialize it to the SaveGame class.

@@ -523,9 +523,18 @@ public class LevelScreenController extends AbstractController {
     private void displayEndScreen() {
         hideInitialButtons();
         getFinalSCore();
-        SaveGameHelper test = new SaveGameHelper(equationList , selectedLevel , selectedOperation , finalScore , points);
 
-        _mainApp.initMainEndScreen(points, finalScore, selectedLevel , selectedOperation);
+
+        if (!selectedOperation.equals("custom")) {
+            //if the selectedOperation was not Custom
+            SaveGameHelper test = new SaveGameHelper(equationList, selectedLevel, selectedOperation, finalScore, points);
+            _mainApp.initMainEndScreen(points, finalScore, selectedLevel , selectedOperation);
+        }else{
+            //the selectedOperation was custom
+            SaveGameHelper test = new SaveGameHelper(equationList, selectedLevel, selectedOperation, finalScore, points);
+            _mainApp.initMainEndScreen(points, finalScore, selectedLevel , selectedOperation);
+        }
+
     }
 
     //---------------------------------------------------------------------------------------------------------
@@ -747,6 +756,12 @@ public class LevelScreenController extends AbstractController {
      * @param selectedOperation
      */
     public void setDifficultyAndMode(String selectedLevel, String selectedOperation) {
+
+
+        //if the selectedOperation is "custom"
+        //then the selectedLevel will be the name of the creation
+
+
         difficultyLabel.setText(selectedLevel.substring(0,1).toUpperCase() + selectedLevel.substring(1));
         this.selectedLevel = selectedLevel;
 
@@ -760,9 +775,13 @@ public class LevelScreenController extends AbstractController {
         }else if (selectedOperation.equals("*")){
             modeLabel.setText("Multiplication");
             this.selectedOperation = "multiplication";
-        }else {
+        }else if (selectedOperation.equals("/")){
             modeLabel.setText("Division");
             this.selectedOperation = "division";
+        }else {
+            //it was a custom level
+            modeLabel.setText("Custom");
+            this.selectedOperation = "custom";
         }
     }
 
