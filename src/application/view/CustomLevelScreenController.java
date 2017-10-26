@@ -29,6 +29,8 @@ public class CustomLevelScreenController extends AbstractController{
     private PopOver addLevelPopOver = new PopOver();
     private PopOver deleteLevelPopOver = new PopOver();
 
+
+
     @FXML
     private void initialize(){
 
@@ -46,9 +48,11 @@ public class CustomLevelScreenController extends AbstractController{
 
     @FXML
     public void handleAdd(){
+
         //should open up a new scene, where the user cna make their equation, and submit
         hidePopOvers();
         _mainApp.initCreateCustom();
+
     }
 
     @FXML

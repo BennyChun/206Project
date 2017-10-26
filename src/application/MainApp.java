@@ -345,7 +345,7 @@ public class MainApp extends Application {
 	 * @param selectedLevel
 	 * @param selectedOperation
 	 */
-	public void initMainEndScreen(int finalScore , String selectedLevel, String selectedOperation){
+	public void initMainEndScreen(int points, int finalScore , String selectedLevel, String selectedOperation){
 		try {
 			//load start menu from fxml file.
 			FXMLLoader loader = new FXMLLoader();
@@ -360,8 +360,7 @@ public class MainApp extends Application {
 
 			//give stage select controller access to the main app
 			EndScreenController controller = loader.getController();
-
-			controller.setScoreLabel(finalScore);
+			controller.setScoreLabel(points, finalScore);
 			controller.setPreviousLevel(selectedLevel, selectedOperation);
 			controller.setMainApp(this);
 

@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EasyStatsController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="840.0" prefWidth="460.0" stylesheets="@scrollpane.css">
@@ -39,12 +38,13 @@
                   <Font name="Maiandra GD" size="24.0" />
                </font>
             </Label>
-            <TableView fx:id="overallStats" focusTraversable="false" layoutX="35.0" layoutY="482.0" prefHeight="256.0" prefWidth="400.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
+            <TableView fx:id="overallStats" focusTraversable="false" layoutX="34.0" layoutY="457.0" prefHeight="290.0" prefWidth="400.0" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="458.0">
               <columns>
-                <TableColumn fx:id="_difficulty" maxWidth="98.5" prefWidth="98.5" text="Difficulty" />
-                <TableColumn fx:id="_operation" prefWidth="113.5" text="Operation" />
-                  <TableColumn fx:id="_score" prefWidth="81.5" text="Score" />
-                  <TableColumn fx:id="_time" prefWidth="105.0" text="Date" />
+                <TableColumn fx:id="_difficulty" maxWidth="98.5" prefWidth="77.0" text="Difficulty" />
+                <TableColumn fx:id="_operation" prefWidth="109.0" text="Operation" />
+                  <TableColumn fx:id="_score" prefWidth="54.0" text="Score" />
+                  <TableColumn fx:id="_time" prefWidth="103.0" text="Date" />
+                  <TableColumn fx:id="_points" prefWidth="56.0" text="Points" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -62,7 +62,7 @@
                   <Font name="Maiandra GD" size="22.0" />
                </font>
             </JFXButton>
-            <TableView fx:id="sessionStats" focusTraversable="false" layoutX="62.0" layoutY="346.0" prefHeight="256.0" prefWidth="400.0" visible="false" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="480.0">
+            <TableView fx:id="sessionStats" focusTraversable="false" layoutX="36.0" layoutY="458.0" prefHeight="290.0" prefWidth="400.0" visible="false" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="458.0">
                <columns>
                   <TableColumn fx:id="_equation" prefWidth="116.5" text="Equation" />
                   <TableColumn fx:id="_answer" prefWidth="82.0" text="Answer" />

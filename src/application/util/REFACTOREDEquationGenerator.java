@@ -40,8 +40,8 @@ public class REFACTOREDEquationGenerator {
             upperBound = 20;
         }else if (selectedLevel.equals("hard")){
             upperBound = 99;
-        }else{
-            System.out.println("you have passed an invalid argument to the constructor, please only pass easy or hard");
+        }else if (selectedLevel.equals("custom")){
+            upperBound = 99;//please tell the user to set up the upper bound with setUpperBound()
         }
         lowerBound = 1;
     }
