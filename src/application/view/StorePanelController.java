@@ -15,11 +15,11 @@ public class StorePanelController extends AbstractController {
     @FXML
     public void initialize(){
         System.out.println(_mainApp.imagePath);
-        if(_mainApp.imagePath.equals("file:/C:/Users/BennyChun-PC/eclipse-workspace/206Project/bin/application/view/kiwi.png")){
+        if(_mainApp.imagePath.contains("kiwi.png")){
             kiwiButton.setSelected(true);
-        } else if(_mainApp.imagePath.equals("file:/C:/Users/BennyChun-PC/eclipse-workspace/206Project/bin/application/view/Kea.png")){
+        } else if(_mainApp.imagePath.contains("Kea.png")){
             keaButton.setSelected(true);
-        } else if(_mainApp.imagePath.equals("file:/C:/Users/BennyChun-PC/eclipse-workspace/206Project/bin/application/view/kakapo.png")){
+        } else if(_mainApp.imagePath.contains("kakapo.png")){
             kakapoButton.setSelected(true);
         }
 

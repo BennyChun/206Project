@@ -92,8 +92,8 @@ public class LevelScreenController extends AbstractController {
     private String selectedOperation;
     private String correctAnswer;// records the correct answer, for the current equation
     private int finalScore=0;
-
     private String mao="";//this stores the users recorded answer in maori
+    private int points = 0; // user score tracker in point form
 
     //==============================================================================
 
@@ -453,22 +453,18 @@ public class LevelScreenController extends AbstractController {
 
     private void processCorrect(){
         hideInitialButtons();//hide the question label AND disable/hide the 3 buttons (listen, record , confirm)
-
         // make the 3 little speech circles green
         correctFill();
-
         // add a tick to tracker, shows up on the gui
         updateCorrectQuestionTracker();
-
         correctLabel.setVisible(true);//shows the correctLabel bubble
         correctLabel.setText(" Well Done! \n You Said: " +correctAnswer + " " + "\n Which means: " + currentEquation.getTheAnswer() + " ");
-
         nextButton.setVisible(true);
         nextButton.setDisable(false);
-
         currentEquation.setCorrect(true);//sets the state of the current question to be TRUE (user answer this question correctly
 
     }
+
 
     // if the attempt is between 1 and 2
     private void processIncorrect(){
@@ -681,6 +677,7 @@ public class LevelScreenController extends AbstractController {
             questionTen.setOpacity(1);
         }
     }
+
 
 
     //===========================================================================================================
