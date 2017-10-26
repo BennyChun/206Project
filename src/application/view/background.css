@@ -7,6 +7,10 @@ ScrollPane AnchorPane{
     -fx-background-color: #ffffff;
 }
 
+AnchorPane AnchorPane{
+    -fx-background-color: none;
+}
+
 JFXButton {
     -fx-background-color: #B4D8E7;
 }
