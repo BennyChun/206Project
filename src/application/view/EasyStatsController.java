@@ -224,6 +224,8 @@ public class EasyStatsController extends AbstractController {
         if (size > 0) {
             int highestScore = observableArrayList.get(0).getThePoints();//gets the score of the first savegame, make it the highest
 
+
+            //find max algorithm
             for (int i = 1; i < size; i++) {
                 SaveGameObservable temp = observableArrayList.get(i);
                 int tempScore = temp.getThePoints();
