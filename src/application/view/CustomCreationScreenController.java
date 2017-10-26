@@ -181,6 +181,10 @@ public class CustomCreationScreenController extends AbstractController {
 
 
     //=================================================================
+    // the below methods check the status of the checkboxes and checks
+    // them if unchecked, and unchecks them if they're checked.
+
+
     @FXML
     private void handleAdd(){
         if(addCheck.isSelected()){

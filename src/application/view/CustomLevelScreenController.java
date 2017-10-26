@@ -124,8 +124,8 @@ public class CustomLevelScreenController extends AbstractController{
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
-        alert.setHeaderText("Are you sure you want to Delete this saved game ?");
-        alert.setContentText("Once deleted, you can never get it back :(");
+        alert.setHeaderText("Are you sure you want to delete this saved game ?");
+        alert.setContentText("Once deleted, you can never get it back");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
