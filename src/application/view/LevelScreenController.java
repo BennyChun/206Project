@@ -543,6 +543,10 @@ public class LevelScreenController extends AbstractController {
     //=========================================================================================================
     //---------------------------------------------------------------------------------------------------------
 
+    /**
+     * This method is used to update the points the user has scored
+     * by checking how many they've gotten correct in a row.
+     */
     private void addPoints(){
 
         if (streakCounter == 0){
