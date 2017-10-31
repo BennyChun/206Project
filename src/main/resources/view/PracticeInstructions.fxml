@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.PracticeInstructionsController">
+   <children>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="810.0" layoutY="679.0" onAction="#handleContinue" prefHeight="75.0" text="Continue" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font name="Maiandra GD" size="37.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="226.0" layoutY="29.0" text="PRACTICE LEVEL INSTRUCTIONS">
+         <font>
+            <Font name="Maiandra GD" size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="165.0" text="While practicing press the following buttons:">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+      </Label>
+      <VBox layoutX="84.0" layoutY="228.0" prefHeight="400.0" prefWidth="250.0" spacing="50.0">
+         <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" >
+               <font>
+                  <Font name="Freestyle Script" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Icons/111251-material-design/png/voice-message-microphone-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" >
+               <font>
+                  <Font name="Freestyle Script" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Icons/111251-material-design/png/play-arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="100.0" prefWidth="250.0" ripplerFill="BLACK" >
+               <font>
+                  <Font name="Freestyle Script" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@right-arrow-forward.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+      <VBox layoutX="376.0" layoutY="228.0" prefHeight="400.0" prefWidth="500.0" spacing="50.0">
+         <children>
+            <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" prefWidth="367.0" text="This will give you 2 seconds to record your answer. You can record as many times as you want, before confirming your answer.">
+               <font>
+                  <Font name="Maiandra GD" size="20.0" />
+               </font>
+            </JFXTextArea>
+            <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" prefWidth="367.0" text="This button will allow you to listen the the recoding you've made, you can listen to it as many times as you want">
+               <font>
+                  <Font name="Maiandra GD" size="20.0" />
+               </font>
+            </JFXTextArea>
+            <JFXTextArea editable="false" focusColor="WHITE" focusTraversable="false" prefHeight="100.0" prefWidth="367.0" text="Allows you to submit your answer when you're ready. Don't worry if you get it wrong the first time, you have two attempts at each question">
+               <font>
+                  <Font name="Maiandra GD" size="20.0" />
+               </font>
+            </JFXTextArea>
+         </children>
+      </VBox>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="9.0" layoutY="9.0" onAction="#handleBack" prefHeight="14.0" prefWidth="31.0" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="9.0">
+         <font>
+            <Font name="Maiandra GD" size="37.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="307.0" layoutY="81.0" text="Practice random Maori numbers (1-99) here!">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

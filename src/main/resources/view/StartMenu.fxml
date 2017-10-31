@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StartMenuController">
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="196.0" layoutY="590.0" onAction="#handleQuit" prefHeight="50.0" prefWidth="100.0" text="QUIT">
+         <font>
+            <Font name="Maiandra GD" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="480.0" layoutY="32.0" prefHeight="143.0" prefWidth="479.0" text="TATAI!">
+         <font>
+            <Font name="Maiandra GD" size="142.0" />
+         </font>
+      </Label>
+   <VBox layoutX="96.0" layoutY="231.0" prefHeight="346.0" prefWidth="300.0" spacing="30.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="231.0">
+      <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePlay" prefWidth="400.0" ripplerFill="BLACK" text="PLAY">
+               <font>
+                  <Font name="Maiandra GD" size="32.0" />
+               </font>
+            </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handlePractice" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" text="PRACTICE">
+            <font>
+               <Font name="Maiandra GD" size="32.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleStatistics" prefHeight="50.0" prefWidth="400.0" ripplerFill="BLACK" text="STATISTICS">
+            <font>
+               <Font name="Maiandra GD" size="32.0" />
+            </font>
+         </JFXButton>
+         <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#handleMic" prefHeight="61.0" prefWidth="300.0" ripplerFill="BLACK" text="MIC TEST">
+            <font>
+               <Font name="Maiandra GD" size="32.0" />
+            </font>
+         </JFXButton>
+      </children>
+   </VBox>
+   <JFXButton focusTraversable="false" layoutX="547.0" layoutY="272.0" onAction="#handleCharacter" onMouseEntered="#showClickMe" onMouseExited="#closeClickMe" prefHeight="381.0" prefWidth="385.0" style="-fx-background-color: none;">
+      <graphic>
+         <ImageView fx:id="mascot" accessibleRole="BUTTON" fitHeight="448.0" fitWidth="406.0" pickOnBounds="true" preserveRatio="true" scaleX="-1.0">
+            <image>
+               <Image url="@kiwi.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </JFXButton>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#413c3c" height="11.0" layoutX="580.0" layoutY="50.0" stroke="#413c3c" strokeType="INSIDE" width="59.0" />
+
+</AnchorPane>

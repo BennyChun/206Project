@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LevelScreenController">
+   <children>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="14.0" onAction="#handleBack" prefHeight="14.0" prefWidth="31.0">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Freestyle Script" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="recordButton" buttonType="RAISED" focusTraversable="false" layoutX="416.0" layoutY="638.0" onAction="#handleRecord" onMouseEntered="#recordHelp" onMouseExited="#recordClose" prefHeight="100.0" prefWidth="250.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="387.0">
+         <graphic>
+            <FontAwesomeIconView glyphName="MICROPHONE" size="60" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="confirmButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="729.0" layoutY="638.0" onAction="#handleConfirm" onMouseEntered="#confirmHelp" onMouseExited="#confirmClose" prefHeight="100.0" prefWidth="250.0" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="62.0">
+         <font>
+            <Font name="Freestyle Script" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@right-arrow-forward.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="listenButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="59.0" layoutY="638.0" onAction="#handleListen" onMouseEntered="#listenHelp" onMouseExited="#listenClose" prefHeight="100.0" prefWidth="250.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="62.0">
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icons/111251-material-design/png/play-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <HBox fx:id="questionTracker" layoutX="337.0" layoutY="70.0" onMouseEntered="#questionTrackHelp" onMouseExited="#questionTrackerClose" prefHeight="35.0" spacing="10.0" AnchorPane.leftAnchor="292.0">
+         <children>
+            <ImageView fx:id="questionOne" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionTwo" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionThree" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionFour" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionFive" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionSix" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionSeven" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionEight" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionNine" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="questionTen" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@circumference.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox fx:id="attemptTracker" layoutX="447.0" layoutY="112.0" onMouseEntered="#attemptHelp" onMouseExited="#attemptClose" prefHeight="30.0" prefWidth="130.0" spacing="20.0">
+         <children>
+            <Rectangle fx:id="attemptOne" arcHeight="5.0" arcWidth="5.0" fill="#fff200" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Rectangle fx:id="attemptTwo" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Rectangle fx:id="attemptThree" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+         </children>
+      </HBox>
+      <JFXButton fx:id="retryButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="503.0" onAction="#handleRetry" onMouseEntered="#retryHelp" onMouseExited="#retryClose" prefHeight="100.0" prefWidth="250.0" visible="false">
+         <graphic>
+            <FontAwesomeIconView glyphName="REPEAT" size="60" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="skipButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="387.0" layoutY="626.0" onAction="#handleSkip" onMouseEntered="#skipHelp" onMouseExited="#skipClose" prefHeight="100.0" prefWidth="250.0" visible="false">
+         <font>
+            <Font name="Freestyle Script" size="24.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="FORWARD" size="60" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="nextButton" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="388.0" layoutY="626.0" onAction="#handleNext" onMouseEntered="#nextHelp" onMouseExited="#nextClose" prefHeight="100.0" prefWidth="250.0" visible="false">
+         <graphic>
+            <FontAwesomeIconView glyphName="STEP_FORWARD" size="60" />
+         </graphic>
+      </JFXButton>
+      <Label fx:id="difficultyLabel" layoutX="369.0" layoutY="24.0" prefHeight="37.0" text="mao">
+         <font>
+            <Font name="Maiandra GD" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="modeLabel" layoutX="687.0" layoutY="24.0" prefHeight="37.0" text="mao">
+         <font>
+            <Font name="Maiandra GD" size="30.0" />
+         </font></Label>
+      <Label fx:id="correctLabel" focusTraversable="false" layoutX="369.0" layoutY="164.0" style="-fx-background-color: #ADFF2F; -fx-background-radius: 15px;" visible="false" AnchorPane.leftAnchor="505.0">
+         <font>
+            <Font name="Maiandra GD" size="42.0" />
+         </font>
+      </Label>
+      <Label fx:id="questionLabel" layoutX="505.0" layoutY="164.0" prefHeight="88.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15px;" text=" What is 42 + 42? " AnchorPane.leftAnchor="505.0">
+         <font>
+            <Font name="Maiandra GD" size="42.0" />
+         </font>
+      </Label>
+      <Circle fx:id="circleOne" fill="WHITE" layoutX="481.0" layoutY="213.0" radius="18.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circleTwo" fill="WHITE" layoutX="447.0" layoutY="225.0" radius="12.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" AnchorPane.bottomAnchor="531.0" AnchorPane.leftAnchor="435.0" />
+      <Circle fx:id="circleThree" fill="WHITE" layoutX="428.0" layoutY="242.0" radius="6.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label fx:id="incorrectLabel" focusTraversable="false" layoutX="366.0" layoutY="164.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px;" visible="false" AnchorPane.leftAnchor="505.0">
+         <font>
+            <Font name="Maiandra GD" size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="228.0" layoutY="24.0" prefHeight="37.0" text="Difficulty:">
+         <font>
+            <Font name="Maiandra GD" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="587.0" layoutY="24.0" prefHeight="37.0" text="Mode:">
+         <font>
+            <Font name="Maiandra GD" size="30.0" />
+         </font>
+      </Label>
+      <JFXProgressBar fx:id="progressBar" blendMode="RED" layoutX="387.0" layoutY="603.0" prefHeight="12.0" prefWidth="250.0" progress="0.0" />
+      <ImageView fx:id="mascot" fitHeight="437.0" fitWidth="417.0" layoutX="14.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="166.0">
+         <image>
+            <Image url="@kiwi.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
