@@ -1,0 +1,23 @@
+AnchorPane {
+  -fx-background-color: radial-gradient(center 50% 50% , radius 40% , #ffebcd, #117554);
+
+}
+
+ScrollPane AnchorPane{
+    -fx-background-color: #ffffff;
+}
+
+AnchorPane AnchorPane{
+    -fx-background-color: none;
+}
+
+JFXButton {
+    -fx-background-color: #B4D8E7;
+}
+
+.check-box > .box > .mark {
+    -fx-padding: 15px;
+}
+.check-box > .box {
+    -fx-padding: 10px;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.StatisticsScreenController">
+    <children>
+        <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="31.0" layoutY="14.0" onAction="#handleBack">
+            <font>
+                <Font name="Maiandra GD" size="24.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@back-arrow.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+      <FontAwesomeIconView />
+      <FontAwesomeIconView glyphName="LINE_CHART" layoutX="407.0" layoutY="172.0" size="184" />
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="287.0" layoutY="202.0" onAction="#handleEasy" prefWidth="120.0" text="Easy">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="452.0" layoutY="202.0" onAction="#handleHard" prefWidth="120.0" text="Hard">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="617.0" layoutY="202.0" onAction="#handleCustom" prefWidth="120.0" text="Custom">
+         <font>
+            <Font name="Maiandra GD" size="24.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="statsPane" layoutX="275.0" layoutY="266.0" prefHeight="475.0" prefWidth="475.0" style="-fx-background-color: #ffffff;" />
+    </children>
+</AnchorPane>

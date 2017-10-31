@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" stylesheets="@scrollpane.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EasyStatsController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="840.0" prefWidth="460.0" stylesheets="@scrollpane.css">
+         <children>
+            <LineChart fx:id="_scoreGraph" layoutX="55.0" layoutY="123.0" prefHeight="300.0" prefWidth="350.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" visible="false" fx:id="x" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="y" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Label layoutX="50.0" layoutY="71.0" text="High Score:">
+               <font>
+                  <Font name="Maiandra GD" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="highScore" layoutX="178.0" layoutY="71.0" text="10/10">
+               <font>
+                  <Font name="Maiandra GD" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="423.0" text="Previous Attempts">
+               <font>
+                  <Font name="Maiandra GD" size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="overallStats" focusTraversable="false" layoutX="34.0" layoutY="457.0" prefHeight="290.0" prefWidth="400.0" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="458.0">
+              <columns>
+                <TableColumn fx:id="_difficulty" maxWidth="98.5" prefWidth="77.0" text="Difficulty" />
+                <TableColumn fx:id="_operation" prefWidth="109.0" text="Operation" />
+                  <TableColumn fx:id="_score" prefWidth="54.0" text="Score" />
+                  <TableColumn fx:id="_time" prefWidth="103.0" text="Date" />
+                  <TableColumn fx:id="_points" prefWidth="56.0" text="Points" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <JFXButton fx:id="_openSession" buttonType="RAISED" focusTraversable="false" layoutX="62.0" layoutY="763.0" onAction="#handleOpenSession" style="-fx-background-color: #ffffff;" text="Open Session" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="763.0">
+               <font>
+                  <Font name="Maiandra GD" size="22.0" />
+               </font>
+            </JFXButton>
+
+            <JFXButton fx:id="delete" buttonType="RAISED" focusTraversable="false" layoutX="304.0" layoutY="763.0" onAction="#handleDeleteStats" style="-fx-background-color: #ffffff;" text="Delete">
+
+               <font>
+                  <Font name="Maiandra GD" size="22.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="sessionStats" focusTraversable="false" layoutX="36.0" layoutY="458.0" prefHeight="290.0" prefWidth="400.0" visible="false" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="458.0">
+               <columns>
+                  <TableColumn fx:id="_equation" prefWidth="116.5" text="Equation" />
+                  <TableColumn fx:id="_answer" prefWidth="82.0" text="Answer" />
+                  <TableColumn fx:id="_isCorrect" prefWidth="59.0" text="Correct?" />
+                  <TableColumn fx:id="_attempts" prefWidth="65.0" text="Attempts" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <JFXButton fx:id="_closeSession" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="107.0" layoutY="754.0" onAction="#handleCloseSession" style="-fx-background-color: #ffffff;" text="Close Session" visible="false" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="763.0">
+               <font>
+                  <Font name="Maiandra GD" size="22.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="StatLevelLabel" alignment="CENTER" layoutX="27.0" layoutY="17.0" prefHeight="39.0" prefWidth="418.0" text="stats">
+               <font>
+                  <Font name="Maiandra GD" size="32.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
